@@ -2,11 +2,11 @@
 
 **Djessi Jorge — Solutions Architect / Agentic AI Engineer · London, UK**
 
-[Live portfolio](https://djessi-architecture-cockpit.djessi2.chatgpt.site/) · [LinkedIn](https://www.linkedin.com/in/djessijorge/) · [GitHub profile](https://github.com/djessijorge9-ship-it/)
+[Live portfolio](https://portfolio.djessi2.chatgpt.site/) · [LinkedIn](https://www.linkedin.com/in/djessijorge/) · [GitHub profile](https://github.com/djessijorge9-ship-it/)
 
 ## 1. Executive Overview & Architectural Philosophy
 
-This repository contains the portfolio application, its static crawler representation and verification checks. It presents five evaluated educational systems and nine completed IBM, AWS and Udacity programmes. It does not contain the capstone implementations, training datasets, course handouts or private evaluation logs.
+This repository contains the portfolio application, its static crawler representation and verification checks. It presents five evaluated educational systems and ten completed IBM, AWS and Udacity programmes. It does not contain the capstone implementations, training datasets, course handouts or private evaluation logs.
 
 > Selected certification projects. Results reflect educational prototypes and recorded project evaluations.
 
@@ -19,7 +19,7 @@ Recorded educational evaluations do not establish production throughput, uptime,
 The application has two representations of the same profile and evaluation content:
 
 - **Interactive React SPA:** React 19, TypeScript, Vite, Tailwind CSS and Lucide React provide category filters, keyboard-accessible blueprint tabs, architecture inspection dialogs and a clipboard summary with a selectable-text fallback. The active blueprint is reflected in the `system` query parameter. Inter and JetBrains Mono are bundled locally through Fontsource.
-- **Three-layer static fallback:** Layer 1 is a visible semantic portfolio inside `#root`, with complete projects, credentials and capability distinctions. Layer 2 is a head-level JSON-LD graph connecting `ProfilePage` and `Person`, with nine official credential destinations. Layer 3 is an independent `noscript` recovery navigation outside the React root, linking to portfolio sections and allowed profile destinations. Native static details remain inspectable without JavaScript.
+- **Three-layer static fallback:** Layer 1 is a visible semantic portfolio inside `#root`, with complete projects, credentials and capability distinctions. Layer 2 is a head-level JSON-LD graph connecting `ProfilePage` and `Person`, with ten official credential destinations. Layer 3 is an independent `noscript` recovery navigation outside the React root, linking to portfolio sections and allowed profile destinations. Native static details remain inspectable without JavaScript.
 
 The existing `createRoot(...).render(...)` mount replaces the static root when React starts. This is a client render over a static fallback, rather than React server hydration. Full content does not depend on a crawler executing the bundle. The independent recovery navigation supplies navigation, while the semantic root supplies the complete content.
 
@@ -35,7 +35,7 @@ flowchart TD
 
 | Source | Responsibility |
 | --- | --- |
-| `src/data.ts` | Profile, five project records, exact evaluations, nine credentials, capability matrix and recruiter summary |
+| `src/data.ts` | Profile, five project records, exact evaluations, ten credentials, capability matrix and recruiter summary |
 | `src/blueprints.ts` | Five system blueprints: stack, nodes, outcomes and benchmark text |
 | `src/App.tsx` and `src/components/` | Interactive presentation, URL state, inspection and clipboard behavior |
 | `index.html` | Search/social metadata, semantic static portfolio, JSON-LD and independent no-JavaScript recovery |
@@ -60,7 +60,7 @@ The aggregate benchmark remains **66+** offline and live verification tests, as 
 
 ## 4. Verified Credentials Ledger
 
-Nine programmes were completed in October 2026: three professional certificates and six Udacity Nanodegrees. Each destination is the supplied official verification page.
+Ten programmes were completed in October 2026: three professional certificates and seven Udacity Nanodegrees. Each destination is the supplied official verification page.
 
 | Programme | Issuer | Completed | Official verification |
 | --- | --- | --- | --- |
@@ -73,8 +73,9 @@ Nine programmes were completed in October 2026: three professional certificates 
 | Generative AI Nanodegree | Udacity | 21 October 2026 | [Verify Certificate ↗](https://www.udacity.com/certificate/e/823fea76-cd71-11f1-a3e2-1f751a2fc192) |
 | Agentic AI Nanodegree | Udacity | 21 October 2026 | [Verify Certificate ↗](https://www.udacity.com/certificate/e/0ca6ac48-cd2e-11f1-81c4-0340813a7e5f) |
 | Computer Vision Nanodegree | Udacity | 23 October 2026 | [Verify Certificate ↗](https://www.udacity.com/certificate/e/9c2fe1da-cdb1-11f1-afaa-73d387b1c8b9) |
+| Deep Reinforcement Learning Nanodegree | Udacity | 23 October 2026 | [Verify Certificate ↗](https://www.udacity.com/certificate/e/2a76d76c-ce2c-11f1-9a30-cb3177fb5d4d) |
 
-The professional-certificate scopes are recorded separately from applied project capabilities: systems and solutions architecture; RAG and agentic AI; advanced AWS generative AI development. Udacity study covers agentic AI engineering, generative AI, deep learning, computer vision and AWS machine learning engineering.
+The professional-certificate scopes are recorded separately from applied project capabilities: systems and solutions architecture; RAG and agentic AI; advanced AWS generative AI development. Udacity study covers agentic AI engineering, generative AI, deep learning, computer vision, deep reinforcement learning and AWS machine learning engineering. The official programme title for the tenth certificate is Deep Reinforcement Learning; the certificate identifies Nanodegree program completion.
 
 ## 5. Local Development & Verification Commands
 
@@ -99,7 +100,7 @@ The preview normally serves `http://127.0.0.1:4173/`. In a second terminal, insp
 curl --fail --silent --show-error --user-agent "facebookexternalhit/1.1" http://127.0.0.1:4173/
 ```
 
-The response must expose five complete projects, nine certificate links, capability distinctions and JSON-LD without executing JavaScript. `npm run verify` compares source and built semantic roots, metadata and structured data; checks exact credential destinations and recorded results; exercises repository curation gates; checks static inspections and independent recovery navigation; and scans selected release text for private contact details and high-confidence secret formats. It requires an existing `dist/` build. External-page availability and browser interactions remain separate checks.
+The response must expose five complete projects, ten certificate links, capability distinctions and JSON-LD without executing JavaScript. `npm run verify` compares source and built semantic roots, metadata and structured data; checks exact credential destinations and recorded results; exercises repository curation gates; checks static inspections and independent recovery navigation; and scans selected release text for private contact details and high-confidence secret formats. It requires an existing `dist/` build. External-page availability and browser interactions remain separate checks.
 
 ### Repository curation and rights
 

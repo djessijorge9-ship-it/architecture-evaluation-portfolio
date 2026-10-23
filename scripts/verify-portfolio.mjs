@@ -72,6 +72,7 @@ const expectedCredentials = [
   ['Generative AI Nanodegree', 'Udacity', '2026-10-21', 'https://www.udacity.com/certificate/e/823fea76-cd71-11f1-a3e2-1f751a2fc192'],
   ['Agentic AI Nanodegree', 'Udacity', '2026-10-21', 'https://www.udacity.com/certificate/e/0ca6ac48-cd2e-11f1-81c4-0340813a7e5f'],
   ['Computer Vision Nanodegree', 'Udacity', '2026-10-23', 'https://www.udacity.com/certificate/e/9c2fe1da-cdb1-11f1-afaa-73d387b1c8b9'],
+  ['Deep Reinforcement Learning Nanodegree', 'Udacity', '2026-10-23', 'https://www.udacity.com/certificate/e/2a76d76c-ce2c-11f1-9a30-cb3177fb5d4d'],
 ];
 const expectedScopes = [
   '11 Courses • Systems Architecture, Enterprise Data Architecture, Cloud Native, Microservices, Docker/Kubernetes, Cybersecurity & GenAI Architecture',
@@ -91,13 +92,19 @@ assert.deepEqual(projects.map(project => project.id), Object.keys(expectedResult
 assert.equal(blueprints.length, 5);
 assert.deepEqual(blueprints.map(blueprint => blueprint.id), projects.map(project => project.id));
 assert.equal(skills.length, 7);
-assert.equal(credentials.length, 9);
+assert.equal(credentials.length, 10);
 assert.deepEqual(credentials.map(credential => [credential.title, credential.issuer, credential.isoDate, credential.verificationUrl]), expectedCredentials);
+const certificateDate = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+assert.deepEqual(credentials.map(credential => credential.date), expectedCredentials.map(([, , isoDate]) => certificateDate.format(new Date(`${isoDate}T00:00:00Z`))));
 assert.deepEqual(credentials.slice(0, 3).map(credential => credential.scope), expectedScopes);
-assert.equal(metrics[0].value, '9');
+assert.equal(metrics[0].value, '10');
 assert.equal(metrics[1].value, '66+');
 assert.equal(profile.location, 'London, UK');
-assert.deepEqual(Object.keys(profile).sort(), ['github', 'linkedin', 'location', 'name']);
+assert.deepEqual(Object.keys(profile).sort(), ['github', 'linkedin', 'location', 'name', 'portfolio']);
+const expectedPortfolioUrl = 'https://portfolio.djessi2.chatgpt.site/';
+assert.equal(profile.portfolio, expectedPortfolioUrl);
+assert(executiveSummary.includes(expectedPortfolioUrl), 'Recruiter summary must include the current portfolio URL.');
+for (const credential of credentials) assert(executiveSummary.includes(credential.verificationUrl), `Recruiter summary missing ${credential.title} verification URL.`);
 assert.equal(disclaimer, 'Selected certification projects. Results reflect educational prototypes and recorded project evaluations.');
 assert.equal(typeof getCuratedRepositoryUrl, 'function', 'Export the repository curation gate from src/data.ts.');
 
@@ -125,6 +132,10 @@ const person = sourceGraph['@graph'].find(node => node['@type'] === 'Person');
 const page = sourceGraph['@graph'].find(node => node['@type'] === 'ProfilePage');
 assert(person && page, 'Person and ProfilePage nodes must exist.');
 assert.equal(page.mainEntity?.['@id'], person['@id']);
+assert.equal(page.url, expectedPortfolioUrl);
+assert.equal(person.url, expectedPortfolioUrl);
+assert.equal(page['@id'], `${expectedPortfolioUrl}#profile-page`);
+assert.equal(person['@id'], `${expectedPortfolioUrl}#person`);
 assert.equal(person.address.addressLocality, 'London');
 assert.equal(person.address.addressCountry, 'UK');
 assert.deepEqual(person.sameAs, [profile.linkedin, profile.github]);
@@ -137,6 +148,7 @@ for (const key of ['title', 'og:title', 'og:site_name', 'twitter:title']) assert
 assert.equal(sourceMetadata['og:type'], 'website');
 assert.equal(sourceMetadata['twitter:card'], 'summary_large_image');
 assert.equal(sourceMetadata['og:url'], sourceMetadata.canonical);
+assert.equal(sourceMetadata.canonical, expectedPortfolioUrl);
 assert.equal(sourceMetadata['og:description'], sourceMetadata.description);
 assert.equal(sourceMetadata['twitter:description'], sourceMetadata.description);
 assert(sourceMetadata.description.includes('AWS SageMaker'));
@@ -151,9 +163,9 @@ for (const [label, html] of [['source', sourceHtml], ['build', builtHtml]]) {
   const ids = [...html.matchAll(/<[a-z][\w-]*\b[^>]*>/gi)].map(match => attributes(match[0]).id).filter(Boolean);
   assert.equal(ids.length, new Set(ids).size, `${label}: duplicate HTML IDs.`);
   const text = plain(elementById(html, 'static-portfolio'));
-  for (const expected of ['VERIFIED BUILD • 9 PROGRAMMES & 5 EVALUATED SYSTEMS', 'System Architecture Blueprints', 'Verification & Evaluation Benchmarks', 'Evaluated Systems & Reference Architectures', 'Credentials & Programmes', 'Technical Capability Matrix', 'LONDON, UK', disclaimer]) assert(text.includes(expected), `${label}: missing ${expected}.`);
-  assert(text.includes('nine completed IBM, AWS and Udacity programmes'));
-  assert(!/\b(?:seven|7) (?:completed|programmes)/i.test(text), `${label}: stale programme count.`);
+  for (const expected of ['VERIFIED BUILD • 10 PROGRAMMES & 5 EVALUATED SYSTEMS', 'System Architecture Blueprints', 'Verification & Evaluation Benchmarks', 'Evaluated Systems & Reference Architectures', 'Credentials & Programmes', 'Technical Capability Matrix', 'LONDON, UK', disclaimer]) assert(text.includes(expected), `${label}: missing ${expected}.`);
+  assert(text.includes('ten completed IBM, AWS and Udacity programmes'));
+  assert(!/\b(?:seven|7|nine|9) (?:completed|programmes)/i.test(text), `${label}: stale programme count.`);
   const articles = [...elementById(html, 'architecture-projects').matchAll(/<article\b[^>]*>[\s\S]*?<\/article>/gi)].map(match => match[0]);
   assert.equal(articles.length, 5, `${label}: exactly five project articles.`);
   projects.forEach((project, index) => {
@@ -200,4 +212,4 @@ for (const relative of [...releasePaths, ...await builtTextPaths('dist')]) {
   assert(!new RegExp('\\b(?:' + ['TO' + 'DO', 'FIX' + 'ME'].join('|') + ')\\b').test(text), `${relative}: unfinished release content.`);
 }
 for (const [kind, pattern] of privatePatterns) assert(!pattern.test(executiveSummary), `Recruiter summary contains ${kind}.`);
-console.log('PASS: five complete evaluated systems, nine official credentials, source/build parity, repository gates, static recovery and release privacy checks.');
+console.log('PASS: five complete evaluated systems, ten official credentials, canonical portfolio URL, source/build parity, repository gates, static recovery and release privacy checks.');
