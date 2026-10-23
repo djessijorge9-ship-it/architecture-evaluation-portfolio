@@ -4,6 +4,8 @@
 
 [Live portfolio](https://portfolio.djessi2.chatgpt.site/) · [LinkedIn](https://www.linkedin.com/in/djessijorge/) · [GitHub profile](https://github.com/djessijorge9-ship-it/)
 
+The public origin is **https://portfolio.djessi2.chatgpt.site/**. Canonical metadata, Open Graph, JSON-LD and the copied executive summary use this same origin. The offline verifier checks their URL parity; public HTTP and browser checks verify deployment availability separately.
+
 ## 1. Executive Overview & Architectural Philosophy
 
 This repository contains the portfolio application, its static crawler representation and verification checks. It presents five evaluated educational systems and ten completed IBM, AWS and Udacity programmes. It does not contain the capstone implementations, training datasets, course handouts or private evaluation logs.
