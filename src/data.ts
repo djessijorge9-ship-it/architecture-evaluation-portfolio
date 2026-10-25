@@ -1,3 +1,5 @@
+import { catalogueCount, programmeCatalog } from './catalogue.ts';
+
 export type Category =
   | 'Agentic AI & Supervision'
   | 'Multimodal & Observability'
@@ -50,7 +52,7 @@ export const profile = {
   portfolio: 'https://portfolio.djessi2.chatgpt.site/',
 };
 
-export const summary = 'Focused on translating requirements into bounded AI workflows, evidence-grounded answers and evaluated cloud ML solutions. Combines thirteen completed IBM, AWS and Udacity credentials with capstone work in LangGraph supervision, multi-agent tool use, multimodal applications and SageMaker training-to-serving. Interested in teams building useful, testable AI systems, bringing a practical focus on model evaluation, transaction integrity, observability and clear technical documentation.';
+export const summary = 'Focused on translating requirements into bounded AI workflows, evidence-grounded answers and evaluated cloud ML solutions. Combines thirteen completed IBM, AWS and Udacity credentials with 31 projects spanning agentic AI, generative models, NLP, computer vision, deep reinforcement learning, cloud ML and streaming data. Explore every project’s execution flow, guardrails and recorded evaluation, with a practical focus on model evaluation, transaction integrity, observability and clear technical documentation.';
 
 export const disclaimer = 'Selected certification projects. Results reflect educational prototypes and recorded project evaluations.';
 
@@ -316,6 +318,11 @@ export const executiveSummary = [
   ...credentials.map((credential) => `${credential.title} — ${credential.issuer}${credential.scope ? `\n${credential.scope}` : ''}\nCompleted: ${credential.date}\nVerify Certificate: ${credential.verificationUrl}`),
   disclaimer,
   ...projects.map((project) => `${project.title} — ${project.subtitle} (October 2026)\n${project.evaluation}`),
+  `Complete Udacity Project Catalogue: ${catalogueCount} distinct projects across nine completed Nanodegrees and one course certificate. Five featured systems are a subset. Proposals and final implementations count once; lesson exercises and archive revisions are excluded.`,
+  ...programmeCatalog.flatMap(programme => [
+    `${programme.title} — ${programme.projects.length} projects\nVerify completion: ${programme.credentialUrl}`,
+    ...programme.projects.map(project => `${project.title}\n${project.evaluation}\nLimits: ${project.limitation}`),
+  ]),
   projects[1].guardrails[0],
   projects[3].guardrails[0],
   projects[4].guardrails[3],

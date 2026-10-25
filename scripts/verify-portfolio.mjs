@@ -8,6 +8,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const read = relative => readFile(path.join(root, relative), 'utf8');
 const data = await import(pathToFileURL(path.join(root, 'src/data.ts')).href);
 const { blueprints } = await import(pathToFileURL(path.join(root, 'src/blueprints.ts')).href);
+const { programmeCatalog, catalogueCount, catalogueProjects } = await import(pathToFileURL(path.join(root, 'src/catalogue.ts')).href);
 const { projects, credentials, profile, disclaimer, metrics, skills, executiveSummary, getCuratedRepositoryUrl } = data;
 const [sourceHtml, builtHtml, readme, mainSource] = await Promise.all([
   read('index.html'),
@@ -141,7 +142,31 @@ for (const project of projects) {
 }
 
 const sourceGraph = graph(sourceHtml);
+const expectedCoverage = { nd189: 5, nd901: 3, nd900: 4, nd608: 3, nd101: 4, nd891: 3, nd892: 3, nd893: 3, nd029: 2, cd12355: 1 };
+assert.equal(catalogueCount, 31);
+assert.equal(programmeCatalog.length, 10);
+assert.deepEqual(Object.fromEntries(programmeCatalog.map(programme => [programme.id, programme.projects.length])), expectedCoverage);
+assert.equal(new Set(catalogueProjects.map(project => project.id)).size, 31, 'Catalogue project IDs must be unique.');
+assert.deepEqual(catalogueProjects.filter(project => project.featuredId).map(project => project.featuredId).sort(), projects.map(project => project.id).sort(), 'Featured projects are a subset of the catalogue, counted once.');
+assert.equal(catalogueProjects.filter(project => !project.featuredId).length, 26);
+assert(executiveSummary.includes('Complete Udacity Project Catalogue: 31 distinct projects'));
+for (const programme of programmeCatalog) {
+  assert(credentials.some(credential => credential.verificationUrl === programme.credentialUrl), `${programme.id}: completion certificate missing.`);
+  for (const project of programme.projects) {
+    assert.equal(project.repoUrl, null);
+    assert.equal(project.isRepoCurated, false);
+    assert(project.pipeline.length >= 3 && project.guardrails.length >= 2);
+    for (const key of ['evaluation', 'limitation', 'evidence']) assert(project[key].length > 30, `${project.id}: incomplete ${key}.`);
+    for (const value of [project.title, project.evaluation, project.limitation]) {
+      assert(executiveSummary.includes(value), `${project.id}: missing from clipboard summary.`);
+      assert(readme.includes(value), `${project.id}: missing from README.`);
+    }
+  }
+}
 assert.deepEqual(graph(builtHtml), sourceGraph, 'Source and built structured data differ.');
+const catalogueSchema = sourceGraph['@graph'].find(node => node['@type'] === 'ItemList');
+assert.equal(catalogueSchema?.numberOfItems, 31);
+assert.deepEqual(catalogueSchema.itemListElement.map(entry => entry.item.name), catalogueProjects.map(project => project.title));
 const person = sourceGraph['@graph'].find(node => node['@type'] === 'Person');
 const page = sourceGraph['@graph'].find(node => node['@type'] === 'ProfilePage');
 assert(person && page, 'Person and ProfilePage nodes must exist.');
@@ -178,7 +203,7 @@ for (const [label, html] of [['source', sourceHtml], ['build', builtHtml]]) {
   const ids = [...html.matchAll(/<[a-z][\w-]*\b[^>]*>/gi)].map(match => attributes(match[0]).id).filter(Boolean);
   assert.equal(ids.length, new Set(ids).size, `${label}: duplicate HTML IDs.`);
   const text = plain(elementById(html, 'static-portfolio'));
-  for (const expected of ['VERIFIED BUILD • 13 CREDENTIALS & 5 EVALUATED SYSTEMS', 'System Architecture Blueprints', 'Verification & Evaluation Benchmarks', 'Evaluated Systems & Reference Architectures', 'Credentials & Programmes', 'Technical Capability Matrix', 'LONDON, UK', disclaimer]) assert(text.includes(expected), `${label}: missing ${expected}.`);
+  for (const expected of ['VERIFIED BUILD • 13 CREDENTIALS & 31 PROJECTS', 'System Architecture Blueprints', 'Verification & Evaluation Benchmarks', 'Evaluated Systems & Reference Architectures', 'Complete Udacity Project Catalogue', 'Credentials & Programmes', 'Technical Capability Matrix', 'LONDON, UK', disclaimer]) assert(text.includes(expected), `${label}: missing ${expected}.`);
   assert(text.includes('thirteen completed IBM, AWS and Udacity credentials'));
   assert(text.includes(metrics[0].label), `${label}: benchmark must count credentials.`);
   assert(!/\b(?:seven|7|nine|9|ten|10)\s+(?:(?:completed\s+IBM,\s+AWS\s+and\s+Udacity\s+)|(?:completed\s+))?(?:credentials|programmes|certificate links)\b/i.test(text), `${label}: stale credential count.`);
@@ -193,6 +218,14 @@ for (const [label, html] of [['source', sourceHtml], ['build', builtHtml]]) {
     assert(anchors(article).every(anchor => anchor.href?.startsWith('#')), `${label}/${project.id}: uncurated project has an external card link.`);
   });
   const credentialSection = elementById(html, 'credentials');
+  const catalogueSection = elementById(html, 'project-catalogue');
+  assert.equal([...catalogueSection.matchAll(/data-catalogue-project=/g)].length, 31, `${label}: complete non-JS project inventory missing.`);
+  for (const project of catalogueProjects) {
+    const record = elementById(catalogueSection, `catalogue-project-${project.id}`);
+    assert(record.includes('<details'), `${label}/${project.id}: static inspection unavailable.`);
+    for (const value of [project.title, ...project.pipeline, ...project.guardrails, project.evaluation, project.limitation, project.evidence]) assert(comparable(record).includes(comparable(value)), `${label}/${project.id}: incomplete catalogue record.`);
+    assert.equal(anchors(record).length, 0, 'Uncurated records must not contain external repository links.');
+  }
   const verificationAnchors = anchors(credentialSection).filter(anchor => anchor.text === 'Verify Certificate ↗');
   assert.equal(verificationAnchors.length, 13, `${label}: visible verification count must match 13 credential records.`);
   assert.deepEqual(verificationAnchors.map(anchor => anchor.href), credentials.map(credential => credential.verificationUrl), `${label}: certificate links differ.`);
@@ -205,10 +238,10 @@ for (const [label, html] of [['source', sourceHtml], ['build', builtHtml]]) {
   const recovery = html.match(/<noscript\b[^>]*>([\s\S]*?)<\/noscript>/i)?.[1] ?? '';
   assert(/<nav\b[^>]*aria-label=["']Portfolio recovery navigation["']/i.test(recovery), `${label}: independent recovery navigation missing.`);
   const recoveryHrefs = anchors(recovery).map(anchor => anchor.href);
-  for (const href of ['#architecture-projects', '#credentials', '#skill-matrix', profile.github, profile.linkedin]) assert(recoveryHrefs.includes(href), `${label}: missing recovery destination ${href}.`);
+  for (const href of ['#project-catalogue', '#architecture-projects', '#credentials', '#skill-matrix', profile.github, profile.linkedin]) assert(recoveryHrefs.includes(href), `${label}: missing recovery destination ${href}.`);
 }
 
-const releasePaths = ['README.md', 'index.html', 'src/data.ts', 'src/blueprints.ts', 'src/App.tsx', 'src/main.tsx', 'src/styles.css', 'src/components/ProjectCard.tsx', 'src/components/ProjectDrawer.tsx', 'src/components/ArchitecturePreview.tsx', 'scripts/verify-portfolio.mjs', 'package.json', 'package-lock.json', 'tsconfig.json', 'vite.config.ts', '.gitignore'];
+const releasePaths = ['README.md', 'index.html', 'src/data.ts', 'src/catalogue.ts', 'src/catalogue.css', 'src/blueprints.ts', 'src/App.tsx', 'src/main.tsx', 'src/styles.css', 'src/components/ProjectCatalogue.tsx', 'src/components/ProjectCard.tsx', 'src/components/ProjectDrawer.tsx', 'src/components/ArchitecturePreview.tsx', 'scripts/sync-catalogue.mjs', 'scripts/verify-portfolio.mjs', 'package.json', 'package-lock.json', 'tsconfig.json', 'vite.config.ts', '.gitignore'];
 async function builtTextPaths(directory) {
   const entries = await readdir(path.join(root, directory), { withFileTypes: true });
   const paths = await Promise.all(entries.map(entry => entry.isDirectory() ? builtTextPaths(path.join(directory, entry.name)) : /\.(?:html|js|css|json)$/i.test(entry.name) ? [path.join(directory, entry.name)] : []));
@@ -229,4 +262,4 @@ for (const relative of [...releasePaths, ...await builtTextPaths('dist')]) {
   assert(!new RegExp('\\b(?:' + ['TO' + 'DO', 'FIX' + 'ME'].join('|') + ')\\b').test(text), `${relative}: unfinished release content.`);
 }
 for (const [kind, pattern] of privatePatterns) assert(!pattern.test(executiveSummary), `Recruiter summary contains ${kind}.`);
-console.log('PASS: five complete evaluated systems, thirteen official credentials with accurate course/Nanodegree classification, canonical portfolio URL, source/build parity, repository gates, static recovery and release privacy checks.');
+console.log('PASS: 31 complete projects across nine Nanodegrees and one course, 26 additions, five featured blueprints, thirteen official credentials, canonical URL, source/build parity, repository gates, static recovery and release privacy.');
