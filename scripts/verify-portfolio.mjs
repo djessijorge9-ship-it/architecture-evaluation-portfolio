@@ -73,6 +73,9 @@ const expectedCredentials = [
   ['Agentic AI Nanodegree', 'Udacity', '2026-10-21', 'https://www.udacity.com/certificate/e/0ca6ac48-cd2e-11f1-81c4-0340813a7e5f'],
   ['Computer Vision Nanodegree', 'Udacity', '2026-10-23', 'https://www.udacity.com/certificate/e/9c2fe1da-cdb1-11f1-afaa-73d387b1c8b9'],
   ['Deep Reinforcement Learning Nanodegree', 'Udacity', '2026-10-23', 'https://www.udacity.com/certificate/e/2a76d76c-ce2c-11f1-9a30-cb3177fb5d4d'],
+  ['Natural Language Processing Nanodegree', 'Udacity', '2026-10-25', 'https://www.udacity.com/certificate/e/c1c1a7aa-cdaf-11f1-b6f9-8bb02a043926'],
+  ['Microservices at Scale using AWS and Kubernetes', 'Udacity', '2026-10-25', 'https://www.udacity.com/certificate/e/5d8dfadc-d042-11f1-93ef-5f6905dcf04d'],
+  ['Data Streaming Nanodegree', 'Udacity', '2026-10-25', 'https://www.udacity.com/certificate/e/ce6e6422-d041-11f1-bbc9-23cf1ca0d113'],
 ];
 const expectedScopes = [
   '11 Courses • Systems Architecture, Enterprise Data Architecture, Cloud Native, Microservices, Docker/Kubernetes, Cybersecurity & GenAI Architecture',
@@ -92,18 +95,29 @@ assert.deepEqual(projects.map(project => project.id), Object.keys(expectedResult
 assert.equal(blueprints.length, 5);
 assert.deepEqual(blueprints.map(blueprint => blueprint.id), projects.map(project => project.id));
 assert.equal(skills.length, 7);
-assert.equal(credentials.length, 10);
+assert.equal(credentials.length, 13);
+assert.equal(new Set(credentials.map(credential => credential.verificationUrl)).size, 13, 'Each credential needs its own official destination.');
+assert.equal(credentials.filter(credential => credential.title.endsWith('Professional Certificate')).length, 3);
+assert.equal(credentials.filter(credential => credential.title.endsWith('Nanodegree')).length, 9);
+const courseCertificate = credentials.find(credential => credential.title === 'Microservices at Scale using AWS and Kubernetes');
+assert.equal(courseCertificate?.scope, 'Udacity Course Certificate');
+assert.equal(credentials.filter(credential => credential.scope === 'Udacity Course Certificate').length, 1);
+assert(readme.includes('Thirteen credentials were completed in October 2026: three professional certificates, nine Udacity Nanodegrees and one Udacity course certificate.'));
 assert.deepEqual(credentials.map(credential => [credential.title, credential.issuer, credential.isoDate, credential.verificationUrl]), expectedCredentials);
 const certificateDate = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 assert.deepEqual(credentials.map(credential => credential.date), expectedCredentials.map(([, , isoDate]) => certificateDate.format(new Date(`${isoDate}T00:00:00Z`))));
 assert.deepEqual(credentials.slice(0, 3).map(credential => credential.scope), expectedScopes);
-assert.equal(metrics[0].value, '10');
+assert.equal(metrics[0].value, '13');
+assert.equal(metrics[0].label, 'Completed IBM, AWS & Udacity Credentials (Oct 2026)');
 assert.equal(metrics[1].value, '66+');
 assert.equal(profile.location, 'London, UK');
 assert.deepEqual(Object.keys(profile).sort(), ['github', 'linkedin', 'location', 'name', 'portfolio']);
 const expectedPortfolioUrl = 'https://portfolio.djessi2.chatgpt.site/';
 assert.equal(profile.portfolio, expectedPortfolioUrl);
 assert(executiveSummary.includes(expectedPortfolioUrl), 'Recruiter summary must include the current portfolio URL.');
+assert(executiveSummary.includes('Verified Credentials (13 completed in October 2026)'), 'Recruiter summary ledger count must match the credential records.');
+assert(executiveSummary.includes('Udacity Course Certificate'), 'Recruiter summary must identify the course certificate accurately.');
+assert(data.summary.includes('thirteen completed IBM, AWS and Udacity credentials'));
 for (const credential of credentials) assert(executiveSummary.includes(credential.verificationUrl), `Recruiter summary missing ${credential.title} verification URL.`);
 assert.equal(disclaimer, 'Selected certification projects. Results reflect educational prototypes and recorded project evaluations.');
 assert.equal(typeof getCuratedRepositoryUrl, 'function', 'Export the repository curation gate from src/data.ts.');
@@ -140,6 +154,7 @@ assert.equal(person.address.addressLocality, 'London');
 assert.equal(person.address.addressCountry, 'UK');
 assert.deepEqual(person.sameAs, [profile.linkedin, profile.github]);
 assert.deepEqual(person.hasCredential.map(credential => [credential.name, credential.creator?.name, credential.dateCreated, credential.url]), expectedCredentials);
+assert(/\bcourse certificate\b/i.test(person.hasCredential.find(credential => credential.name === courseCertificate.title)?.description ?? ''), 'Structured data must identify the course certificate accurately.');
 expectedScopes.forEach((scope, index) => assert(person.hasCredential[index].description.includes(scope)));
 const sourceMetadata = metadata(sourceHtml);
 assert.deepEqual(metadata(builtHtml), sourceMetadata, 'Source and built metadata differ.');
@@ -163,9 +178,10 @@ for (const [label, html] of [['source', sourceHtml], ['build', builtHtml]]) {
   const ids = [...html.matchAll(/<[a-z][\w-]*\b[^>]*>/gi)].map(match => attributes(match[0]).id).filter(Boolean);
   assert.equal(ids.length, new Set(ids).size, `${label}: duplicate HTML IDs.`);
   const text = plain(elementById(html, 'static-portfolio'));
-  for (const expected of ['VERIFIED BUILD • 10 PROGRAMMES & 5 EVALUATED SYSTEMS', 'System Architecture Blueprints', 'Verification & Evaluation Benchmarks', 'Evaluated Systems & Reference Architectures', 'Credentials & Programmes', 'Technical Capability Matrix', 'LONDON, UK', disclaimer]) assert(text.includes(expected), `${label}: missing ${expected}.`);
-  assert(text.includes('ten completed IBM, AWS and Udacity programmes'));
-  assert(!/\b(?:seven|7|nine|9) (?:completed|programmes)/i.test(text), `${label}: stale programme count.`);
+  for (const expected of ['VERIFIED BUILD • 13 CREDENTIALS & 5 EVALUATED SYSTEMS', 'System Architecture Blueprints', 'Verification & Evaluation Benchmarks', 'Evaluated Systems & Reference Architectures', 'Credentials & Programmes', 'Technical Capability Matrix', 'LONDON, UK', disclaimer]) assert(text.includes(expected), `${label}: missing ${expected}.`);
+  assert(text.includes('thirteen completed IBM, AWS and Udacity credentials'));
+  assert(text.includes(metrics[0].label), `${label}: benchmark must count credentials.`);
+  assert(!/\b(?:seven|7|nine|9|ten|10)\s+(?:(?:completed\s+IBM,\s+AWS\s+and\s+Udacity\s+)|(?:completed\s+))?(?:credentials|programmes|certificate links)\b/i.test(text), `${label}: stale credential count.`);
   const articles = [...elementById(html, 'architecture-projects').matchAll(/<article\b[^>]*>[\s\S]*?<\/article>/gi)].map(match => match[0]);
   assert.equal(articles.length, 5, `${label}: exactly five project articles.`);
   projects.forEach((project, index) => {
@@ -178,6 +194,7 @@ for (const [label, html] of [['source', sourceHtml], ['build', builtHtml]]) {
   });
   const credentialSection = elementById(html, 'credentials');
   const verificationAnchors = anchors(credentialSection).filter(anchor => anchor.text === 'Verify Certificate ↗');
+  assert.equal(verificationAnchors.length, 13, `${label}: visible verification count must match 13 credential records.`);
   assert.deepEqual(verificationAnchors.map(anchor => anchor.href), credentials.map(credential => credential.verificationUrl), `${label}: certificate links differ.`);
   credentials.forEach(credential => {
     for (const value of [credential.title, credential.issuer, credential.date, ...(credential.scope ? [credential.scope] : [])]) assert(plain(credentialSection).includes(value), `${label}: incomplete credential ${credential.title}.`);
@@ -212,4 +229,4 @@ for (const relative of [...releasePaths, ...await builtTextPaths('dist')]) {
   assert(!new RegExp('\\b(?:' + ['TO' + 'DO', 'FIX' + 'ME'].join('|') + ')\\b').test(text), `${relative}: unfinished release content.`);
 }
 for (const [kind, pattern] of privatePatterns) assert(!pattern.test(executiveSummary), `Recruiter summary contains ${kind}.`);
-console.log('PASS: five complete evaluated systems, ten official credentials, canonical portfolio URL, source/build parity, repository gates, static recovery and release privacy checks.');
+console.log('PASS: five complete evaluated systems, thirteen official credentials with accurate course/Nanodegree classification, canonical portfolio URL, source/build parity, repository gates, static recovery and release privacy checks.');

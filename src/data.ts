@@ -50,7 +50,7 @@ export const profile = {
   portfolio: 'https://portfolio.djessi2.chatgpt.site/',
 };
 
-export const summary = 'Focused on translating requirements into bounded AI workflows, evidence-grounded answers and evaluated cloud ML solutions. Combines ten completed IBM, AWS and Udacity programmes with capstone work in LangGraph supervision, multi-agent tool use, multimodal applications and SageMaker training-to-serving. Interested in teams building useful, testable AI systems, bringing a practical focus on model evaluation, transaction integrity, observability and clear technical documentation.';
+export const summary = 'Focused on translating requirements into bounded AI workflows, evidence-grounded answers and evaluated cloud ML solutions. Combines thirteen completed IBM, AWS and Udacity credentials with capstone work in LangGraph supervision, multi-agent tool use, multimodal applications and SageMaker training-to-serving. Interested in teams building useful, testable AI systems, bringing a practical focus on model evaluation, transaction integrity, observability and clear technical documentation.';
 
 export const disclaimer = 'Selected certification projects. Results reflect educational prototypes and recorded project evaluations.';
 
@@ -61,7 +61,7 @@ export const categories: Category[] = [
 ];
 
 export const metrics = [
-  { value: '10', label: 'Completed IBM, AWS & Udacity Programmes (Oct 2026)' },
+  { value: '13', label: 'Completed IBM, AWS & Udacity Credentials (Oct 2026)' },
   { value: '66+', label: 'Offline & Live Verification Tests Passed Across Agentic/Multimodal Suites' },
   { value: '0', label: 'Execution Errors in 20-Scenario Deterministic Multi-Agent Ledger Run' },
   { value: '5.73 MPa', label: 'Holdout RMSE (40.82% Lower than Ridge Baseline on AWS ML Capstone)' },
@@ -235,12 +235,34 @@ export const credentials: { title: string; issuer: string; date: string; isoDate
     isoDate: '2026-10-23',
     verificationUrl: 'https://www.udacity.com/certificate/e/2a76d76c-ce2c-11f1-9a30-cb3177fb5d4d',
   },
+  {
+    title: 'Natural Language Processing Nanodegree',
+    issuer: 'Udacity',
+    date: '25 October 2026',
+    isoDate: '2026-10-25',
+    verificationUrl: 'https://www.udacity.com/certificate/e/c1c1a7aa-cdaf-11f1-b6f9-8bb02a043926',
+  },
+  {
+    title: 'Microservices at Scale using AWS and Kubernetes',
+    issuer: 'Udacity',
+    date: '25 October 2026',
+    isoDate: '2026-10-25',
+    scope: 'Udacity Course Certificate',
+    verificationUrl: 'https://www.udacity.com/certificate/e/5d8dfadc-d042-11f1-93ef-5f6905dcf04d',
+  },
+  {
+    title: 'Data Streaming Nanodegree',
+    issuer: 'Udacity',
+    date: '25 October 2026',
+    isoDate: '2026-10-25',
+    verificationUrl: 'https://www.udacity.com/certificate/e/ce6e6422-d041-11f1-bbc9-23cf1ca0d113',
+  },
 ];
 
 export const education = [
   {
     provider: 'Udacity',
-    text: 'Nanodegree programmes in agentic AI engineering, generative AI, deep learning, deep reinforcement learning, computer vision and AWS machine learning engineering; completed October 2026.',
+    text: 'Nanodegree programmes in agentic AI engineering, generative AI, deep learning, deep reinforcement learning, computer vision, natural language processing, data streaming and AWS machine learning engineering; plus a course certificate in microservices at scale using AWS and Kubernetes. Completed October 2026.',
   },
   {
     provider: 'IBM, SkillUp and Amazon Web Services via Coursera',
@@ -290,8 +312,8 @@ export const executiveSummary = [
   `${profile.name} — Solutions Architect / Agentic AI Engineer`,
   summary,
   `${profile.location}\nPortfolio: ${profile.portfolio}\nLinkedIn: ${profile.linkedin}\nGitHub: ${profile.github}`,
-  'Verified Credentials & Programmes (10 completed in October 2026)',
-  ...credentials.map((credential) => `${credential.title} — ${credential.issuer}\nCompleted: ${credential.date}\nVerify Certificate: ${credential.verificationUrl}`),
+  `Verified Credentials (${credentials.length} completed in October 2026)`,
+  ...credentials.map((credential) => `${credential.title} — ${credential.issuer}${credential.scope ? `\n${credential.scope}` : ''}\nCompleted: ${credential.date}\nVerify Certificate: ${credential.verificationUrl}`),
   disclaimer,
   ...projects.map((project) => `${project.title} — ${project.subtitle} (October 2026)\n${project.evaluation}`),
   projects[1].guardrails[0],
