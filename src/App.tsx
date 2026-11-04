@@ -1089,6 +1089,93 @@ const CASE_STUDIES = [
       scopeSummary:
         'Verified across 48 offline and mock API checks, 5 initial live HubSpot company creates, and 3 consecutive replay runs with 0 duplicate creates and 0 CRM drift.'
     }
+  },
+  {
+    id: 'cs-13',
+    code: 'CS-13',
+    category: 'ai',
+    accent: 'emerald',
+    domainBadge: 'GOOGLE ADK, VERTEX AI & A2A SYSTEMS',
+    title: 'Google ADK & Vertex AI: Four Independent Academic Agent Systems',
+    subtitle:
+      'ND906 portfolio covering separate legal reporting, research orchestration, grounded support and A2A banking implementations, with source-specific historical evidence.',
+    stack: ['Google ADK', 'Vertex AI Gemini', 'FastAPI & Pydantic', 'Vertex AI Search', 'Cloud SQL & MCP Toolbox', 'Agent2Agent (A2A)'],
+    headlineMetric: '4 Accepted Projects',
+    headlineMetricLabel: 'ND906 | 4 Nov 2026',
+    certName: 'Google Agentic AI Engineer Nanodegree',
+    certUrl: 'https://www.udacity.com/certificate/e/abc7f810-d49d-11f1-851e-ff548a14528e',
+    narrative: {
+      context:
+        'Four distinct academic scenarios expose different agent-engineering risks: maintaining context across report sections, coordinating research refinement, selecting authoritative support tools and limiting disclosure in a multi-agent banking prototype. Each implementation and its evaluation cohort is independent.',
+      objective:
+        'Implement four separate Google agent systems with inspectable orchestration, structured state, task-specific tools and deterministic controls, while keeping mocked checks, simulated research sources and historical live-model observations explicitly scoped to their originating project.',
+      execution: [
+        'P01 Legal Intelligence: built a FastAPI/Pydantic and Vertex AI workflow using three specialist personas to generate four sequential report sections, passing accepted-section context forward with bounded retries, writing-quality heuristics and token/cost telemetry.',
+        'P02 Research Assistant: implemented actual Google ADK Runner orchestration with ParallelAgent source branches, SequentialAgent aggregation and a Researcher/Critic refinement loop. The retained run uses nine simulated references; its search agents do not retrieve external publications.',
+        'P03 Betty’s Bird Boutique: revised the ADK support agent for accepted review 4864251, routing document questions to Standard Vertex AI Search, catalog reads to parameterized Cloud SQL SELECT tools through MCP Toolbox and bird questions to a separate Google Search AgentTool, with provider grounding-URL retention.',
+        'P04 Multi-Agent Banking: separated manager, deposit and loan into three independent ADK applications communicating through A2A, using read-only parameterized SQL, structured state, Decimal arithmetic, an isolated Boolean equity check and deterministic final wording.'
+      ],
+      outcome:
+        'Four accepted assessments are recorded under reviews 4863109, 4863111, 4864251 and 4863110. Separate historical cohorts retain 31 network-mocked P01 checks and one four-section live report at 21.295 seconds with 16,591 tokens; a seven-stage P02 live-model run at 36.244 seconds with simulated sources; a revised six-turn P03 session with 15 model calls and 44.699 seconds of top-level execution; and 18 completed P04 requests across 15 threads without recorded RPC/task errors. These observations do not establish legal accuracy, external research verification, banking correctness or production reliability.'
+    },
+    takeaway: {
+      headline: 'Task-Specific Model Flexibility vs. Deterministic Boundaries & Evidence Scope',
+      tradeoffLesson:
+        'Structured state, constrained tools and local deterministic checks make model behavior more inspectable while preserving the limits of simulated retrieval, heuristic writing scores and unlabeled scenarios. These four independent academic implementations retain disclosed AI assistance and supplied-starter provenance; historical run observations do not establish unaided authorship, commercial impact or current service availability.'
+    },
+    diagramConfig: {
+      title: 'ND906: Four independent academic agent systems',
+      subtitleLine1:
+        'P01 legal, P02 research, P03 boutique and P04 banking execute as separate academic implementations.',
+      subtitleLine2:
+        'Arrows show a common engineering pattern; historical run cohorts remain project-specific.',
+      orchestratorLabel: 'COMMON ENGINEERING PATTERN | 4 INDEPENDENT SYSTEMS',
+      entryNode: { label: 'Academic Scenario', sub: '(Select P01 to P04)', color: '#7C3AED', icon: 'api' },
+      topServices: [
+        { label: 'P01 Legal', sub: '(FastAPI / Vertex)', color: '#C026D3', icon: 'api' },
+        { label: 'P02 Research', sub: '(ADK / Simulation)', color: '#059669', icon: 'ai' },
+        { label: 'P03 Boutique', sub: '(Search / Catalog)', color: '#059669', icon: 'search' },
+        { label: 'P04 Banking', sub: '(ADK / A2A)', color: '#059669', icon: 'shield' },
+        { label: 'Vertex AI', sub: '(Per-Project Calls)', color: '#7C3AED', icon: 'ai' }
+      ],
+      flowSteps: [
+        { line1: 'Select P01, P02,', line2: 'P03 or P04', line3: 'independently' },
+        { line1: 'Define structured', line2: 'state, persona or', line3: 'task contracts' },
+        { line1: 'Route the chosen', line2: 'model and tools', line3: 'for that project' },
+        { line1: 'Apply per-project', line2: 'bounded workflow', line3: 'and local controls' },
+        { line1: 'Record its own', line2: 'run cohort and', line3: 'accepted artifacts' }
+      ],
+      branchLabel: 'Local guardrail path',
+      returnStep1: { line1: 'Check local schema', line2: 'and tool boundaries' },
+      returnStep2: { line1: 'Keep evidence', line2: 'project-specific' },
+      rightModelNode: { label: 'Vertex AI Gemini', sub: '(Separate Calls)', color: '#059669', icon: 'ai' },
+      bottomStoreNode: { label: 'Accepted Artifacts', sub: '(4 Independent ZIPs)', color: '#7C3AED', icon: 'lock' }
+    },
+    evidence: {
+      credential: 'Google Agentic AI Engineer Nanodegree (Udacity, Issued Nov 4, 2026)',
+      sha256: '9285fb71111c9595939f1bf02e6fca097b1f8b4817efa0451338608187da8d7a',
+      deliverables: [
+        'P01: FastAPI report service, persona/context orchestration, writing-quality validator, saved response/metrics and separately labeled mocked-check output.',
+        'P02: ADK parallel/sequential/refinement agents, saved seven-stage workflow and research report, with synthetic-source disclosures and offline-check source.',
+        'P03: revised support/search agents, source-grounding callbacks, SQL tool configuration, saved main/current-search traces and accepted review 4864251; earlier failed review 4863108 remains separate history.',
+        'P04: independent manager/deposit/loan ADK and A2A apps, parameterized read-only tools, structured loan controls, scenario results and prototype approval/decline traces.',
+        'Complete ND906 evidence ZIP containing four original accepted submission archives and their separately accessible artifacts, with recorded archive integrity metadata.'
+      ],
+      filesIncluded: [
+        'nd906 Portfolio Evidence.zip',
+        'project/starter/src/core/agent_system.py',
+        'project/starter/src/core/quality_validator.py',
+        'project/starter/agents/orchestrator.py',
+        'starter/agent.py',
+        'starter/search_agent.py',
+        'starter/tools.yaml',
+        'project/starter/manager/agent.py',
+        'project/starter/loan/loan.py',
+        'project/starter/deposit/agent.py'
+      ],
+      scopeSummary:
+        'Four independent ND906 academic implementations accepted under reviews 4863109, 4863111, 4864251 and 4863110. The checksum identifies the complete program evidence ZIP. Source records disclose AI assistance and supplied-starter material; mocked checks, simulated references and live-model observations remain separately labeled, and current service availability was not revalidated.'
+    }
   }
 ];
 
@@ -1096,6 +1183,12 @@ const CASE_STUDIES = [
 // DATA: OFFICIAL VERIFIED CERTIFICATES (17 Udacity + 28 Categorized Credentials)
 // ============================================================================
 const UDACITY_CERTIFICATES = [
+  {
+    title: 'Google Agentic AI Engineer Nanodegree',
+    date: 'Nov 4, 2026',
+    category: 'Agentic AI',
+    url: 'https://www.udacity.com/certificate/e/abc7f810-d49d-11f1-851e-ff548a14528e'
+  },
   {
     title: 'AI Ops Engineer Nanodegree',
     date: 'Nov 2, 2026',
@@ -1441,7 +1534,7 @@ const ENTERPRISE_TIMELINE = [
     domainBadge: 'Multi-Agent AI, Cloud Architecture & Data Platforms',
     accent: 'indigo',
     summary:
-      'Designing deterministic generative AI workflows, stateful multi-agent systems, and cloud-native data pipelines backed by 17 completed Udacity Nanodegrees and courses (50+ accepted engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specializations.',
+      'Designing deterministic generative AI workflows, stateful multi-agent systems, and cloud-native data pipelines backed by 18 completed Udacity Nanodegrees and courses (50+ accepted engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specializations.',
     highlights: [
       'Architected stateful multi-agent orchestration pipelines using LangGraph, Anthropic Claude Code, and FastAPI with schema-validated tool execution, complexity routing, and automated faithfulness gates.',
       'Delivered end-to-end cloud reference implementations across AWS (SageMaker, Glue, Iceberg, Athena, ECS, Step Functions, CloudFormation), 5-job GitHub Actions MLOps pipelines, and real-time streaming platforms (Apache Kafka, Spark, Scala).',
@@ -1914,7 +2007,8 @@ export default function App() {
     'cs-09': true,
     'cs-10': true,
     'cs-11': true,
-    'cs-12': true
+    'cs-12': true,
+    'cs-13': true
   });
 
   // Clipboard state for SHA256 copy button
@@ -2118,7 +2212,7 @@ export default function App() {
             </h1>
 
             <p className="text-sm sm:text-base max-w-3xl leading-relaxed text-slate-600">
-              Combining 12 years of London enterprise delivery across DCD Academy, Tata Consultancy Services (supporting EDF Energy), and King&apos;s College Hospital NHS Foundation Trust with 17 graduated Udacity Nanodegrees and courses (50+ verified engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specializations.
+              Combining 12 years of London enterprise delivery across DCD Academy, Tata Consultancy Services (supporting EDF Energy), and King&apos;s College Hospital NHS Foundation Trust with 18 graduated Udacity Nanodegrees and courses (50+ verified engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specializations.
             </p>
 
             {/* Primary Hero Action Bar */}
@@ -2258,7 +2352,7 @@ export default function App() {
         <section id="section-cases" className="scroll-mt-24 space-y-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-indigo-200 bg-indigo-50 text-indigo-700 font-semibold mb-2">
-              <span>ENGINEERING & ARCHITECTURE CASE STUDIES (CS-01 TO CS-12)</span>
+              <span>ENGINEERING & ARCHITECTURE CASE STUDIES (CS-01 TO CS-13)</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
               System Architecture Diagrams, Execution & Measured Outcomes
@@ -2272,8 +2366,8 @@ export default function App() {
           <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-sm flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-1.5">
               {[
-                { id: 'all', label: 'All Case Studies (12)' },
-                { id: 'ai', label: 'Agentic AI & AI Ops (4)' },
+                { id: 'all', label: 'All Case Studies (13)' },
+                { id: 'ai', label: 'Agentic AI & AI Ops (5)' },
                 { id: 'cloud', label: 'Cloud & Serverless Architecture (3)' },
                 { id: 'data', label: 'Data, Scala, Vision & RevOps (5)' }
               ].map((tab) => {
@@ -2591,7 +2685,7 @@ export default function App() {
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5 text-indigo-600" />
                 <h3 className="text-lg font-bold text-slate-900">
-                  Udacity Graduated Nanodegrees & Advanced Engineering Certificates (17 Verified)
+                  Udacity Graduated Nanodegrees & Advanced Engineering Certificates (18 Verified)
                 </h3>
               </div>
               <span className="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">

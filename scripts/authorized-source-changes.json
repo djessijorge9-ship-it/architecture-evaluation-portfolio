@@ -1,0 +1,57 @@
+{
+  "original": {
+    "bytes": 157493,
+    "sha256": "1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d"
+  },
+  "current": {
+    "bytes": 165516,
+    "sha256": "0625fcad517fe2abd26fcc78f3bcf96ad44f91f68de6f7e96fdb3817b4b920a4"
+  },
+  "changes": [
+    {
+      "before": "const UDACITY_CERTIFICATES = [\n",
+      "after": "const UDACITY_CERTIFICATES = [\n  {\n    title: 'Google Agentic AI Engineer Nanodegree',\n    date: 'Nov 4, 2026',\n    category: 'Agentic AI',\n    url: 'https://www.udacity.com/certificate/e/abc7f810-d49d-11f1-851e-ff548a14528e'\n  },\n",
+      "occurrences": 1
+    },
+    {
+      "before": "backed by 17 completed Udacity Nanodegrees and courses",
+      "after": "backed by 18 completed Udacity Nanodegrees and courses",
+      "occurrences": 1
+    },
+    {
+      "before": "with 17 graduated Udacity Nanodegrees and courses",
+      "after": "with 18 graduated Udacity Nanodegrees and courses",
+      "occurrences": 1
+    },
+    {
+      "before": "Udacity Graduated Nanodegrees & Advanced Engineering Certificates (17 Verified)",
+      "after": "Udacity Graduated Nanodegrees & Advanced Engineering Certificates (18 Verified)",
+      "occurrences": 1
+    },
+    {
+      "before": "\n];\n\n// ============================================================================\n// DATA: OFFICIAL VERIFIED CERTIFICATES (17 Udacity + 28 Categorized Credentials)",
+      "after": ",\n  {\n    id: 'cs-13',\n    code: 'CS-13',\n    category: 'ai',\n    accent: 'emerald',\n    domainBadge: 'GOOGLE ADK, VERTEX AI & A2A SYSTEMS',\n    title: 'Google ADK & Vertex AI: Four Independent Academic Agent Systems',\n    subtitle:\n      'ND906 portfolio covering separate legal reporting, research orchestration, grounded support and A2A banking implementations, with source-specific historical evidence.',\n    stack: ['Google ADK', 'Vertex AI Gemini', 'FastAPI & Pydantic', 'Vertex AI Search', 'Cloud SQL & MCP Toolbox', 'Agent2Agent (A2A)'],\n    headlineMetric: '4 Accepted Projects',\n    headlineMetricLabel: 'ND906 | 4 Nov 2026',\n    certName: 'Google Agentic AI Engineer Nanodegree',\n    certUrl: 'https://www.udacity.com/certificate/e/abc7f810-d49d-11f1-851e-ff548a14528e',\n    narrative: {\n      context:\n        'Four distinct academic scenarios expose different agent-engineering risks: maintaining context across report sections, coordinating research refinement, selecting authoritative support tools and limiting disclosure in a multi-agent banking prototype. Each implementation and its evaluation cohort is independent.',\n      objective:\n        'Implement four separate Google agent systems with inspectable orchestration, structured state, task-specific tools and deterministic controls, while keeping mocked checks, simulated research sources and historical live-model observations explicitly scoped to their originating project.',\n      execution: [\n        'P01 Legal Intelligence: built a FastAPI/Pydantic and Vertex AI workflow using three specialist personas to generate four sequential report sections, passing accepted-section context forward with bounded retries, writing-quality heuristics and token/cost telemetry.',\n        'P02 Research Assistant: implemented actual Google ADK Runner orchestration with ParallelAgent source branches, SequentialAgent aggregation and a Researcher/Critic refinement loop. The retained run uses nine simulated references; its search agents do not retrieve external publications.',\n        'P03 Betty’s Bird Boutique: revised the ADK support agent for accepted review 4864251, routing document questions to Standard Vertex AI Search, catalog reads to parameterized Cloud SQL SELECT tools through MCP Toolbox and bird questions to a separate Google Search AgentTool, with provider grounding-URL retention.',\n        'P04 Multi-Agent Banking: separated manager, deposit and loan into three independent ADK applications communicating through A2A, using read-only parameterized SQL, structured state, Decimal arithmetic, an isolated Boolean equity check and deterministic final wording.'\n      ],\n      outcome:\n        'Four accepted assessments are recorded under reviews 4863109, 4863111, 4864251 and 4863110. Separate historical cohorts retain 31 network-mocked P01 checks and one four-section live report at 21.295 seconds with 16,591 tokens; a seven-stage P02 live-model run at 36.244 seconds with simulated sources; a revised six-turn P03 session with 15 model calls and 44.699 seconds of top-level execution; and 18 completed P04 requests across 15 threads without recorded RPC/task errors. These observations do not establish legal accuracy, external research verification, banking correctness or production reliability.'\n    },\n    takeaway: {\n      headline: 'Task-Specific Model Flexibility vs. Deterministic Boundaries & Evidence Scope',\n      tradeoffLesson:\n        'Structured state, constrained tools and local deterministic checks make model behavior more inspectable while preserving the limits of simulated retrieval, heuristic writing scores and unlabeled scenarios. These four independent academic implementations retain disclosed AI assistance and supplied-starter provenance; historical run observations do not establish unaided authorship, commercial impact or current service availability.'\n    },\n    diagramConfig: {\n      title: 'ND906: Four independent academic agent systems',\n      subtitleLine1:\n        'P01 legal, P02 research, P03 boutique and P04 banking execute as separate academic implementations.',\n      subtitleLine2:\n        'Arrows show a common engineering pattern; historical run cohorts remain project-specific.',\n      orchestratorLabel: 'COMMON ENGINEERING PATTERN | 4 INDEPENDENT SYSTEMS',\n      entryNode: { label: 'Academic Scenario', sub: '(Select P01 to P04)', color: '#7C3AED', icon: 'api' },\n      topServices: [\n        { label: 'P01 Legal', sub: '(FastAPI / Vertex)', color: '#C026D3', icon: 'api' },\n        { label: 'P02 Research', sub: '(ADK / Simulation)', color: '#059669', icon: 'ai' },\n        { label: 'P03 Boutique', sub: '(Search / Catalog)', color: '#059669', icon: 'search' },\n        { label: 'P04 Banking', sub: '(ADK / A2A)', color: '#059669', icon: 'shield' },\n        { label: 'Vertex AI', sub: '(Per-Project Calls)', color: '#7C3AED', icon: 'ai' }\n      ],\n      flowSteps: [\n        { line1: 'Select P01, P02,', line2: 'P03 or P04', line3: 'independently' },\n        { line1: 'Define structured', line2: 'state, persona or', line3: 'task contracts' },\n        { line1: 'Route the chosen', line2: 'model and tools', line3: 'for that project' },\n        { line1: 'Apply per-project', line2: 'bounded workflow', line3: 'and local controls' },\n        { line1: 'Record its own', line2: 'run cohort and', line3: 'accepted artifacts' }\n      ],\n      branchLabel: 'Local guardrail path',\n      returnStep1: { line1: 'Check local schema', line2: 'and tool boundaries' },\n      returnStep2: { line1: 'Keep evidence', line2: 'project-specific' },\n      rightModelNode: { label: 'Vertex AI Gemini', sub: '(Separate Calls)', color: '#059669', icon: 'ai' },\n      bottomStoreNode: { label: 'Accepted Artifacts', sub: '(4 Independent ZIPs)', color: '#7C3AED', icon: 'lock' }\n    },\n    evidence: {\n      credential: 'Google Agentic AI Engineer Nanodegree (Udacity, Issued Nov 4, 2026)',\n      sha256: '9285fb71111c9595939f1bf02e6fca097b1f8b4817efa0451338608187da8d7a',\n      deliverables: [\n        'P01: FastAPI report service, persona/context orchestration, writing-quality validator, saved response/metrics and separately labeled mocked-check output.',\n        'P02: ADK parallel/sequential/refinement agents, saved seven-stage workflow and research report, with synthetic-source disclosures and offline-check source.',\n        'P03: revised support/search agents, source-grounding callbacks, SQL tool configuration, saved main/current-search traces and accepted review 4864251; earlier failed review 4863108 remains separate history.',\n        'P04: independent manager/deposit/loan ADK and A2A apps, parameterized read-only tools, structured loan controls, scenario results and prototype approval/decline traces.',\n        'Complete ND906 evidence ZIP containing four original accepted submission archives and their separately accessible artifacts, with recorded archive integrity metadata.'\n      ],\n      filesIncluded: [\n        'nd906 Portfolio Evidence.zip',\n        'project/starter/src/core/agent_system.py',\n        'project/starter/src/core/quality_validator.py',\n        'project/starter/agents/orchestrator.py',\n        'starter/agent.py',\n        'starter/search_agent.py',\n        'starter/tools.yaml',\n        'project/starter/manager/agent.py',\n        'project/starter/loan/loan.py',\n        'project/starter/deposit/agent.py'\n      ],\n      scopeSummary:\n        'Four independent ND906 academic implementations accepted under reviews 4863109, 4863111, 4864251 and 4863110. The checksum identifies the complete program evidence ZIP. Source records disclose AI assistance and supplied-starter material; mocked checks, simulated references and live-model observations remain separately labeled, and current service availability was not revalidated.'\n    }\n  }\n];\n\n// ============================================================================\n// DATA: OFFICIAL VERIFIED CERTIFICATES (17 Udacity + 28 Categorized Credentials)",
+      "occurrences": 1
+    },
+    {
+      "before": "    'cs-12': true\n",
+      "after": "    'cs-12': true,\n    'cs-13': true\n",
+      "occurrences": 1
+    },
+    {
+      "before": "<span>ENGINEERING & ARCHITECTURE CASE STUDIES (CS-01 TO CS-12)</span>",
+      "after": "<span>ENGINEERING & ARCHITECTURE CASE STUDIES (CS-01 TO CS-13)</span>",
+      "occurrences": 1
+    },
+    {
+      "before": "{ id: 'all', label: 'All Case Studies (12)' }",
+      "after": "{ id: 'all', label: 'All Case Studies (13)' }",
+      "occurrences": 1
+    },
+    {
+      "before": "{ id: 'ai', label: 'Agentic AI & AI Ops (4)' }",
+      "after": "{ id: 'ai', label: 'Agentic AI & AI Ops (5)' }",
+      "occurrences": 1
+    }
+  ]
+}
