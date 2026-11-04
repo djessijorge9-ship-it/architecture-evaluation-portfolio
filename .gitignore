@@ -1,8 +1,7 @@
 node_modules/
 dist/
-.sites-runtime/
 .env
 .env.*
-*.local
-coverage/
-*.log
+.DS_Store
+.sites-runtime/
+.sites-checkout/

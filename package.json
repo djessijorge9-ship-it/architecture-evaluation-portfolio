@@ -1,31 +1,29 @@
 {
-  "name": "architecture-evaluation-portfolio",
-  "version": "1.0.0",
+  "name": "djessi-jorge-architecture-portfolio",
   "private": true,
+  "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
-    "dev": "vite --host 127.0.0.1",
-    "build": "node scripts/sync-catalogue.mjs && tsc --noEmit && vite build",
-    "preview": "vite preview --host 127.0.0.1",
-    "verify": "node scripts/verify-portfolio.mjs"
+    "dev": "vite --host 127.0.0.1 --port 5000",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 5000"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.2.8",
-    "@fontsource/jetbrains-mono": "^5.2.8",
-    "lucide-react": "^0.468.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "lucide-react": "^0.454.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.17",
-    "@types/react": "^19.2.2",
-    "@types/react-dom": "^19.2.2",
-    "@vitejs/plugin-react": "^5.1.1",
-    "tailwindcss": "^4.1.17",
-    "typescript": "~5.9.3",
-    "vite": "^7.2.2"
-  },
-  "engines": {
-    "node": ">=24"
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "6.2.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.2",
+    "vite": "8.3.5"
   }
 }
