@@ -14,14 +14,14 @@ const sourceText = source.toString('utf8');
 
 assert.deepEqual(manifest.original, originalReference, 'The original reference identity must remain unchanged.');
 assert.equal(source.length, manifest.current.bytes, 'The authorized component byte count changed.');
-assert.equal(digest(source), manifest.current.sha256, 'App.tsx differs from the authorized ND906 extension.');
+assert.equal(digest(source), manifest.current.sha256, 'App.tsx differs from the authorized portfolio content and presentation manifest.');
 assert.doesNotMatch(sourceText, /(?:drive|docs)\.google\.com/i, 'Public component source must not contain Drive or Docs URLs.');
 assert.doesNotMatch(manifestText, /(?:drive|docs)\.google\.com/i, 'The public change manifest must not contain Drive or Docs URLs.');
 assert.ok(Array.isArray(manifest.changes) && manifest.changes.length > 0, 'Authorized source replacements are required.');
 
 // Undo the reviewed replacements in reverse application order. Matching the
-// original byte hash preserves every existing record, the SVG architecture
-// function, and layout code outside those exact replacements.
+// original byte hash verifies the complete baseline outside the exact reviewed
+// content additions and presentation changes, including SVG and layout updates.
 let reconstructed = sourceText;
 for (const [index, change] of [...manifest.changes].reverse().entries()) {
   assert.equal(typeof change.before, 'string', 'Replacement source must be literal text.');
@@ -36,6 +36,6 @@ for (const [index, change] of [...manifest.changes].reverse().entries()) {
 const reconstructedBytes = Buffer.from(reconstructed, 'utf8');
 assert.equal(reconstructedBytes.length, originalReference.bytes, 'Reversing authorized changes did not restore the original byte count.');
 assert.equal(digest(reconstructedBytes), originalReference.sha256, 'Reversing authorized changes did not restore the complete original component.');
-console.log(`Authorized ND906 component verified: ${source.length} bytes, SHA256 ${digest(source)}`);
+console.log(`Authorized portfolio component verified: ${source.length} bytes, SHA256 ${digest(source)}`);
 console.log(`Reconstructed original verified: ${reconstructedBytes.length} bytes, SHA256 ${digest(reconstructedBytes)}`);
 console.log(`${manifest.changes.length} authorized App replacements; no public Drive or Docs URLs.`);

@@ -8,10 +8,12 @@ React 18, TypeScript, Tailwind CSS 3.4, and Lucide portfolio, built with Vite 8 
 
 The portfolio contains 13 case studies and 46 credentials: 18 Udacity credentials and 28 industry credentials. The authorized ND906 extension adds the Google Agentic AI Engineer Nanodegree and CS-13, covering four independent academic agent implementations. Its evidence distinguishes AI-assisted work, mocked checks, simulated research references, and historical live-model observations. Those observations do not establish production reliability or current service availability.
 
-All 12 original case-study records and 45 original credential records remain verbatim. The existing SVG architecture function and layout source are preserved. The authorized additions and directly affected count changes mean `src/App.tsx` now has a new byte identity:
+The readability update preserves every existing data array verbatim: all 13 case studies, 18 Udacity credentials, 28 industry credentials, architecture tracks, core capabilities, credential groups, and enterprise timeline. CS-13 and the Google Agentic AI Engineer Nanodegree remain included.
+
+The presentation uses a 1440px desktop container, larger responsive typography and controls, more space within the track cards, and clearer architecture diagrams. SVG labels are enlarged, and the orchestration header and numbered badges are repositioned. These authorized presentation changes are recorded alongside the earlier content additions in the source manifest. `src/App.tsx` has a new byte identity:
 
 ```text
-Current:  165516 bytes | SHA256 0625fcad517fe2abd26fcc78f3bcf96ad44f91f68de6f7e96fdb3817b4b920a4
+Current:  166698 bytes | SHA256 098d2b2bad375ad62e2ba767fb72e14d15903a14f6e1ab05742212f538221818
 Original: 157493 bytes | SHA256 1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d
 ```
 
@@ -37,9 +39,9 @@ The production build writes `dist/index.html` and static assets. Stop the dev se
 
 ## Verification
 
-`scripts/verify-source.mjs` checks the current component's bytes and SHA256 against `scripts/authorized-source-changes.json`, then reverses the exact authorized replacements in reverse order. The reconstructed component must match the full original 157,493-byte SHA256. This checks preservation of the complete baseline outside the reviewed ND906 replacements. The guard also rejects Drive and Docs URLs in the public source and change manifest.
+`scripts/verify-source.mjs` checks the current component's bytes and SHA256 against `scripts/authorized-source-changes.json`, then reverses the exact authorized replacements in reverse order. The reconstructed component must match the full original 157,493-byte SHA256. This checks preservation of the complete baseline outside the reviewed content additions and presentation changes. The guard also rejects Drive and Docs URLs in the public source and change manifest.
 
-Build tooling uses Vite 8.3.5 and `@vitejs/plugin-react` 6.2.1. This unchanged dependency set passed a clean install, an audit with zero reported vulnerabilities, and a production build. React 18 and Tailwind CSS 3.4 are retained.
+Build tooling uses Vite 8.3.5 and `@vitejs/plugin-react` 6.2.1. React 18 and Tailwind CSS 3.4 are retained. Run the source guard, dependency audit, and production build above before publishing a release.
 
 ## Source and hosting
 

@@ -51,7 +51,9 @@ if ($LASTEXITCODE -ne 0) { throw 'Push failed.' }
 
 Commit source, the npm lockfile, `scripts/authorized-source-changes.json`, the verification script, and `.openai/hosting.json`. Keep generated `node_modules/` and `dist/` out of Git. If branch protection requires a pull request, commit to a feature branch and merge it into `main` through the normal review process.
 
-The ND906 extension is an explicitly authorized change to the original component. All 12 original case-study objects, 45 original credential objects, and the SVG function and layout source remain intact. The source guard verifies the current component identity and reverses the exact authorized replacements to reconstruct the original byte hash. If a future request explicitly authorizes further component changes, document and review their literal replacements, preserve their order, update the current identity in the manifest, and confirm that reversing every authorized replacement still reconstructs the original baseline. Do not update the manifest merely to bypass a guard failure.
+The authorized changes include the ND906 content extension and the portfolio readability update. The latter preserves all existing data arrays verbatim, including 13 case studies, 18 Udacity credentials, 28 industry credentials, architecture tracks, core capabilities, credential groups, and the enterprise timeline. It changes presentation classes and the SVG renderer to widen the desktop container, enlarge typography, and separate diagram labels and numbered badges.
+
+The source guard verifies the current component identity and reverses the exact authorized replacements to reconstruct the original byte hash. If a future request explicitly authorizes further component changes, document and review their literal replacements, preserve their order, update the current identity in the manifest, and confirm that reversing every authorized replacement still reconstructs the original baseline. Do not update the manifest merely to bypass a guard failure.
 
 ## Publish the same Site
 
@@ -63,4 +65,4 @@ For a direct editing request, identify this existing portfolio and describe the 
 
 GitHub Actions runs install, audit, source-preservation verification, and build checks on pushes and pull requests to `main`. Passing those checks confirms the repository build. A Sites publication is a separate release step; a GitHub push alone does not update the hosted application.
 
-After Sites reports a successful release, verify the returned URL, all 13 project controls, and the 46 credential links. Once native hosting confirms DNS and TLS activation, verify both custom-domain hostnames and the canonical root URL before describing the domain as active.
+After Sites reports a successful release, verify the returned URL, all 13 project controls, and the 46 credential links. Check desktop and mobile readability, clearance around the right social rail, and diagram badge positions in expanded projects. Preserve the active root and `www` domain configuration and verify the canonical HTTPS URL.

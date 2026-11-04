@@ -1711,11 +1711,11 @@ const AwsReferenceArchitectureSVG = ({ config, projectId }) => {
     <g key={key}>
       <rect x={x} y={y} width="44" height="44" rx="4" fill={color} />
       {renderTileIcon(x, y, iconType)}
-      <text x={x + 22} y={y + 57} textAnchor="middle" fill="#1E293B" fontSize="9.5" fontWeight="600" fontFamily="sans-serif">
+      <text x={x + 22} y={y + 57} textAnchor="middle" fill="#1E293B" fontSize="10.5" fontWeight="600" fontFamily="sans-serif">
         {label}
       </text>
       {sub && (
-        <text x={x + 22} y={y + 68} textAnchor="middle" fill="#475569" fontSize="8.5" fontFamily="sans-serif">
+        <text x={x + 22} y={y + 68} textAnchor="middle" fill="#475569" fontSize="9.5" fontFamily="sans-serif">
           {sub}
         </text>
       )}
@@ -1751,13 +1751,13 @@ const AwsReferenceArchitectureSVG = ({ config, projectId }) => {
         <rect x="0" y="0" width="900" height="495" fill="#FFFFFF" />
 
         {/* Top Header Title & 2-Line Subtitle */}
-        <text x="24" y="28" fill="#0F172A" fontSize="20" fontWeight="800" fontFamily="sans-serif">
+        <text x="24" y="28" fill="#0F172A" fontSize="21" fontWeight="800" fontFamily="sans-serif" textLength={['cs-07', 'cs-09', 'cs-11'].includes(projectId) ? 852 : undefined} lengthAdjust="spacingAndGlyphs">
           {config.title}
         </text>
-        <text x="24" y="47" fill="#334155" fontSize="10.5" fontFamily="sans-serif">
+        <text x="24" y="47" fill="#334155" fontSize="11.5" fontFamily="sans-serif">
           {config.subtitleLine1}
         </text>
-        <text x="24" y="61" fill="#334155" fontSize="10.5" fontFamily="sans-serif">
+        <text x="24" y="61" fill="#334155" fontSize="11.5" fontFamily="sans-serif">
           {config.subtitleLine2}
         </text>
 
@@ -1799,9 +1799,9 @@ const AwsReferenceArchitectureSVG = ({ config, projectId }) => {
         {/* Central Dashed Orchestrator Boundary Box */}
         <rect
           x="116"
-          y="182"
+          y="174"
           width="662"
-          height="218"
+          height="226"
           rx="4"
           fill="none"
           stroke="#94A3B8"
@@ -1810,9 +1810,9 @@ const AwsReferenceArchitectureSVG = ({ config, projectId }) => {
         />
 
         {/* Orange Compute Orchestrator Badge inside Top-Left of Dashed Box */}
-        <rect x="116" y="182" width="24" height="24" fill="#EA580C" />
-        <polygon points="128,186 135,190 135,198 128,202 121,198 121,190" stroke="#FFFFFF" strokeWidth="1.3" fill="none" />
-        <text x="146" y="198" fill="#475569" fontSize="10" fontWeight="600" fontFamily="sans-serif">
+        <rect x="116" y="174" width="24" height="24" fill="#EA580C" />
+        <polygon points="128,178 135,182 135,190 128,194 121,190 121,182" stroke="#FFFFFF" strokeWidth="1.3" fill="none" />
+        <text x="146" y="190" dominantBaseline="text-after-edge" fill="#475569" fontSize="11" fontWeight="600" fontFamily="sans-serif">
           {config.orchestratorLabel}
         </text>
 
@@ -1839,14 +1839,14 @@ const AwsReferenceArchitectureSVG = ({ config, projectId }) => {
           return (
             <g key={`flow-step-${idx}`}>
               <rect x={bx} y={by} width={bw} height={bh} fill="#FFFFFF" stroke="#1E293B" strokeWidth="1.3" />
-              <text x={bx + 52} y={by + 22} textAnchor="middle" fill="#0F172A" fontSize="9.5" fontWeight="600" fontFamily="sans-serif">
+              <text x={bx + 52} y={by + 22} textAnchor="middle" fill="#0F172A" fontSize="10.2" fontWeight="600" fontFamily="sans-serif">
                 {step.line1}
               </text>
-              <text x={bx + 52} y={by + 36} textAnchor="middle" fill="#0F172A" fontSize="9.5" fontWeight="600" fontFamily="sans-serif">
+              <text x={bx + 52} y={by + 36} textAnchor="middle" fill="#0F172A" fontSize="10.2" fontWeight="600" fontFamily="sans-serif">
                 {step.line2}
               </text>
               {step.line3 && (
-                <text x={bx + 52} y={by + 50} textAnchor="middle" fill="#334155" fontSize="9" fontFamily="sans-serif">
+                <text x={bx + 52} y={by + 50} textAnchor="middle" fill="#334155" fontSize="9.5" fontFamily="sans-serif">
                   {step.line3}
                 </text>
               )}
@@ -1883,18 +1883,18 @@ const AwsReferenceArchitectureSVG = ({ config, projectId }) => {
 
         {/* Bottom Row inside Orchestrator */}
         <rect x="138" y="326" width="104" height="58" fill="#FFFFFF" stroke="#1E293B" strokeWidth="1.3" />
-        <text x="190" y="352" textAnchor="middle" fill="#0F172A" fontSize="9.5" fontWeight="600" fontFamily="sans-serif">
+        <text x="190" y="352" textAnchor="middle" fill="#0F172A" fontSize="10.2" fontWeight="600" fontFamily="sans-serif">
           {config.returnStep2.line1}
         </text>
-        <text x="190" y="366" textAnchor="middle" fill="#334155" fontSize="9" fontFamily="sans-serif">
+        <text x="190" y="366" textAnchor="middle" fill="#334155" fontSize="9.5" fontFamily="sans-serif">
           {config.returnStep2.line2}
         </text>
 
         <rect x="266" y="326" width="104" height="58" fill="#FFFFFF" stroke="#1E293B" strokeWidth="1.3" />
-        <text x="318" y="352" textAnchor="middle" fill="#0F172A" fontSize="9.5" fontWeight="600" fontFamily="sans-serif">
+        <text x="318" y="352" textAnchor="middle" fill="#0F172A" fontSize="10.2" fontWeight="600" fontFamily="sans-serif">
           {config.returnStep1.line1}
         </text>
-        <text x="318" y="366" textAnchor="middle" fill="#334155" fontSize="9" fontFamily="sans-serif">
+        <text x="318" y="366" textAnchor="middle" fill="#334155" fontSize="9.5" fontFamily="sans-serif">
           {config.returnStep1.line2}
         </text>
 
@@ -1972,11 +1972,11 @@ const AwsReferenceArchitectureSVG = ({ config, projectId }) => {
         />
 
         {/* Numbered Blue Step Badges (1 to 5) inside the Diagram */}
-        {renderNumberBadge(82, 178, 1)}
-        {renderNumberBadge(328, 184, 2)}
+        {renderNumberBadge(82, 218, 1)}
+        {renderNumberBadge(242, 192, 2)}
         {renderNumberBadge(456, 304, 3)}
-        {renderNumberBadge(584, 184, 4)}
-        {renderNumberBadge(712, 184, 5)}
+        {renderNumberBadge(500, 192, 4)}
+        {renderNumberBadge(628, 192, 5)}
       </svg>
     </div>
   );
@@ -2136,25 +2136,25 @@ export default function App() {
           NON-STICKY BRIGHT-THEME NAVIGATION HEADER (4 CLEAN TABS)
       ===================================================================== */}
       <header className="relative z-30 bg-white border-b border-slate-200 text-[#0F172A]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-12 pr-14 sm:pr-16 h-20 flex items-center justify-between gap-3 max-lg:h-auto max-lg:min-h-20 max-lg:flex-wrap max-lg:py-4">
           {/* Brand Identity */}
           <button
             onClick={() => scrollToSection('overview', 'section-overview')}
-            className="text-left flex items-center gap-2.5"
+            className="text-left flex items-center gap-2.5 shrink-0"
           >
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" />
             <div>
-              <span className="font-bold tracking-tight text-sm sm:text-base block leading-none text-slate-900">
+              <span className="font-extrabold tracking-tight text-base sm:text-lg block leading-none text-slate-900">
                 DJESSI JORGE
               </span>
-              <span className="font-mono text-[10px] tracking-wider uppercase block mt-0.5 text-slate-500">
+              <span className="font-mono text-xs tracking-wider uppercase block mt-0.5 text-slate-500">
                 LONDON, UNITED KINGDOM
               </span>
             </div>
           </button>
 
           {/* Clean 4-Tab Section Navigation */}
-          <nav className="flex flex-wrap items-center gap-1">
+          <nav className="grid grid-cols-2 items-center gap-1 w-full lg:flex lg:w-auto lg:flex-wrap">
             {[
               { id: 'overview', label: 'Overview', target: 'section-overview' },
               { id: 'cases', label: 'System Case Studies', target: 'section-cases' },
@@ -2166,7 +2166,7 @@ export default function App() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id, item.target)}
-                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
+                  className={`px-4 py-2 rounded-lg text-sm sm:text-[15px] font-medium transition-all ${
                     isActive
                       ? 'bg-indigo-50 text-indigo-700 border border-indigo-200 font-semibold'
                       : 'text-slate-600 hover:text-slate-900'
@@ -2183,17 +2183,17 @@ export default function App() {
       {/* =====================================================================
           MAIN PORTFOLIO CONTENT
       ===================================================================== */}
-      <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pr-12 sm:pr-14 pt-8 pb-16 space-y-20">
+      <main className="relative z-10 max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-12 pr-14 sm:pr-16 pt-10 pb-20 space-y-24">
         {/* ===================================================================
             SECTION 1: OVERVIEW, HERO & CORE ARCHITECTURE TRACKS
         =================================================================== */}
         <section id="section-overview" className="scroll-mt-8 space-y-8">
           {/* Status & Location Pill Bar */}
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-indigo-200 bg-indigo-50 text-indigo-700 font-semibold">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono border border-indigo-200 bg-indigo-50 text-indigo-700 font-semibold">
               <span>ARCHITECTURE & ENGINEERING PORTFOLIO</span>
             </div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-emerald-200 bg-emerald-50 text-emerald-700 font-semibold">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono border border-emerald-200 bg-emerald-50 text-emerald-700 font-semibold">
               <MapPin className="w-3.5 h-3.5" />
               <span>LONDON, UK | HYBRID & IMMEDIATE AVAILABILITY</span>
             </div>
@@ -2201,7 +2201,7 @@ export default function App() {
 
           {/* Core Value Proposition Headline + Primary Action */}
           <div className="space-y-6">
-            <h1 className="text-3xl sm:text-5xl lg:text-[48px] font-extrabold tracking-tight leading-[1.14] text-slate-900">
+            <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-[1.14] text-slate-900">
               Modern/Hybrid Engineer & Architect{' '}
               <span className="text-slate-500 font-semibold">
                 solving complex backend, AI, and data challenges at scale with focus on
@@ -2211,7 +2211,7 @@ export default function App() {
               </span>
             </h1>
 
-            <p className="text-sm sm:text-base max-w-3xl leading-relaxed text-slate-600">
+            <p className="text-base sm:text-lg max-w-4xl leading-relaxed text-slate-600">
               Combining 12 years of London enterprise delivery across DCD Academy, Tata Consultancy Services (supporting EDF Energy), and King&apos;s College Hospital NHS Foundation Trust with 18 graduated Udacity Nanodegrees and courses (50+ verified engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specializations.
             </p>
 
@@ -2219,7 +2219,7 @@ export default function App() {
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <button
                 onClick={() => scrollToSection('cases', 'section-cases')}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold border border-indigo-200 bg-indigo-50/70 hover:bg-indigo-100/80 text-indigo-700 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm sm:text-base font-semibold border border-indigo-200 bg-indigo-50/70 hover:bg-indigo-100/80 text-indigo-700 transition-colors"
               >
                 <span>Explore System Case Studies</span>
                 <ArrowRight className="w-4 h-4" />
@@ -2227,7 +2227,7 @@ export default function App() {
 
               <button
                 onClick={() => scrollToSection('credentials', 'section-credentials')}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs sm:text-sm font-semibold border border-emerald-200 bg-emerald-50/70 hover:bg-emerald-100/80 text-emerald-800 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm sm:text-base font-semibold border border-emerald-200 bg-emerald-50/70 hover:bg-emerald-100/80 text-emerald-800 transition-colors"
               >
                 <Award className="w-4 h-4 text-emerald-600" />
                 <span>View Verified Credentials</span>
@@ -2240,7 +2240,7 @@ export default function App() {
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
               <div className="flex items-center gap-2">
                 <Briefcase className="w-4 h-4 text-emerald-600" />
-                <h2 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-900">
+                <h2 className="text-sm sm:text-base font-bold uppercase tracking-wider text-slate-900">
                   Core Architecture & Engineering Tracks
                 </h2>
               </div>
@@ -2249,7 +2249,7 @@ export default function App() {
               </span>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {ARCHITECTURE_TRACKS.map((item) => {
                 const topBorder =
                   item.accent === 'indigo'
@@ -2267,33 +2267,33 @@ export default function App() {
                 return (
                   <div
                     key={item.id}
-                    className={`rounded-lg border border-slate-200 bg-slate-50/70 p-4 flex flex-col justify-between space-y-3 ${topBorder}`}
+                    className={`rounded-lg border border-slate-200 bg-slate-50/70 p-5 sm:p-6 flex flex-col justify-between space-y-3 ${topBorder}`}
                   >
                     <div className="space-y-2">
-                      <span className={`inline-block px-2 py-0.5 rounded text-[10px] font-mono font-semibold border ${badgeStyle}`}>
+                      <span className={`inline-block px-2.5 py-1 rounded text-xs font-mono font-semibold border ${badgeStyle}`}>
                         {item.badge}
                       </span>
-                      <h3 className="text-base font-bold text-slate-900">{item.trackTitle}</h3>
-                      <p className="text-xs leading-relaxed text-slate-600">
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900">{item.trackTitle}</h3>
+                      <p className="text-sm sm:text-[15px] leading-relaxed text-slate-600">
                         {item.businessValue}
                       </p>
                     </div>
 
                     <div className="space-y-2 pt-2 border-t border-slate-200">
-                      <div className="text-[10px] font-mono uppercase font-semibold text-slate-500">
+                      <div className="text-xs font-mono uppercase font-semibold text-slate-500">
                         Core Technologies:
                       </div>
                       <div className="flex flex-wrap gap-1">
                         {item.matchedSkills.map((skill) => (
                           <span
                             key={skill}
-                            className="px-2 py-0.5 rounded text-[10px] font-mono border border-slate-200 bg-white text-slate-700 select-none"
+                            className="px-2.5 py-1 rounded-md text-xs font-mono border border-slate-200 bg-white text-slate-700 select-none"
                           >
                             {skill}
                           </span>
                         ))}
                       </div>
-                      <div className="text-[11px] font-mono font-semibold text-indigo-600 pt-1">
+                      <div className="text-xs sm:text-sm font-mono font-semibold text-indigo-600 pt-1">
                         Featured Proof: {item.relevantProjects}
                       </div>
                     </div>
@@ -2308,7 +2308,7 @@ export default function App() {
             <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-indigo-600" />
-                <h2 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900">
+                <h2 className="text-sm sm:text-base font-mono font-bold uppercase tracking-wider text-slate-900">
                   FOCUS AREAS & ARCHITECTURAL SCOPE
                 </h2>
               </div>
@@ -2335,8 +2335,8 @@ export default function App() {
                     <div className="flex items-start gap-3">
                       <span className={`w-2.5 h-2.5 rounded-full mt-1.5 shrink-0 ${dotColor}`} />
                       <div className="space-y-1">
-                        <h3 className="text-sm font-bold leading-snug text-slate-900">{cap.title}</h3>
-                        <p className="text-xs leading-relaxed text-slate-600">{cap.detail}</p>
+                        <h3 className="text-base sm:text-lg font-bold leading-snug text-slate-900">{cap.title}</h3>
+                        <p className="text-sm sm:text-[15px] leading-relaxed text-slate-600">{cap.detail}</p>
                       </div>
                     </div>
                   </div>
@@ -2354,10 +2354,10 @@ export default function App() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-indigo-200 bg-indigo-50 text-indigo-700 font-semibold mb-2">
               <span>ENGINEERING & ARCHITECTURE CASE STUDIES (CS-01 TO CS-13)</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
               System Architecture Diagrams, Execution & Measured Outcomes
             </h2>
-            <p className="text-sm mt-1 text-slate-600">
+            <p className="text-base mt-1 text-slate-600">
               Each project details the operational challenge, architectural objective, engineering execution, measured outcome, architectural trade-off takeaway, and end-to-end system diagram.
             </p>
           </div>
@@ -2376,7 +2376,7 @@ export default function App() {
                   <button
                     key={tab.id}
                     onClick={() => setSelectedCategory(tab.id)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all border ${
+                    className={`px-3.5 py-2 rounded-lg text-xs sm:text-sm font-mono transition-all border ${
                       active
                         ? 'bg-indigo-600 text-white border-indigo-600 font-semibold shadow-sm'
                         : 'bg-slate-50 text-slate-600 border-slate-200 hover:text-slate-900 hover:border-slate-300'
@@ -2389,14 +2389,14 @@ export default function App() {
             </div>
 
             {/* Search Input */}
-            <div className="relative w-full sm:w-64">
+            <div className="relative w-full sm:w-72">
               <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Filter by stack (e.g. Scala, Kafka)..."
-                className="w-full pl-8 pr-7 py-1.5 rounded-lg text-xs font-mono border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:border-indigo-500 outline-none transition-colors"
+                className="w-full px-3.5 pl-8 pr-7 py-2 rounded-lg text-xs sm:text-sm font-mono border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:border-indigo-500 outline-none transition-colors"
               />
               {searchQuery && (
                 <button
@@ -2446,27 +2446,27 @@ export default function App() {
                     onClick={() => toggleProject(cs.id)}
                     className="p-5 sm:p-6 cursor-pointer select-none flex flex-col lg:flex-row lg:items-center justify-between gap-4 hover:bg-slate-50/60 transition-colors"
                   >
-                    <div className="space-y-2.5 flex-1">
+                    <div className="space-y-2.5 flex-1 min-w-0">
                       <div className="flex flex-wrap items-center gap-2">
-                        <span className={`px-2.5 py-0.5 rounded text-xs font-mono font-extrabold ${codeBadgeStyle}`}>
+                        <span className={`px-3 py-1 rounded-md text-xs sm:text-sm font-mono font-extrabold ${codeBadgeStyle}`}>
                           {cs.code}
                         </span>
-                        <span className={`px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold border ${domainBadgeStyle}`}>
+                        <span className={`px-3 py-1 rounded-md text-xs sm:text-[13px] font-mono font-semibold border ${domainBadgeStyle}`}>
                           {cs.domainBadge}
                         </span>
                       </div>
 
-                      <h3 className="text-lg sm:text-xl font-bold leading-snug text-slate-900">
+                      <h3 className="text-xl sm:text-2xl font-bold leading-snug text-slate-900">
                         {cs.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-600">{cs.subtitle}</p>
+                      <p className="text-sm sm:text-base leading-relaxed text-slate-600">{cs.subtitle}</p>
 
                       {/* Static Tech Stack Badges */}
                       <div className="flex flex-wrap items-center gap-1.5 pt-1">
                         {cs.stack.map((tech) => (
                           <span
                             key={tech}
-                            className="px-2.5 py-0.5 rounded-md text-[11px] font-mono border border-slate-200 bg-slate-50 text-slate-700 select-none"
+                            className="px-3 py-1 rounded-md text-xs sm:text-[13px] font-mono border border-slate-200 bg-slate-50 text-slate-700 select-none"
                           >
                             {tech}
                           </span>
@@ -2475,18 +2475,18 @@ export default function App() {
                     </div>
 
                     {/* Right Primary Metric + Explore Project Trigger */}
-                    <div className="flex items-center justify-between lg:justify-end gap-5 pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-100">
-                      <div className="text-left lg:text-right">
-                        <div className="text-base sm:text-lg font-mono font-extrabold text-indigo-600">
+                    <div className="flex flex-wrap items-center justify-between lg:justify-end gap-5 pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-100 min-w-0 max-w-full">
+                      <div className="text-left lg:text-right min-w-0 max-w-full break-words">
+                        <div className="text-lg sm:text-xl font-mono font-extrabold text-indigo-600">
                           {cs.headlineMetric}
                         </div>
-                        <div className="text-[11px] font-mono text-slate-500">
+                        <div className="text-xs sm:text-sm font-mono text-slate-500">
                           {cs.headlineMetricLabel}
                         </div>
                       </div>
 
                       <div
-                        className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-mono font-semibold border shrink-0 ${
+                        className={`inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-mono font-semibold border shrink-0 ${
                           isExpanded
                             ? 'bg-indigo-600 text-white border-indigo-600'
                             : 'bg-slate-50 text-slate-700 border-slate-200'
@@ -2522,32 +2522,32 @@ export default function App() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {/* Context & Operational Challenge */}
                           <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-1.5">
-                            <div className="text-xs font-mono font-bold uppercase text-indigo-700">
+                            <div className="text-xs sm:text-sm font-mono font-bold uppercase text-indigo-700">
                               Context & Operational Challenge
                             </div>
-                            <p className="text-xs sm:text-sm leading-relaxed text-slate-600">
+                            <p className="text-sm sm:text-base leading-relaxed text-slate-600">
                               {cs.narrative.context}
                             </p>
                           </div>
 
                           {/* Architectural Objective */}
                           <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-1.5">
-                            <div className="text-xs font-mono font-bold uppercase text-sky-700">
+                            <div className="text-xs sm:text-sm font-mono font-bold uppercase text-sky-700">
                               Architectural Objective
                             </div>
-                            <p className="text-xs sm:text-sm leading-relaxed text-slate-600">
+                            <p className="text-sm sm:text-base leading-relaxed text-slate-600">
                               {cs.narrative.objective}
                             </p>
                           </div>
 
                           {/* System Implementation & Engineering Execution */}
                           <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-2 md:col-span-2">
-                            <div className="text-xs font-mono font-bold uppercase text-emerald-700">
+                            <div className="text-xs sm:text-sm font-mono font-bold uppercase text-emerald-700">
                               System Implementation & Engineering Execution
                             </div>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5 pt-1">
                               {cs.narrative.execution.map((act, idx) => (
-                                <li key={idx} className="text-xs sm:text-sm text-slate-700 flex items-start gap-2">
+                                <li key={idx} className="text-sm sm:text-base leading-relaxed text-slate-700 flex items-start gap-2">
                                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                                   <span className="leading-relaxed">{act}</span>
                                 </li>
@@ -2557,10 +2557,10 @@ export default function App() {
 
                           {/* Measured Outcome & Verification Benchmarks */}
                           <div className="p-4 rounded-xl border border-emerald-200 bg-emerald-50/60 shadow-sm space-y-1.5 md:col-span-2">
-                            <div className="text-xs font-mono font-bold uppercase text-emerald-950">
+                            <div className="text-xs sm:text-sm font-mono font-bold uppercase text-emerald-950">
                               Measured Outcome & Verification Benchmarks
                             </div>
-                            <p className="text-xs sm:text-sm leading-relaxed font-medium text-slate-800">
+                            <p className="text-sm sm:text-base leading-relaxed font-medium text-slate-800">
                               {cs.narrative.outcome}
                             </p>
                           </div>
@@ -2575,7 +2575,7 @@ export default function App() {
                         >
                           <div className="flex items-center gap-2">
                             <Lightbulb className="w-4 h-4 text-amber-600 shrink-0" />
-                            <span className="text-xs font-mono font-bold uppercase text-amber-900">
+                            <span className="text-xs sm:text-sm font-mono font-bold uppercase text-amber-900">
                               Optional Architectural Takeaway: {cs.takeaway.headline}
                             </span>
                           </div>
@@ -2585,7 +2585,7 @@ export default function App() {
                         </button>
 
                         {showTakeaway && (
-                          <div className="px-4 pb-3.5 pt-1 border-t border-amber-200/80 text-xs sm:text-sm text-slate-800 leading-relaxed">
+                          <div className="px-4 pb-3.5 pt-1 border-t border-amber-200/80 text-sm sm:text-base text-slate-800 leading-relaxed">
                             {cs.takeaway.tradeoffLesson}
                           </div>
                         )}
@@ -2605,12 +2605,12 @@ export default function App() {
                       </div>
 
                       {/* 4. Clean Single-Row Executive Evidence Footer */}
-                      <div className="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div className="space-y-1">
-                          <div className="text-xs font-mono font-bold uppercase text-emerald-700">
+                      <div className="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:flex-wrap sm:items-center justify-between gap-4 min-w-0">
+                        <div className="space-y-1 min-w-0 max-w-full break-words">
+                          <div className="text-sm font-mono font-bold uppercase text-emerald-700">
                             VERIFIED CREDENTIAL & ARCHIVE INTEGRITY
                           </div>
-                          <div className="text-xs font-semibold text-slate-800">{cs.evidence.credential}</div>
+                          <div className="text-sm font-semibold text-slate-800">{cs.evidence.credential}</div>
                           <div className="flex flex-wrap items-center gap-2 pt-0.5">
                             <span className="text-[11px] font-mono text-slate-500">
                               SHA256: {cs.evidence.sha256.slice(0, 18)}...
@@ -2634,12 +2634,12 @@ export default function App() {
                           </div>
                         </div>
 
-                        <div className="flex flex-wrap items-center gap-2 shrink-0">
+                        <div className="flex flex-wrap items-center gap-2 min-w-0 max-w-full">
                           <a
                             href={cs.certUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-xs font-mono font-semibold border border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-emerald-100 transition-colors"
+                            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-mono font-semibold border border-emerald-300 max-w-full whitespace-normal text-left bg-emerald-50 text-emerald-800 hover:bg-emerald-100 transition-colors"
                           >
                             <Award className="w-3.5 h-3.5 text-emerald-600" />
                             <span>Verify Certificate</span>
@@ -2648,7 +2648,7 @@ export default function App() {
 
                           <button
                             onClick={() => setSummaryModalProject(cs)}
-                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-mono font-bold bg-indigo-600 hover:bg-indigo-500 text-white transition-colors"
+                            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-mono font-bold bg-indigo-600 max-w-full whitespace-normal text-left hover:bg-indigo-500 text-white transition-colors"
                           >
                             <FileCode2 className="w-4 h-4" />
                             <span>Project Summary & Scope</span>
@@ -2684,7 +2684,7 @@ export default function App() {
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5 text-indigo-600" />
-                <h3 className="text-lg font-bold text-slate-900">
+                <h3 className="text-xl font-bold text-slate-900">
                   Udacity Graduated Nanodegrees & Advanced Engineering Certificates (18 Verified)
                 </h3>
               </div>
@@ -2700,18 +2700,18 @@ export default function App() {
                   href={cert.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="group p-3.5 rounded-lg border border-slate-200 bg-slate-50/70 hover:bg-indigo-50/50 hover:border-indigo-300 transition-all flex items-center justify-between gap-3"
+                  className="group p-3.5 rounded-lg border border-slate-200 bg-slate-50/70 hover:bg-indigo-50/50 hover:border-indigo-300 transition-all flex flex-col items-start sm:flex-row sm:items-center justify-between gap-3 min-w-0"
                 >
-                  <div className="space-y-0.5">
-                    <div className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-indigo-700 flex items-center gap-1.5">
+                  <div className="space-y-0.5 min-w-0 max-w-full break-words">
+                    <div className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-indigo-700 flex items-center gap-1.5">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                       <span>{cert.title}</span>
                     </div>
-                    <div className="text-[11px] font-mono text-slate-500 pl-5">
+                    <div className="text-xs sm:text-[13px] font-mono text-slate-500 pl-5">
                       {cert.category} | Issued {cert.date}
                     </div>
                   </div>
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-mono font-semibold bg-white border border-slate-200 text-indigo-600 group-hover:border-indigo-300 shrink-0">
+                  <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs sm:text-sm font-mono font-semibold bg-white border border-slate-200 text-indigo-600 group-hover:border-indigo-300 shrink-0">
                     <span>Verify</span>
                     <ExternalLink className="w-3 h-3" />
                   </span>
@@ -2725,7 +2725,7 @@ export default function App() {
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-emerald-600" />
-                <h3 className="text-lg font-bold text-slate-900">
+                <h3 className="text-xl font-bold text-slate-900">
                   Coursera Specializations, Anthropic, LangChain, DeepLearning.AI & HubSpot Certifications (28 Verified)
                 </h3>
               </div>
@@ -2738,7 +2738,7 @@ export default function App() {
             <div className="flex flex-wrap items-center gap-1.5">
               <button
                 onClick={() => setSelectedCertGroup('all')}
-                className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all border ${
+                className={`px-3.5 py-2 rounded-lg text-xs sm:text-sm font-mono transition-all border ${
                   selectedCertGroup === 'all'
                     ? 'bg-emerald-600 text-white border-emerald-600 font-semibold shadow-sm'
                     : 'bg-slate-50 text-slate-600 border-slate-200 hover:text-slate-900 hover:border-slate-300'
@@ -2752,7 +2752,7 @@ export default function App() {
                   <button
                     key={grp.id}
                     onClick={() => setSelectedCertGroup(grp.id)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all border ${
+                    className={`px-3.5 py-2 rounded-lg text-xs sm:text-sm font-mono transition-all border ${
                       active
                         ? 'bg-emerald-600 text-white border-emerald-600 font-semibold shadow-sm'
                         : 'bg-slate-50 text-slate-600 border-slate-200 hover:text-slate-900 hover:border-slate-300'
@@ -2770,7 +2770,7 @@ export default function App() {
                 const items = COURSERA_AND_INDUSTRY_CERTIFICATES.filter((c) => c.group === grp.id);
                 return (
                   <div key={grp.id} className="space-y-2.5">
-                    <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-700 border-l-4 border-l-emerald-600 pl-2.5">
+                    <div className="text-sm font-mono font-bold uppercase tracking-wider text-slate-700 border-l-4 border-l-emerald-600 pl-2.5">
                       {grp.title}
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -2780,18 +2780,18 @@ export default function App() {
                           href={cert.url}
                           target="_blank"
                           rel="noreferrer"
-                          className="group p-3.5 rounded-lg border border-slate-200 bg-slate-50/70 hover:bg-emerald-50/50 hover:border-emerald-300 transition-all flex items-center justify-between gap-3"
+                          className="group p-3.5 rounded-lg border border-slate-200 bg-slate-50/70 hover:bg-emerald-50/50 hover:border-emerald-300 transition-all flex flex-col items-start sm:flex-row sm:items-center justify-between gap-3 min-w-0"
                         >
-                          <div className="space-y-0.5">
-                            <div className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-emerald-800 flex items-center gap-1.5">
+                          <div className="space-y-0.5 min-w-0 max-w-full break-words">
+                            <div className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-emerald-800 flex items-center gap-1.5">
                               <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                               <span>{cert.title}</span>
                             </div>
-                            <div className="text-[11px] font-mono text-slate-500 pl-5">
+                            <div className="text-xs sm:text-[13px] font-mono text-slate-500 pl-5">
                               {cert.issuer} | Issued {cert.date}
                             </div>
                           </div>
-                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-mono font-semibold bg-white border border-slate-200 text-emerald-700 group-hover:border-emerald-300 shrink-0">
+                          <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs sm:text-sm font-mono font-semibold bg-white border border-slate-200 text-emerald-700 group-hover:border-emerald-300 shrink-0">
                             <span>Verify</span>
                             <ExternalLink className="w-3 h-3" />
                           </span>
@@ -2834,11 +2834,11 @@ export default function App() {
 
                   <div className="p-5 sm:p-6 rounded-xl border border-slate-200 bg-white shadow-sm">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <span className="font-mono text-xs font-bold text-indigo-600">
+                      <span className="font-mono text-xs sm:text-sm font-bold text-indigo-600">
                         {item.period} | {item.location}
                       </span>
                       <span
-                        className={`px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold border ${
+                        className={`px-2.5 py-0.5 rounded-full text-xs sm:text-sm font-mono font-semibold border ${
                           isIndigo
                             ? 'bg-indigo-50 text-indigo-700 border-indigo-200'
                             : 'bg-emerald-50 text-emerald-700 border-emerald-200'
@@ -2848,17 +2848,17 @@ export default function App() {
                       </span>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900">
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
                       {item.role} <span className="text-slate-500 font-semibold">| {item.company}</span>
                     </h3>
 
-                    <p className="text-xs sm:text-sm mt-2 mb-3.5 leading-relaxed text-slate-600">
+                    <p className="text-sm sm:text-base mt-2 mb-3.5 leading-relaxed text-slate-600">
                       {item.summary}
                     </p>
 
                     <ul className="space-y-2 mb-4">
                       {item.highlights.map((bullet, idx) => (
-                        <li key={idx} className="text-xs sm:text-sm text-slate-700 flex items-start gap-2.5">
+                        <li key={idx} className="text-sm sm:text-base leading-relaxed text-slate-700 flex items-start gap-2.5">
                           <CheckCircle2
                             className={`w-4 h-4 shrink-0 mt-0.5 ${
                               isIndigo ? 'text-indigo-600' : 'text-emerald-600'
@@ -2873,7 +2873,7 @@ export default function App() {
                       {item.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-2.5 py-0.5 rounded text-[11px] font-mono border border-slate-200 bg-slate-50 text-slate-700 select-none"
+                          className="px-3 py-1 rounded-md text-xs sm:text-[13px] font-mono border border-slate-200 bg-slate-50 text-slate-700 select-none"
                         >
                           {tag}
                         </span>
@@ -2914,11 +2914,11 @@ export default function App() {
       ===================================================================== */}
       {summaryModalProject && (
         <div
-          className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto"
+          className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-start justify-center p-4 overflow-y-auto"
           onClick={() => setSummaryModalProject(null)}
         >
           <div
-            className="max-w-2xl w-full rounded-2xl border border-slate-200 bg-white p-6 space-y-5 shadow-2xl my-8 text-slate-900"
+            className="max-w-2xl w-full min-w-0 rounded-2xl border border-slate-200 bg-white p-6 space-y-5 shadow-2xl my-0 text-slate-900 max-h-[calc(100dvh-2rem)] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
@@ -2937,7 +2937,7 @@ export default function App() {
               </button>
             </div>
 
-            <div className="space-y-4 text-xs sm:text-sm">
+            <div className="space-y-4 text-sm sm:text-base">
               {/* Title & Verified Credential */}
               <div>
                 <div className="text-base sm:text-lg font-bold text-slate-900">
@@ -2982,7 +2982,7 @@ export default function App() {
                   {summaryModalProject.evidence.filesIncluded.map((f) => (
                     <span
                       key={f}
-                      className="px-2.5 py-1 rounded-md text-[11px] font-mono border border-slate-200 bg-slate-50 text-slate-700"
+                      className="px-2.5 py-1 rounded-md text-xs sm:text-[13px] font-mono border border-slate-200 bg-slate-50 text-slate-700 max-w-full break-all"
                     >
                       {f}
                     </span>
