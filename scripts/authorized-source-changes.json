@@ -4,8 +4,8 @@
     "sha256": "1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d"
   },
   "current": {
-    "bytes": 174939,
-    "sha256": "9a8bc2cdf4d1482b39018b3881fdb992176f3f145d076f22fa8ab9c689171a06"
+    "bytes": 174130,
+    "sha256": "14a8fc987bfb86b77efaa7c531cbfb3aaa3d374e1cc89453d84337c08f44bef7"
   },
   "changes": [
     {
@@ -161,6 +161,491 @@
     {
       "before": "Executed deep root-cause incident diagnostics, problem management escalations, and change control governance using ServiceNow across enterprise Windows estates and virtualized infrastructure.",
       "after": "Acted as Team Lead overseeing queue health, SLA compliance, and shift handovers; mentored junior 1st/2nd line analysts on root-cause incident diagnostics, problem management escalations, and change control governance in ServiceNow.",
+      "occurrences": 1
+    },
+    {
+      "before": "ection-overview')}\n            className=\"text-left flex items-center gap-2.5 shrink-0\"\n          >\n            <span className=\"w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse\" />\n            <div>\n              <span className=\"font-extrabold tracking-tight text-base sm:text-lg ",
+      "after": "ection-overview')}\n            className=\"text-left flex items-center gap-2.5 shrink-0\"\n          >\n            <div>\n              <span className=\"font-extrabold tracking-tight text-base sm:text-lg ",
+      "occurrences": 1
+    },
+    {
+      "before": "              <span className=\"font-mono text-xs tracking-wider uppercase block mt-0.5 text-slate-500\">\n                LONDON, UNITED KINGDOM\n              </span>",
+      "after": "              <span className=\"font-mono text-xs tracking-wider uppercase inline-flex items-center gap-1 mt-0.5 text-slate-500\">\n                <MapPin className=\"w-3 h-3 shrink-0\" aria-hidden=\"true\" />\n                <span>LONDON, UK</span>\n              </span>",
+      "occurrences": 1
+    },
+    {
+      "before": "===================== */}\n        <section id=\"section-overview\" className=\"scroll-mt-8 space-y-8\">\n          {/* Status & Location Pill Bar */}\n          <div className=\"flex flex-wrap items-center justify-between gap-3\">\n            <div className=\"inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono border border-indigo-200 bg-indigo-50 text-indigo-700 font-semibold\">\n              <span>ARCHITECTURE & ENGINEERING PORTFOLIO</span>\n            </div>\n            <div className=\"inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-mono border border-emerald-200 bg-emerald-50 text-emerald-700 font-semibold\">\n              <MapPin className=\"w-3.5 h-3.5\" />\n              <span>LONDON, UK | HYBRID & IMMEDIATE AVAILABILITY</span>\n            </div>\n          </div>\n\n          {/* Core Value Proposition Headline + Primary Action */}\n          <div className=\"space-y",
+      "after": "===================== */}\n        <section id=\"section-overview\" className=\"scroll-mt-8 space-y-8\">\n          {/* Core Value Proposition Headline + Primary Action */}\n          <div className=\"space-y",
+      "occurrences": 1
+    },
+    {
+      "before": "'Cloud Modernization, Multi-Region Networking & FinOps'",
+      "after": "'Cloud Modernisation, Multi-Region Networking & FinOps'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Designing resilient cloud infrastructures, cross-region network topologies, and event-driven AI workloads that prevent downtime, enforce least-privilege IAM governance, and align technical delivery with FinOps guardrails.'",
+      "after": "'I design resilient cloud infrastructure, cross-region networks and event-driven AI workloads, with least-privilege IAM, FinOps controls and measures to prevent downtime.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Cost Optimization (FinOps)'",
+      "after": "'Cost Optimisation (FinOps)'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Building stateful multi-agent workflows, automated code review agents, and 5-job GitHub Actions MLOps pipelines that resolve enterprise workflows safely using explicit drift checks and escalation guardrails.'",
+      "after": "'I build stateful multi-agent workflows, automated code review agents and 5-job GitHub Actions MLOps pipelines, using drift checks and escalation guardrails to handle enterprise workflows safely.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Transforming high-volume event streams and batch datasets into validated Medallion lakehouses, functional Scala pipelines, computer vision workflows, and zero-drift HubSpot CRM synchronization bridges.'",
+      "after": "'I build and validate Medallion lakehouses, functional Scala pipelines, computer vision workflows and HubSpot CRM synchronisation bridges for high-volume event streams and batch datasets, with zero-drift replay verification.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Stateful agent routing with LangGraph, TypeScript Claude Agent SDK specialists, Model Context Protocol (MCP), semantic vector caching, and tiered LLM cost optimization.'",
+      "after": "'Stateful agent routing with LangGraph, TypeScript Claude Agent SDK specialists, Model Context Protocol (MCP), semantic vector caching, and tiered LLM cost optimisation.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Deterministic Signal-to-CRM synchronization bridges (Clay to HubSpot) with replay idempotency and protected-field survivorship, paired with explicit latency-versus-cost architectural trade-offs.'",
+      "after": "'Deterministic Signal-to-CRM synchronisation bridges (Clay to HubSpot) with replay idempotency and protected-field survivorship, paired with explicit latency-versus-cost architectural trade-offs.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'65.0% Modeled Cost Saving'",
+      "after": "'65.0% Modelled Cost Saving'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Demonstrated a 65.0% modeled LLM inference cost saving across the 74-row evaluation ledger ($0.1009 routed spend versus $0.2882 all-gpt-4o baseline), backed by 231 passing unit tests.'",
+      "after": "'Demonstrated a 65.0% modelled LLM inference cost saving across the 74-row evaluation ledger ($0.1009 routed spend versus $0.2882 all-gpt-4o baseline), backed by 231 passing unit tests.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Evaluating query complexity and checking a Chroma semantic cache before model dispatch introduced minimal gateway overhead while delivering a 65.0% modeled token cost reduction ($0.1009 vs. $0.2882) without sacrificing answer quality.'",
+      "after": "'Evaluating query complexity and checking a Chroma semantic cache before model dispatch introduced minimal gateway overhead while delivering a 65.0% modelled token cost reduction ($0.1009 vs. $0.2882) without sacrificing answer quality.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Verified across 231 passing unit tests, Chroma vector semantic caching module, 2-tier complexity router, and 74-row cost evaluation ledger demonstrating a 65.0% modeled cost reduction.'",
+      "after": "'Verified across 231 passing unit tests, Chroma vector semantic caching module, 2-tier complexity router, and 74-row cost evaluation ledger demonstrating a 65.0% modelled cost reduction.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Operationalized pretrained FinBERT behind FastAPI with a 5-job GitHub Actions workflow, 7 passing pytest checks, and automated Deepchecks drift gates.'",
+      "after": "'Deployed pretrained FinBERT behind FastAPI with a 5-job GitHub Actions workflow, 7 passing pytest checks, and automated Deepchecks drift gates.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Operationalize a pretrained FinBERT sentiment model behind a containerized FastAPI service governed by a 5-job GitHub Actions CI/CD workflow that enforces automated unit testing and Deepchecks drift thresholds prior to deployment.'",
+      "after": "'Deploy a pretrained FinBERT sentiment model behind a containerised FastAPI service governed by a 5-job GitHub Actions CI/CD workflow that enforces automated unit testing and Deepchecks drift thresholds prior to deployment.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'5-job GitHub Actions pipeline (lint, test, deepchecks, build, deploy) operationalizing FinBERT behind FastAPI.'",
+      "after": "'5-job GitHub Actions pipeline (lint, test, deepchecks, build, deploy) deploying FinBERT behind FastAPI.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Containerized FastAPI inference service serving pretrained FinBERT sentiment predictions'",
+      "after": "'Containerised FastAPI inference service serving pretrained FinBERT sentiment predictions'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Verified 5-job GitHub Actions CI/CD pipeline operationalizing pretrained FinBERT behind FastAPI with 7 passing pytest cases and automated Deepchecks drift gating.'",
+      "after": "'Verified 5-job GitHub Actions CI/CD pipeline deploying pretrained FinBERT behind FastAPI with 7 passing pytest cases and automated Deepchecks drift gating.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Design and build the UDA-Hub stateful LangGraph support agent capable of classifying ticket intent, retrieving verified knowledge base articles, executing authorized account tools, and escalating unresolved issues cleanly to human specialists.'",
+      "after": "'Design and build the UDA-Hub stateful LangGraph support agent capable of classifying ticket intent, retrieving verified knowledge base articles, executing authorised account tools, and escalating unresolved issues cleanly to human specialists.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Validated deterministic routing, tool invocation, and fallback behavior across 21 offline test cases and 2 database setup notebooks.'",
+      "after": "'Validated deterministic routing, tool invocation, and fallback behaviour across 21 offline test cases and 2 database setup notebooks.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'authorized DB tools'",
+      "after": "'authorised DB tools'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Engineered a read-only TypeScript CLI orchestrating three specialized Claude SDK agents: Code Quality, Test Coverage Estimation, and Refactoring.'",
+      "after": "'Engineered a read-only TypeScript CLI orchestrating three specialised Claude SDK agents: Code Quality, Test Coverage Estimation, and Refactoring.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Passed 42 out of 42 tool unit tests and 3 live Claude Agent SDK integration reviews, producing reproducible JSON, Markdown, and HTML code review artifacts with zero repository mutations.'",
+      "after": "'Passed 42 out of 42 tool unit tests and 3 live Claude Agent SDK integration reviews, producing reproducible JSON, Markdown, and HTML code review artefacts with zero repository mutations.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Enforcing a strict read-only contract across three specialized Claude SDK agents (Quality, Coverage, Refactoring) guaranteed safe local and CI execution while delivering structured, developer-ready review reports.'",
+      "after": "'Enforcing a strict read-only contract across three specialised Claude SDK agents (Quality, Coverage, Refactoring) guaranteed safe local and CI execution while delivering structured, developer-ready review reports.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Review Artifacts'",
+      "after": "'Review Artefacts'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Enterprise AWS organization design paired with live two-region VPC peering, custom route tables, security groups, and verified cross-region network traffic receipts.'",
+      "after": "'Enterprise AWS organisation design paired with live two-region VPC peering, custom route tables, security groups, and verified cross-region network traffic receipts.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Designed an enterprise multi-account AWS Organizations structure separating Security, Shared Services, Sandbox, and Production organizational units (OUs).'",
+      "after": "'Designed an enterprise multi-account AWS Organizations structure separating Security, Shared Services, Sandbox, and Production organisational units (OUs).'",
+      "occurrences": 1
+    },
+    {
+      "before": "'CLOUD MIGRATION & CONTAINERIZED API'",
+      "after": "'CLOUD MIGRATION & CONTAINERISED API'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Cloud migration of a legacy credit card fraud pipeline onto S3, AWS Glue ETL jobs, and a containerized FastAPI scoring service on Amazon ECS.'",
+      "after": "'Cloud migration of a legacy credit card fraud pipeline onto S3, AWS Glue ETL jobs, and a containerised FastAPI scoring service on Amazon ECS.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Containerized Fraud Pipeline'",
+      "after": "'Containerised Fraud Pipeline'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Migrate the credit card fraud pipeline to managed AWS infrastructure by decoupling version-pinned S3 data preparation (AWS Glue) from a containerized FastAPI inference microservice deployed on Amazon ECS.'",
+      "after": "'Migrate the credit card fraud pipeline to managed AWS infrastructure by decoupling version-pinned S3 data preparation (AWS Glue) from a containerised FastAPI inference microservice deployed on Amazon ECS.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Containerized the FastAPI fraud scoring service with Docker and validated local container packaging against a deterministic 16-row test fixture.'",
+      "after": "'Containerised the FastAPI fraud scoring service with Docker and validated local container packaging against a deterministic 16-row test fixture.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Version-pinned Amazon S3 data lineage feeding AWS Glue ETL jobs and a containerized FastAPI service on Amazon ECS.'",
+      "after": "'Version-pinned Amazon S3 data lineage feeding AWS Glue ETL jobs and a containerised FastAPI service on Amazon ECS.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Containerized FastAPI fraud scoring microservice validated on a 16-row test fixture'",
+      "after": "'Containerised FastAPI fraud scoring microservice validated on a 16-row test fixture'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Event-Driven AI Document Summarization with CloudFormation & Amazon Bedrock'",
+      "after": "'Event-Driven AI Document Summarisation with CloudFormation & Amazon Bedrock'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Immutable AWS CloudFormation stack provisioning S3 event notifications, AWS Lambda compute, Amazon Bedrock LLM summarization, and CloudWatch telemetry.'",
+      "after": "'Immutable AWS CloudFormation stack provisioning S3 event notifications, AWS Lambda compute, Amazon Bedrock LLM summarisation, and CloudWatch telemetry.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'FinOps Optimization'",
+      "after": "'FinOps Optimisation'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Running dedicated compute instances for intermittent document summarization and generative AI workloads creates high idle cloud expenditure and manual provisioning drift.'",
+      "after": "'Running dedicated compute instances for intermittent document summarisation and generative AI workloads creates high idle cloud expenditure and manual provisioning drift.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Modernize an AI document processing workload using AWS CloudFormation Infrastructure as Code to deploy an event-driven Amazon S3, AWS Lambda, and Amazon Bedrock pipeline paired with FinOps cost-optimization blueprints.'",
+      "after": "'Modernise an AI document processing workload using AWS CloudFormation Infrastructure as Code to deploy an event-driven Amazon S3, AWS Lambda, and Amazon Bedrock pipeline paired with FinOps cost-optimisation blueprints.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Configured the AWS Lambda handler to trigger automatically on S3 object uploads, invoke Amazon Bedrock LLM summarization, and write structured outputs.'",
+      "after": "'Configured the AWS Lambda handler to trigger automatically on S3 object uploads, invoke Amazon Bedrock LLM summarisation, and write structured outputs.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Formulated FinOps architectural optimization blueprints covering S3 lifecycle tiering, response caching, and batch inference scheduling.'",
+      "after": "'Formulated FinOps architectural optimisation blueprints covering S3 lifecycle tiering, response caching, and batch inference scheduling.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Delivered a reproducible CloudFormation-provisioned S3, Lambda, and Amazon Bedrock event-driven summarization pipeline that eliminates idle compute burn between inference events.'",
+      "after": "'Delivered a reproducible CloudFormation-provisioned S3, Lambda, and Amazon Bedrock event-driven summarisation pipeline that eliminates idle compute burn between inference events.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Event-driven Amazon Bedrock workload modernization with CloudFormation'",
+      "after": "'Event-driven Amazon Bedrock workload modernisation with CloudFormation'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Paired with FinOps architectural designs for S3 lifecycle tiering, response caching, and batch optimization.'",
+      "after": "'Paired with FinOps architectural designs for S3 lifecycle tiering, response caching, and batch optimisation.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'summarization LLM'",
+      "after": "'summarisation LLM'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Event-driven Amazon Bedrock document summarization handler with CloudWatch telemetry'",
+      "after": "'Event-driven Amazon Bedrock document summarisation handler with CloudWatch telemetry'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Verified S3 upload trigger and Bedrock summary output artifacts'",
+      "after": "'Verified S3 upload trigger and Bedrock summary output artefacts'",
+      "occurrences": 1
+    },
+    {
+      "before": "'FinOps optimization blueprint covering S3 lifecycle tiering and response caching'",
+      "after": "'FinOps optimisation blueprint covering S3 lifecycle tiering and response caching'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Verified live AWS CloudFormation deployment chaining S3 event triggers, AWS Lambda, and Amazon Bedrock summarization paired with FinOps optimization blueprints.'",
+      "after": "'Verified live AWS CloudFormation deployment chaining S3 event triggers, AWS Lambda, and Amazon Bedrock summarisation paired with FinOps optimisation blueprints.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Modeling Bronze, Silver, and Gold layers as Apache Iceberg tables registered in AWS Glue Catalog enabled ACID CDC updates and snapshot time-travel via serverless Amazon Athena without running an always-on warehouse cluster.'",
+      "after": "'Modelling Bronze, Silver, and Gold layers as Apache Iceberg tables registered in AWS Glue Catalog enabled ACID CDC updates and snapshot time-travel via serverless Amazon Athena without running an always-on warehouse cluster.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Materialize Gold'",
+      "after": "'Materialise Gold'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Five-course functional programming and Apache Spark specialization completed with 100% scores across 17 functional Scala implementations and 265 passing unit tests.'",
+      "after": "'Five-course functional programming and Apache Spark specialisation completed with 100% scores across 17 functional Scala implementations and 265 passing unit tests.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Engineer the Earth Observatory spatial climate interpolation engine using pure functional Scala collections alongside distributed Apache Spark RDD, DataFrame, and Dataset pipelines across the 5-course EPFL specialization.'",
+      "after": "'Engineer the Earth Observatory spatial climate interpolation engine using pure functional Scala collections alongside distributed Apache Spark RDD, DataFrame, and Dataset pipelines across the 5-course EPFL specialisation.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Developed distributed Apache Spark RDD and DataFrame pipelines (`wikipedia`, `stackoverflow`, `timeusage`) using custom partitioning to minimize shuffle overhead.'",
+      "after": "'Developed distributed Apache Spark RDD and DataFrame pipelines (`wikipedia`, `stackoverflow`, `timeusage`) using custom partitioning to minimise shuffle overhead.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Designed a 4-block PyTorch CNN (`models.py`) operating on OpenCV Haar Cascade normalized 128x128 grayscale face crops to predict 68 facial landmarks (136 coordinates).'",
+      "after": "'Designed a 4-block PyTorch CNN (`models.py`) operating on OpenCV Haar Cascade normalised 128x128 greyscale face crops to predict 68 facial landmarks (136 coordinates).'",
+      "occurrences": 1
+    },
+    {
+      "before": "'(Serialize & Classify)'",
+      "after": "'(Serialise & Classify)'",
+      "occurrences": 1
+    },
+    {
+      "before": "'OpenCV & normalize'",
+      "after": "'OpenCV & normalise'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Functions & serialize'",
+      "after": "'Functions & serialise'",
+      "occurrences": 1
+    },
+    {
+      "before": "'OpenCV Haar Cascade face detection and 128x128 grayscale normalization pipeline'",
+      "after": "'OpenCV Haar Cascade face detection and 128x128 greyscale normalisation pipeline'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Amazon SageMaker Model Monitor real-time S3 payload capture and drift visualization'",
+      "after": "'Amazon SageMaker Model Monitor real-time S3 payload capture and drift visualisation'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Idempotent Signal-to-CRM Data Synchronization & HubSpot Replay Bridge'",
+      "after": "'Idempotent Signal-to-CRM Data Synchronisation & HubSpot Replay Bridge'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Account intelligence ingestion and idempotent CRM synchronization pipeline connecting a 5-company, 8-column Clay data contract to a live HubSpot CRM environment.'",
+      "after": "'Account intelligence ingestion and idempotent CRM synchronisation pipeline connecting a 5-company, 8-column Clay data contract to a live HubSpot CRM environment.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Engineer a deterministic Signal-to-CRM synchronization bridge that transfers a 5-company, 8-column (40-cell) Clay enrichment contract into a live HubSpot CRM environment (containing 32 pre-existing companies) with strict replay idempotency.'",
+      "after": "'Engineer a deterministic Signal-to-CRM synchronisation bridge that transfers a 5-company, 8-column (40-cell) Clay enrichment contract into a live HubSpot CRM environment (containing 32 pre-existing companies) with strict replay idempotency.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Executed the initial live HubSpot synchronization run, creating 5 net-new target companies with zero unintended updates to existing CRM records.'",
+      "after": "'Executed the initial live HubSpot synchronisation run, creating 5 net-new target companies with zero unintended updates to existing CRM records.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Idempotent Clay-to-HubSpot CRM synchronization & replay bridge'",
+      "after": "'Idempotent Clay-to-HubSpot CRM synchronisation & replay bridge'",
+      "occurrences": 1
+    },
+    {
+      "before": "'5-company, 8-column (40-cell) Clay enrichment contract synchronized into a live HubSpot portal (32 existing companies).'",
+      "after": "'5-company, 8-column (40-cell) Clay enrichment contract synchronised into a live HubSpot portal (32 existing companies).'",
+      "occurrences": 1
+    },
+    {
+      "before": "'P03 Betty’s Bird Boutique: revised the ADK support agent for accepted review 4864251, routing document questions to Standard Vertex AI Search, catalog reads to parameterized Cloud SQL SELECT tools through MCP Toolbox and bird questions to a separate Google Search AgentTool, with provider grounding-URL retention.'",
+      "after": "'P03 Betty’s Bird Boutique: revised the ADK support agent for accepted review 4864251, routing document questions to Standard Vertex AI Search, catalogue reads to parameterised Cloud SQL SELECT tools through MCP Toolbox and bird questions to a separate Google Search AgentTool, with provider grounding-URL retention.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'P04 Multi-Agent Banking: separated manager, deposit and loan into three independent ADK applications communicating through A2A, using read-only parameterized SQL, structured state, Decimal arithmetic, an isolated Boolean equity check and deterministic final wording.'",
+      "after": "'P04 Multi-Agent Banking: separated manager, deposit and loan into three independent ADK applications communicating through A2A, using read-only parameterised SQL, structured state, Decimal arithmetic, an isolated Boolean equity check and deterministic final wording.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Structured state, constrained tools and local deterministic checks make model behavior more inspectable while preserving the limits of simulated retrieval, heuristic writing scores and unlabeled scenarios. These four independent academic implementations retain disclosed AI assistance and supplied-starter provenance; historical run observations do not establish unaided authorship, commercial impact or current service availability.'",
+      "after": "'Structured state, constrained tools and local deterministic checks make model behaviour more inspectable while preserving the limits of simulated retrieval, heuristic writing scores and unlabelled scenarios. These four independent academic implementations retain disclosed AI assistance and supplied-starter provenance; historical run observations do not establish unaided authorship, commercial impact or current service availability.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'(Search / Catalog)'",
+      "after": "'(Search / Catalogue)'",
+      "occurrences": 1
+    },
+    {
+      "before": "'accepted artifacts'",
+      "after": "'accepted artefacts'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Accepted Artifacts'",
+      "after": "'Accepted Artefacts'",
+      "occurrences": 2
+    },
+    {
+      "before": "'P01: FastAPI report service, persona/context orchestration, writing-quality validator, saved response/metrics and separately labeled mocked-check output.'",
+      "after": "'P01: FastAPI report service, persona/context orchestration, writing-quality validator, saved response/metrics and separately labelled mocked-check output.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'P04: independent manager/deposit/loan ADK and A2A apps, parameterized read-only tools, structured loan controls, scenario results and prototype approval/decline traces.'",
+      "after": "'P04: independent manager/deposit/loan ADK and A2A apps, parameterised read-only tools, structured loan controls, scenario results and prototype approval/decline traces.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Complete ND906 evidence ZIP containing four original accepted submission archives and their separately accessible artifacts, with recorded archive integrity metadata.'",
+      "after": "'Complete ND906 evidence ZIP containing four original accepted submission archives and their separately accessible artefacts, with recorded archive integrity metadata.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Four independent ND906 academic implementations accepted under reviews 4863109, 4863111, 4864251 and 4863110. The checksum identifies the complete program evidence ZIP. Source records disclose AI assistance and supplied-starter material; mocked checks, simulated references and live-model observations remain separately labeled, and current service availability was not revalidated.'",
+      "after": "'Four independent ND906 academic implementations accepted under reviews 4863109, 4863111, 4864251 and 4863110. The checksum identifies the complete programme evidence ZIP. Source records disclose AI assistance and supplied-starter material; mocked checks, simulated references and live-model observations remain separately labelled, and current service availability was not revalidated.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'P01 Infrastructure: used Packer and parameterized Terraform for tagged private Linux VMs, managed disks and a Standard Load Balancer, with NSG Internet denial, learner-resource-group scope guards, policy checks and saved apply/destroy readbacks.'",
+      "after": "'P01 Infrastructure: used Packer and parameterised Terraform for tagged private Linux VMs, managed disks and a Standard Load Balancer, with NSG Internet denial, learner-resource-group scope guards, policy checks and saved apply/destroy readbacks.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Reproducible infrastructure and release gates answer different questions, so private-VM readbacks, local checks, CI runs and bounded load cohorts stay separately labeled. This AI-assisted coursework uses supplied applications and historical evidence; it does not establish current Azure availability, a production SLA or complete removal of every policy object.'",
+      "after": "'Reproducible infrastructure and release gates answer different questions, so private-VM readbacks, local checks, CI runs and bounded load cohorts stay separately labelled. This AI-assisted coursework uses supplied applications and historical evidence; it does not establish current Azure availability, a production SLA or complete removal of every policy object.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'application artifact'",
+      "after": "'application artefact'",
+      "occurrences": 1
+    },
+    {
+      "before": "'P01: Packer image configuration, parameterized Terraform topology, scope/policy guards and retained private-VM, deployment and bounded cleanup evidence.'",
+      "after": "'P01: Packer image configuration, parameterised Terraform topology, scope/policy guards and retained private-VM, deployment and bounded cleanup evidence.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Complete ND082 evidence package with three original accepted submission ZIPs, source artifacts and recorded archive-integrity metadata.'",
+      "after": "'Complete ND082 evidence package with three original accepted submission ZIPs, source artefacts and recorded archive-integrity metadata.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Three independent accepted ND082 academic implementations, with disclosed AI assistance and supplied applications. The checksum identifies the complete program evidence ZIP. Saved infrastructure, CI/CD and release-verification cohorts retain their own network, source-snapshot, workload and cleanup limits; current Azure state and production reliability were not revalidated.'",
+      "after": "'Three independent accepted ND082 academic implementations, with disclosed AI assistance and supplied applications. The checksum identifies the complete programme evidence ZIP. Saved infrastructure, CI/CD and release-verification cohorts retain their own network, source-snapshot, workload and cleanup limits; current Azure state and production reliability were not revalidated.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Designing deterministic generative AI workflows, stateful multi-agent systems, and cloud-native data pipelines backed by 19 completed Udacity Nanodegrees and courses (50+ accepted engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specializations.'",
+      "after": "'Designing deterministic generative AI workflows, stateful multi-agent systems, and cloud-native data pipelines backed by 19 completed Udacity Nanodegrees and courses (50+ accepted engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specialisations.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Engineered an idempotent Signal-to-CRM data synchronization bridge connecting Clay enrichment contracts to a live HubSpot CRM portal with zero-drift replay verification.'",
+      "after": "'Engineered an idempotent Signal-to-CRM data synchronisation bridge connecting Clay enrichment contracts to a live HubSpot CRM portal with zero-drift replay verification.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Integrated generative AI production workflows (Anthropic Claude, ChatGPT, HeyGen, ElevenLabs) with Articulate Storyline 360 and Thought Industries LMS to standardize technical accuracy and modular delivery.'",
+      "after": "'Integrated generative AI production workflows (Anthropic Claude, ChatGPT, HeyGen, ElevenLabs) with Articulate Storyline 360 and Thought Industries LMS to standardise technical accuracy and modular delivery.'",
+      "occurrences": 1
+    },
+    {
+      "before": "'Spearheaded clinical system implementation, workflow mapping, and SQL Server statutory data validation across acute and specialist NHS healthcare clinics.'",
+      "after": "'Led clinical system implementation and workflow mapping, and used SQL Server to validate statutory data across acute and specialist NHS healthcare clinics.'",
+      "occurrences": 1
+    },
+    {
+      "before": "\n              Modern/Hybrid Engineer & Architect",
+      "after": "\n              Engineer & Architect",
+      "occurrences": 1
+    },
+    {
+      "before": "\n                solving complex backend, AI, and data challenges at scale with focus on\n              ",
+      "after": "\n                building backend, AI and data systems, with a focus on\n              ",
+      "occurrences": 1
+    },
+    {
+      "before": "\n                system performance, cost efficiency, and clear business outcomes.\n              ",
+      "after": "\n                performance, running costs and practical results.\n              ",
+      "occurrences": 1
+    },
+    {
+      "before": "\n              Combining 12 years of London enterprise delivery across DCD Academy, Tata Consultancy Services (supporting EDF Energy), and King&apos;s College Hospital NHS Foundation Trust with 19 graduated Udacity Nanodegrees and courses (50+ verified engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specializations.\n            ",
+      "after": "\n              I have 12 years of experience in London, working at DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust. My training includes 19 completed Udacity Nanodegrees and courses (50+ verified engineering projects), plus AWS, Anthropic, LangChain, IBM and EPFL specialisations.\n            ",
+      "occurrences": 1
+    },
+    {
+      "before": "\n              Verified Udacity Nanodegrees, Coursera Specializations & Certifications\n            ",
+      "after": "\n              Verified Udacity Nanodegrees, Coursera Specialisations & Certifications\n            ",
+      "occurrences": 1
+    },
+    {
+      "before": "\n                  Coursera Specializations, Anthropic, LangChain, DeepLearning.AI & HubSpot Certifications (28 Verified)\n                ",
+      "after": "\n                  Coursera Specialisations, Anthropic, LangChain, DeepLearning.AI & HubSpot Certifications (28 Verified)\n                ",
+      "occurrences": 1
+    },
+    {
+      "before": "'(128x128 Grayscale)'",
+      "after": "'(128x128 Greyscale)'",
+      "occurrences": 1
+    },
+    {
+      "before": "'color-mapped slippy'",
+      "after": "'colour-mapped slippy'",
+      "occurrences": 1
+    },
+    {
+      "before": "'128x128 grayscale'",
+      "after": "'128x128 greyscale'",
+      "occurrences": 1
+    },
+    {
+      "before": "{ line1: 'Render 256x256', line2: 'colour-mapped slippy', line3: 'map PNG tiles' }",
+      "after": "{ line1: 'Render 256x256', line2: 'colour-mapped', line3: 'slippy map PNG tiles' }",
       "occurrences": 1
     }
   ]
