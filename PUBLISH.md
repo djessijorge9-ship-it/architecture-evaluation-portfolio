@@ -4,7 +4,9 @@ The [public repository](https://github.com/djessijorge9-ship-it/architecture-eva
 
 The canonical domain is [djessijorge.com](https://djessijorge.com), with root and `www` active through native Sites hosting and verified HTTPS certificates. The [Sites fallback URL](https://djessi-jorge-systems-portfolio.djessi2.chatgpt.site) remains available for release verification.
 
-The current source contains 13 case studies and 46 credentials: 18 Udacity credentials and 28 industry credentials. CS-13 covers four independent ND906 academic implementations. Preserve its qualifications around AI assistance, mocked checks, simulated research references, and historical live-model observations when updating its narrative.
+The current source contains 14 case studies and 47 credentials: 19 Udacity credentials and 28 industry credentials. CS-13 covers four independent ND906 academic implementations. Preserve its qualifications around AI assistance, mocked checks, simulated research references, and historical live-model observations when updating its narrative.
+
+CS-14 covers three independent ND082 academic projects: Azure infrastructure with Packer and Terraform, CI/CD with GitHub Actions and Azure Pipelines, and layered release-quality checks. Preserve the distinctions between supplied applications, AI-assisted work, and historical project results. These results do not establish commercial impact or production reliability.
 
 ## Update the GitHub source
 
@@ -51,7 +53,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Push failed.' }
 
 Commit source, the npm lockfile, `scripts/authorized-source-changes.json`, the verification script, and `.openai/hosting.json`. Keep generated `node_modules/` and `dist/` out of Git. If branch protection requires a pull request, commit to a feature branch and merge it into `main` through the normal review process.
 
-The authorized changes include the ND906 content extension and the portfolio readability update. The latter preserves all existing data arrays verbatim, including 13 case studies, 18 Udacity credentials, 28 industry credentials, architecture tracks, core capabilities, credential groups, and the enterprise timeline. It changes presentation classes and the SVG renderer to widen the desktop container, enlarge typography, and separate diagram labels and numbered badges.
+The authorized changes include the ND906 and ND082 content extensions and the portfolio readability update. Existing records remain verbatim alongside the authorized additions. The current arrays include 14 case studies, 19 Udacity credentials, 28 industry credentials, architecture tracks, core capabilities, credential groups, and the enterprise timeline. The readability update changes presentation classes and the SVG renderer to widen the desktop container to 1440px, enlarge typography, and separate diagram labels and numbered badges.
 
 The source guard verifies the current component identity and reverses the exact authorized replacements to reconstruct the original byte hash. If a future request explicitly authorizes further component changes, document and review their literal replacements, preserve their order, update the current identity in the manifest, and confirm that reversing every authorized replacement still reconstructs the original baseline. Do not update the manifest merely to bypass a guard failure.
 
@@ -65,4 +67,4 @@ For a direct editing request, identify this existing portfolio and describe the 
 
 GitHub Actions runs install, audit, source-preservation verification, and build checks on pushes and pull requests to `main`. Passing those checks confirms the repository build. A Sites publication is a separate release step; a GitHub push alone does not update the hosted application.
 
-After Sites reports a successful release, verify the returned URL, all 13 project controls, and the 46 credential links. Check desktop and mobile readability, clearance around the right social rail, and diagram badge positions in expanded projects. Preserve the active root and `www` domain configuration and verify the canonical HTTPS URL.
+After Sites reports a successful release, verify the returned URL, all 14 project controls, and the 47 credential links. Check desktop and mobile readability, clearance around the right social rail, and diagram badge positions in expanded projects. Preserve the active root and `www` domain configuration and verify the canonical HTTPS URL.

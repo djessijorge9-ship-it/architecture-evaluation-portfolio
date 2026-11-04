@@ -6,14 +6,16 @@ React 18, TypeScript, Tailwind CSS 3.4, and Lucide portfolio, built with Vite 8 
 - Canonical domain: [djessijorge.com](https://djessijorge.com). The root domain and `www` are active on Sites with verified HTTPS certificates.
 - Sites fallback: [Djessi Jorge Systems Portfolio](https://djessi-jorge-systems-portfolio.djessi2.chatgpt.site).
 
-The portfolio contains 13 case studies and 46 credentials: 18 Udacity credentials and 28 industry credentials. The authorized ND906 extension adds the Google Agentic AI Engineer Nanodegree and CS-13, covering four independent academic agent implementations. Its evidence distinguishes AI-assisted work, mocked checks, simulated research references, and historical live-model observations. Those observations do not establish production reliability or current service availability.
+The portfolio contains 14 case studies and 47 credentials: 19 Udacity credentials and 28 industry credentials. The authorized ND906 extension adds the Google Agentic AI Engineer Nanodegree and CS-13, covering four independent academic agent implementations. Its evidence distinguishes AI-assisted work, mocked checks, simulated research references, and historical live-model observations. Those observations do not establish production reliability or current service availability.
 
-The readability update preserves every existing data array verbatim: all 13 case studies, 18 Udacity credentials, 28 industry credentials, architecture tracks, core capabilities, credential groups, and enterprise timeline. CS-13 and the Google Agentic AI Engineer Nanodegree remain included.
+The authorized ND082 extension adds an Azure DevOps credential and CS-14, covering three independent academic projects: Azure infrastructure with Packer and Terraform, CI/CD with GitHub Actions and Azure Pipelines, and layered release-quality checks. Its evidence retains the scope of supplied applications, disclosed AI assistance, and historical results; it does not establish commercial impact or production reliability.
+
+Existing records remain verbatim alongside the authorized additions. The current arrays include 14 case studies, 19 Udacity credentials, 28 industry credentials, architecture tracks, core capabilities, credential groups, and the enterprise timeline. CS-13 and the Google Agentic AI Engineer Nanodegree remain included.
 
 The presentation uses a 1440px desktop container, larger responsive typography and controls, more space within the track cards, and clearer architecture diagrams. SVG labels are enlarged, and the orchestration header and numbered badges are repositioned. These authorized presentation changes are recorded alongside the earlier content additions in the source manifest. `src/App.tsx` has a new byte identity:
 
 ```text
-Current:  166698 bytes | SHA256 098d2b2bad375ad62e2ba767fb72e14d15903a14f6e1ab05742212f538221818
+Current:  174722 bytes | SHA256 fdaf2bc37486b0d1144ae00f6b830040d0f3ca65c6fd35814ef8d20eb31089f7
 Original: 157493 bytes | SHA256 1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d
 ```
 

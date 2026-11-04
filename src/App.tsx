@@ -120,7 +120,7 @@ const CORE_CAPABILITIES = [
 ];
 
 // ============================================================================
-// DATA: 12 SYSTEM CASE STUDIES (CS-01 TO CS-12 | CLEAN EXECUTIVE FORMAT)
+// DATA: 14 SYSTEM CASE STUDIES (CS-01 TO CS-14 | CLEAN EXECUTIVE FORMAT)
 // ============================================================================
 const CASE_STUDIES = [
   {
@@ -1176,13 +1176,168 @@ const CASE_STUDIES = [
       scopeSummary:
         'Four independent ND906 academic implementations accepted under reviews 4863109, 4863111, 4864251 and 4863110. The checksum identifies the complete program evidence ZIP. Source records disclose AI assistance and supplied-starter material; mocked checks, simulated references and live-model observations remain separately labeled, and current service availability was not revalidated.'
     }
+  },
+  {
+    id: 'cs-14',
+    code: 'CS-14',
+    category: 'cloud',
+    accent: 'indigo',
+    domainBadge: 'AZURE INFRASTRUCTURE, CI/CD & RELEASE QUALITY',
+    title: 'Azure Cloud DevOps: Infrastructure, CI/CD & Quality Release Gates',
+    subtitle: 'ND082: three independent, AI-assisted academic implementations covering Azure infrastructure, CI/CD delivery and release verification with supplied applications and historical evidence.',
+    stack: [
+      'Packer & Terraform',
+      'GitHub Actions',
+      'Azure Pipelines',
+      'Azure App Service & VMs',
+      'Newman, Selenium & JMeter',
+      'Azure Monitor & Log Analytics'
+    ],
+    headlineMetric: '3 Accepted Projects',
+    headlineMetricLabel: 'ND082 | 4 Nov 2026',
+    certName: 'Cloud DevOps using Microsoft Azure Nanodegree',
+    certUrl: 'https://www.udacity.com/certificate/e/7eaa03b8-d043-11f1-bd05-3b6d8f4ec1ee',
+    narrative: {
+      context: 'Three independent coursework scenarios require repeatable Azure provisioning, traceable application delivery and inspectable release gates. Their network controls, supplied applications, execution targets and retained evidence have different scopes.',
+      objective: 'Implement separately scoped infrastructure, CI/CD and release-quality workflows with reproducible configuration, explicit deployment gates, correlated telemetry and bounded cleanup evidence, preserving the provenance of each historical observation.',
+      execution: [
+        'P01 Infrastructure: used Packer and parameterized Terraform for tagged private Linux VMs, managed disks and a Standard Load Balancer, with NSG Internet denial, learner-resource-group scope guards, policy checks and saved apply/destroy readbacks.',
+        'P02 CI/CD: defined a Flask prediction contract, GitHub CI and Azure Pipelines Build/Deploy with federated identity configuration, isolated packaging, readiness/heading smoke gates and request-ID log correlation. The demonstrated source snapshot and later accepted documentation snapshot remain distinct.',
+        'P03 Release Quality: provisioned temporary Terraform infrastructure and deployed supplied precompiled FakeRestAPI to Windows App Service. Azure Pipelines coordinates Newman, bounded JMeter workloads, separate Selenium workflows against a public training site, Azure Monitor/Log Analytics and scoped cleanup readback.'
+      ],
+      outcome: 'P01 records 21 resources applied and later destroyed, with Hello World checks on both private VMs through Run Command; Internet ingress stays blocked and inert policy remnants remain. P02 saved Cloud Shell and GitHub runs each report 59 passing checks; the same demonstrated source snapshot completed Azure Build/Deploy and an HTTP 200 prediction correlated with its request-ID log. P03 retains 201 API assertion cases across 54 HTTP requests, three passing browser workflows, and 969 stress / 629 endurance successful workload requests, excluding one ownership preflight per load report. These are separate historical academic cohorts, not a production reliability score.'
+    },
+    takeaway: {
+      headline: 'Repeatable Delivery vs. Scoped Verification & Cleanup',
+      tradeoffLesson: 'Reproducible infrastructure and release gates answer different questions, so private-VM readbacks, local checks, CI runs and bounded load cohorts stay separately labeled. This AI-assisted coursework uses supplied applications and historical evidence; it does not establish current Azure availability, a production SLA or complete removal of every policy object.'
+    },
+    diagramConfig: {
+      title: 'ND082: Three independent Azure coursework implementations',
+      subtitleLine1: 'Conceptual reference across three separate academic infrastructure, CI/CD and release-quality implementations.',
+      subtitleLine2: 'Arrows show a common pattern; execution targets, verification cohorts and cleanup scope remain project-specific.',
+      orchestratorLabel: 'COMMON PATTERN | 3 INDEPENDENT AZURE PROJECTS',
+      entryNode: {
+        label: 'Scoped Coursework',
+        sub: '(Select P01 to P03)',
+        color: '#7C3AED',
+        icon: 'shield'
+      },
+      topServices: [
+        {
+          label: 'Packer/Terraform',
+          sub: '(Image / Scoped IaC)',
+          color: '#7C3AED',
+          icon: 'cloud'
+        },
+        {
+          label: 'GitHub CI',
+          sub: '(Saved CI Checks)',
+          color: '#059669',
+          icon: 'git'
+        },
+        {
+          label: 'Azure Pipelines',
+          sub: '(Project Releases)',
+          color: '#059669',
+          icon: 'git'
+        },
+        {
+          label: 'App Service',
+          sub: '(Supplied Apps)',
+          color: '#059669',
+          icon: 'api'
+        },
+        {
+          label: 'Azure Monitor',
+          sub: '(Logs / Alerts)',
+          color: '#059669',
+          icon: 'metrics'
+        }
+      ],
+      flowSteps: [
+        {
+          line1: 'Select one project',
+          line2: 'and verify its',
+          line3: 'resource scope'
+        },
+        {
+          line1: 'Prepare its image,',
+          line2: 'source or supplied',
+          line3: 'application artifact'
+        },
+        {
+          line1: 'Provision and',
+          line2: 'deploy that project',
+          line3: 'independently'
+        },
+        {
+          line1: 'Run its scoped',
+          line2: 'service, API or',
+          line3: 'release checks'
+        },
+        {
+          line1: 'Retain logs and',
+          line2: 'project-specific',
+          line3: 'cleanup evidence'
+        }
+      ],
+      branchLabel: 'Scope or gate control',
+      returnStep1: {
+        line1: 'Inspect retained',
+        line2: 'run-specific evidence'
+      },
+      returnStep2: {
+        line1: 'Keep cohorts and',
+        line2: 'cleanup scope distinct'
+      },
+      rightModelNode: {
+        label: 'Azure Runtime',
+        sub: '(VMs / App Service)',
+        color: '#059669',
+        icon: 'cloud'
+      },
+      bottomStoreNode: {
+        label: 'Accepted Artifacts',
+        sub: '(3 Independent ZIPs)',
+        color: '#7C3AED',
+        icon: 'lock'
+      }
+    },
+    evidence: {
+      credential: 'Cloud DevOps using Microsoft Azure Nanodegree (Udacity, Issued Nov 4, 2026)',
+      sha256: '94bc49d21086a6b24762d0b8b43acece97fef941312d5a0d52b24e290f99c9ac',
+      deliverables: [
+        'P01: Packer image configuration, parameterized Terraform topology, scope/policy guards and retained private-VM, deployment and bounded cleanup evidence.',
+        'P02: Flask contract and packaging, GitHub/Azure pipeline definitions, saved check results and correlated App Service prediction/log evidence, preserving source-snapshot provenance.',
+        'P03: Azure release pipeline, supplied application/test archives, separately counted API/browser/load results, monitoring records and scoped cleanup readback.',
+        'Complete ND082 evidence package with three original accepted submission ZIPs, source artifacts and recorded archive-integrity metadata.'
+      ],
+      filesIncluded: [
+        'nd082 Portfolio Evidence.zip',
+        'main.tf',
+        'server.json',
+        '.github/workflows/ci.yml',
+        'azure-pipelines.yml',
+        'azure-pipelines.yaml',
+        'execution-evidence/postman/TEST-DataValidation.xml',
+        'execution-evidence/cleanup-verification.json',
+        'scripts/pipeline_support.py'
+      ],
+      scopeSummary: 'Three independent accepted ND082 academic implementations, with disclosed AI assistance and supplied applications. The checksum identifies the complete program evidence ZIP. Saved infrastructure, CI/CD and release-verification cohorts retain their own network, source-snapshot, workload and cleanup limits; current Azure state and production reliability were not revalidated.'
+    }
   }
 ];
 
 // ============================================================================
-// DATA: OFFICIAL VERIFIED CERTIFICATES (17 Udacity + 28 Categorized Credentials)
+// DATA: OFFICIAL VERIFIED CERTIFICATES (19 Udacity + 28 Categorized Credentials)
 // ============================================================================
 const UDACITY_CERTIFICATES = [
+  {
+    title: 'Cloud DevOps using Microsoft Azure Nanodegree',
+    date: 'Nov 4, 2026',
+    category: 'Cloud DevOps & Azure',
+    url: 'https://www.udacity.com/certificate/e/7eaa03b8-d043-11f1-bd05-3b6d8f4ec1ee'
+  },
   {
     title: 'Google Agentic AI Engineer Nanodegree',
     date: 'Nov 4, 2026',
@@ -1534,7 +1689,7 @@ const ENTERPRISE_TIMELINE = [
     domainBadge: 'Multi-Agent AI, Cloud Architecture & Data Platforms',
     accent: 'indigo',
     summary:
-      'Designing deterministic generative AI workflows, stateful multi-agent systems, and cloud-native data pipelines backed by 18 completed Udacity Nanodegrees and courses (50+ accepted engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specializations.',
+      'Designing deterministic generative AI workflows, stateful multi-agent systems, and cloud-native data pipelines backed by 19 completed Udacity Nanodegrees and courses (50+ accepted engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specializations.',
     highlights: [
       'Architected stateful multi-agent orchestration pipelines using LangGraph, Anthropic Claude Code, and FastAPI with schema-validated tool execution, complexity routing, and automated faithfulness gates.',
       'Delivered end-to-end cloud reference implementations across AWS (SageMaker, Glue, Iceberg, Athena, ECS, Step Functions, CloudFormation), 5-job GitHub Actions MLOps pipelines, and real-time streaming platforms (Apache Kafka, Spark, Scala).',
@@ -2008,7 +2163,8 @@ export default function App() {
     'cs-10': true,
     'cs-11': true,
     'cs-12': true,
-    'cs-13': true
+    'cs-13': true,
+    'cs-14': true
   });
 
   // Clipboard state for SHA256 copy button
@@ -2212,7 +2368,7 @@ export default function App() {
             </h1>
 
             <p className="text-base sm:text-lg max-w-4xl leading-relaxed text-slate-600">
-              Combining 12 years of London enterprise delivery across DCD Academy, Tata Consultancy Services (supporting EDF Energy), and King&apos;s College Hospital NHS Foundation Trust with 18 graduated Udacity Nanodegrees and courses (50+ verified engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specializations.
+              Combining 12 years of London enterprise delivery across DCD Academy, Tata Consultancy Services (supporting EDF Energy), and King&apos;s College Hospital NHS Foundation Trust with 19 graduated Udacity Nanodegrees and courses (50+ verified engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specializations.
             </p>
 
             {/* Primary Hero Action Bar */}
@@ -2347,12 +2503,12 @@ export default function App() {
         </section>
 
         {/* ===================================================================
-            SECTION 2: SYSTEM CASE STUDIES & ARCHITECTURE DIAGRAMS (CS-01 TO CS-12)
+            SECTION 2: SYSTEM CASE STUDIES & ARCHITECTURE DIAGRAMS (CS-01 TO CS-14)
         =================================================================== */}
         <section id="section-cases" className="scroll-mt-24 space-y-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-indigo-200 bg-indigo-50 text-indigo-700 font-semibold mb-2">
-              <span>ENGINEERING & ARCHITECTURE CASE STUDIES (CS-01 TO CS-13)</span>
+              <span>ENGINEERING & ARCHITECTURE CASE STUDIES (CS-01 TO CS-14)</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
               System Architecture Diagrams, Execution & Measured Outcomes
@@ -2366,9 +2522,9 @@ export default function App() {
           <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-sm flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-1.5">
               {[
-                { id: 'all', label: 'All Case Studies (13)' },
+                { id: 'all', label: 'All Case Studies (14)' },
                 { id: 'ai', label: 'Agentic AI & AI Ops (5)' },
-                { id: 'cloud', label: 'Cloud & Serverless Architecture (3)' },
+                { id: 'cloud', label: 'Cloud & Serverless Architecture (4)' },
                 { id: 'data', label: 'Data, Scala, Vision & RevOps (5)' }
               ].map((tab) => {
                 const active = selectedCategory === tab.id;
@@ -2409,7 +2565,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* 12 Case Study Cards */}
+          {/* 14 Case Study Cards */}
           <div className="space-y-6">
             {filteredCaseStudies.map((cs) => {
               const isExpanded = expandedIds.includes(cs.id);
@@ -2664,7 +2820,7 @@ export default function App() {
         </section>
 
         {/* ===================================================================
-            SECTION 3: VERIFIED CREDENTIALS (17 Udacity + 28 Categorized Links)
+            SECTION 3: VERIFIED CREDENTIALS (19 Udacity + 28 Categorized Links)
         =================================================================== */}
         <section id="section-credentials" className="scroll-mt-24 space-y-8">
           <div>
@@ -2679,13 +2835,13 @@ export default function App() {
             </p>
           </div>
 
-          {/* Card 1: 17 Udacity Graduated Nanodegrees & Courses */}
+          {/* Card 1: 19 Udacity Graduated Nanodegrees & Courses */}
           <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm space-y-4">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5 text-indigo-600" />
                 <h3 className="text-xl font-bold text-slate-900">
-                  Udacity Graduated Nanodegrees & Advanced Engineering Certificates (18 Verified)
+                  Udacity Graduated Nanodegrees & Advanced Engineering Certificates (19 Verified)
                 </h3>
               </div>
               <span className="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">
