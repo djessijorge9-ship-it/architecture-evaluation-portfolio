@@ -1705,26 +1705,26 @@ const ENTERPRISE_TIMELINE = [
     domainBadge: 'Data Centre Infrastructure, Power, Cooling & AI Enablement',
     accent: 'indigo',
     summary:
-      'Led end-to-end technical learning architecture and AI-assisted curriculum production across mission-critical data-centre engineering domains in collaboration with 24 senior subject-matter experts.',
+      'Led end-to-end technical learning architecture and AI-assisted curriculum production across mission-critical data-centre engineering domains, acting as Team Lead to junior peers and collaborating with 24 senior subject-matter experts.',
     highlights: [
       'Curated and structured technical engineering programmes covering data-centre power distribution, liquid and air cooling thermodynamics, hyperscale cloud infrastructure, energy sustainability, and AI operations.',
       'Integrated generative AI production workflows (Anthropic Claude, ChatGPT, HeyGen, ElevenLabs) with Articulate Storyline 360 and Thought Industries LMS to standardize technical accuracy and modular delivery.',
-      'Partnered directly with 24 principal engineers and industry SMEs to translate complex infrastructure specifications and operational runbooks into scenario-driven engineering assessments.'
+      'Acted as Team Lead mentoring and coaching junior peers while partnering with 24 principal engineers and industry SMEs to translate complex infrastructure specifications into competency frameworks, SOPs, and scenario-driven assessments.'
     ],
     tags: ['Data Centre Infrastructure', 'Power & Cooling Systems', 'AI Production Workflows', 'SME Collaboration', 'Thought Industries LMS']
   },
   {
     period: '2018–2023',
-    role: '1st to 3rd Line Technical Support Engineer',
+    role: '1st to 3rd Line Technical Support Engineer & Team Lead',
     company: 'Tata Consultancy Services (Supporting EDF Energy)',
     location: 'London & Croydon, United Kingdom',
     domainBadge: 'Red, Green & Blue Segregated Enterprise Networks',
     accent: 'emerald',
     summary:
-      'Provided high-availability 1st to 3rd line infrastructure, endpoint, and energy trading-floor support for EDF Energy across strictly segregated corporate and power generation network environments.',
+      'Provided high-availability 1st to 3rd line infrastructure, endpoint, and energy trading-floor support for EDF Energy across strictly segregated corporate and power generation network environments, acting as Team Lead and senior escalation point for junior support engineers.',
     highlights: [
       'Supported critical enterprise operations across EDF Energy corporate networks (Red and Green), power Generation enclaves (Blue), and live wholesale energy trading-floor systems at Interchange Croydon.',
-      'Executed deep root-cause incident diagnostics, problem management escalations, and change control governance using ServiceNow across enterprise Windows estates and virtualized infrastructure.',
+      'Acted as Team Lead overseeing queue health, SLA compliance, and shift handovers; mentored junior 1st/2nd line analysts on root-cause incident diagnostics, problem management escalations, and change control governance in ServiceNow.',
       'Managed endpoint security compliance, automated software deployment, and real-time user experience telemetry using Microsoft Intune, Active Directory, and Aternity monitoring.'
     ],
     tags: ['ServiceNow Diagnostics', 'Red/Green/Blue Networks', 'Microsoft Intune', 'Aternity Telemetry', 'Trading Floor Support']

@@ -4,8 +4,8 @@
     "sha256": "1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d"
   },
   "current": {
-    "bytes": 174722,
-    "sha256": "fdaf2bc37486b0d1144ae00f6b830040d0f3ca65c6fd35814ef8d20eb31089f7"
+    "bytes": 174939,
+    "sha256": "9a8bc2cdf4d1482b39018b3881fdb992176f3f145d076f22fa8ab9c689171a06"
   },
   "changes": [
     {
@@ -136,6 +136,31 @@
     {
       "before": "{/* Card 1: 17 Udacity Graduated Nanodegrees & Courses */}",
       "after": "{/* Card 1: 19 Udacity Graduated Nanodegrees & Courses */}",
+      "occurrences": 1
+    },
+    {
+      "before": "Led end-to-end technical learning architecture and AI-assisted curriculum production across mission-critical data-centre engineering domains in collaboration with 24 senior subject-matter experts.",
+      "after": "Led end-to-end technical learning architecture and AI-assisted curriculum production across mission-critical data-centre engineering domains, acting as Team Lead to junior peers and collaborating with 24 senior subject-matter experts.",
+      "occurrences": 1
+    },
+    {
+      "before": "Partnered directly with 24 principal engineers and industry SMEs to translate complex infrastructure specifications and operational runbooks into scenario-driven engineering assessments.",
+      "after": "Acted as Team Lead mentoring and coaching junior peers while partnering with 24 principal engineers and industry SMEs to translate complex infrastructure specifications into competency frameworks, SOPs, and scenario-driven assessments.",
+      "occurrences": 1
+    },
+    {
+      "before": "1st to 3rd Line Technical Support Engineer",
+      "after": "1st to 3rd Line Technical Support Engineer & Team Lead",
+      "occurrences": 1
+    },
+    {
+      "before": "Provided high-availability 1st to 3rd line infrastructure, endpoint, and energy trading-floor support for EDF Energy across strictly segregated corporate and power generation network environments.",
+      "after": "Provided high-availability 1st to 3rd line infrastructure, endpoint, and energy trading-floor support for EDF Energy across strictly segregated corporate and power generation network environments, acting as Team Lead and senior escalation point for junior support engineers.",
+      "occurrences": 1
+    },
+    {
+      "before": "Executed deep root-cause incident diagnostics, problem management escalations, and change control governance using ServiceNow across enterprise Windows estates and virtualized infrastructure.",
+      "after": "Acted as Team Lead overseeing queue health, SLA compliance, and shift handovers; mentored junior 1st/2nd line analysts on root-cause incident diagnostics, problem management escalations, and change control governance in ServiceNow.",
       "occurrences": 1
     }
   ]

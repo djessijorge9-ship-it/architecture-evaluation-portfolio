@@ -15,7 +15,7 @@ Existing records remain verbatim alongside the authorized additions. The current
 The presentation uses a 1440px desktop container, larger responsive typography and controls, more space within the track cards, and clearer architecture diagrams. SVG labels are enlarged, and the orchestration header and numbered badges are repositioned. These authorized presentation changes are recorded alongside the earlier content additions in the source manifest. `src/App.tsx` has a new byte identity:
 
 ```text
-Current:  174722 bytes | SHA256 fdaf2bc37486b0d1144ae00f6b830040d0f3ca65c6fd35814ef8d20eb31089f7
+Current:  174939 bytes | SHA256 9a8bc2cdf4d1482b39018b3881fdb992176f3f145d076f22fa8ab9c689171a06
 Original: 157493 bytes | SHA256 1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d
 ```
 
