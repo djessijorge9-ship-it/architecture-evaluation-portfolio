@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   ChevronDown,
   ChevronUp,
@@ -31,7 +31,7 @@ const ARCHITECTURE_TRACKS = [
     badge: 'Cloud Modernisation, Multi-Region Networking & FinOps',
     accent: 'indigo',
     businessValue:
-      'I design resilient cloud infrastructure, cross-region networks and event-driven AI workloads, with least-privilege IAM, FinOps controls and measures to prevent downtime.',
+      'Designs resilient cloud infrastructure, cross-region networks and event-driven AI workloads, with least-privilege IAM, FinOps controls and measures to prevent downtime.',
     matchedSkills: [
       'AWS Well-Architected',
       'AWS CloudFormation & VPC Peering',
@@ -48,7 +48,7 @@ const ARCHITECTURE_TRACKS = [
     badge: 'Multi-Agent Systems, Claude SDK & Automated CI/CD',
     accent: 'emerald',
     businessValue:
-      'I build stateful multi-agent workflows, automated code review agents and 5-job GitHub Actions MLOps pipelines, using drift checks and escalation guardrails to handle enterprise workflows safely.',
+      'Builds stateful multi-agent workflows, automated code review agents and 5-job GitHub Actions MLOps pipelines, using drift checks and escalation guardrails to handle enterprise workflows safely.',
     matchedSkills: [
       'LangGraph & LangChain',
       'Claude Agent SDK & MCP',
@@ -65,7 +65,7 @@ const ARCHITECTURE_TRACKS = [
     badge: 'Lakehouses, Kafka/Spark, Scala FP & CRM Integration',
     accent: 'amber',
     businessValue:
-      'I build and validate Medallion lakehouses, functional Scala pipelines, computer vision workflows and HubSpot CRM synchronisation bridges for high-volume event streams and batch datasets, with zero-drift replay verification.',
+      'Builds and validates Medallion lakehouses, functional Scala pipelines, computer vision workflows and HubSpot CRM synchronisation bridges for high-volume event streams and batch datasets, with zero-drift replay verification.',
     matchedSkills: [
       'Apache Kafka, Faust & KSQL',
       'AWS Glue, Iceberg & Athena',
@@ -1329,6 +1329,30 @@ const CASE_STUDIES = [
 ];
 
 // ============================================================================
+// DATA: FEATURED ARCHITECTURAL IMPLEMENTATIONS
+// ============================================================================
+const FEATURED_IMPLEMENTATIONS = [
+  {
+    "projectId": "cs-05",
+    "focus": "Private AWS networking and governance",
+    "contribution": "Configured and verified private VPC peering across two AWS regions, with route tables, security groups and flow-log checks. Produced a separate multi-account governance and FinOps blueprint.",
+    "decision": "Explicit CIDR routes and least-privilege security groups support private communication; the separate OU/SCP design remains a governance blueprint."
+  },
+  {
+    "projectId": "cs-14",
+    "focus": "Azure delivery and release checks",
+    "contribution": "Implemented Azure infrastructure, CI/CD and release checks across three independent projects using supplied applications and AI assistance, supported by historical execution evidence.",
+    "decision": "Separated provisioning, deployment readiness and release testing so that each check had a clear purpose and evidence scope."
+  },
+  {
+    "projectId": "cs-01",
+    "focus": "LLM routing and modelled cost",
+    "contribution": "Built a two-tier router and Chroma semantic cache, validated routing, caching and fallback across 231 unit tests, and produced a 74-row cost ledger.",
+    "decision": "Checked the cache before reserving the stronger model for complex queries; the ledger records a 65.0% modelled saving against an all-gpt-4o baseline."
+  }
+];
+
+// ============================================================================
 // DATA: OFFICIAL VERIFIED CERTIFICATES (19 Udacity + 28 Categorized Credentials)
 // ============================================================================
 const UDACITY_CERTIFICATES = [
@@ -2148,6 +2172,7 @@ export default function App() {
 
   // First project expanded by default
   const [expandedIds, setExpandedIds] = useState(['cs-01']);
+  const [pendingCaseId, setPendingCaseId] = useState(null);
 
   // Optional Architectural Takeaway visibility per project
   const [openTakeaways, setOpenTakeaways] = useState({
@@ -2210,6 +2235,31 @@ export default function App() {
   const toggleTakeaway = (id) => {
     setOpenTakeaways((prev) => ({ ...prev, [id]: !prev[id] }));
   };
+
+  // Open the full case after React has applied the filter and expansion changes.
+  const openImplementation = (id) => {
+    setSelectedCategory('all');
+    setSearchQuery('');
+    setExpandedIds((ids) => ids.includes(id) ? ids : [...ids, id]);
+    setActiveNav('cases');
+    setPendingCaseId(id);
+  };
+
+  useEffect(() => {
+    if (!pendingCaseId || selectedCategory !== 'all' || searchQuery || !expandedIds.includes(pendingCaseId)) return;
+    const article = document.getElementById(`case-${pendingCaseId}`);
+    const heading = document.getElementById(`case-title-${pendingCaseId}`);
+    if (!article || !heading) return;
+    const frame = window.requestAnimationFrame(() => {
+      heading.focus({ preventScroll: true });
+      article.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start'
+      });
+      setPendingCaseId(null);
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [pendingCaseId, selectedCategory, searchQuery, expandedIds]);
 
   // Smooth navigation scroll
   const scrollToSection = (navId, elementId) => {
@@ -2357,16 +2407,16 @@ export default function App() {
             </h1>
 
             <p className="text-base sm:text-lg max-w-4xl leading-relaxed text-slate-600">
-              I have 12 years of experience in London, working at DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust. My training includes 19 completed Udacity Nanodegrees and courses (50+ verified engineering projects), plus AWS, Anthropic, LangChain, IBM and EPFL specialisations.
+              Experience spans 12 years across enterprise IT support, clinical systems and technical learning in London, including DCD Academy, Tata Consultancy Services supporting EDF Energy, and King&apos;s College Hospital NHS Foundation Trust. Responsibilities have included team leadership, mentoring junior colleagues, support queue management and escalations, clinical system implementation and statutory data validation. Current independent technical practice focuses on cloud, AI and data implementations, with scope and evidence documented in the case studies.
             </p>
 
             {/* Primary Hero Action Bar */}
             <div className="flex flex-wrap items-center gap-3 pt-1">
               <button
-                onClick={() => scrollToSection('cases', 'section-cases')}
+                onClick={() => scrollToSection('cases', 'section-featured')}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm sm:text-base font-semibold border border-indigo-200 bg-indigo-50/70 hover:bg-indigo-100/80 text-indigo-700 transition-colors"
               >
-                <span>Explore System Case Studies</span>
+                <span>Explore featured implementations</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
@@ -2379,6 +2429,67 @@ export default function App() {
               </button>
             </div>
           </div>
+
+          {/* Featured architectural implementations */}
+          <section id="section-featured" aria-labelledby="featured-heading" className="scroll-mt-8 rounded-xl border border-slate-200 bg-white p-5 sm:p-6 space-y-5 shadow-sm">
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div className="space-y-2 max-w-4xl">
+                <h2 id="featured-heading" className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
+                  Featured architectural implementations
+                </h2>
+                <p className="text-sm sm:text-base leading-relaxed text-slate-600">
+                  Cloud networking, Azure delivery and cost-aware AI, with clear implementation scope, design decisions and recorded verification.
+                </p>
+              </div>
+              <button type="button" onClick={() => scrollToSection('cases', 'section-cases')} className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-700 hover:text-indigo-900 underline underline-offset-4">
+                View all 14 case studies <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+              {FEATURED_IMPLEMENTATIONS.map((feature) => {
+                const cs = CASE_STUDIES.find((project) => project.id === feature.projectId);
+                if (!cs) return null;
+                return (
+                  <article key={cs.id} aria-labelledby={`featured-${cs.id}`} className="min-w-0 rounded-lg border border-slate-200 border-t-4 border-t-indigo-600 bg-slate-50/70 p-5 flex flex-col gap-4">
+                    <div className="space-y-3">
+                      <span className="inline-block rounded-md bg-indigo-100 px-2.5 py-1 text-xs font-mono font-bold text-indigo-800">{cs.code}</span>
+                      <h3 id={`featured-${cs.id}`} className="text-lg sm:text-xl font-bold leading-snug text-slate-900">{feature.focus}</h3>
+                      <div className="flex flex-wrap gap-1.5">
+                        {cs.stack.slice(0, 3).map((technology) => (
+                          <span key={technology} className="max-w-full rounded-md border border-slate-200 bg-white px-2 py-1 text-xs font-mono text-slate-600">{technology}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <dl className="space-y-4 text-sm sm:text-[15px] leading-relaxed text-slate-600">
+                      <div>
+                        <dt className="mb-1 text-xs font-bold uppercase tracking-wide text-slate-800">Implementation</dt>
+                        <dd>{feature.contribution}</dd>
+                      </div>
+                      <div>
+                        <dt className="mb-1 text-xs font-bold uppercase tracking-wide text-slate-800">Design decision</dt>
+                        <dd>{feature.decision}</dd>
+                      </div>
+                    </dl>
+                    <div className="mt-auto pt-4 border-t border-slate-200 space-y-4">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Recorded verification</p>
+                        <p className="mt-1 text-lg font-mono font-bold leading-snug text-indigo-700 break-words">{cs.headlineMetric}</p>
+                        <p className="mt-1 text-xs sm:text-sm font-mono text-slate-500">{cs.headlineMetricLabel}</p>
+                      </div>
+                      <button type="button" onClick={() => openImplementation(cs.id)} aria-label={`Open implementation: ${cs.code} ${feature.focus}`} className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 text-sm font-semibold text-white hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                        Open implementation <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+            <p className="text-xs sm:text-sm leading-relaxed text-slate-500">
+              Independent academic implementations. Supplied components, assistance and historical verification limits are retained in the project details.
+            </p>
+          </section>
+
 
           {/* CORE ARCHITECTURE & ENGINEERING TRACKS (Static Skill Badges) */}
           <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 space-y-4 shadow-sm">
@@ -2584,7 +2695,9 @@ export default function App() {
               return (
                 <article
                   key={cs.id}
-                  className={`rounded-xl border border-slate-200 bg-white shadow-sm transition-all overflow-hidden ${leftBorderAccent}`}
+                  id={`case-${cs.id}`}
+                  aria-labelledby={`case-title-${cs.id}`}
+                  className={`scroll-mt-8 rounded-xl border border-slate-200 bg-white shadow-sm transition-all overflow-hidden ${leftBorderAccent}`}
                 >
                   {/* Card Header */}
                   <div
@@ -2601,7 +2714,7 @@ export default function App() {
                         </span>
                       </div>
 
-                      <h3 className="text-xl sm:text-2xl font-bold leading-snug text-slate-900">
+                      <h3 id={`case-title-${cs.id}`} tabIndex={-1} className="text-xl sm:text-2xl font-bold leading-snug text-slate-900">
                         {cs.title}
                       </h3>
                       <p className="text-sm sm:text-base leading-relaxed text-slate-600">{cs.subtitle}</p>
@@ -2820,7 +2933,7 @@ export default function App() {
               Verified Udacity Nanodegrees, Coursera Specialisations & Certifications
             </h2>
             <p className="text-sm mt-1 text-slate-600">
-              Select any credential below to open its official verification page on Udacity, Coursera, Anthropic, LangChain Academy, DeepLearning.AI, or HubSpot Academy.
+              47 verified credentials: 19 Udacity Nanodegrees and courses, plus 28 industry credentials. Select any credential below to open its official verification page on Udacity, Coursera, Anthropic, LangChain Academy, DeepLearning.AI, or HubSpot Academy.
             </p>
           </div>
 

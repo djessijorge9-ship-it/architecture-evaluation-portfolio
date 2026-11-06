@@ -4,8 +4,8 @@
     "sha256": "1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d"
   },
   "current": {
-    "bytes": 174130,
-    "sha256": "14a8fc987bfb86b77efaa7c531cbfb3aaa3d374e1cc89453d84337c08f44bef7"
+    "bytes": 181762,
+    "sha256": "3083c84e4e89ba912faa3c0c3451fd2bc24ba9c80967eb79b365ab3a72df82d2"
   },
   "changes": [
     {
@@ -646,6 +646,76 @@
     {
       "before": "{ line1: 'Render 256x256', line2: 'colour-mapped slippy', line3: 'map PNG tiles' }",
       "after": "{ line1: 'Render 256x256', line2: 'colour-mapped', line3: 'slippy map PNG tiles' }",
+      "occurrences": 1
+    },
+    {
+      "before": "import React, { useState, useMemo } from 'react';",
+      "after": "import React, { useState, useMemo, useEffect } from 'react';",
+      "occurrences": 1
+    },
+    {
+      "before": "// ============================================================================\n// DATA: OFFICIAL VERIFIED CERTIFICATES",
+      "after": "// ============================================================================\n// DATA: FEATURED ARCHITECTURAL IMPLEMENTATIONS\n// ============================================================================\nconst FEATURED_IMPLEMENTATIONS = [\n  {\n    \"projectId\": \"cs-05\",\n    \"focus\": \"Private AWS networking and governance\",\n    \"contribution\": \"Configured and verified private VPC peering across two AWS regions, with route tables, security groups and flow-log checks. Produced a separate multi-account governance and FinOps blueprint.\",\n    \"decision\": \"Explicit CIDR routes and least-privilege security groups support private communication; the separate OU/SCP design remains a governance blueprint.\"\n  },\n  {\n    \"projectId\": \"cs-14\",\n    \"focus\": \"Azure delivery and release checks\",\n    \"contribution\": \"Implemented Azure infrastructure, CI/CD and release checks across three independent projects using supplied applications and AI assistance, supported by historical execution evidence.\",\n    \"decision\": \"Separated provisioning, deployment readiness and release testing so that each check had a clear purpose and evidence scope.\"\n  },\n  {\n    \"projectId\": \"cs-01\",\n    \"focus\": \"LLM routing and modelled cost\",\n    \"contribution\": \"Built a two-tier router and Chroma semantic cache, validated routing, caching and fallback across 231 unit tests, and produced a 74-row cost ledger.\",\n    \"decision\": \"Checked the cache before reserving the stronger model for complex queries; the ledger records a 65.0% modelled saving against an all-gpt-4o baseline.\"\n  }\n];\n\n// ============================================================================\n// DATA: OFFICIAL VERIFIED CERTIFICATES",
+      "occurrences": 1
+    },
+    {
+      "before": "  const [expandedIds, setExpandedIds] = useState(['cs-01']);",
+      "after": "  const [expandedIds, setExpandedIds] = useState(['cs-01']);\n  const [pendingCaseId, setPendingCaseId] = useState(null);",
+      "occurrences": 1
+    },
+    {
+      "before": "  // Smooth navigation scroll",
+      "after": "  // Open the full case after React has applied the filter and expansion changes.\n  const openImplementation = (id) => {\n    setSelectedCategory('all');\n    setSearchQuery('');\n    setExpandedIds((ids) => ids.includes(id) ? ids : [...ids, id]);\n    setActiveNav('cases');\n    setPendingCaseId(id);\n  };\n\n  useEffect(() => {\n    if (!pendingCaseId || selectedCategory !== 'all' || searchQuery || !expandedIds.includes(pendingCaseId)) return;\n    const article = document.getElementById(`case-${pendingCaseId}`);\n    const heading = document.getElementById(`case-title-${pendingCaseId}`);\n    if (!article || !heading) return;\n    const frame = window.requestAnimationFrame(() => {\n      heading.focus({ preventScroll: true });\n      article.scrollIntoView({\n        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',\n        block: 'start'\n      });\n      setPendingCaseId(null);\n    });\n    return () => window.cancelAnimationFrame(frame);\n  }, [pendingCaseId, selectedCategory, searchQuery, expandedIds]);\n\n  // Smooth navigation scroll",
+      "occurrences": 1
+    },
+    {
+      "before": "I have 12 years of experience in London, working at DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust. My training includes 19 completed Udacity Nanodegrees and courses (50+ verified engineering projects), plus AWS, Anthropic, LangChain, IBM and EPFL specialisations.",
+      "after": "Experience spans 12 years across enterprise IT support, clinical systems and technical learning in London, including DCD Academy, Tata Consultancy Services supporting EDF Energy, and King&apos;s College Hospital NHS Foundation Trust. Responsibilities have included team leadership, mentoring junior colleagues, support queue management and escalations, clinical system implementation and statutory data validation. Current independent technical practice focuses on cloud, AI and data implementations, with scope and evidence documented in the case studies.",
+      "occurrences": 1
+    },
+    {
+      "before": "onClick={() => scrollToSection('cases', 'section-cases')}",
+      "after": "onClick={() => scrollToSection('cases', 'section-featured')}",
+      "occurrences": 1
+    },
+    {
+      "before": "<span>Explore System Case Studies</span>",
+      "after": "<span>Explore featured implementations</span>",
+      "occurrences": 1
+    },
+    {
+      "before": "          {/* CORE ARCHITECTURE & ENGINEERING TRACKS (Static Skill Badges) */}",
+      "after": "          {/* Featured architectural implementations */}\n          <section id=\"section-featured\" aria-labelledby=\"featured-heading\" className=\"scroll-mt-8 rounded-xl border border-slate-200 bg-white p-5 sm:p-6 space-y-5 shadow-sm\">\n            <div className=\"flex flex-wrap items-start justify-between gap-4\">\n              <div className=\"space-y-2 max-w-4xl\">\n                <h2 id=\"featured-heading\" className=\"text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900\">\n                  Featured architectural implementations\n                </h2>\n                <p className=\"text-sm sm:text-base leading-relaxed text-slate-600\">\n                  Cloud networking, Azure delivery and cost-aware AI, with clear implementation scope, design decisions and recorded verification.\n                </p>\n              </div>\n              <button type=\"button\" onClick={() => scrollToSection('cases', 'section-cases')} className=\"inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-700 hover:text-indigo-900 underline underline-offset-4\">\n                View all 14 case studies <ArrowRight className=\"w-4 h-4\" aria-hidden=\"true\" />\n              </button>\n            </div>\n\n            <div className=\"grid grid-cols-1 lg:grid-cols-3 gap-5\">\n              {FEATURED_IMPLEMENTATIONS.map((feature) => {\n                const cs = CASE_STUDIES.find((project) => project.id === feature.projectId);\n                if (!cs) return null;\n                return (\n                  <article key={cs.id} aria-labelledby={`featured-${cs.id}`} className=\"min-w-0 rounded-lg border border-slate-200 border-t-4 border-t-indigo-600 bg-slate-50/70 p-5 flex flex-col gap-4\">\n                    <div className=\"space-y-3\">\n                      <span className=\"inline-block rounded-md bg-indigo-100 px-2.5 py-1 text-xs font-mono font-bold text-indigo-800\">{cs.code}</span>\n                      <h3 id={`featured-${cs.id}`} className=\"text-lg sm:text-xl font-bold leading-snug text-slate-900\">{feature.focus}</h3>\n                      <div className=\"flex flex-wrap gap-1.5\">\n                        {cs.stack.slice(0, 3).map((technology) => (\n                          <span key={technology} className=\"max-w-full rounded-md border border-slate-200 bg-white px-2 py-1 text-xs font-mono text-slate-600\">{technology}</span>\n                        ))}\n                      </div>\n                    </div>\n                    <dl className=\"space-y-4 text-sm sm:text-[15px] leading-relaxed text-slate-600\">\n                      <div>\n                        <dt className=\"mb-1 text-xs font-bold uppercase tracking-wide text-slate-800\">Implementation</dt>\n                        <dd>{feature.contribution}</dd>\n                      </div>\n                      <div>\n                        <dt className=\"mb-1 text-xs font-bold uppercase tracking-wide text-slate-800\">Design decision</dt>\n                        <dd>{feature.decision}</dd>\n                      </div>\n                    </dl>\n                    <div className=\"mt-auto pt-4 border-t border-slate-200 space-y-4\">\n                      <div>\n                        <p className=\"text-xs font-semibold uppercase tracking-wide text-slate-500\">Recorded verification</p>\n                        <p className=\"mt-1 text-lg font-mono font-bold leading-snug text-indigo-700 break-words\">{cs.headlineMetric}</p>\n                        <p className=\"mt-1 text-xs sm:text-sm font-mono text-slate-500\">{cs.headlineMetricLabel}</p>\n                      </div>\n                      <button type=\"button\" onClick={() => openImplementation(cs.id)} aria-label={`Open implementation: ${cs.code} ${feature.focus}`} className=\"w-full inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 text-sm font-semibold text-white hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600\">\n                        Open implementation <ArrowRight className=\"w-4 h-4\" aria-hidden=\"true\" />\n                      </button>\n                    </div>\n                  </article>\n                );\n              })}\n            </div>\n            <p className=\"text-xs sm:text-sm leading-relaxed text-slate-500\">\n              Independent academic implementations. Supplied components, assistance and historical verification limits are retained in the project details.\n            </p>\n          </section>\n\n\n          {/* CORE ARCHITECTURE & ENGINEERING TRACKS (Static Skill Badges) */}",
+      "occurrences": 1
+    },
+    {
+      "before": "I design resilient cloud infrastructure, cross-region networks and event-driven AI workloads, with least-privilege IAM, FinOps controls and measures to prevent downtime.",
+      "after": "Designs resilient cloud infrastructure, cross-region networks and event-driven AI workloads, with least-privilege IAM, FinOps controls and measures to prevent downtime.",
+      "occurrences": 1
+    },
+    {
+      "before": "I build stateful multi-agent workflows, automated code review agents and 5-job GitHub Actions MLOps pipelines, using drift checks and escalation guardrails to handle enterprise workflows safely.",
+      "after": "Builds stateful multi-agent workflows, automated code review agents and 5-job GitHub Actions MLOps pipelines, using drift checks and escalation guardrails to handle enterprise workflows safely.",
+      "occurrences": 1
+    },
+    {
+      "before": "I build and validate Medallion lakehouses, functional Scala pipelines, computer vision workflows and HubSpot CRM synchronisation bridges for high-volume event streams and batch datasets, with zero-drift replay verification.",
+      "after": "Builds and validates Medallion lakehouses, functional Scala pipelines, computer vision workflows and HubSpot CRM synchronisation bridges for high-volume event streams and batch datasets, with zero-drift replay verification.",
+      "occurrences": 1
+    },
+    {
+      "before": "                  key={cs.id}\n                  className={`rounded-xl border border-slate-200 bg-white shadow-sm transition-all overflow-hidden ${leftBorderAccent}`}",
+      "after": "                  key={cs.id}\n                  id={`case-${cs.id}`}\n                  aria-labelledby={`case-title-${cs.id}`}\n                  className={`scroll-mt-8 rounded-xl border border-slate-200 bg-white shadow-sm transition-all overflow-hidden ${leftBorderAccent}`}",
+      "occurrences": 1
+    },
+    {
+      "before": "<h3 className=\"text-xl sm:text-2xl font-bold leading-snug text-slate-900\">\n                        {cs.title}",
+      "after": "<h3 id={`case-title-${cs.id}`} tabIndex={-1} className=\"text-xl sm:text-2xl font-bold leading-snug text-slate-900\">\n                        {cs.title}",
+      "occurrences": 1
+    },
+    {
+      "before": "Select any credential below to open its official verification page on Udacity, Coursera, Anthropic, LangChain Academy, DeepLearning.AI, or HubSpot Academy.",
+      "after": "47 verified credentials: 19 Udacity Nanodegrees and courses, plus 28 industry credentials. Select any credential below to open its official verification page on Udacity, Coursera, Anthropic, LangChain Academy, DeepLearning.AI, or HubSpot Academy.",
       "occurrences": 1
     }
   ]

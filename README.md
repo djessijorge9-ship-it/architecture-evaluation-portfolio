@@ -12,10 +12,12 @@ The authorized ND082 extension adds an Azure DevOps credential and CS-14, coveri
 
 Authorised copy refinements use plain UK English in authored prose while retaining official credential titles, URLs, source paths, metrics, and facts. The current arrays include 14 case studies, 19 Udacity credentials, 28 industry credentials, architecture tracks, core capabilities, credential groups, and the enterprise timeline. CS-13 and the Google Agentic AI Engineer Nanodegree remain included.
 
+The introduction emphasises enterprise engineering experience. Three featured implementation cards sit immediately after the hero and before the architecture tracks: CS-05, CS-14, and CS-01. Each shows the contribution, a design decision, and an existing verified metric. Its `Open implementation` action clears filters, expands the corresponding case study, and scrolls to and focuses that case. The cards use `FEATURED_IMPLEMENTATIONS`; all 14 case-study objects, 47 credentials, and the enterprise timeline are unchanged by this feature. The hero and three architecture-track business-value summaries use a neutral voice while retaining their facts.
+
 The presentation uses a 1440px desktop container, larger responsive typography and controls, more space within the track cards, and clearer architecture diagrams. SVG labels are enlarged, and the orchestration header and numbered badges are repositioned. Header branding is simplified, with a small location icon and `LONDON, UK`. Authorised presentation and copy changes are recorded alongside the earlier content additions in the source manifest. `src/App.tsx` has a new byte identity:
 
 ```text
-Current:  174130 bytes | SHA256 14a8fc987bfb86b77efaa7c531cbfb3aaa3d374e1cc89453d84337c08f44bef7
+Current:  181762 bytes | SHA256 3083c84e4e89ba912faa3c0c3451fd2bc24ba9c80967eb79b365ab3a72df82d2
 Original: 157493 bytes | SHA256 1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d
 ```
 
