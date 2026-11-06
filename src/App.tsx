@@ -31,7 +31,7 @@ const ARCHITECTURE_TRACKS = [
     badge: 'Cloud Modernisation, Multi-Region Networking & FinOps',
     accent: 'indigo',
     businessValue:
-      'Designs resilient cloud infrastructure, cross-region networks and event-driven AI workloads, with least-privilege IAM, FinOps controls and measures to prevent downtime.',
+      'Combines two-region private networking, container delivery and event-driven AI coursework with separate IAM, FinOps and multi-account design exercises.',
     matchedSkills: [
       'AWS Well-Architected',
       'AWS CloudFormation & VPC Peering',
@@ -44,11 +44,11 @@ const ARCHITECTURE_TRACKS = [
   },
   {
     id: 'track-ai',
-    trackTitle: 'Agentic AI & Production LLMOps Engineering',
+    trackTitle: 'Agentic AI & LLMOps Engineering',
     badge: 'Multi-Agent Systems, Claude SDK & Automated CI/CD',
     accent: 'emerald',
     businessValue:
-      'Builds stateful multi-agent workflows, automated code review agents and 5-job GitHub Actions MLOps pipelines, using drift checks and escalation guardrails to handle enterprise workflows safely.',
+      'Work covers stateful agents, code-review tooling and five-job MLOps pipelines, with scoped context, drift checks and recorded test and review workflows.',
     matchedSkills: [
       'LangGraph & LangChain',
       'Claude Agent SDK & MCP',
@@ -65,14 +65,14 @@ const ARCHITECTURE_TRACKS = [
     badge: 'Lakehouses, Kafka/Spark, Scala FP & CRM Integration',
     accent: 'amber',
     businessValue:
-      'Builds and validates Medallion lakehouses, functional Scala pipelines, computer vision workflows and HubSpot CRM synchronisation bridges for high-volume event streams and batch datasets, with zero-drift replay verification.',
+      'Covers lakehouse and streaming coursework, Scala implementations, vision projects and a five-company HubSpot bridge, with validation results kept separate by project and run.',
     matchedSkills: [
       'Apache Kafka, Faust & KSQL',
       'AWS Glue, Iceberg & Athena',
       'Amazon SageMaker & Step Functions',
       'Scala Functional Programming',
       'PyTorch CNN & OpenCV',
-      'HubSpot CRM API & Clay Sync'
+      'HubSpot API & Clay Import/Review'
     ],
     relevantProjects: 'CS-08 (Exastore Lakehouse), CS-09 (Kafka/Spark), CS-10 (Scala FP), CS-11 (Vision) & CS-12 (HubSpot Sync)'
   }
@@ -85,37 +85,37 @@ const CORE_CAPABILITIES = [
   {
     id: 'cap-1',
     accent: 'indigo',
-    title: 'Multi-Agent AI Systems, Claude SDK & Deterministic LLMOps',
+    title: 'Multi-Agent AI Systems, Claude SDK & LLMOps',
     detail:
-      'Stateful agent routing with LangGraph, TypeScript Claude Agent SDK specialists, Model Context Protocol (MCP), semantic vector caching, and tiered LLM cost optimisation.'
+      'Stateful agent workflows, TypeScript Claude Agent SDK specialists, Model Context Protocol tools, semantic caching and tiered LLM routing, with project-specific assistance and validation records.'
   },
   {
     id: 'cap-2',
     accent: 'emerald',
     title: 'Enterprise Data Lakehouses, Event Streaming & Functional Scala',
     detail:
-      'Bronze-Silver-Gold Medallion lakehouses on AWS Glue, Apache Iceberg, and Amazon Athena, real-time Kafka/Faust/KSQL and Spark Structured Streaming, and 100%-scored EPFL Scala functional pipelines.'
+      'Bronze-Silver-Gold lakehouse coursework on AWS Glue, Iceberg and Athena; Kafka/Faust/KSQL and Spark streaming; and 17 Scala assignments with separately recorded checks.'
   },
   {
     id: 'cap-3',
     accent: 'indigo',
     title: 'Cloud Infrastructure, Cross-Region Networking & Container Migration',
     detail:
-      'Two-region AWS VPC peering and routing validation, version-pinned AWS Glue and Amazon ECS FastAPI microservice migrations, and CloudFormation event-driven Amazon Bedrock workloads.'
+      'Historical two-region AWS private-network checks, starter-derived Glue/ECS fraud workflows and CloudFormation-managed S3/Lambda/Bedrock summarisation.'
   },
   {
     id: 'cap-4',
     accent: 'amber',
-    title: 'Idempotent RevOps CRM Engineering & Cloud FinOps Governance',
+    title: 'CRM Replay Controls & Cloud Governance',
     detail:
-      'Deterministic Signal-to-CRM synchronisation bridges (Clay to HubSpot) with replay idempotency and protected-field survivorship, paired with explicit latency-versus-cost architectural trade-offs.'
+      'A Python/SQLite bridge from public-seed Clay import/review to HubSpot, with three recorded repeat runs; separate cloud governance designs and modelled cost comparisons.'
   },
   {
     id: 'cap-5',
     accent: 'emerald',
     title: 'End-to-End MLOps Pipelines & Computer Vision',
     detail:
-      '5-job GitHub Actions CI/CD workflows with Deepchecks drift gating, serverless AWS Step Functions and SageMaker Model Monitor orchestration, and custom PyTorch CNN keypoint regression.'
+      'Five-job MLOps CI/CD, a separately validated SageMaker/Step Functions workflow and PyTorch keypoint regression, with delivery, model evaluation and confidence gating kept distinct.'
   }
 ];
 
@@ -128,403 +128,428 @@ const CASE_STUDIES = [
     code: 'CS-01',
     category: 'ai',
     accent: 'indigo',
-    domainBadge: 'AI OPS & LLM COST GOVERNANCE',
-    title: 'Intelligent LLM Complexity Router & Semantic Caching Service',
+    domainBadge: 'LLM VALIDATION & MODELLED COST ANALYSIS',
+    title: 'LLM FAQ Service: Guardrails, Tracing & Bounded Cost Analysis',
     subtitle:
-      'Two-tier query complexity router (gpt-4o-mini vs. gpt-4o) with Chroma vector semantic caching, 231 passing unit tests, and a 74-row cost evaluation ledger.',
-    stack: ['Python', 'FastAPI', 'Chroma Semantic Cache', '2-Tier LLM Router', 'RAGAS Evaluation', 'Pytest (231 Tests)'],
-    headlineMetric: '65.0% Modelled Cost Saving',
-    headlineMetricLabel: '$0.1009 Routed vs. $0.2882 Baseline',
+      'AI-assisted additions to a supplied FastAPI and Chroma service, with 231 mocked checks, separate retrieval sweeps and a mixed live/seeded cost comparison.',
+    stack: ['Python / FastAPI', 'Supplied Chroma Cache', 'Supplied 2-Tier Router', 'Guard Patterns & Tracing', 'Separate RAGAS Sweeps', '231 Mocked Checks'],
+    headlineMetric: '65.0% Modelled Cost Difference',
+    headlineMetricLabel: '74 Mixed Rows | Hypothetical Baseline',
     certName: 'AI Ops Engineer Nanodegree',
     certUrl: 'https://www.udacity.com/certificate/e/0d76b32a-d670-11f1-a0db-431d20b60fd0',
     narrative: {
       context:
-        'Routing every incoming enterprise customer FAQ query directly to a frontier large language model creates unnecessary token expenditure for routine questions that can be answered by a smaller model or served from a semantic cache.',
+        'This academic capstone supplied an LLM FAQ service with FastAPI, Chroma retrieval and semantic caching, two-tier model routing, evaluation and scanner infrastructure, and most tests. It was an extension and validation exercise rather than a platform built from an empty repository.',
       objective:
-        'Architect a FastAPI routing gateway that classifies prompt complexity across a 2-tier model policy (gpt-4o-mini vs. gpt-4o), serves recurring intents from a Chroma vector cache, and tracks per-request cost differentials.',
+        'Extend the supplied service with catalogue content, input guard patterns and tracing, then compare retrieval settings and historical-price cost scenarios without treating mocked checks or mixed evaluation data as production evidence.',
       execution: [
-        'Engineered a deterministic complexity router (`router.py`) that evaluates query structure and intent before dispatching traffic between lightweight (`gpt-4o-mini`) and frontier (`gpt-4o`) model tiers.',
-        'Integrated a Chroma semantic cache (`semantic.py`) in front of the model gateway to return verified answers immediately on recurring FAQ queries.',
-        'Validated end-to-end routing, caching, and fallback logic across 231 passing unit tests alongside automated hallucination and RAGAS quality checks.',
-        'Generated a 74-row cost evaluation ledger comparing tiered routing and caching against a uniform all-gpt-4o baseline.'
+        'AI-assisted preparation added five catalogue documents and three input patterns to the supplied service. A starter comparison binds nine modified source/data files to the accepted archive; individual change authorship is not established.',
+        'Added an exporter and classification, request, retrieval and generation spans. Deliberately malformed ingestion and paired prompt-injection examples were checked separately from routine service tests.',
+        'Retained 231 passing tests with Chroma, OpenAI, Phoenix and scanner boundaries mocked. Separate 30-question sweeps favoured k=10 for faithfulness and recall, with lower precision than k=5; the configured default remained k=5.',
+        'Compared 74 cost rows against a hypothetical all-gpt-4o baseline. The write-up discloses 38 recorded live calls and 36 seeded synthetic rows; the ledger does not individually flag that split.'
       ],
       outcome:
-        'Demonstrated a 65.0% modelled LLM inference cost saving across the 74-row evaluation ledger ($0.1009 routed spend versus $0.2882 all-gpt-4o baseline), backed by 231 passing unit tests.'
+        'The retained archive records 231 passing tests and a 74-row historical-price comparison of $0.1009 versus a hypothetical $0.2882 baseline, a 65.0% modelled difference. These results do not measure production savings or establish unchanged answer quality.'
     },
     takeaway: {
-      headline: '2-Tier Complexity Routing + Semantic Vector Cache vs. Uniform Frontier Model Calls',
+      headline: 'Retrieval Recall, Precision & Cost Require Separate Comparisons',
       tradeoffLesson:
-        'Evaluating query complexity and checking a Chroma semantic cache before model dispatch introduced minimal gateway overhead while delivering a 65.0% modelled token cost reduction ($0.1009 vs. $0.2882) without sacrificing answer quality.'
+        'The 30-question sweep raised faithfulness from 0.848 to 0.931 and recall from 0.867 to 0.922 at k=10 versus k=5, while precision fell from 0.822 to 0.741. That proposed setting, the unchanged k=5 default and the mixed cost ledger answer different questions; none establishes a production quality or cost guarantee.'
     },
     diagramConfig: {
-      title: 'Intelligent LLM FAQ routing service & semantic caching architecture',
+      title: 'Supplied LLM FAQ service with added guard patterns & tracing',
       subtitleLine1:
-        'FastAPI routing gateway combining a Chroma semantic vector cache with 2-tier (gpt-4o-mini / gpt-4o) model dispatch.',
+        'Runtime reference: supplied FastAPI, Chroma cache and two-tier routing, extended with catalogue content, patterns and spans.',
       subtitleLine2:
-        'Backed by 231 passing unit tests, RAGAS quality checks, and a 74-row cost evaluation ledger (65.0% cost saving).',
-      orchestratorLabel: 'FastAPI 2-Tier Router & Cost Governance Orchestrator',
-      entryNode: { label: 'FastAPI Gateway', sub: '(FAQ Request)', color: '#7C3AED', icon: 'api' },
+        'Separate historical checks: 231 mocked tests, 30-question retrieval sweeps and 74 mixed live/seeded cost rows.',
+      orchestratorLabel: 'Supplied FastAPI Runtime & Added Trace Instrumentation',
+      entryNode: { label: 'FastAPI Gateway', sub: '(Supplied Service)', color: '#7C3AED', icon: 'api' },
       topServices: [
-        { label: 'Chroma Vector Cache', sub: '(Semantic Lookup)', color: '#C026D3', icon: 'cache' },
-        { label: 'Complexity Router', sub: '(Mini vs Frontier)', color: '#059669', icon: 'ai' },
-        { label: 'Tier 1: gpt-4o-mini', sub: '(Routine FAQs)', color: '#059669', icon: 'ai' },
-        { label: 'Hallucination Gate', sub: '(Support Checks)', color: '#059669', icon: 'shield' },
-        { label: 'RAGAS Evaluator', sub: '(Quality Metrics)', color: '#059669', icon: 'metrics' }
+        { label: 'Chroma Cache', sub: '(Supplied Lookup)', color: '#C026D3', icon: 'cache' },
+        { label: 'Complexity Router', sub: '(Supplied Rules)', color: '#059669', icon: 'ai' },
+        { label: 'gpt-4o-mini', sub: '(Routine Queries)', color: '#059669', icon: 'ai' },
+        { label: 'Guard Patterns', sub: '(Added Inputs)', color: '#059669', icon: 'shield' },
+        { label: 'Phoenix Tracing', sub: '(Added Spans)', color: '#059669', icon: 'metrics' }
       ],
       flowSteps: [
-        { line1: 'Check Chroma cache', line2: 'for semantic match', line3: 'on incoming FAQ' },
-        { line1: 'Evaluate query', line2: 'complexity rule', line3: '& token budget' },
-        { line1: 'Route request to', line2: 'gpt-4o-mini or', line3: 'gpt-4o model tier' },
-        { line1: 'Run hallucination', line2: '& RAGAS quality', line3: 'verification checks' },
-        { line1: 'Record token spend', line2: 'in 74-row cost', line3: 'evaluation ledger' }
+        { line1: 'Check semantic', line2: 'cache in supplied', line3: 'service runtime' },
+        { line1: 'Apply supplied', line2: 'complexity routing', line3: 'rules on a miss' },
+        { line1: 'Select mini or', line2: 'gpt-4o provider', line3: 'for model dispatch' },
+        { line1: 'Check configured', line2: 'guard patterns &', line3: 'record runtime spans' },
+        { line1: 'Retain bounded', line2: 'runtime evidence', line3: 'for separate analysis' }
       ],
-      branchLabel: 'If cache hit',
-      returnStep1: { line1: 'Compare vs baseline', line2: '($0.1009 vs $0.2882)' },
-      returnStep2: { line1: 'Return FAQ JSON', line2: '& update cache' },
-      rightModelNode: { label: 'Tier 2: gpt-4o', sub: '(Complex Synthesis)', color: '#059669', icon: 'ai' },
-      bottomStoreNode: { label: 'Cost & Eval Ledger', sub: '(231 Passing Tests)', color: '#7C3AED', icon: 'search' }
+      branchLabel: 'Cache lookup branch',
+      returnStep1: { line1: 'Reuse cached answer', line2: 'when threshold met' },
+      returnStep2: { line1: 'Return FAQ JSON', line2: 'through supplied API' },
+      rightModelNode: { label: 'gpt-4o', sub: '(Complex Queries)', color: '#059669', icon: 'ai' },
+      bottomStoreNode: { label: 'Separate Evaluations', sub: '(Retrieval / Cost)', color: '#7C3AED', icon: 'search' }
     },
     evidence: {
       credential: 'Udacity AI Ops Engineer Nanodegree (Issued Nov 2, 2026)',
       sha256: '579353dc5062c9ae0ddaff5a99cb79d037f03dde569f4b6d9e1b59cda2e1a2c8',
       deliverables: [
-        'Two-tier LLM query complexity router dispatching between gpt-4o-mini and gpt-4o',
-        'Chroma vector semantic cache short-circuiting repeated enterprise FAQ requests',
-        'Automated RAGAS quality and hallucination verification checks across benchmark prompts',
-        '74-row cost evaluation ledger proving $0.1009 routed spend vs. $0.2882 all-gpt-4o baseline'
+        'Starter comparison identifying five catalogue documents, three input patterns, an exporter and added spans',
+        '231 passing service checks with external, vector-store and scanner boundaries mocked',
+        'Separate 30-question retrieval sweeps, paired guard examples and malformed-ingestion evidence',
+        '74-row mixed live/seeded historical-price analysis: $0.1009 versus a hypothetical $0.2882 baseline'
       ],
       filesIncluded: [
-        'src/llm_faq_service/router/router.py',
-        'src/llm_faq_service/cache/semantic.py',
-        'tests/unit/test_router_and_cache.py',
-        'reports/cost_evaluation_ledger_74rows.csv'
+        'src/gateway/app.py',
+        'src/gateway/router.py',
+        'src/cache/semantic.py',
+        'tests/conftest.py',
+        'evidence/test.txt',
+        'evidence/topk_sweep.log',
+        'data/cost_log.jsonl',
+        'evidence/cost_report.txt',
+        'WRITEUP.md'
       ],
       scopeSummary:
-        'Verified across 231 passing unit tests, Chroma vector semantic caching module, 2-tier complexity router, and 74-row cost evaluation ledger demonstrating a 65.0% modelled cost reduction.'
-    }
+        'Academic, AI-assisted extension of a supplied service. Archive evidence records 231 tests, 74 cost rows and a 65.0% modelled difference. The reviewer separately states 235 tests, 87 rows and 61.9%; that discrepancy remains unresolved and is not substituted for the retained archive results. No production savings, measured scanner accuracy or current availability is established.'
+    },
+    validationLessons: 'Validation separated mocked service checks from historical provider execution. The retained suite records 231 passes. A 30-question retrieval sweep favoured k=10 in the write-up for stronger grounding and recall, with lower precision than k=5; the configured default remained k=5. Deliberate malformed ingestion and paired prompt-injection controls were checked separately. Additions to the supplied service included catalogue data, guard patterns and trace instrumentation. The 65.0% modelled cost comparison mixes live and seeded rows against a hypothetical baseline, supporting a bounded experiment rather than production savings.'
   },
   {
     id: 'cs-02',
     code: 'CS-02',
     category: 'ai',
     accent: 'emerald',
-    domainBadge: 'AUTOMATED CI/CD MLOPS & DRIFT GATING',
-    title: 'End-to-End CI/CD MLOps Pipeline for Financial Sentiment Analysis (FinBERT)',
+    domainBadge: 'CI/CD VALIDATION & DRIFT GATING',
+    title: 'FinBERT Sentiment Service: CI/CD & Deployment Validation',
     subtitle:
-      'Deployed pretrained FinBERT behind FastAPI with a 5-job GitHub Actions workflow, 7 passing pytest checks, and automated Deepchecks drift gates.',
-    stack: ['FinBERT', 'GitHub Actions (5-Job CI/CD)', 'Deepchecks Drift', 'FastAPI', 'Pytest Suite', 'Docker & AWS ECS'],
+      'AI-assisted completion of a supplied API starter around pretrained FinBERT, with five successful historical CI jobs and ECS deployment dispatch rather than a proven completed rollout.',
+    stack: ['Pretrained FinBERT', '5-Job GitHub Actions', 'Deepchecks Drift Gates', 'FastAPI', '7 API Tests', 'Docker / ECS Dispatch'],
     headlineMetric: '5 / 5 CI Jobs Passed',
-    headlineMetricLabel: 'Deepchecks Drift Gated',
+    headlineMetricLabel: 'Historical Run | ECS Dispatch Only',
     certName: 'AI Ops Engineer Nanodegree',
     certUrl: 'https://www.udacity.com/certificate/e/0d76b32a-d670-11f1-a0db-431d20b60fd0',
     narrative: {
       context:
-        'Deploying financial NLP inference services without automated continuous integration and statistical drift checks risks promoting broken containers or serving degraded sentiment predictions when market language shifts.',
+        'This academic project reused pretrained FinBERT weights and an educational dataset. The supplied starter left API and monitoring sections unimplemented; retained work completed endpoint validation, logging, metrics and delivery checks without claiming model fine-tuning or new research.',
       objective:
-        'Deploy a pretrained FinBERT sentiment model behind a containerised FastAPI service governed by a 5-job GitHub Actions CI/CD workflow that enforces automated unit testing and Deepchecks drift thresholds prior to deployment.',
+        'Complete a containerised FastAPI sentiment service and a five-job delivery workflow that checks code, API behaviour and configured drift bounds before image publication and ECS deployment dispatch.',
       execution: [
-        'Constructed a 5-job GitHub Actions workflow (`lint`, `test`, `deepchecks`, `build`, and `deploy`) to automate code quality, model validation, and container packaging.',
-        'Executed a 7-case pytest unit and real-model smoke inference suite against the FastAPI sentiment endpoint, completing in 0.56 seconds.',
-        'Configured explicit evaluation thresholds in `params.yaml` and integrated Deepchecks suites to audit property drift and prediction drift on every pipeline run.',
-        'Verified that property drift (`0.4042` vs. `0.50` limit), prediction drift (`0.2317` vs. `0.60` limit), and weighted F1 (`0.59` vs. `0.56` threshold) passed before triggering container build and ECS rollout.'
+        'Assistant-operated preparation completed the starter API and monitoring sections, data/evaluation/promotion scripts, drift checks and container workflow. The individual author of each recorded CI correction is unestablished.',
+        'Historical CI logs record seven Ruff errors and a later image-output suppression that left deployment without its required image. Recorded commits corrected lint handling and passed an image tag, reconstructing the ECR URI inside deployment.',
+        'A later commit narrowed serving dependencies to CPU-only packages. An intervening build failed with its detailed log unavailable, so neither a complete failure sequence nor a controlled packaging-performance improvement is claimed.',
+        'The final recorded run passed lint, test, deepchecks, build and deploy. Seven API tests passed in 0.56 seconds; separate model smoke and drift checks recorded property drift 0.4042 below 0.50 and prediction drift 0.2317 below 0.60.'
       ],
       outcome:
-        'Passed all 5 GitHub Actions CI/CD stages, all 7 pytest unit and smoke inference tests in 0.56 seconds, and all Deepchecks statistical drift gates (0.4042 property drift and 0.2317 prediction drift; 0.59 weighted F1).'
+        'All five jobs succeeded in the final historical CI run. The retained ECS response still reports rolloutState=IN_PROGRESS, establishing deployment dispatch rather than steady state or present endpoint health. The model smoke result and drift checks are bounded validation, not prediction-accuracy evidence.'
     },
     takeaway: {
-      headline: 'Pre-Deployment Deepchecks Drift Gating in GitHub Actions vs. Ungated Container Releases',
+      headline: 'A Passing Deploy Job Is One Delivery Checkpoint',
       tradeoffLesson:
-        'Embedding automated `lint`, `test`, and `deepchecks` drift assertions directly into GitHub Actions before `build` and `deploy` guaranteed that only schema-valid, drift-verified FinBERT containers progressed to registry push and ECS rollout.'
+        'Passing only an image tag between jobs avoids the recorded image-URI output suppression, while reconstructing the URI in deployment keeps the required input local to that job. CI, drift checks and deployment dispatch provide separate evidence; service readiness still needs an observed completed rollout and health checks.'
     },
     diagramConfig: {
-      title: 'FinBERT 5-job GitHub Actions CI/CD & automated drift gating architecture',
+      title: 'FinBERT CI/CD checks & historically dispatched ECS deployment',
       subtitleLine1:
-        '5-job GitHub Actions pipeline (lint, test, deepchecks, build, deploy) deploying FinBERT behind FastAPI.',
+        'Supplied API starter completed around pretrained FinBERT; five GitHub Actions jobs passed in the retained final run.',
       subtitleLine2:
-        'Enforces 7 pytest unit/smoke checks (0.56s) and Deepchecks drift bounds (0.4042 property / 0.2317 prediction drift).',
-      orchestratorLabel: '5-Job GitHub Actions CI/CD & FastAPI Inference Orchestrator',
-      entryNode: { label: 'GitHub Push / API', sub: '(CI/CD Trigger)', color: '#7C3AED', icon: 'git' },
+        'Seven API tests and separate model/drift checks passed; the ECS response remained IN_PROGRESS.',
+      orchestratorLabel: 'GitHub Actions Validation, Image Publication & ECS Dispatch',
+      entryNode: { label: 'GitHub Workflow', sub: '(Historical Run)', color: '#7C3AED', icon: 'git' },
       topServices: [
-        { label: 'params.yaml', sub: '(Drift Thresholds)', color: '#C026D3', icon: 'cache' },
-        { label: 'Job 1: Lint', sub: '(Code Quality)', color: '#059669', icon: 'ai' },
-        { label: 'Job 2: Pytest', sub: '(7 Cases / 0.56s)', color: '#059669', icon: 'ai' },
-        { label: 'Job 3: Deepchecks', sub: '(Drift Validation)', color: '#059669', icon: 'shield' },
-        { label: 'Job 4 & 5: Build', sub: '& ECS Rollout', color: '#059669', icon: 'cloud' }
+        { label: 'params.yaml', sub: '(Configured Bounds)', color: '#C026D3', icon: 'cache' },
+        { label: 'Job 1: Lint', sub: '(Code Checks)', color: '#059669', icon: 'ai' },
+        { label: 'Job 2: API Tests', sub: '(7 / 0.56s)', color: '#059669', icon: 'ai' },
+        { label: 'Job 3: Deepchecks', sub: '(Drift Bounds)', color: '#059669', icon: 'shield' },
+        { label: 'Build & Deploy', sub: '(Dispatch Only)', color: '#059669', icon: 'cloud' }
       ],
       flowSteps: [
-        { line1: 'Load F1 & drift', line2: 'thresholds from', line3: 'params.yaml config' },
-        { line1: 'Run Job 1 lint &', line2: 'Job 2 pytest suite', line3: '(7 cases in 0.56s)' },
-        { line1: 'Verify Deepchecks', line2: 'property (0.4042) &', line3: 'pred (0.2317) drift' },
-        { line1: 'Build Docker image', line2: 'with FinBERT &', line3: 'FastAPI service' },
-        { line1: 'Push image & start', line2: 'Amazon ECS service', line3: 'deployment rollout' }
+        { line1: 'Load configured', line2: 'evaluation & drift', line3: 'bounds for checks' },
+        { line1: 'Run lint and', line2: 'seven API tests', line3: 'in historical CI' },
+        { line1: 'Check property', line2: '0.4042 / 0.50 &', line3: 'pred 0.2317 / 0.60' },
+        { line1: 'Build CPU-only', line2: 'serving image &', line3: 'pass image tag' },
+        { line1: 'Reconstruct URI', line2: 'and dispatch ECS', line3: 'deployment update' }
       ],
-      branchLabel: 'All gates pass',
-      returnStep1: { line1: 'Real-model smoke', line2: 'inference check' },
-      returnStep2: { line1: 'Serve sentiment', line2: 'prediction JSON' },
-      rightModelNode: { label: 'FastAPI + FinBERT', sub: '(Sentiment Service)', color: '#059669', icon: 'ai' },
-      bottomStoreNode: { label: 'CI & Drift Reports', sub: '(5/5 Jobs Passed)', color: '#7C3AED', icon: 'search' }
+      branchLabel: 'Recorded checks pass',
+      returnStep1: { line1: 'Separate model', line2: 'smoke inference' },
+      returnStep2: { line1: 'Rollout retained as', line2: 'IN_PROGRESS' },
+      rightModelNode: { label: 'Pretrained FinBERT', sub: '(Reused Weights)', color: '#059669', icon: 'ai' },
+      bottomStoreNode: { label: 'Historical CI Logs', sub: '(5 Jobs / Drift)', color: '#7C3AED', icon: 'search' }
     },
     evidence: {
       credential: 'Udacity AI Ops Engineer Nanodegree (Issued Nov 2, 2026)',
       sha256: 'b817f0567bc25a8cbc5d6c3395f4f58b36742acaddabdf96529af7bc8a0af6fd',
       deliverables: [
-        '5-job GitHub Actions CI/CD workflow (lint, test, deepchecks, build, deploy)',
-        'Containerised FastAPI inference service serving pretrained FinBERT sentiment predictions',
-        '7 passing pytest unit and smoke inference checks executing in 0.56 seconds',
-        'Automated Deepchecks drift gating verifying 0.4042 property drift, 0.2317 prediction drift, and 0.59 weighted F1'
+        'Completed starter API and monitoring sections around reused FinBERT weights and an educational dataset',
+        'Five-job GitHub Actions workflow with recorded lint and image-tag handoff corrections',
+        'Seven API tests passing in 0.56 seconds, plus a separate real-model smoke check',
+        'Drift results within configured bounds and a successful deploy job with ECS rollout still IN_PROGRESS'
       ],
       filesIncluded: [
-        '.github/workflows/ci_cd_pipeline.yml',
+        '.github/workflows/ci-cd.yml',
         'app/main.py',
+        'app/utils.py',
+        'tests/test_api.py',
+        'tests/conftest.py',
         'params.yaml',
-        'tests/test_api_and_model.py',
-        'reports/deepchecks_drift_summary.json'
+        'requirements-api.txt',
+        'Dockerfile'
       ],
       scopeSummary:
-        'Verified 5-job GitHub Actions CI/CD pipeline deploying pretrained FinBERT behind FastAPI with 7 passing pytest cases and automated Deepchecks drift gating.'
-    }
+        'Academic, assistant-operated implementation and historical CI evidence. Five final jobs passed; seven API tests and separate model/drift checks are retained. ECS dispatch succeeded without evidence of completed rollout or present health. Reviewer-only weighted F1 is not presented as a reproduced measurement, and individual CI correction authorship remains unrecorded.'
+    },
+    validationLessons: 'CI logs exposed two delivery problems: Ruff reported seven errors, and GitHub suppressed an image URI output as potentially secret, leaving deployment without its required image. Recorded commits corrected lint handling and passed an image tag between jobs, reconstructing the URI inside deployment. Later CPU-only container dependencies narrowed the serving package. The final run passed five jobs, including seven API tests and separate model and drift checks. The specific correction author is unrecorded; the successful deploy job does not establish completed ECS rollout or present service health.'
   },
   {
     id: 'cs-03',
     code: 'CS-03',
     category: 'ai',
     accent: 'indigo',
-    domainBadge: 'AGENTIC AI & RAG ORCHESTRATION',
-    title: 'UDA-Hub: Autonomous Customer Support & Knowledge Routing Agent',
+    domainBadge: 'LANGGRAPH VALIDATION & GUARDED SUPPORT TOOLS',
+    title: 'UDA-Hub: Tenant-Scoped LangGraph Support Prototype',
     subtitle:
-      'Stateful multi-agent support workflow using LangGraph, Python, persistent state, and guarded tool execution over CultPass support scenarios.',
-    stack: ['LangGraph', 'Python', 'Persistent Thread State', 'RAG Knowledge Lookup', 'Guarded Support Tools', 'Escalation Gate'],
-    headlineMetric: '21 Offline Tests & 10/10 Live Ticket Checks',
-    headlineMetricLabel: '8 Multi-Turn Tickets (25 Requests)',
+      'Substantially AI-assisted academic implementation using supplied entities, seed data and articles, with weighted lexical retrieval, persistent state and local guarded actions.',
+    stack: ['LangGraph / Python', 'Persistent Thread State', 'Weighted Lexical Retrieval', 'Guarded SQLite Tools', '21 Offline Tests', 'Synthetic Provider Scenarios'],
+    headlineMetric: '21 Offline Tests | 8 Synthetic Tickets',
+    headlineMetricLabel: '25 Historical Provider Requests',
     certName: 'Agentic AI Engineer with LangChain & LangGraph Nanodegree',
     certUrl: 'https://www.udacity.com/certificate/e/7f3f43c0-cd31-11f1-85d2-5797698f73c3',
     narrative: {
       context:
-        'Customer support teams face growing ticket backlogs when tier-1 inquiries require cross-referencing policy articles and account records, while unguarded chatbots risk hallucinating on complex edge cases.',
+        'UDA-Hub is an academic CultPass support prototype. It reuses supplied SQLAlchemy entities, seed data and four knowledge articles; the supplied sample workflow was not used. Substantial AI assistance supported the new graph, repositories, guarded tools, tests, ten scenario articles and documentation.',
       objective:
-        'Design and build the UDA-Hub stateful LangGraph support agent capable of classifying ticket intent, retrieving verified knowledge base articles, executing authorised account tools, and escalating unresolved issues cleanly to human specialists.',
+        'Implement persistent support conversations with weighted lexical knowledge lookup, tenant-scoped local account actions and structured escalation, then validate deterministic boundaries separately from historical model-provider behaviour.',
       execution: [
-        'Architected a stateful LangGraph supervisor workflow separating intent triage, RAG knowledge retrieval, account database tools, and structured human handoff over CultPass support operations.',
-        'Configured persistent thread checkpointing so multi-turn customer conversations retain full context across follow-up interactions.',
-        'Validated deterministic routing, tool invocation, and fallback behaviour across 21 offline test cases and 2 database setup notebooks.',
-        'Executed an end-to-end live validation across 8 multi-turn customer support tickets (25 provider requests), verifying all 10 enumerated quality and escalation checks.'
+        'Implemented a LangGraph workflow over supplied educational data with intent triage, weighted lexical retrieval and structured responses. Retrieval uses lexical weights rather than vector embeddings.',
+        'Added persistent thread state and guarded SQLite actions for synthetic accounts. Tenant/user identifiers remain trusted upstream inputs rather than a complete authentication system; cancellations affect the local teaching database only.',
+        'Ran 21 offline tests with an injected deterministic model, exercising real graph/repository behaviour, ownership boundaries, exact quotations, invalid output and memory across restarts. Two database-setup notebooks are separate setup evidence.',
+        'A separate historical gpt-4o-mini run attempted 25 provider requests across eight synthetic multi-turn tickets and passed ten enumerated scenario assertions, with five tickets resolved and three escalated. These counts are not a production accuracy measure.'
       ],
       outcome:
-        'Passed 21 out of 21 offline unit tests and 10 out of 10 live ticket validation checks across 8 multi-turn CultPass support scenarios (25 live requests) with structured human escalation.'
+        'The retained evidence contains 21 passing offline tests and ten passing assertions in the separate eight-ticket provider run. Deliberate ownership and unknown-account errors exercised negative boundaries. Operational confidence is heuristic rather than a calibrated probability, and current availability or customer success is not established.'
     },
     takeaway: {
-      headline: 'Stateful LangGraph Thread Memory + Structured Escalation Gate vs. Stateless Single-Turn Prompts',
+      headline: 'Test Conservative Escalation Alongside Successful Answers',
       tradeoffLesson:
-        'Maintaining explicit LangGraph thread state and enforcing deterministic escalation criteria guaranteed that routine policy and account inquiries resolved autonomously while ambiguous edge cases handed off cleanly to human agents.'
+        'Persistent state, tenant-scoped tools and explicit output schemas make support behaviour inspectable, while lexical retrieval and confidence thresholds retain limitations. Synthetic resolutions and escalation assertions show bounded scenario behaviour; they do not establish production accuracy, full authentication or calibrated confidence.'
     },
     diagramConfig: {
-      title: 'UDA-Hub stateful LangGraph customer support & knowledge agent',
+      title: 'UDA-Hub academic LangGraph support prototype & local tools',
       subtitleLine1:
-        'Stateful LangGraph workflow combining intent triage, knowledge base RAG retrieval, and guarded account tools.',
+        'AI-assisted graph and guarded tools reuse supplied educational data; retrieval is weighted lexical, not embedding-based.',
       subtitleLine2:
-        'Verified across 21 passing offline tests and an 8-ticket (25-request) live validation run passing 10/10 checks.',
-      orchestratorLabel: 'LangGraph Stateful Customer Support Orchestrator',
-      entryNode: { label: 'Support Ticket', sub: '(Multi-Turn User)', color: '#7C3AED', icon: 'api' },
+        'Separate evidence: 21 deterministic offline tests and 8 synthetic provider tickets using 25 requests / 10 assertions.',
+      orchestratorLabel: 'LangGraph Prototype with Persistent State & Structured Escalation',
+      entryNode: { label: 'Synthetic Ticket', sub: '(Trusted IDs)', color: '#7C3AED', icon: 'api' },
       topServices: [
         { label: 'State Checkpointer', sub: '(Thread Memory)', color: '#C026D3', icon: 'cache' },
-        { label: 'Intent Classifier', sub: '(Ticket Triage)', color: '#059669', icon: 'ai' },
-        { label: 'Knowledge Base RAG', sub: '(Policy Articles)', color: '#059669', icon: 'ai' },
-        { label: 'Account DB Tools', sub: '(Guarded Lookup)', color: '#059669', icon: 'db' },
-        { label: 'Escalation Gate', sub: '(Human Handoff)', color: '#059669', icon: 'shield' }
+        { label: 'Intent Classifier', sub: '(Schema Output)', color: '#059669', icon: 'ai' },
+        { label: 'Lexical Retrieval', sub: '(Teaching Articles)', color: '#059669', icon: 'ai' },
+        { label: 'Local DB Tools', sub: '(Tenant-Scoped)', color: '#059669', icon: 'db' },
+        { label: 'Escalation Gate', sub: '(Heuristic Bounds)', color: '#059669', icon: 'shield' }
       ],
       flowSteps: [
-        { line1: 'Load persistent', line2: 'LangGraph thread', line3: 'conversation state' },
-        { line1: 'Classify customer', line2: 'ticket intent &', line3: 'urgency level' },
-        { line1: 'Query knowledge', line2: 'base & execute', line3: 'authorised DB tools' },
-        { line1: 'Verify resolution', line2: 'completeness vs', line3: 'escalation rules' },
-        { line1: 'Log outcome in', line2: 'validation summary', line3: '(10/10 checks pass)' }
+        { line1: 'Load persistent', line2: 'thread state for', line3: 'trusted tenant IDs' },
+        { line1: 'Classify intent', line2: 'using explicit', line3: 'output schemas' },
+        { line1: 'Retrieve lexical', line2: 'matches or invoke', line3: 'guarded local tools' },
+        { line1: 'Apply confidence', line2: 'and escalation', line3: 'rules to the result' },
+        { line1: 'Record synthetic', line2: 'scenario outcome', line3: 'for bounded checks' }
       ],
-      branchLabel: 'If resolved',
-      returnStep1: { line1: 'Structured human', line2: 'escalation summary' },
-      returnStep2: { line1: 'Return verified', line2: 'support resolution' },
-      rightModelNode: { label: 'LLM Synthesizer', sub: '(Grounded Answer)', color: '#059669', icon: 'ai' },
-      bottomStoreNode: { label: 'Support DB & KB', sub: '(21 Offline / 8 Live)', color: '#7C3AED', icon: 'search' }
+      branchLabel: 'Resolution decision',
+      returnStep1: { line1: 'Structured', line2: 'escalation record' },
+      returnStep2: { line1: 'Return support', line2: 'response JSON' },
+      rightModelNode: { label: 'gpt-4o-mini', sub: '(Historical Run)', color: '#059669', icon: 'ai' },
+      bottomStoreNode: { label: 'Teaching DB & KB', sub: '(Local / Synthetic)', color: '#7C3AED', icon: 'search' }
     },
     evidence: {
       credential: 'Udacity Agentic AI Engineer Nanodegree (Issued Oct 21, 2026)',
       sha256: 'b349ed54cff77f45996fa850576ad1d916597b316b332821bb1d0e5d18255ae3',
       deliverables: [
-        'Stateful LangGraph multi-agent customer support supervisor over CultPass operations',
-        'Persistent thread memory and guarded SQLite account and knowledge retrieval tools',
-        '21 passing offline unit tests covering routing, tool execution, and escalation paths',
-        'Live validation across 8 multi-turn support tickets (25 requests) passing 10/10 quality checks'
+        'AI-assisted graph, repositories and tools reusing supplied entities, seed data and four knowledge articles',
+        'Persistent thread memory, weighted lexical retrieval and guarded actions in a local synthetic SQLite database',
+        '21 passing offline tests using an injected deterministic model and real graph/repository behaviour',
+        'Separate eight-ticket provider run: 25 requests, ten scenario assertions, five resolved and three escalated'
       ],
       filesIncluded: [
+        'SOURCE-ATTRIBUTION.json',
+        'README.txt',
         'agentic/workflow.py',
-        'agentic/tools/support_tools.py',
-        '01_db_setup.ipynb',
-        '02_ticket_resolution_eval.ipynb',
-        'tests/test_uda_hub_agent.py'
+        'agentic/agents/specialists.py',
+        'tests/test_workflow.py',
+        'tests/fake_model.py',
+        'evidence/offline-test-output.txt',
+        'evidence/live-provider-results.json',
+        'evidence/live-provider-events.jsonl',
+        'evidence/validation-summary.json'
       ],
       scopeSummary:
-        'Verified across 21 passing offline unit tests, 2 database setup and evaluation notebooks, and an 8-ticket (25-request) live validation run passing 10/10 checks.'
-    }
+        'Substantially AI-assisted academic prototype over supplied data. Offline tests inject a deterministic model; the separate historical provider run uses eight synthetic tickets. Trusted upstream identifiers, local actions and heuristic confidence limit the claims. The reported earlier 23-request debugging sequence lacks retained original failures and pre-change prompts, so it is not presented as an independently reconstructed incident.'
+    },
+    validationLessons: 'Validation used 21 offline tests with an injected deterministic model, followed by a separate eight-ticket course-provider run using 25 requests. Tests covered tenant isolation, guarded account actions, exact quotations, invalid model output and memory across restarts. Final prompts state exact JSON schemas and clarify confidence semantics; provider traces exercise resolution, escalation, ownership and remembered preferences. AI assistance supported implementation and verification. Conservative escalation needs tests alongside successful answers: synthetic scenario passes and operational confidence heuristics do not establish production accuracy or calibrated probabilities.'
   },
   {
     id: 'cs-04',
     code: 'CS-04',
     category: 'ai',
     accent: 'emerald',
-    domainBadge: 'AI ENGINEERING & CODE QUALITY AUTOMATION',
-    title: 'Enterprise Automated Code Review & Security Analysis CLI',
+    domainBadge: 'SDK REVIEW ORCHESTRATION & SOURCE ADJUDICATION',
+    title: 'Claude Agent SDK Review CLI: Supplied PRs & Verified Reports',
     subtitle:
-      'Read-only TypeScript CLI orchestrating three Anthropic Claude Agent SDK specialists with head-SHA snapshots, SQL injection risk flagging, and deterministic policy scoring.',
-    stack: ['Claude Agent SDK', 'TypeScript CLI', '3 Specialist Agents', 'JSON / MD / HTML Reports', '42 Tool Unit Tests', 'SQL Risk Audit'],
-    headlineMetric: '42 / 42 Passing Tool Tests',
-    headlineMetricLabel: '3 Claude Specialist Review Agents',
+      'AI-assisted completion of a supplied TypeScript CLI scaffold, separating Claude specialist drafts, source adjudication and 42 tests with the paid-model boundary mocked.',
+    stack: ['Claude Agent SDK', 'TypeScript CLI', '3 Review Specialists', 'Source-Adjudicated Reports', '42 Mocked-Boundary Tests', 'JSON / MD / HTML'],
+    headlineMetric: '42 Review-Tool Tests Passed',
+    headlineMetricLabel: 'Mocked Boundary | 3 SDK PR Runs',
     certName: 'AI Engineering with Claude Nanodegree',
     certUrl: 'https://www.udacity.com/certificate/e/cc24fb94-d484-11f1-9745-7779ca96d13b',
     narrative: {
       context:
-        'Manual code reviews take significant senior engineering time and can overlook subtle quality, test coverage, or SQL construction risks, whereas autonomous agents with write privileges risk mutating repository branches unexpectedly.',
+        'This academic project supplied an unimplemented orchestrator alongside Zod, CLI, helper and Skill scaffolding. Supplied teaching pull requests provided review targets. Codex assisted implementation and debugging; separate Claude specialists generated review drafts rather than establishing commercial security findings.',
       objective:
-        'Build a deterministic, read-only TypeScript CLI powered by the Anthropic Claude Agent SDK that coordinates three specialist review agents over local git diffs to generate structured JSON, Markdown, and HTML audit reports.',
+        'Complete a read-only review CLI with constrained tools, head snapshots, schema/completeness checks and deterministic scoring, then compare generated findings against exact source before emitting final reports.',
       execution: [
-        'Engineered a read-only TypeScript CLI orchestrating three specialised Claude SDK agents: Code Quality, Test Coverage Estimation, and Refactoring.',
-        'Scoped agent analysis strictly to local git diffs and head-SHA snapshots so reviews execute safely without mutating developer branches.',
-        'Implemented automated detection, contextual qualification, and deterministic policy scoring of unsafe SQL query construction and code maintainability issues.',
-        'Validated all custom analysis tools across 42 passing unit tests and 3 end-to-end live Claude Agent SDK integration reviews, emitting schema-validated JSON, Markdown, and HTML reports.'
+        'The coding assistant completed SDK orchestration, read-tool allowlists, source snapshots, lint/completeness checks, prompts, safe rendering and tests around the supplied contracts and helpers.',
+        'Three Claude specialists reviewed code quality, estimated coverage and proposed refactoring on supplied PR heads. A schema-valid draft falsely claimed an email expression rejected plus-addresses; the assistant checked the exact source, tightened instructions and reran reviews.',
+        'Model changes and review attempts remain separate cohorts. A subsequent source-adjudication pass removed speculative security claims and duplicate findings, repaired illustrative tests with inaccessible helpers or invalid fixtures, and recomputed scores without another model run.',
+        'Final verification records 42 tool tests with the paid-model boundary mocked and separate SDK execution across three PR heads. Source/head, schema, Skill, lint and total checks covered nine final files: JSON, Markdown and HTML for each head.'
       ],
       outcome:
-        'Passed 42 out of 42 tool unit tests and 3 live Claude Agent SDK integration reviews, producing reproducible JSON, Markdown, and HTML code review artefacts with zero repository mutations.'
+        'The retained tool suite passed 42 tests, and three historical SDK PR runs produced source-adjudicated final report sets. Nine final files are three formats for three heads, not nine independently accurate model reviews. Suggested target-module tests are illustrative and were not executed as the 42 tool tests.'
     },
     takeaway: {
-      headline: 'Read-Only Multi-Specialist Claude SDK CLI vs. Mutating Auto-Commit Agents',
+      headline: 'Source Adjudication Complements Tool & Schema Checks',
       tradeoffLesson:
-        'Enforcing a strict read-only contract across three specialised Claude SDK agents (Quality, Coverage, Refactoring) guaranteed safe local and CI execution while delivering structured, developer-ready review reports.'
+        'Read-tool constraints, valid JSON and deterministic scores bound execution and report structure, while source inspection is still needed to reject plausible but unsupported findings. The supplied mock database and payment examples do not prove real SQL exfiltration, charging or compliance failures, and model changes do not establish a controlled accuracy improvement.'
     },
     diagramConfig: {
-      title: 'Enterprise code review agent CLI with Anthropic Claude Agent SDK',
+      title: 'Review CLI execution & separate source-adjudication workflow',
       subtitleLine1:
-        'Read-only TypeScript CLI coordinating 3 Claude Agent SDK specialists (Code Quality, Test Coverage, Refactoring).',
+        'AI-assisted completion of supplied scaffolding; Claude specialists draft findings on supplied teaching PR heads.',
       subtitleLine2:
-        'Verified across 42 passing tool unit tests and 3 live SDK integration reviews outputting JSON, Markdown, and HTML reports.',
-      orchestratorLabel: 'TypeScript CLI & Claude Agent SDK Review Orchestrator',
-      entryNode: { label: 'Git Diff Input', sub: '(Head-SHA Snapshot)', color: '#7C3AED', icon: 'git' },
+        '42 mocked-boundary tool tests; 3 historical SDK PR runs; separate adjudication yields 9 files in 3 formats.',
+      orchestratorLabel: 'Read-Only SDK Review Orchestration & Separately Checked Artefacts',
+      entryNode: { label: 'Supplied PR Head', sub: '(Source Snapshot)', color: '#7C3AED', icon: 'git' },
       topServices: [
-        { label: 'Read-Only Guard', sub: '(Zero Repo Mutation)', color: '#C026D3', icon: 'lock' },
-        { label: 'Agent 1: Quality', sub: '(Defect & SQL Audit)', color: '#059669', icon: 'ai' },
-        { label: 'Agent 2: Coverage', sub: '(Gap Estimation)', color: '#059669', icon: 'ai' },
-        { label: 'Agent 3: Refactor', sub: '(Clean Code Diffs)', color: '#059669', icon: 'ai' },
-        { label: 'Report Emitter', sub: '(JSON / MD / HTML)', color: '#059669', icon: 'metrics' }
+        { label: 'Read-Tool Guard', sub: '(Allowed Tools)', color: '#C026D3', icon: 'lock' },
+        { label: 'Quality Specialist', sub: '(Draft Findings)', color: '#059669', icon: 'ai' },
+        { label: 'Coverage Specialist', sub: '(Gap Estimates)', color: '#059669', icon: 'ai' },
+        { label: 'Refactor Specialist', sub: '(Proposed Diffs)', color: '#059669', icon: 'ai' },
+        { label: 'Final Reports', sub: '(After Adjudication)', color: '#059669', icon: 'metrics' }
       ],
       flowSteps: [
-        { line1: 'Capture read-only', line2: 'git diff & head-SHA', line3: 'source snapshot' },
-        { line1: 'Run Code Quality', line2: 'specialist (audit', line3: 'SQL & defects)' },
-        { line1: 'Run Test Coverage', line2: 'estimation & gap', line3: 'analysis specialist' },
-        { line1: 'Run Refactoring', line2: 'specialist & merge', line3: 'adjudicated findings' },
-        { line1: 'Generate validated', line2: 'JSON, Markdown &', line3: 'HTML review reports' }
+        { line1: 'Snapshot supplied', line2: 'PR head and read', line3: 'bounded source' },
+        { line1: 'Run Code Quality', line2: 'specialist for', line3: 'draft findings' },
+        { line1: 'Run Coverage &', line2: 'Refactoring for', line3: 'separate estimates' },
+        { line1: 'Separately check', line2: 'drafts against', line3: 'the exact source' },
+        { line1: 'Recompute scores', line2: 'and emit checked', line3: 'JSON / MD / HTML' }
       ],
-      branchLabel: '42/42 tool tests',
-      returnStep1: { line1: 'Schema-validated', line2: 'adjudication JSON' },
-      returnStep2: { line1: 'Export HTML, MD', line2: '& JSON review files' },
-      rightModelNode: { label: 'Claude Agent SDK', sub: '(3 Live Reviews)', color: '#059669', icon: 'ai' },
-      bottomStoreNode: { label: 'Review Artefacts', sub: '(42 Passing Tests)', color: '#7C3AED', icon: 'search' }
+      branchLabel: 'Separate validation',
+      returnStep1: { line1: 'Check source, schema', line2: 'and head consistency' },
+      returnStep2: { line1: 'Retain final reports', line2: '& adjudication record' },
+      rightModelNode: { label: 'Claude Agent SDK', sub: '(3 PR Heads)', color: '#059669', icon: 'ai' },
+      bottomStoreNode: { label: 'Final Review Files', sub: '(3 Heads / 3 Formats)', color: '#7C3AED', icon: 'search' }
     },
     evidence: {
       credential: 'Udacity AI Engineering with Claude Nanodegree (Issued Oct 31, 2026)',
       sha256: 'd5743f06260b66e0ac6ce9455c1c17b12e9ae143f4056cbcbd0a3c6655326c21',
       deliverables: [
-        'Read-only TypeScript CLI coordinating 3 Anthropic Claude Agent SDK specialists',
-        'Head-SHA source snapshot isolation ensuring zero repository mutations during analysis',
-        'Deterministic policy scoring and SQL injection risk flagging over modified code diffs',
-        '42 passing tool unit tests and multi-format report generation (JSON, Markdown, HTML)'
+        'AI-assisted SDK orchestrator and constrained read tools around supplied Zod, CLI, helper and Skill scaffolding',
+        'Separate raw model attempts, tightened instructions and source-adjudication records for supplied PR heads',
+        '42 passing review-tool tests with the paid-model boundary mocked, separate from SDK provider runs',
+        'Nine source-adjudicated report files: JSON, Markdown and HTML for three PR heads, with deterministic score checks'
       ],
       filesIncluded: [
-        'src/cli/index.ts',
-        'src/agents/quality_coverage_refactor.ts',
-        'src/tools/diff_and_ast_tools.ts',
-        'tests/tools.test.ts',
-        'reports/code_review_report.html'
+        'src/orchestrator.ts',
+        'src/prompts/code-quality-analyzer.prompt.ts',
+        'tests/orchestrator.test.ts',
+        'evidence/adjudication.json',
+        'evidence/tests.log',
+        'evidence/report-verification.json',
+        'evidence/pr-1/source/fixtures/clean-code.ts',
+        'README.md'
       ],
       scopeSummary:
-        'Verified read-only TypeScript CLI with 3 Claude Agent SDK specialists, 42 passing tool unit tests, and 3 live integration reviews outputting JSON, Markdown, and HTML reports.'
-    }
+        'Academic, assistant-operated implementation, review inspection and adjudication over supplied targets. Claude-generated raw drafts and source-adjudicated final reports are distinct; final structure and tool success do not establish semantic accuracy. The 42 mocked-boundary tests are not executed target-module regression tests. Rejected raw drafts remain in original-workspace provenance outside the accepted archive.'
+    },
+    validationLessons: 'Real SDK reviews produced schema-valid reports containing unsupported findings, including a claim that an email expression rejected plus-addresses. The coding assistant checked the exact PR source, tightened review instructions and reran reviews; model changes and attempts remain separate. A further source-adjudication pass removed speculative security claims and repaired illustrative tests using private helpers or invalid fixtures. Final verification records 42 tool tests with the paid-model boundary mocked and nine consistent reports for three PR heads. Valid structure and successful tool calls do not establish a review’s semantic accuracy.'
   },
   {
     id: 'cs-05',
     code: 'CS-05',
     category: 'cloud',
     accent: 'indigo',
-    domainBadge: 'CLOUD ARCHITECTURE & NETWORKING',
-    title: 'Cross-Region AWS Network Architecture & Multi-Account Governance Blueprint',
+    domainBadge: 'AWS NETWORK VALIDATION & GOVERNANCE DESIGN',
+    title: 'Cross-Region AWS Networking & Separate Governance Blueprint',
     subtitle:
-      'Enterprise AWS organisation design paired with live two-region VPC peering, custom route tables, security groups, and verified cross-region network traffic receipts.',
-    stack: ['AWS VPC Peering', 'Cross-Region Routing', 'AWS Organizations Blueprint', 'Security Groups & NACLs', 'VPC Flow Logs', 'FinOps Governance'],
-    headlineMetric: '2-Region VPC Peered',
-    headlineMetricLabel: 'Verified Cross-Region Traffic',
+      'Codex-assisted academic work: historical private VPC connectivity in one authorised account across two Regions, alongside an undeployed multi-account governance design.',
+    stack: ['AWS VPC Peering', 'Explicit Regional Routes', 'Account / Ownership Guards', '8 Mocked Safety Tests', 'Ping & VPC Flow Logs', 'Separate Governance Design'],
+    headlineMetric: '2 Regions | Private Connectivity',
+    headlineMetricLabel: 'One Account | Governance Blueprint',
     certName: 'AWS Cloud Architect Nanodegree',
     certUrl: 'https://www.udacity.com/certificate/e/d2ed9638-cae4-11f1-bbfe-07a631d7ce6a',
     narrative: {
       context:
-        'Enterprise cloud estates require segmented network topologies across geographic regions and structured multi-account cost and security governance to prevent lateral movement and budget overruns.',
+        'The supplied fictional Excipient scenario and report template combined network and governance design requirements. The README attributes research, runtime code, tests, reports, diagrams, evidence analysis and packaging to OpenAI Codex; unaided human operation is not established.',
       objective:
-        'Execute a live two-region AWS VPC peering and private routing validation while authoring a comprehensive multi-account AWS Organizations, Service Control Policy (SCP), and FinOps budget blueprint.',
+        'Validate a private two-Region VPC path within one authorised account, with account/ownership safety checks, while keeping the proposed multi-account OU, SCP, tagging and budget arrangements separate from the live network scope.',
       execution: [
-        'Provisioned non-overlapping VPC networks across two AWS regions and established an active cross-region VPC peering connection.',
-        'Configured regional route tables, least-privilege security groups, network ACLs, and VPC Flow Logs to verify private cross-region IP connectivity.',
-        'Designed an enterprise multi-account AWS Organizations structure separating Security, Shared Services, Sandbox, and Production organisational units (OUs).',
-        'Authored Service Control Policies (SCPs), cost-allocation tagging standards, and AWS Budgets alerting blueprints.'
+        'Added a Python AWS runtime for non-overlapping VPCs, explicit regional routes, scoped security rules and Flow Logs. The first attempt failed before EC2 launch when the accepter Region could not yet find the peering connection.',
+        'Codex added a bounded wait for the specific provider NotFound response, rejected terminal peering states and required active status in both Regions before routes and instances. The failed attempt was retained separately from the later run.',
+        'Eight isolated fake-client safety tests passed without AWS service calls. A separate live run on 18 October 2026 recorded both private VMs running, successful ping observations and 12 matching ACCEPT Flow Log records per Region; the initial east-Region ping had 25% packet loss.',
+        'Prepared a separate multi-account AWS Organizations, OU, SCP, cost-allocation tagging and budget blueprint. Those controls were designed rather than deployed, and no cross-account operation, failover, RTO, SLA or cost saving was measured.'
       ],
       outcome:
-        'Verified live two-region AWS VPC peering, route propagation, and private cross-region traffic receipts alongside a complete multi-account AWS Organizations and FinOps governance blueprint.'
+        'Historical observations corroborate private connectivity across two Regions within one authorised account, with bounded packet-loss evidence and matching ACCEPT logs. Eight mocked safety tests support runtime guard behaviour. The governance blueprint is a design artefact; cleanup records do not establish present cloud state.'
     },
     takeaway: {
-      headline: 'Private Cross-Region VPC Peering + Segmented OU Governance vs. Flat Single-Region Networks',
+      headline: 'Confirm Regional State Before Advancing the Network Workflow',
       tradeoffLesson:
-        'Pairing explicit cross-region CIDR route tables and least-privilege security groups with a segmented multi-account OU blueprint isolated workload blast radius while maintaining private cross-region communication.'
+        'A successful creation response did not make peering immediately visible to the accepter Region. A provider-specific bounded wait and active-state checks in both Regions addressed that recorded failure before routing. Private connectivity observations remain distinct from loss-free networking, cross-account governance and failover assurances.'
     },
     diagramConfig: {
-      title: 'Cross-region AWS VPC peering & enterprise governance architecture',
+      title: 'Historical one-account network path & separate governance design',
       subtitleLine1:
-        'Live two-region AWS VPC peering, route table propagation, and private IP connectivity verification.',
+        'Two-Region private VPC peering with explicit routes and corroborating ping / ACCEPT logs, not automatic route propagation.',
       subtitleLine2:
-        'Paired with enterprise multi-account AWS Organizations, SCP guardrails, and FinOps budget governance blueprints.',
-      orchestratorLabel: 'Cross-Region AWS VPC Peering & Network Governance Topology',
-      entryNode: { label: 'Primary Region VPC', sub: '(Private Subnet)', color: '#7C3AED', icon: 'cloud' },
+        'Multi-account OUs, SCPs and FinOps remain design only; no cross-account or failover SLA was demonstrated.',
+      orchestratorLabel: 'One-Account Network Runtime with Separate Governance Blueprint',
+      entryNode: { label: 'Primary VPC', sub: '(One Account)', color: '#7C3AED', icon: 'cloud' },
       topServices: [
-        { label: 'Route Tables', sub: '(Cross-Region CIDR)', color: '#C026D3', icon: 'cache' },
-        { label: 'VPC Peering Link', sub: '(Active Peering)', color: '#059669', icon: 'api' },
-        { label: 'Security Groups', sub: '(Least-Privilege)', color: '#DC2626', icon: 'shield' },
-        { label: 'VPC Flow Logs', sub: '(Traffic Telemetry)', color: '#059669', icon: 'metrics' },
-        { label: 'Org & FinOps Plan', sub: '(SCPs & Budgets)', color: '#059669', icon: 'lock' }
+        { label: 'Explicit Routes', sub: '(Remote CIDR)', color: '#C026D3', icon: 'cache' },
+        { label: 'VPC Peering', sub: '(Active Both Regions)', color: '#059669', icon: 'api' },
+        { label: 'Security Rules', sub: '(Scoped Traffic)', color: '#DC2626', icon: 'shield' },
+        { label: 'VPC Flow Logs', sub: '(ACCEPT Evidence)', color: '#059669', icon: 'metrics' },
+        { label: 'Governance Plan', sub: '(Design Only)', color: '#059669', icon: 'lock' }
       ],
       flowSteps: [
-        { line1: 'Provision primary', line2: '& secondary region', line3: 'non-overlapping VPCs' },
-        { line1: 'Establish active', line2: 'cross-region VPC', line3: 'peering connection' },
-        { line1: 'Configure regional', line2: 'route tables &', line3: 'security group rules' },
-        { line1: 'Validate private IP', line2: 'connectivity &', line3: 'VPC flow telemetry' },
-        { line1: 'Deliver multi-acct', line2: 'Organizations, SCP', line3: '& FinOps blueprint' }
+        { line1: 'Create VPCs in', line2: 'two Regions within', line3: 'one authorised account' },
+        { line1: 'Wait for visible', line2: 'peering and active', line3: 'state in both Regions' },
+        { line1: 'Configure explicit', line2: 'regional routes &', line3: 'scoped traffic rules' },
+        { line1: 'Observe private', line2: 'ping and matching', line3: 'ACCEPT Flow Logs' },
+        { line1: 'Retain historical', line2: 'network evidence;', line3: 'governance is separate' }
       ],
-      branchLabel: 'Peering active',
-      returnStep1: { line1: 'Verify route tables', line2: '& flow log receipts' },
-      returnStep2: { line1: 'Confirm cross-region', line2: 'private reachability' },
-      rightModelNode: { label: 'Secondary VPC', sub: '(Peered Region)', color: '#059669', icon: 'cloud' },
-      bottomStoreNode: { label: 'Network & Org Audit', sub: '(2 Regions Verified)', color: '#7C3AED', icon: 'search' }
+      branchLabel: 'Active in both Regions',
+      returnStep1: { line1: 'Corroborate ping', line2: 'with ACCEPT records' },
+      returnStep2: { line1: 'Retain packet loss', line2: 'and scope limits' },
+      rightModelNode: { label: 'Secondary VPC', sub: '(Same Account)', color: '#059669', icon: 'cloud' },
+      bottomStoreNode: { label: 'Historical Evidence', sub: '(2 Regions / 1 Account)', color: '#7C3AED', icon: 'search' }
     },
     evidence: {
       credential: 'Udacity AWS Cloud Architect Nanodegree (Issued Oct 30, 2026)',
       sha256: '13c27505568d35b60882a5150ec40b86bf4f076c705133845b865852f20353fe',
       deliverables: [
-        'Live two-region AWS VPC peering topology with non-overlapping CIDR blocks',
-        'Custom regional route tables, security groups, and verified cross-region network traffic receipts',
-        'Enterprise multi-account AWS Organizations and Service Control Policy (SCP) architecture blueprint',
-        'Cloud FinOps cost-allocation tagging and budget governance framework'
+        'Codex-assisted Python network runtime with account/ownership guards and a bounded peering visibility wait',
+        'Eight isolated fake-client safety tests, separate from historical AWS service execution',
+        'Two-Region private connectivity observations with 12 matching ACCEPT records per Region and retained initial packet loss',
+        'Separate, undeployed multi-account OU, SCP, tagging and budget governance blueprint'
       ],
       filesIncluded: [
-        'architecture/enterprise_multi_account_blueprint.pdf',
-        'network/vpc_peering_route_tables.json',
-        'verification/cross_region_connectivity_receipts.log',
-        'finops/cost_governance_model.xlsx'
+        'README.txt',
+        'network_runtime.py',
+        'test_network_runtime_offline.py',
+        'network-runtime-offline-review.json',
+        'evidence/network/state.json',
+        'evidence/network-r2/observation.json',
+        'evidence/network-r2/us-east-1-console-output.txt',
+        'DjessiJorge_AWSArchitect_OrganizationInfrastructureProject.pdf'
       ],
       scopeSummary:
-        'Verified live two-region AWS VPC peering and cross-region routing connectivity paired with enterprise multi-account AWS Organizations and FinOps governance blueprints.'
-    }
+        'Codex-assisted academic work with a historical live network run in one authorised account across two Regions. Ping and Flow Logs corroborate private reachability, while the first east-Region ping recorded 25% loss. Eight safety tests used isolated fake clients. Multi-account governance remained a blueprint; cross-account deployment, failover, RTO, SLA, cost savings and current cloud state are unestablished.'
+    },
+    validationLessons: 'The first live peering attempt failed before EC2 launch when the accepter Region reported the connection as not found. Codex added a bounded, provider-specific visibility wait and required active status in both Regions before routing. Eight isolated mocked safety tests passed; a separate live run then recorded private-VM ping success and matching ACCEPT Flow Logs in both Regions. Usable regional state needed corroboration beyond a successful creation response. Multi-account governance remained a design exercise, and no failover SLA was measured.'
   },
   {
     id: 'cs-06',
@@ -532,79 +557,85 @@ const CASE_STUDIES = [
     category: 'cloud',
     accent: 'amber',
     domainBadge: 'CLOUD MIGRATION & CONTAINERISED API',
-    title: 'Credit Card Fraud Pipeline Migration to AWS Glue & ECS FastAPI',
+    title: 'Starter-Derived Fraud Training, Publication & ECS Serving on AWS',
     subtitle:
-      'Cloud migration of a legacy credit card fraud pipeline onto S3, AWS Glue ETL jobs, and a containerised FastAPI scoring service on Amazon ECS.',
-    stack: ['AWS Glue ETL', 'FastAPI', 'Amazon ECS', 'Docker Containers', 'Amazon S3 Versioning', 'CloudWatch Logs'],
-    headlineMetric: 'Glue + ECS Live',
-    headlineMetricLabel: 'Containerised Fraud Pipeline',
+      'Three supplied interfaces adapted for Glue model training, immutable S3 publication, triggering-object archival and FastAPI serving, with separately recorded checks.',
+    stack: ['AWS Glue & Spark ML', 'FastAPI & Amazon ECS', 'S3 Events & Versioning', 'Immutable Model Publication', 'Docker Containers', 'CloudWatch Logs'],
+    headlineMetric: 'Held-out F1: 0.8344',
+    headlineMetricLabel: '43,210 test rows | Historical B run',
     certName: 'AWS Cloud Architect Nanodegree',
     certUrl: 'https://www.udacity.com/certificate/e/d2ed9638-cae4-11f1-bbfe-07a631d7ce6a',
     narrative: {
       context:
-        'Legacy monolithic fraud scoring scripts tightly coupled batch data preparation with synchronous inference, making it difficult to audit dataset lineage or scale real-time HTTP scoring independently.',
+        'The supplied fraud-training, model-loading and refresh interfaces need explicit feature contracts, traceable source-to-model publication and separate evidence that the trained model can be served. A notification-window failure is retained as prior attempt history with an unverified cause.',
       objective:
-        'Migrate the credit card fraud pipeline to managed AWS infrastructure by decoupling version-pinned S3 data preparation (AWS Glue) from a containerised FastAPI inference microservice deployed on Amazon ECS.',
+        'Complete the three starter interfaces, separate training-only preprocessing from held-out evaluation, and bind event handling, model publication, archival and ECS serving to recorded source identities.',
       execution: [
-        'Configured versioned Amazon S3 storage with explicit `VersionId`-pinned dataset lineage across raw and curated zones.',
-        'Developed and executed AWS Glue ETL jobs to cleanse, transform, and partition credit card transaction records.',
-        'Containerised the FastAPI fraud scoring service with Docker and validated local container packaging against a deterministic 16-row test fixture.',
-        'Deployed the container task to Amazon ECS and verified live HTTP inference responses and CloudWatch runtime telemetry.'
+        'Codex-assisted source adaptation completed the Glue trainer, FastAPI loader and refresh function. Fixed Class 0/1 labels, feature-only request validation and training-only preprocessing preserve the model contract; 12 offline mocked checks cover these interfaces without executing AWS services.',
+        'The source-bound B run trained a Spark Random Forest pipeline on 284,807 retained rows with a feature-group 70/15/15 split. The full input inventory records keys, ETags and sizes; it is not a transactionally locked, version-pinned dataset.',
+        'The refresh path journals before starting Glue, deduplicates events and archives the triggering object only after successful model publication. Immutable model paths and pointers are retained; the triggering archive copy is pinned to its S3 VersionId.',
+        'Separate ECS records retain two localhost HTTP smoke probes. A native 16-row Docker fixture, mocked interface tests, earlier attempts and the B training run remain distinct execution cohorts.'
       ],
       outcome:
-        'Completed end-to-end migration to AWS Glue ETL and Amazon ECS FastAPI container serving, verified via S3 VersionId lineage, 16-row Docker fixture tests, and live HTTP runtime probes.'
+        'The B run records F1 0.8344, PR-AUC 0.8082 and ROC-AUC 0.9821 on 43,210 held-out rows. Two localhost probes inside the ECS task returned HTTP 200 and checked functional delivery, not holdout accuracy. The earlier notification-window account has no proven cause; neither the later run nor its waiting barrier establishes a controlled before-and-after improvement or current endpoint availability.'
     },
     takeaway: {
-      headline: 'Decoupled AWS Glue Batch ETL + Amazon ECS FastAPI Containers vs. Monolithic Scripts',
+      headline: 'Separate Training, Publication, Archival & Serving Checks',
       tradeoffLesson:
-        'Pinning S3 dataset `VersionId` metadata for AWS Glue ETL and validating the FastAPI Docker image against a 16-row fixture prior to Amazon ECS deployment ensured reproducible data lineage and reliable container serving.'
+        'Immutable model outputs and an event journal make state transitions inspectable, while exact-version archival protects the triggering object. They do not lock the whole training inventory. Predictive quality, mocked interface behaviour and HTTP delivery need separate checks; no production fraud-decision, throughput or latency guarantee follows from these classroom records.'
     },
     diagramConfig: {
-      title: 'Credit card fraud pipeline migration to AWS Glue & Amazon ECS',
+      title: 'Source-bound fraud training, publication & ECS serving workflow',
       subtitleLine1:
-        'Version-pinned Amazon S3 data lineage feeding AWS Glue ETL jobs and a containerised FastAPI service on Amazon ECS.',
+        'Three supplied interfaces link S3 events, Glue training, immutable model publication and FastAPI serving.',
       subtitleLine2:
-        'Verified via 16-row Docker test fixtures, Amazon ECS task deployment logs, and live HTTP runtime probes.',
-      orchestratorLabel: 'AWS Glue ETL & Amazon ECS FastAPI Migration Architecture',
-      entryNode: { label: 'S3 Raw Storage', sub: '(VersionId Pinned)', color: '#7C3AED', icon: 'db' },
+        'B-run holdout metrics, 12 mocked checks, a native fixture and two HTTP probes are separate historical cohorts.',
+      orchestratorLabel: 'EVENT JOURNAL | TRAIN | PUBLISH | ARCHIVE | SERVE',
+      entryNode: { label: 'S3 Object Event', sub: '(Trigger version)', color: '#7C3AED', icon: 'db' },
       topServices: [
-        { label: 'S3 Versioning', sub: '(Dataset Lineage)', color: '#C026D3', icon: 'lock' },
-        { label: 'AWS Glue ETL', sub: '(Feature Cleansing)', color: '#059669', icon: 'ai' },
-        { label: 'Docker Fixture', sub: '(16-Row Validation)', color: '#059669', icon: 'cache' },
-        { label: 'Amazon ECR / ECS', sub: '(Container Service)', color: '#059669', icon: 'cloud' },
-        { label: 'CloudWatch Logs', sub: '(Runtime Telemetry)', color: '#EA580C', icon: 'metrics' }
+        { label: 'S3 Event Journal', sub: '(Deduplication)', color: '#C026D3', icon: 'lock' },
+        { label: 'Glue / Spark ML', sub: '(Train-only prep)', color: '#059669', icon: 'ai' },
+        { label: 'Model Publication', sub: '(Immutable output)', color: '#059669', icon: 'cache' },
+        { label: 'Amazon ECR / ECS', sub: '(FastAPI serving)', color: '#059669', icon: 'cloud' },
+        { label: 'Source Receipts', sub: '(Separate checks)', color: '#EA580C', icon: 'metrics' }
       ],
       flowSteps: [
-        { line1: 'Ingest raw fraud', line2: 'dataset into S3 with', line3: 'pinned VersionId' },
-        { line1: 'Execute AWS Glue', line2: 'ETL job to stage', line3: 'curated features' },
-        { line1: 'Build FastAPI Docker', line2: 'image & verify on', line3: '16-row test fixture' },
-        { line1: 'Deploy container', line2: 'task onto managed', line3: 'Amazon ECS cluster' },
-        { line1: 'Run live HTTP', line2: 'scoring probes &', line3: 'capture ECS logs' }
+        { line1: 'Validate event', line2: 'and journal before', line3: 'one Glue start' },
+        { line1: 'Train on retained', line2: 'source inventory', line3: '284,807 rows' },
+        { line1: 'Publish model', line2: 'before successful', line3: 'completion archive' },
+        { line1: 'Archive triggering', line2: 'object\'s exact', line3: 'S3 VersionId' },
+        { line1: 'Load run model', line2: 'in ECS and probe', line3: 'localhost HTTP' }
       ],
-      branchLabel: '16-row test pass',
-      returnStep1: { line1: 'Verify HTTP 200', line2: 'fraud score JSON' },
-      returnStep2: { line1: 'Confirm S3 & ECS', line2: 'runtime lineage' },
-      rightModelNode: { label: 'ECS FastAPI Task', sub: '(Live HTTP Endpoint)', color: '#059669', icon: 'api' },
-      bottomStoreNode: { label: 'Curated S3 Store', sub: '(Glue ETL Output)', color: '#7C3AED', icon: 'search' }
+      branchLabel: 'Separate checks',
+      returnStep1: { line1: 'Keep held-out F1', line2: 'separate from HTTP' },
+      returnStep2: { line1: 'Check source and', line2: 'model bindings' },
+      rightModelNode: { label: 'FastAPI in ECS', sub: '(2 HTTP 200 probes)', color: '#059669', icon: 'api' },
+      bottomStoreNode: { label: 'S3 Model Store', sub: '(Run-bound outputs)', color: '#7C3AED', icon: 'search' }
     },
     evidence: {
       credential: 'Udacity AWS Cloud Architect Nanodegree (Issued Oct 30, 2026)',
       sha256: '5d719209b8d4cb65be5c84ba1738afb83facb933c8c7b58c959b7c50408788f4',
       deliverables: [
-        'VersionId-pinned Amazon S3 data storage and AWS Glue ETL transformation pipeline',
-        'Containerised FastAPI fraud scoring microservice validated on a 16-row test fixture',
-        'Live Amazon ECS container task deployment with verified HTTP runtime scoring probes',
-        'Cloud migration architecture decision record and operational runbook'
+        'Three completed starter interfaces for Glue training, FastAPI model loading and refresh/event handling, with substantial Codex assistance disclosed.',
+        'Twelve offline mocked interface checks and a separate native 16-row Docker compatibility fixture.',
+        'Source-bound B training metrics for 284,807 source rows and a 43,210-row holdout, without a before-and-after improvement claim.',
+        'Immutable model publication, triggering-version archive receipts and two functional-only localhost HTTP probes inside ECS.'
       ],
       filesIncluded: [
-        'glue/credit_card_fraud_etl.py',
-        'service/app.py',
-        'service/Dockerfile',
-        'verification/ecs_runtime_probe_receipt.json'
+        'completed_starter/fraud_detector_model_trainer.py',
+        'completed_starter/fraud_detection_api/main.py',
+        'completed_starter/refresh_function.py',
+        'completed_starter/Dockerfile',
+        'evidence/ATTEMPT-HISTORY.json',
+        'evidence/audits/completed-starter-offline-tests.json',
+        'evidence/runtime-b/train-metrics.json',
+        'evidence/runtime-b/actual-http-smoke.json',
+        'evidence/runtime-b/new-source-runtime-proof.json'
       ],
       scopeSummary:
-        'Verified S3 VersionId-pinned dataset lineage, AWS Glue ETL execution, 16-row Docker fixture validation, and live Amazon ECS FastAPI container deployment.'
-    }
+        'Academic, starter-derived implementation with substantial Codex assistance disclosed. The earlier notification-window account, source-bound B training, mocked tests, native fixture and HTTP probes are separate records. The full training inventory is not transactionally version-locked; HTTP 200 does not establish predictive accuracy, production reliability or current service availability.'
+    },
+    validationLessons: 'Codex adapted three supplied starter interfaces and used 12 mocked tests to check schemas, event deduplication and publication/archive ordering. An attempt-history record reports no observed notification within the allotted window; the original runtime and cause remain unverified. A separate, source-bound run processed 284,807 source rows, recorded held-out F1 of 0.8344 and served two HTTP 200 smoke probes. The probes checked delivery, not accuracy. Training, publication, archival and serving needed distinct state checks, with each execution cohort kept separate.'
   },
   {
     id: 'cs-07',
@@ -614,37 +645,37 @@ const CASE_STUDIES = [
     domainBadge: 'SERVERLESS AI & CLOUDFORMATION IAC',
     title: 'Event-Driven AI Document Summarisation with CloudFormation & Amazon Bedrock',
     subtitle:
-      'Immutable AWS CloudFormation stack provisioning S3 event notifications, AWS Lambda compute, Amazon Bedrock LLM summarisation, and CloudWatch telemetry.',
-    stack: ['Amazon Bedrock', 'AWS CloudFormation', 'AWS Lambda', 'Amazon S3 Events', 'Least-Privilege IAM', 'FinOps Optimisation'],
-    headlineMetric: 'Bedrock + IaC Stack',
-    headlineMetricLabel: 'Event-Driven AI Pipeline',
+      'CloudFormation-defined S3 notifications, Lambda and Amazon Nova Micro on Bedrock, with encrypted output and source-matched historical deployment receipts.',
+    stack: ['Amazon Bedrock / Nova Micro', 'AWS CloudFormation', 'AWS Lambda', 'Amazon S3 Events', 'Least-Privilege IAM', 'FinOps Proposals'],
+    headlineMetric: '13,932 Input / 447 Output Tokens',
+    headlineMetricLabel: 'Recorded final document run',
     certName: 'AWS Cloud Architect Nanodegree',
     certUrl: 'https://www.udacity.com/certificate/e/d2ed9638-cae4-11f1-bbfe-07a631d7ce6a',
     narrative: {
       context:
-        'Running dedicated compute instances for intermittent document summarisation and generative AI workloads creates high idle cloud expenditure and manual provisioning drift.',
+        'The supplied document scenario requires a traceable upload-to-summary path with encrypted storage, scoped permissions and distinct input/output buckets. Storage and inference cost options need to be explained separately from the implemented workload.',
       objective:
-        'Modernise an AI document processing workload using AWS CloudFormation Infrastructure as Code to deploy an event-driven Amazon S3, AWS Lambda, and Amazon Bedrock pipeline paired with FinOps cost-optimisation blueprints.',
+        'Validate a CloudFormation-defined S3-to-Lambda-to-Bedrock workflow against its deployed source and saved encrypted output, while keeping proposed optimisations and generated-text quality outside the deployment-success claim.',
       execution: [
-        'Authored modular AWS CloudFormation templates provisioning input/output S3 buckets, event notifications, least-privilege IAM roles, and AWS Lambda functions.',
-        'Configured the AWS Lambda handler to trigger automatically on S3 object uploads, invoke Amazon Bedrock LLM summarisation, and write structured outputs.',
-        'Verified end-to-end CloudFormation stack deployment, S3 event triggering, and Bedrock invocation telemetry in CloudWatch Logs.',
-        'Formulated FinOps architectural optimisation blueprints covering S3 lifecycle tiering, response caching, and batch inference scheduling.'
+        'The retained template and Lambda source define separate input/output buckets, public-access blocks, AES256 encryption and scoped execution permissions. Output writes do not target the input notification bucket.',
+        'The handler accepts supported S3 ObjectCreated events for plaintext inputs, bounds the actual read to 100,000 bytes, invokes Amazon Nova Micro through Bedrock and stores the resulting summary.',
+        'CloudFormation validation, final UPDATE_COMPLETE receipts and local/deployed source hashes were compared. A saved upload after the final update produced a new output object from the matching source.',
+        'The report proposes lifecycle tiering, selective storage changes, reuse/caching and batch inference. These options were not demonstrated as implemented savings, and the roughly 70 KB sample is below the cited Intelligent-Tiering eligibility threshold.'
       ],
       outcome:
-        'Delivered a reproducible CloudFormation-provisioned S3, Lambda, and Amazon Bedrock event-driven summarisation pipeline that eliminates idle compute burn between inference events.'
+        'The final workflow receipt records a 69,854-byte input and a fresh saved output at 2026-10-30 09:20:28 UTC, bound to deployed code/template hashes. Recorded usage is 13,932 input and 447 output tokens. This verifies event delivery and persisted output, not legal factual accuracy or cost savings. An earlier Lambda log is a separate execution; the reported ten local tests lack an independently retained raw test log.'
     },
     takeaway: {
-      headline: 'CloudFormation Event-Driven S3 + Lambda + Bedrock vs. Always-On Compute Clusters',
+      headline: 'Source-Matched Event Delivery vs. Text Quality & Cost Proposals',
       tradeoffLesson:
-        'Triggering AWS Lambda and Amazon Bedrock strictly on S3 object upload events via CloudFormation IaC eliminated 100% of idle compute cost between requests while enforcing scoped IAM execution roles.'
+        'Separate buckets and bounded reads make the event path inspectable and avoid output-trigger recursion. Deployment receipts and an encrypted summary establish that path, not legal correctness. Lifecycle, caching and batch inference require implementation and measurement before any storage, inference or idle-cost saving can be claimed.'
     },
     diagramConfig: {
       title: 'Event-driven Amazon Bedrock workload modernisation with CloudFormation',
       subtitleLine1:
-        'AWS CloudFormation stack chaining Amazon S3 object events, AWS Lambda orchestration, and Amazon Bedrock inference.',
+        'CloudFormation connects encrypted S3 input, Lambda and Nova Micro on Bedrock to a separate encrypted output bucket.',
       subtitleLine2:
-        'Paired with FinOps architectural designs for S3 lifecycle tiering, response caching, and batch optimisation.',
+        'The final source-matched receipt records 13,932 input and 447 output tokens; cost optimisations remain proposals.',
       orchestratorLabel: 'CloudFormation Serverless S3 + Lambda + Bedrock Orchestrator',
       entryNode: { label: 'S3 Input Bucket', sub: '(Document Upload)', color: '#7C3AED', icon: 'db' },
       topServices: [
@@ -652,39 +683,42 @@ const CASE_STUDIES = [
         { label: 'IAM Execution Role', sub: '(Scoped Policy)', color: '#DC2626', icon: 'lock' },
         { label: 'AWS Lambda', sub: '(Event Orchestrator)', color: '#EA580C', icon: 'api' },
         { label: 'CloudWatch Logs', sub: '(Execution Trace)', color: '#059669', icon: 'metrics' },
-        { label: 'FinOps Blueprint', sub: '(Lifecycle & Cache)', color: '#059669', icon: 'cache' }
+        { label: 'Workflow Receipt', sub: '(Hashes + token use)', color: '#059669', icon: 'cache' }
       ],
       flowSteps: [
-        { line1: 'Provision S3, IAM &', line2: 'Lambda stack via', line3: 'CloudFormation IaC' },
-        { line1: 'Upload document to', line2: 'S3 & trigger event', line3: 'notification hook' },
-        { line1: 'Invoke AWS Lambda', line2: 'with least-privilege', line3: 'Bedrock IAM role' },
-        { line1: 'Call Amazon Bedrock', line2: 'summarisation LLM', line3: '& format output' },
-        { line1: 'Persist result to S3', line2: 'output bucket &', line3: 'log CloudWatch' }
+        { line1: 'Provision S3, IAM', line2: 'and Lambda through', line3: 'CloudFormation' },
+        { line1: 'Upload plaintext', line2: 'to the input S3', line3: 'notification path' },
+        { line1: 'Validate event', line2: 'and bound the read', line3: 'to 100,000 bytes' },
+        { line1: 'Invoke Nova Micro', line2: 'through Amazon', line3: 'Bedrock' },
+        { line1: 'Persist encrypted', line2: 'summary and retain', line3: 'source receipts' }
       ],
       branchLabel: 'Event-driven',
-      returnStep1: { line1: 'Apply S3 lifecycle', line2: '& caching FinOps' },
-      returnStep2: { line1: 'Store structured', line2: 'Bedrock summary' },
-      rightModelNode: { label: 'Amazon Bedrock', sub: '(LLM Summarizer)', color: '#059669', icon: 'ai' },
-      bottomStoreNode: { label: 'S3 Output & Logs', sub: '(CloudFormation IaC)', color: '#7C3AED', icon: 'search' }
+      returnStep1: { line1: 'Check output and', line2: 'source identities' },
+      returnStep2: { line1: 'Save encrypted', line2: 'summary object' },
+      rightModelNode: { label: 'Amazon Nova Micro', sub: '(Via Bedrock)', color: '#059669', icon: 'ai' },
+      bottomStoreNode: { label: 'S3 Summary Output', sub: '(AES256-encrypted)', color: '#7C3AED', icon: 'search' }
     },
     evidence: {
       credential: 'Udacity AWS Cloud Architect Nanodegree (Issued Oct 30, 2026)',
       sha256: '45d71a891038d67813ef83f7dac11462bf2be5c8073405678853952eedc2bc77',
       deliverables: [
-        'Immutable AWS CloudFormation template provisioning S3 buckets, IAM roles, and AWS Lambda',
-        'Event-driven Amazon Bedrock document summarisation handler with CloudWatch telemetry',
-        'Verified S3 upload trigger and Bedrock summary output artefacts',
-        'FinOps optimisation blueprint covering S3 lifecycle tiering and response caching'
+        'CloudFormation template and Lambda source for bounded plaintext input, scoped IAM, separate AES256-encrypted S3 buckets and Bedrock invocation.',
+        'Provider template-validation response and final deployment/output receipts bound to matching code and template hashes.',
+        'A recorded final upload/output sequence with 13,932 input and 447 output tokens, separate from the earlier Lambda execution log.',
+        'Storage and inference optimisation proposals, with sample-size limits and no implemented cost-saving claim.'
       ],
       filesIncluded: [
-        'iac/cloudformation_bedrock_pipeline.yaml',
-        'lambda/summarize_handler.py',
-        'verification/cloudwatch_bedrock_execution.json',
-        'docs/finops_optimization_proposal.md'
+        'template.yaml',
+        'lambda_function.py',
+        'project_answers.md',
+        'evidence/template-validation.json',
+        'evidence/workflow-verification.json',
+        'evidence/lambda-logs.json'
       ],
       scopeSummary:
-        'Verified live AWS CloudFormation deployment chaining S3 event triggers, AWS Lambda, and Amazon Bedrock summarisation paired with FinOps optimisation blueprints.'
-    }
+        'Historical academic validation of the source-matched S3 notification, Lambda, Bedrock and encrypted-output chain. Per-action author attribution and a raw log for the reported local test count are not established. Proposal-only cost strategies, generated-text accuracy and current cloud availability remain outside the verified deployment account.'
+    },
+    validationLessons: 'Validation followed the deployed document from S3 notification through Lambda and Bedrock to an encrypted output object. CloudFormation validation and deployment receipts were checked alongside source hashes; a recorded upload after the final update produced a new saved summary from the matching code. The recorded response used 13,932 input and 447 output tokens. These checks establish the event-to-output path, not legal accuracy. Lifecycle policies, caching and batch inference remained proposed optimisations. Deployment correctness, generated-text quality and future cost claims each require their own validation.'
   },
   {
     id: 'cs-08',
@@ -694,56 +728,56 @@ const CASE_STUDIES = [
     domainBadge: 'DATA ENGINEERING & MEDALLION LAKEHOUSE',
     title: 'Exastore Medallion Data Lakehouse on AWS Glue, Iceberg & Athena',
     subtitle:
-      'Bronze, Silver, and Gold lakehouse architecture using S3, AWS Glue jobs, Apache Iceberg tables (with CDC time-travel queries), and Amazon Athena analytical SQL.',
-    stack: ['AWS Glue', 'Apache Iceberg', 'Amazon Athena (25 Queries)', 'Amazon S3', 'Bronze-Silver-Gold', 'ACID Time-Travel'],
+      'A batch Iceberg lakehouse over supplied CDC and event JSON, with tolerant timestamp handling, distinct materialised snapshots and retained Athena history queries.',
+    stack: ['AWS Glue', 'Apache Iceberg', 'Amazon Athena (25 Queries)', 'Amazon S3 & S3 Tables', 'Bronze-Silver-Gold', 'Batch CDC & Snapshots'],
     headlineMetric: '5 Glue Runs & 25 Athena Queries',
-    headlineMetricLabel: 'Bronze, Silver & Gold Iceberg Tables',
+    headlineMetricLabel: 'Historical batch runs | Distinct snapshots',
     certName: 'Data Engineering with AWS Nanodegree',
     certUrl: 'https://www.udacity.com/certificate/e/7409073a-d07d-11f1-b53e-4b451568887b',
     narrative: {
       context:
-        'Raw e-commerce operational exports arrive with malformed timestamps and unjoined entity records, requiring a governed lakehouse architecture that supports ACID transactions, schema enforcement, and historical time-travel.',
+        'The supplied e-commerce CDC and event JSON includes invalid calendar values and records with different analytical eligibility. Raw retention, filtered analytics and later CDC changes need explicit snapshot and revenue definitions.',
       objective:
-        'Architect the Exastore Bronze-Silver-Gold Medallion Data Lakehouse on Amazon S3, AWS Glue, Apache Iceberg, and Amazon Athena with automated data cleansing and Change Data Capture (CDC) verification.',
+        'Process the supplied data through Bronze, Silver and Gold Iceberg layers, retain quality counters and historical queries, and explain which snapshot each row count and revenue metric represents.',
       execution: [
-        'Ingested raw e-commerce datasets into Bronze S3 tables covering 2,133 orders, 912 users, 391 products, and 498 operational events.',
-        'Developed AWS Glue ETL jobs that filter malformed timestamps while preserving raw Bronze records, joining entities into cleansed Silver Apache Iceberg tables (2,019 validated order-details rows).',
-        'Built Gold analytical aggregations (13 monthly and 491 hourly performance summaries) and executed Apache Iceberg snapshot time-travel and CDC merges.',
-        'Validated all Medallion layers across 5 AWS Glue job runs and 25 serverless Amazon Athena SQL queries.'
+        'Four completed Glue scripts use supplied notebooks, scaffolding and datasets. Initial Bronze outputs retain 2,133 orders, 912 users, 391 products and 498 valid events; unchanged raw files remain available for inspection.',
+        'Tolerant timestamp casts preserve affected CDC rows with null timestamps, while unsuitable analytics rows are excluded downstream. Source records include invalid dates such as 29 February 2025; no retained pre-fix exception establishes a crash-and-repair sequence.',
+        'The initial Silver materialisation contains 2,019 order-details rows. Gold contains 13 monthly and 491 event-hour rows. Their order-detail and event-price revenue measures describe different populations and definitions.',
+        'A later supplemental CDC demonstration changes Bronze orders from 2,133 to 2,131 and products from 391 to 393. Silver and Gold retain the earlier materialisation; history/time-travel queries compare the Bronze states separately.'
       ],
       outcome:
-        'Verified all Bronze (2,133 orders / 912 users), Silver (2,019 cleansed order-details), and Gold (13 monthly / 491 hourly) Apache Iceberg tables across 5 AWS Glue runs and 25 Amazon Athena queries.'
+        'The execution ledger records five Glue runs and 25 Athena queries, all SUCCEEDED. Historical Bronze order revenue is 556,462.16 across 2,133 orders versus 555,744.83 across 2,131 later orders. These are distinct from Silver/Gold revenue definitions. Successful jobs and retained snapshots do not establish a refreshed end-to-end reconciliation, and no independent local SQL-test log or exact eight-gate suite is asserted.'
     },
     takeaway: {
-      headline: 'Apache Iceberg ACID Lakehouse + Serverless Amazon Athena vs. Unversioned Raw S3 Files',
+      headline: 'Raw Retention & Explicit Snapshot Boundaries in a Batch Lakehouse',
       tradeoffLesson:
-        'Modelling Bronze, Silver, and Gold layers as Apache Iceberg tables registered in AWS Glue Catalog enabled ACID CDC updates and snapshot time-travel via serverless Amazon Athena without running an always-on warehouse cluster.'
+        'Tolerant parsing avoids rejecting an entire batch while keeping unsuitable records out of analytics, so row-count differences need a documented explanation. Later Bronze CDC does not refresh existing Silver/Gold tables. Deleted keys have no retained tombstones, making older-base replay unsafe; this bounded batch design is not a durable streaming checkpoint or measured all-service saving.'
     },
     diagramConfig: {
       title: 'Exastore Medallion data lakehouse on AWS Glue, Iceberg & Athena',
       subtitleLine1:
-        'Bronze (2,133 orders), Silver (2,019 cleansed order-details), and Gold (13 monthly / 491 hourly) Iceberg lakehouse.',
+        'Initial Bronze, Silver and Gold materialisations are separate from a later Bronze-only CDC demonstration.',
       subtitleLine2:
-        'Verified across 5 AWS Glue ETL job runs, Apache Iceberg CDC time-travel snapshots, and 25 Amazon Athena SQL queries.',
+        'Five Glue runs and 25 Athena queries succeeded; row populations, revenue definitions and snapshot times remain explicit.',
       orchestratorLabel: 'AWS Glue & Apache Iceberg Medallion Lakehouse Orchestrator',
-      entryNode: { label: 'S3 Raw Exports', sub: '(Orders/Users/Events)', color: '#7C3AED', icon: 'db' },
+      entryNode: { label: 'Supplied JSON', sub: '(CDC and events)', color: '#7C3AED', icon: 'db' },
       topServices: [
         { label: 'Glue Data Catalog', sub: '(Iceberg Metadata)', color: '#C026D3', icon: 'cache' },
-        { label: 'Bronze Zone', sub: '(2,133 Orders / 912 Users)', color: '#059669', icon: 'db' },
-        { label: 'Silver Cleansed', sub: '(2,019 Order-Details)', color: '#059669', icon: 'ai' },
-        { label: 'Iceberg CDC', sub: '(Time-Travel Snapshots)', color: '#059669', icon: 'shield' },
-        { label: 'Gold Marts', sub: '(13 Monthly / 491 Hourly)', color: '#059669', icon: 'metrics' }
+        { label: 'Initial Bronze', sub: '(2,133 orders)', color: '#059669', icon: 'db' },
+        { label: 'Silver Snapshot', sub: '(2,019 order details)', color: '#059669', icon: 'ai' },
+        { label: 'Later Bronze CDC', sub: '(2,131 orders)', color: '#059669', icon: 'shield' },
+        { label: 'Gold Snapshot', sub: '(13 mo / 491 rows)', color: '#059669', icon: 'metrics' }
       ],
       flowSteps: [
-        { line1: 'Ingest raw CSVs into', line2: 'Bronze tables (2,133', line3: 'orders, 912 users)' },
-        { line1: 'Filter invalid', line2: 'timestamps into', line3: 'Silver (2,019 rows)' },
-        { line1: 'Execute Iceberg', line2: 'CDC merges &', line3: 'snapshot time-travel' },
-        { line1: 'Materialise Gold', line2: 'KPI marts (13 mo /', line3: '491 hourly rows)' },
-        { line1: 'Verify tables across', line2: '25 Amazon Athena', line3: 'serverless queries' }
+        { line1: 'Load raw JSON', line2: 'and retain initial', line3: 'Bronze records' },
+        { line1: 'Parse tolerantly', line2: 'and filter Silver', line3: '(2,019 details)' },
+        { line1: 'Materialise Gold', line2: '13 monthly rows /', line3: '491 hourly rows' },
+        { line1: 'Apply later CDC', line2: 'to Bronze only', line3: '2,133 to 2,131' },
+        { line1: 'Query history and', line2: 'keep each snapshot', line3: 'scope explicit' }
       ],
-      branchLabel: '5 Glue runs pass',
-      returnStep1: { line1: 'Validate row counts', line2: '& schema integrity' },
-      returnStep2: { line1: 'Publish Gold BI', line2: 'query results' },
+      branchLabel: 'Distinct snapshots',
+      returnStep1: { line1: 'Keep Silver/Gold', line2: 'at earlier snapshot' },
+      returnStep2: { line1: 'Explain filtered', line2: 'rows and revenue' },
       rightModelNode: { label: 'Amazon Athena', sub: '(25 SQL Queries)', color: '#059669', icon: 'search' },
       bottomStoreNode: { label: 'S3 Iceberg Tables', sub: '(Bronze/Silver/Gold)', color: '#7C3AED', icon: 'db' }
     },
@@ -751,20 +785,25 @@ const CASE_STUDIES = [
       credential: 'Udacity Data Engineering with AWS Nanodegree (Issued Oct 30, 2026)',
       sha256: 'eee46fe24e5bbc3e538330519d9545001d0e55a4e1f3d9bc4ce28db4af36beb6',
       deliverables: [
-        'Bronze-Silver-Gold Medallion Lakehouse built on Amazon S3, AWS Glue, and Apache Iceberg',
-        'Automated timestamp validation filtering malformed rows into 2,019 cleansed Silver order-details records',
-        'Apache Iceberg ACID Change Data Capture (CDC) merges and snapshot time-travel queries',
-        '5 verified AWS Glue ETL runs and 25 Amazon Athena analytical SQL queries'
+        'Four batch Glue scripts for Bronze CDC/event ingestion, Silver enrichment and Gold aggregation over supplied data.',
+        'Tolerant timestamp casts, explicit downstream eligibility filters and raw-source retention, without an invented pre-fix crash.',
+        'Initial Silver/Gold materialisation and a separate later Bronze CDC/history demonstration with documented row and revenue definitions.',
+        'Five successful Glue runs and 25 successful Athena queries in the retained execution ledger; no independently retained local SQL-test result is claimed.'
       ],
       filesIncluded: [
-        'glue_jobs/bronze_to_silver_iceberg.py',
-        'glue_jobs/silver_to_gold_aggregations.py',
-        'sql/athena_medallion_verification_25queries.sql',
-        'reports/glue_and_athena_execution_receipts.json'
+        'glue-jobs/cdc-batch/src/iceberg-cdc-bronze-layer.py',
+        'glue-jobs/events/src/iceberg-events-bronze-layer.py',
+        'glue-jobs/silver/src/iceberg-silver-layer.py',
+        'glue-jobs/gold/src/iceberg-gold-layer.py',
+        'runtime/execution-ledger.json',
+        'runtime/bronze-phase.log',
+        'runtime/final-phase.log',
+        'runtime/table-summary.csv'
       ],
       scopeSummary:
-        'Verified Bronze-Silver-Gold Apache Iceberg tables across 5 AWS Glue ETL runs and 25 Amazon Athena analytical SQL queries.'
-    }
+        'Supplied academic datasets, notebooks and scaffolding underpin this bounded batch lakehouse. Per-action human/AI authorship is not established by the package. Five Glue/25 Athena completions and separately scoped initial/later counts are retained; no current cloud state, complete downstream CDC refresh, general replay guarantee or measured cost saving is claimed.'
+    },
+    validationLessons: 'Malformed calendar values in the supplied data were handled with tolerant timestamp casts while the raw records remained available. Silver analytics excluded unsuitable timestamps, and saved outputs explained the resulting row-count differences. Five Glue runs and 25 Athena queries completed successfully. The later CDC demonstration changed bronze orders from 2,133 to 2,131; silver and gold retained their earlier materialised snapshot. Rejected-record handling, snapshot boundaries and revenue definitions had to remain explicit; successful jobs and differing totals did not establish end-to-end reconciliation.'
   },
   {
     id: 'cs-09',
@@ -772,80 +811,86 @@ const CASE_STUDIES = [
     category: 'data',
     accent: 'indigo',
     domainBadge: 'REAL-TIME EVENT STREAMING',
-    title: 'Real-Time Public Transit (Kafka/Faust/KSQL) & STEDI Balance (Spark Streaming) Pipelines',
+    title: 'Public Transit Event Counts & STEDI Customer/Risk Streaming',
     subtitle:
-      'Two event-streaming architectures: CTA public transit turnstile & weather stream processing (Kafka, Faust, KSQL) and STEDI human balance analytics (Spark Structured Streaming).',
-    stack: ['Apache Kafka', 'Faust & KSQL', 'Spark Structured Streaming', 'Schema Registry (Avro)', 'Kafka Connect', 'PySpark'],
-    headlineMetric: '2 Streaming Systems',
-    headlineMetricLabel: 'Kafka, Faust, KSQL & Spark',
+      'Two independent classroom implementations: Kafka/Faust/KSQL transit aggregation and a Spark stream-stream join between Redis customer demographics and supplied STEDI risk scores.',
+    stack: ['Apache Kafka & Avro', 'Faust & KSQL', 'Spark 2.4.6 / PySpark', 'Redis Customer Data', 'Schema Registry & Kafka Connect', 'Plain-JSON Topic Sinks'],
+    headlineMetric: '36,002 Transit Rider Events',
+    headlineMetricLabel: 'Exact replay match | 5 separate Spark checks',
     certName: 'Data Streaming Nanodegree (Kafka & Spark)',
     certUrl: 'https://www.udacity.com/certificate/e/ce6e6422-d041-11f1-bbc9-23cf1ca0d113',
     narrative: {
       context:
-        'Live transit turnstile feeds and wearable accelerometer sensors generate continuous event streams that require schema-validated broker ingestion and stateful stream-to-stream joins.',
+        'The supplied transit simulator needs correct rider-event identity and aggregation. The separate STEDI application needs customer-demographic envelopes joined to supplied risk events by email; neither implementation is a wearable-sensor or consent ETL pipeline.',
       objective:
-        'Architect two production-pattern streaming pipelines: (1) a public transit telemetry platform using Apache Kafka, Schema Registry Avro, Faust, and KSQL, and (2) a human balance sensor pipeline using Spark Structured Streaming.',
+        'Complete the supplied Kafka/Faust/KSQL and Spark interfaces, validate each wire/output contract and keep event counts, synthetic-fixture tests and small classroom application samples in their own evidence cohorts.',
       execution: [
-        'Engineered Apache Kafka Avro producers and Confluent Schema Registry contracts for real-time CTA train arrival, turnstile, and weather events.',
-        'Configured Kafka Connect PostgreSQL JDBC connectors, Faust Python stream processors, and KSQL continuous aggregation tables to power live transit status views.',
-        'Developed PySpark Structured Streaming jobs consuming Kafka topics for STEDI customer profiles, accelerometer readings, and step-trainer telemetry.',
-        'Executed stateful stream-to-stream joins in Spark to filter and score consented customer sensor events in real time.'
+        'Transit producers use Registry-backed Avro for arrivals, turnstiles and weather. PostgreSQL/Kafka Connect station messages are plain JSON; manually registered Avro subjects describe logical station fields, not automatic Registry enforcement of those JSON wire records.',
+        'The retained KSQL provider error identifies a missing table KEY. Final source declares event_id and KEY=event_id, emits one uniquely keyed event per rider, and groups by station_id. Later configuration and frozen-offset replay records verify recovery without identifying an undocumented actor or patch conversation.',
+        'STEDI native Spark transforms decode all entries from Redis customer envelopes, select one live-write alias or initial snapshot array, validate demographics/risk fields and inner-join email/customer across two streams. Kafka output contains customer, score, email and birthYear.',
+        'Five native Spark tests use synthetic fixtures, including both input arrival orders. A separate distributed classroom run records five matched messages for one customer. Its unwatermarked join retains customer state, and one batch took 11.447 seconds against a five-second trigger interval.'
       ],
       outcome:
-        'Delivered two complete real-time streaming systems verifying Avro schema enforcement, Kafka Connect ingestion, Faust/KSQL stateful table aggregations, and PySpark Structured Streaming multi-topic joins.'
+        'The frozen-offset transit check matches 36,002 raw rider events to 36,002 summary riders across 92 unique station IDs, with no differences and a stable source. Separate service readback records 230 stops and 111 physical stations; 94 displayed line memberships are not 94 unique stations. STEDI has five passing native Spark tests in 42.946 seconds and five application messages for one customer. These counts do not establish transit demand, medical-model accuracy, bounded production state or a latency guarantee.'
     },
     takeaway: {
-      headline: 'Declarative KSQL/Faust Stream Tables + Expressive PySpark Structured Streaming Joins',
+      headline: 'Explicit Event Identity, Join State & Separate Output Contracts',
       tradeoffLesson:
-        'Pairing KSQL and Faust for low-overhead topic transformations with PySpark Structured Streaming for complex multi-stream DataFrame joins matched each streaming workload to its optimal execution engine.'
+        'Transit aggregation needs one event per rider and an explicit KSQL table key; topic existence alone does not prove counts. STEDI needs both stream arrival orders tested and the actual downstream JSON contract checked. Retaining customer state without a watermark supports later risk matches in this demonstration but has no production retention bound. No measured optimal-engine or throughput comparison is claimed.'
     },
     diagramConfig: {
-      title: 'Real-time Kafka/Faust/KSQL transit & Spark Structured Streaming architecture',
+      title: 'Independent Kafka/Faust/KSQL transit & Spark demographics/risk streaming',
       subtitleLine1:
-        'Pipeline 1: CTA train & turnstile producers, Schema Registry Avro, Kafka Connect, Faust, and KSQL tables.',
+        'Transit uses Avro events and plain-JSON stations; STEDI joins Redis customer demographics with supplied risk scores.',
       subtitleLine2:
-        'Pipeline 2: STEDI wearable sensor risk evaluation joining Kafka streams via PySpark Structured Streaming.',
-      orchestratorLabel: 'Apache Kafka, Faust, KSQL & Spark Structured Streaming',
-      entryNode: { label: 'Event Producers', sub: '(Transit & Sensors)', color: '#7C3AED', icon: 'api' },
+        'Arrows show a shared validation pattern, not an integrated system; counts and state limits remain implementation-specific.',
+      orchestratorLabel: 'COMMON PATTERN | TRANSIT AND STEDI RUN SEPARATELY',
+      entryNode: { label: 'Selected Workflow', sub: '(Transit or STEDI)', color: '#7C3AED', icon: 'api' },
       topServices: [
-        { label: 'Schema Registry', sub: '(Avro Contracts)', color: '#C026D3', icon: 'cache' },
-        { label: 'Kafka Connect', sub: '(Postgres Sync)', color: '#059669', icon: 'db' },
-        { label: 'Faust Processor', sub: '(Station Stream)', color: '#059669', icon: 'ai' },
-        { label: 'KSQL Tables', sub: '(Turnstile Counts)', color: '#059669', icon: 'metrics' },
-        { label: 'Spark Streaming', sub: '(Sensor Risk Join)', color: '#EA580C', icon: 'cloud' }
+        { label: 'Transit Avro', sub: '(Registry-backed)', color: '#C026D3', icon: 'cache' },
+        { label: 'Transit Connect', sub: '(Plain-JSON stations)', color: '#059669', icon: 'db' },
+        { label: 'Faust + KSQL', sub: '(Transit counts)', color: '#059669', icon: 'ai' },
+        { label: 'Redis Customers', sub: '(STEDI demographics)', color: '#059669', icon: 'metrics' },
+        { label: 'Spark Inner Join', sub: '(STEDI risk events)', color: '#EA580C', icon: 'cloud' }
       ],
       flowSteps: [
-        { line1: 'Publish Avro & JSON', line2: 'events into Apache', line3: 'Kafka broker topics' },
-        { line1: 'Ingest relational', line2: 'reference tables via', line3: 'Kafka Connect JDBC' },
-        { line1: 'Transform station', line2: 'events in Faust &', line3: 'aggregate in KSQL' },
-        { line1: 'Consume sensor &', line2: 'consent streams in', line3: 'PySpark Streaming' },
-        { line1: 'Join streaming', line2: 'DataFrames & emit', line3: 'curated topic sinks' }
+        { line1: 'Select workflow', line2: 'and its supplied', line3: 'training inputs' },
+        { line1: 'Decode records', line2: 'using that input', line3: 'contract' },
+        { line1: 'Preserve identity', line2: 'event_id or', line3: 'customer email' },
+        { line1: 'Aggregate transit', line2: 'or join STEDI', line3: 'streams separately' },
+        { line1: 'Check selected', line2: 'counts / JSON keys', line3: 'against evidence' }
       ],
-      branchLabel: 'Schema valid',
-      returnStep1: { line1: 'Update live transit', line2: 'status monitor UI' },
-      returnStep2: { line1: 'Write curated Spark', line2: 'streaming output' },
-      rightModelNode: { label: 'Streaming Sinks', sub: '(Live UI & Topics)', color: '#059669', icon: 'search' },
-      bottomStoreNode: { label: 'Kafka Topic Store', sub: '(Avro & JSON Streams)', color: '#7C3AED', icon: 'db' }
+      branchLabel: 'Separate cohorts',
+      returnStep1: { line1: 'Compare transit', line2: 'frozen-offset counts' },
+      returnStep2: { line1: 'Check STEDI join', line2: 'and state limits' },
+      rightModelNode: { label: 'Kafka + Training UI', sub: '(Separate outputs)', color: '#059669', icon: 'search' },
+      bottomStoreNode: { label: 'Retained Kafka Data', sub: '(Avro / plain JSON)', color: '#7C3AED', icon: 'db' }
     },
     evidence: {
       credential: 'Udacity Data Streaming Nanodegree (Issued Oct 25, 2026)',
       sha256: '17dee699f7a88e9276fad12482b1fa0ecf8498bb06d08d1aedd0b72ddee374e0',
       deliverables: [
-        'CTA public transit Kafka producers, Confluent Schema Registry Avro schemas, and Kafka Connect JDBC ingestion',
-        'Faust Python stream processor and KSQL continuous turnstile aggregation tables',
-        'STEDI human balance PySpark Structured Streaming pipeline joining customer, accelerometer, and trainer topics',
-        'Real-time sink topic verification and streaming UI telemetry'
+        'Supplied transit integration with Avro event producers, plain-JSON station records, Faust processing and explicitly keyed KSQL rider aggregation.',
+        'Retained missing-KEY provider failure, final query/source bindings and a later exact 36,002-event frozen-offset replay match.',
+        'Separate ND029 STEDI customer-demographic/risk stream-stream join, Redis envelope handling and exact customer/score/email/birthYear Kafka contract.',
+        'Five native Spark synthetic-fixture checks plus a separate five-message, one-customer classroom sample, with unbounded join-state and batch-lag limits disclosed.'
       ],
       filesIncluded: [
-        'producers/models/station.py',
+        'producers/models/turnstile.py',
         'consumers/faust_stream.py',
         'consumers/ksql.py',
-        'spark/sparkpyeventskafkastreamtoconsole.py',
-        'spark/sparkpyrediskafkastreamtoconsole.py'
+        'runtime-evidence/ksql-create-response.json',
+        'runtime-evidence/exact-count-validation-final.json',
+        'project/starter/streaming_common.py',
+        'project/starter/sparkpykafkajoin.py',
+        'tests/test_transformations.py',
+        'spark/logs/transformation-tests.log',
+        'evidence/enriched-risk-sample.jsonl'
       ],
       scopeSummary:
-        'Verified across two complete streaming systems: CTA Public Transit (Kafka, Schema Registry, Faust, KSQL) and STEDI Balance Analytics (Spark Structured Streaming).'
-    }
+        'Two separate supplied classroom implementations, with original actor-level authoring and patch attribution unverified. Transit Avro events and plain-JSON station metadata have different validation boundaries. STEDI joins customer demographics and supplied risk scores, not accelerometer/step-trainer/consent ETL. Synthetic fixtures, frozen-offset counts and the one-customer application sample are distinct historical cohorts, without production or medical guarantees.'
+    },
+    validationLessons: 'A saved KSQL error identified a missing table key in the transit pipeline. The retained query declares event identity explicitly; a later frozen-offset replay matched 36,002 rider events across 92 stations exactly. The separate STEDI implementation passed five native Spark tests and emitted five matched events for one customer. Its stream-stream join retains customer state without a watermark, so the evidence supports a bounded classroom demonstration. Record identity, aggregation and application output needed separate checks; a trigger interval was not a latency guarantee.'
   },
   {
     id: 'cs-10',
@@ -853,80 +898,86 @@ const CASE_STUDIES = [
     category: 'data',
     accent: 'indigo',
     domainBadge: 'SCALA FUNCTIONAL PROGRAMMING & SPARK',
-    title: 'EPFL Functional Programming in Scala, Parallel Collections & Spark Analytics',
+    title: 'EPFL Scala: Functional, Parallel & Spark Coursework Implementations',
     subtitle:
-      'Five-course functional programming and Apache Spark specialisation completed with 100% scores across 17 functional Scala implementations and 265 passing unit tests.',
-    stack: ['Scala', 'Functional Programming', 'Apache Spark RDD/DataFrame', 'Spatial Interpolation', '265 Passing Tests', 'sbt'],
-    headlineMetric: '100% Score (5 / 5 Courses)',
-    headlineMetricLabel: '17 Implementations & 265 Passing Tests',
+      'Seventeen separate AI-assisted assignment implementations across five courses, with 265 recorded test passes summed across distinct suites and explicit full-run/rendering limits.',
+    stack: ['Scala', 'Functional Programming', 'Apache Spark RDD/DataFrame', 'Spatial Interpolation', '17 Separate Test Suites', 'sbt'],
+    headlineMetric: '17 Separate Assignment Suites',
+    headlineMetricLabel: '265 recorded passes across distinct runs',
     certName: 'EPFL Functional Programming in Scala Specialization',
     certUrl: 'https://www.coursera.org/account/accomplishments/specialization/IUG5FUNQECAG',
     narrative: {
       context:
-        'Computing high-resolution global temperature grids and aggregating multi-year datasets on imperative pipelines often introduces mutable-state concurrency bugs and costly Spark shuffle bottlenecks.',
+        'The supplied EPFL coursework covers functional data structures, codecs, parallel algorithms, Spark analytics and a climate Observatory. Each assignment has its own inputs, tests, compatibility constraints and optional execution scope.',
       objective:
-        'Engineer the Earth Observatory spatial climate interpolation engine using pure functional Scala collections alongside distributed Apache Spark RDD, DataFrame, and Dataset pipelines across the 5-course EPFL specialisation.',
+        'Complete and validate the supplied assignment contracts while distinguishing compiler/test-harness fixes, fixture correctness, bounded data runs, browser checks and official course grades.',
       execution: [
-        'Implemented pure functional parsing and station temperature alignment in `Extraction.scala` using immutable Scala case classes and collections.',
-        'Built inverse-distance weighted spatial interpolation and bilinear grid deviation modules (`Manipulation.scala`, `Visualization2.scala`) to render global temperature anomaly map tiles.',
-        'Developed distributed Apache Spark RDD and DataFrame pipelines (`wikipedia`, `stackoverflow`, `timeusage`) using custom partitioning to minimise shuffle overhead.',
-        'Verified correctness across 17 functional programming implementations and 265 passing automated unit test cases across all 5 EPFL courses.'
+        'Source-chat records identify AI-agent implementation, investigation and classroom execution over supplied starters. The 17 assignments retain separate sources and saved suites; no per-function manual or unaided human authorship is inferred.',
+        'The Codecs assertion failed to compile because MUnit inferred incompatible Json types; a one-type-parameter retry also failed. The retained assertion uses assertEquals[Json, Json], after which the saved suite records 26 passes without changing the expected codec contract.',
+        'Wikipedia source avoids driver-side full-corpus List retention and repeated token arrays. Its 17-test suite and one bounded local[2] full-corpus run completed; the earlier grader out-of-memory cause remains unconfirmed, and no controlled shuffle or memory saving is established.',
+        'Other final suites remain separate: StackOverflow full-data analysis failed on a jar:file URI and has no retained successful later analysis; TimeUsage full-data analysis was skipped. Observatory core tests passed, but only a 2015 world image and zoom-0 temperature tile were rendered; its external basemap remained unavailable.'
       ],
       outcome:
-        'Completed all 5 courses and the Earth Observatory Capstone of the EPFL Functional Programming in Scala Specialization with 100% scores across 20 graded assessments and 265 passing unit tests.'
+        'Saved suites record 265 passing tests across 17 distinct assignments, while official course records show 100% across five courses. These are different evidence types. Fixture passes do not complete the failed/skipped full-data analyses or extend Observatory beyond its 2015 preview. The Codecs compile correction, Wikipedia run and later UI checks are separately scoped historical records, not one combined benchmark or proof that races were eliminated.'
     },
     takeaway: {
-      headline: 'Immutable Functional Scala Collections + Custom Spark Partitioning vs. Mutable State',
+      headline: 'Assignment-Specific Validation vs. Broad Performance Claims',
       tradeoffLesson:
-        'Enforcing pure immutability in the Observatory spatial interpolation engine and custom hash partitioning in Apache Spark eliminated concurrency race conditions and reduced network shuffle overhead.'
+        'Immutable transformations, parallel tasks and Spark operations provide inspectable coursework designs, but correctness fixtures, compilation, data runs and rendering need separate validation. A compiler fix can repair the test harness without changing modelled behaviour. No controlled race-elimination, cluster-scale performance or network-shuffle improvement is demonstrated; failed/skipped optional runs and limited imagery remain part of the result.'
     },
     diagramConfig: {
-      title: 'EPFL Scala functional climate observatory & Spark analytics architecture',
+      title: 'EPFL Scala: functional, parallel, Spark and Observatory coursework',
       subtitleLine1:
-        'Purely functional Scala spatial interpolation (Earth Observatory Capstone) and Apache Spark RDD/DataFrame analytics.',
+        'Seventeen independent assignments use supplied functional, parallel, analytics and climate-visualisation contracts.',
       subtitleLine2:
-        'Verified with 100% scores across all 5 EPFL courses, 17 implementations, and 265 passing test suites.',
-      orchestratorLabel: 'Scala Functional Pipeline & Apache Spark Distributed Analytics',
-      entryNode: { label: 'Climate Archives', sub: '(Station CSVs)', color: '#7C3AED', icon: 'db' },
+        '265 passes in separate suites. Optional full-data analyses: StackOverflow failed; TimeUsage skipped. Observatory: limited 2015 preview.',
+      orchestratorLabel: 'COMMON VALIDATION PATTERN | SEPARATE ASSIGNMENTS',
+      entryNode: { label: 'Assignment Input', sub: '(Course fixtures)', color: '#7C3AED', icon: 'db' },
       topServices: [
-        { label: 'Immutable ADTs', sub: '(Pure Case Classes)', color: '#C026D3', icon: 'lock' },
-        { label: 'Spatial IDW', sub: '(Interpolation)', color: '#059669', icon: 'ai' },
-        { label: 'Bilinear Grid', sub: '(Manipulation.scala)', color: '#059669', icon: 'metrics' },
-        { label: 'Tile Renderer', sub: '(Visualization2.scala)', color: '#059669', icon: 'cloud' },
-        { label: 'Apache Spark', sub: '(RDD & DataFrames)', color: '#EA580C', icon: 'search' }
+        { label: 'Immutable ADTs', sub: '(Sets / codecs)', color: '#C026D3', icon: 'lock' },
+        { label: 'Parallel Tasks', sub: '(Separate exercises)', color: '#059669', icon: 'ai' },
+        { label: 'Spark Analytics', sub: '(Local[2] runs)', color: '#059669', icon: 'metrics' },
+        { label: 'Observatory UI', sub: '(2015 preview only)', color: '#059669', icon: 'cloud' },
+        { label: 'Saved Suites', sub: '(17 distinct runs)', color: '#EA580C', icon: 'search' }
       ],
       flowSteps: [
-        { line1: 'Parse station &', line2: 'temperature CSVs in', line3: 'Extraction.scala' },
-        { line1: 'Compute inverse-', line2: 'distance weighted', line3: 'spatial temperatures' },
-        { line1: 'Project bilinear', line2: 'anomaly grids in', line3: 'Manipulation.scala' },
-        { line1: 'Render 256x256', line2: 'colour-mapped', line3: 'slippy map PNG tiles' },
-        { line1: 'Execute Spark RDD/', line2: 'DataFrame jobs &', line3: '265 unit tests' }
+        { line1: 'Choose one', line2: 'assignment and', line3: 'supplied inputs' },
+        { line1: 'Implement its', line2: 'functional /', line3: 'parallel contract' },
+        { line1: 'Run that suite', line2: 'and check compile', line3: 'errors separately' },
+        { line1: 'Inspect optional', line2: 'data runs / UI', line3: 'within limits' },
+        { line1: 'Retain source', line2: 'and scope for', line3: 'each run' }
       ],
-      branchLabel: '265 tests pass',
-      returnStep1: { line1: 'Verify property &', line2: 'bounds assertions' },
-      returnStep2: { line1: 'Export anomaly', line2: 'grids & PNG tiles' },
-      rightModelNode: { label: 'Spark & Scala', sub: '(100% across 5 Courses)', color: '#059669', icon: 'metrics' },
-      bottomStoreNode: { label: 'Scala Codebase', sub: '(17 Implementations)', color: '#7C3AED', icon: 'search' }
+      branchLabel: 'Per assignment',
+      returnStep1: { line1: 'Retain failed /', line2: 'skipped full runs' },
+      returnStep2: { line1: 'Scope tests to', line2: 'their own fixtures' },
+      rightModelNode: { label: 'Recorded Outcomes', sub: '(Not one benchmark)', color: '#059669', icon: 'metrics' },
+      bottomStoreNode: { label: 'Scala Sources', sub: '(17 assignment sets)', color: '#7C3AED', icon: 'search' }
     },
     evidence: {
       credential: 'Coursera EPFL Functional Programming in Scala Specialization (Issued Nov 2, 2026)',
       sha256: '2d70d4e5cc3967b4d6b12fdecab88de14803a9a9ccedb1dc0eb2b4357252b25a',
       deliverables: [
-        '100% completion across all 5 EPFL Scala courses (Principles, Design, Parallel Programming, Spark Big Data, Capstone)',
-        'Earth Observatory spatial climate interpolation and bilinear grid tile rendering engine in pure Scala',
-        'Distributed Apache Spark RDD, DataFrame, and Dataset analytical pipelines (Wikipedia, StackOverflow, TimeUsage)',
-        '17 functional Scala implementations verified across 265 passing unit test cases'
+        'Seventeen separately retained assignment implementations and final saved suites, summing 265 passes, with AI-operated implementation/execution provenance.',
+        'Codecs compiler failure/retry records and the exact two-type-parameter MUnit assertion, followed by 26 saved test passes.',
+        'Wikipedia source, 17-test result and bounded local full-corpus run; earlier grader-memory cause remains unconfirmed.',
+        'Separate StackOverflow failed optional analysis, TimeUsage skipped analysis and Observatory core/UI/2015-preview records; no complete-rendering or controlled performance claim.'
       ],
       filesIncluded: [
-        'observatory/src/main/scala/observatory/Extraction.scala',
-        'observatory/src/main/scala/observatory/Manipulation.scala',
-        'observatory/src/main/scala/observatory/Visualization2.scala',
-        'stackoverflow/src/main/scala/stackoverflow/StackOverflow.scala',
-        'timeusage/src/main/scala/timeusage/TimeUsage.scala'
+        'Assignments/C02-P04/Source/codecs/src/test/scala/codecs/CodecsSuite.scala',
+        'Assignments/C04-P01/Source/wikipedia/src/main/scala/wikipedia/WikipediaRanking.scala',
+        'Assignments/C04-P02/Source/stackoverflow/src/main/scala/stackoverflow/StackOverflow.scala',
+        'Assignments/C04-P03/Source/timeusage/src/main/scala/timeusage/TimeUsage.scala',
+        'Assignments/C05-P01/Source/observatory/src/main/scala/observatory/Extraction.scala',
+        'Assignments/C05-P01/Source/observatory/capstone-ui/src/main/scala/observatory/JSMain.scala',
+        'Sources/support/local/course2/codecs.log',
+        'Sources/support/local/course4/wikipedia-full-corpus-memory.log',
+        'Sources/support/local/course5/validation.json',
+        'Sources/support/local/course5/preview/target/preview/2015-preview.json'
       ],
       scopeSummary:
-        'Verified 100% score across all 5 EPFL Scala courses, Earth Observatory Capstone, 17 functional implementations, and 265 passing unit tests.'
-    }
+        'AI-assisted coursework over supplied interfaces and fixtures. Course grades, 17 separate final suites, optional data runs and UI phases are distinct cohorts. StackOverflow full-data analysis failed, TimeUsage analysis was skipped, Wikipedia grader-memory cause remains unknown, and Observatory generated only 2015 world/zoom-0 temperature imagery while its external basemap failed. No unaided authorship, race elimination, measured shuffle gain or cluster-scale guarantee is claimed.'
+    },
+    validationLessons: 'Across the AI-assisted Scala coursework, validation kept assignments separate. A Codecs test initially failed to compile because MUnit inferred incompatible JSON types; adding one type parameter produced another compiler error. The assertion was corrected to `assertEquals[Json, Json]`, after which the saved suite passed all 26 tests. Separately, Wikipedia was revised to avoid driver-side corpus retention and repeated token arrays; 17 tests and a bounded full-corpus run completed. These checks support the coursework implementations, not cluster-scale performance or complete Observatory rendering.'
   },
   {
     id: 'cs-11',
@@ -934,80 +985,87 @@ const CASE_STUDIES = [
     category: 'data',
     accent: 'amber',
     domainBadge: 'COMPUTER VISION & SERVERLESS MLOPS',
-    title: 'PyTorch Facial Keypoint Detection & Scones Unlimited SageMaker MLOps Workflow',
+    title: 'Facial Keypoint Regression & Separate SageMaker Confidence Workflow',
     subtitle:
-      'Combines a 4-block PyTorch CNN achieving 2.69 px mean error across 770 held-out test images with an event-driven Amazon SageMaker & AWS Step Functions workflow.',
-    stack: ['Amazon SageMaker', 'AWS Step Functions', 'PyTorch CNN', 'OpenCV Haar Cascade', 'AWS Lambda', 'Model Monitor'],
+      'Two independent academic projects: a PyTorch facial-keypoint image holdout and a Scones Unlimited classifier workflow with a 0.93 abstention gate.',
+    stack: ['Amazon SageMaker', 'AWS Step Functions', 'PyTorch CNN', 'OpenCV Haar Cascade', 'AWS Lambda', 'SageMaker Data Capture'],
     headlineMetric: '2.69 px Mean Error',
-    headlineMetricLabel: 'vs. 7.96 px Baseline (770 Test Images)',
+    headlineMetricLabel: 'Facial Keypoints | 770 Official Test Images',
     certName: 'AWS Machine Learning Engineer Nanodegree',
     certUrl: 'https://www.udacity.com/certificate/e/41150320-caa0-11f1-a7b7-677d26a7417a',
     narrative: {
       context:
-        'Production computer vision requires both compact deep learning architectures validated on unseen holdout images and serverless cloud orchestration that halts low-confidence predictions automatically.',
+        'The facial-keypoint coursework asks whether image geometry and learned landmark predictions agree on a labelled holdout. The separate Scones Unlimited coursework asks whether a deployed classifier workflow returns or rejects a prediction according to an explicit confidence policy. They use different data, models and validation cohorts.',
       objective:
-        'Deliver a custom PyTorch CNN facial keypoint regression pipeline alongside an event-driven AWS Step Functions, AWS Lambda, and Amazon SageMaker MLOps workflow with Model Monitor data capture.',
+        'Adapt the two supplied Udacity starters with inspectable preprocessing, model evaluation and cloud payload contracts, keeping labelled regression error separate from workflow execution and confidence-based abstention.',
       execution: [
-        'Designed a 4-block PyTorch CNN (`models.py`) operating on OpenCV Haar Cascade normalised 128x128 greyscale face crops to predict 68 facial landmarks (136 coordinates).',
-        'Trained the PyTorch network to epoch 35 and evaluated accuracy across 770 held-out test images, reducing mean Euclidean error to 2.69 pixels compared to the 7.96-pixel baseline.',
-        'Chained three AWS Lambda functions (`serializeImageData`, `classifyImageData`, `filterLowConfidenceInferences`) inside an AWS Step Functions state machine orchestrating a SageMaker endpoint.',
-        'Configured SageMaker Model Monitor S3 payload capture and verified both high-confidence pass executions and low-confidence threshold exceptions.'
+        'Facial keypoints: substantial AI assistance supported implementation, execution and documentation of a four-block PyTorch CNN, data transforms and a Haar-cascade inference pipeline for 68 landmarks in a common 128x128 greyscale image space.',
+        'Facial keypoints: completed 40 training epochs, selected epoch 35 using the filename-subject-disjoint training/validation split, then evaluated all 770 official test images. These are image holdouts, not an unseen-subject benchmark; eight recorded geometry, range and Haar checks are a separate validation layer.',
+        'Scones Unlimited: AI assistance prepared the implementation and analysis. The included execution_runner.py performed the historical cloud stages; the final notebook analysed saved evidence and retained 40 cloud-reference cells as explicitly skipped implementation references.',
+        'Scones Unlimited: three Lambda handlers serialised an image, called the SageMaker endpoint and enforced a 0.93 confidence gate. Saved histories retain one success and one expected low-confidence rejection; 19 captured requests comprise 17 probes and two workflow calls, including repeated images.'
       ],
       outcome:
-        'Achieved a verified 2.69-pixel mean holdout error across 770 unseen test images (a 66.2% error reduction over the 7.96-pixel baseline) and verified end-to-end AWS Step Functions confidence gating and SageMaker Model Monitor capture.'
+        'The selected facial-keypoint checkpoint recorded 2.691904-pixel mean landmark error versus a 7.961189-pixel training mean-face comparator on 770 official test images, in the same transformed pixel space. Separately, Scones returned a prediction at confidence 0.9957326055 and intentionally rejected a 0.6997604966 case below 0.93. Its 19 capture records have no joined ground-truth labels, so they do not measure accuracy, calibration or drift.'
     },
     takeaway: {
-      headline: 'Compact 4-Block PyTorch CNN + Serverless Step Functions Gate vs. Ungated Heavyweight Models',
+      headline: 'Labelled Model Evaluation & Separate Abstention-Policy Validation',
       tradeoffLesson:
-        'Combining a compact 128x128 PyTorch CNN (66.2% error reduction over baseline) with serverless AWS Step Functions confidence gating prevented low-confidence predictions from propagating downstream while avoiding idle orchestration cluster costs.'
+        'Preprocessing checks, a validation-selected image-holdout result and an expected confidence-gate failure answer different questions. The two AI-assisted academic implementations remain separate; neither a confidence threshold nor payload capture establishes unseen-subject generalisation, demographic fairness, production robustness or drift detection.'
     },
     diagramConfig: {
-      title: 'PyTorch facial keypoint CNN & Scones Unlimited SageMaker MLOps workflow',
+      title: 'Two independent vision projects: facial keypoints and Scones',
       subtitleLine1:
-        'Vision CNN: 128x128 PyTorch keypoint network (68 landmarks) achieving 2.69 px error vs. 7.96 px on 770 holdout images.',
+        'Facial keypoints: 2.691904 px mean error versus 7.961189 px on 770 official image holdouts.',
       subtitleLine2:
-        'Serverless MLOps: AWS Step Functions chaining 3 Lambda handlers with SageMaker inference and Model Monitor capture.',
-      orchestratorLabel: 'PyTorch Vision CNN & AWS Step Functions SageMaker Orchestrator',
-      entryNode: { label: 'Image Input', sub: '(S3 / OpenCV Crop)', color: '#7C3AED', icon: 'api' },
+        'Scones: separate classifier, 0.93 abstention gate and request capture. Arrows show a common validation pattern.',
+      orchestratorLabel: 'COMMON VALIDATION PATTERN | TWO INDEPENDENT PROJECTS',
+      entryNode: { label: 'Select Project', sub: '(Keypoints / Scones)', color: '#7C3AED', icon: 'api' },
       topServices: [
-        { label: 'OpenCV Haar ROI', sub: '(128x128 Greyscale)', color: '#C026D3', icon: 'cache' },
-        { label: 'PyTorch 4-Block CNN', sub: '(68 Landmarks / Ep 35)', color: '#059669', icon: 'ai' },
-        { label: 'Lambda Step 1 & 2', sub: '(Serialise & Classify)', color: '#EA580C', icon: 'cloud' },
-        { label: 'Lambda Step 3 Gate', sub: '(Confidence Filter)', color: '#DC2626', icon: 'shield' },
-        { label: 'Model Monitor', sub: '(S3 Payload Capture)', color: '#059669', icon: 'metrics' }
+        { label: 'OpenCV & PyTorch', sub: '(Facial Keypoints)', color: '#C026D3', icon: 'cache' },
+        { label: 'Image Holdout', sub: '(770 Facial Images)', color: '#059669', icon: 'ai' },
+        { label: 'Scones Lambdas', sub: '(Serialise / Classify)', color: '#EA580C', icon: 'cloud' },
+        { label: 'Confidence Gate', sub: '(0.93 Abstention)', color: '#DC2626', icon: 'shield' },
+        { label: 'S3 Data Capture', sub: '(19 Request Records)', color: '#059669', icon: 'metrics' }
       ],
       flowSteps: [
-        { line1: 'Detect face ROI via', line2: 'OpenCV & normalise', line3: '128x128 greyscale' },
-        { line1: 'Predict 68 facial', line2: 'keypoints (2.69 px', line3: 'on 770 holdout set)' },
-        { line1: 'Trigger AWS Step', line2: 'Functions & serialise', line3: 'image in Lambda 1' },
-        { line1: 'Invoke SageMaker', line2: 'endpoint in Lambda 2', line3: '& capture S3 JSONL' },
-        { line1: 'Enforce confidence', line2: 'threshold gate in', line3: 'Lambda 3 handler' }
+        { line1: 'Select one of two', line2: 'independent vision', line3: 'coursework projects' },
+        { line1: 'Prepare that model', line2: 'and its image or', line3: 'payload contract' },
+        { line1: 'Run keypoint model', line2: 'or Scones workflow', line3: 'as a separate path' },
+        { line1: 'Check its holdout', line2: 'or confidence gate', line3: 'with its own cohort' },
+        { line1: 'Retain separate', line2: 'metrics, histories', line3: 'and capture records' }
       ],
-      branchLabel: 'Confidence pass',
-      returnStep1: { line1: 'Verify 2.69 px vs', line2: '7.96 px baseline' },
-      returnStep2: { line1: 'Return predictions', line2: 'or halt low-conf' },
-      rightModelNode: { label: 'SageMaker & PyTorch', sub: '(Verified Models)', color: '#059669', icon: 'ai' },
-      bottomStoreNode: { label: 'Holdout & Capture', sub: '(770 Test Images)', color: '#7C3AED', icon: 'search' }
+      branchLabel: 'Project-specific check',
+      returnStep1: { line1: 'Labelled keypoint', line2: 'image-holdout error' },
+      returnStep2: { line1: 'Scones confidence', line2: 'pass or abstention' },
+      rightModelNode: { label: 'Project Model', sub: '(Independent Models)', color: '#059669', icon: 'ai' },
+      bottomStoreNode: { label: 'Separate Evidence', sub: '(Holdout / Capture)', color: '#7C3AED', icon: 'search' }
     },
     evidence: {
       credential: 'Udacity AWS ML Engineer & Computer Vision Nanodegrees (Issued Oct 2026)',
       sha256: 'd15ec128efa36d9dd208b716258cbaea3d0a84a524a1eb1b0e6c1a4b784d8c2c',
       deliverables: [
-        '4-block PyTorch CNN predicting 68 facial keypoints with 2.69 px mean error across 770 held-out test images (vs. 7.96 px baseline)',
-        'OpenCV Haar Cascade face detection and 128x128 greyscale normalisation pipeline',
-        'AWS Step Functions state machine chaining serializeImageData, classifyImageData, and filterLowConfidenceInferences',
-        'Amazon SageMaker Model Monitor real-time S3 payload capture and drift visualisation'
+        'Facial keypoints: supplied-starter attribution, four-block CNN, transform/training source, selected checkpoint and 770-image holdout predictions with the training mean-face comparator.',
+        'Facial keypoints: eight recorded preprocessing, geometry and Haar checks; filename-subject-disjoint training/validation and an explicitly image-held-out official test.',
+        'Scones: starter-derived three-Lambda Step Functions implementation, execution runner and saved success plus expected ThresholdConfidenceNotMet histories.',
+        'Scones: 19 endpoint-capture request records and saved-evidence analysis, without joined truth labels, a paid Model Monitor schedule or a drift baseline.'
       ],
       filesIncluded: [
         'models.py',
-        'lambdas/serializeImageData/lambda_function.py',
-        'lambdas/classifyImageData/lambda_function.py',
-        'lambdas/filterLowConfidenceInferences/lambda_function.py',
-        'saved_models/evaluation_summary.json'
+        'data_load.py',
+        'train.py',
+        'evaluate.py',
+        'pipeline.py',
+        'SOURCE.json',
+        'execution_runner.py',
+        'lambdas/classify_image/lambda.py',
+        'lambdas/filter_confidence/lambda.py',
+        'evidence/root-execution/actual-workflow-executions.json',
+        'evidence/root-execution/capture-summary.json'
       ],
       scopeSummary:
-        'Verified 2.69 px vs. 7.96 px holdout error across 770 unseen test images alongside end-to-end AWS Step Functions confidence gating and SageMaker Model Monitor capture.'
-    }
+        'Two independent AI-assisted academic projects. Facial-keypoint mean error is measured on 770 official image holdouts after validation selection. Scones execution, abstention and 19 captured requests are separate observations without accuracy or drift labels. The original OpenCV-stop exception trace is absent; no complete compatibility-debugging sequence, unseen-subject benchmark or current service availability is claimed.'
+    },
+    validationLessons: 'Validation treated the two vision projects separately. For facial keypoints, eight recorded preprocessing checks covered geometry, normalisation and Haar detection. A validation-selected checkpoint was evaluated on 770 held-out images, giving 2.691904-pixel mean error against a 7.961189-pixel mean-face comparator. The official test was an image holdout, not an unseen-subject benchmark. Separately, Scones recorded successful inference and an expected low-confidence rejection at a 0.93 gate. Preprocessing correctness, labelled model evaluation and abstention policy are separate forms of evidence, rather than one combined reliability claim.'
   },
   {
     id: 'cs-12',
@@ -1015,80 +1073,86 @@ const CASE_STUDIES = [
     category: 'data',
     accent: 'emerald',
     domainBadge: 'REVOPS ARCHITECTURE & CRM DATA INTEGRATION',
-    title: 'Idempotent Signal-to-CRM Data Synchronisation & HubSpot Replay Bridge',
+    title: 'Five-Company Public-Seed Import & HubSpot Replay Pilot',
     subtitle:
-      'Account intelligence ingestion and idempotent CRM synchronisation pipeline connecting a 5-company, 8-column Clay data contract to a live HubSpot CRM environment.',
-    stack: ['HubSpot CRM API', 'Clay Data Contract', 'Python Sync Bridge', 'Idempotent Replay', 'Field Survivorship', '48 Pre-Flight Checks'],
-    headlineMetric: '0 Drift Across 3x Replays',
-    headlineMetricLabel: '5 Live Creates & 15 Idempotent Skips',
+      'A custom Python/SQLite adapter used a checked, DOM-derived Clay table CSV to create five marked HubSpot test companies and observe three identical-input replays.',
+    stack: ['HubSpot CRM API', 'Clay Import Review', 'Python & SQLite', 'Reviewed Plan Digest', 'Write Reconciliation', 'Mock HTTP & Local Checks'],
+    headlineMetric: '3 Replays, 0 Writes',
+    headlineMetricLabel: '5 Initial Creates | Observed Pilot',
     certName: 'HubSpot Data Integrations Certified',
     certUrl: 'https://app-eu1.hubspot.com/academy/achievements/4p7h00wk/en/1/djessi-jorge/hubspot-data-integrations-certified',
     narrative: {
       context:
-        'Go-to-Market (GTM) and RevOps data enrichment pipelines frequently corrupt production CRMs by creating duplicate company records, overwriting human-curated fields, or drifting when webhook batches are replayed.',
+        'A bounded five-company pilot needed a reviewed CSV contract before creating marked HubSpot test records. The source rows were public seeds imported into a Clay table, without enrichment or qualification. Chrome blocked the native CSV download, leaving a transport and provenance gap before the approved transfer.',
       objective:
-        'Engineer a deterministic Signal-to-CRM synchronisation bridge that transfers a 5-company, 8-column (40-cell) Clay enrichment contract into a live HubSpot CRM environment (containing 32 pre-existing companies) with strict replay idempotency.',
+        'Verify all five rows and eight fields, require the exact reviewed plan before live mutation, track uncertain writes for reconciliation and compare selected fields on the 32 pre-existing companies through the pilot and its identical-input replays.',
       execution: [
-        'Validated the 5-company, 8-column (40-cell) Clay import contract and generated a pre-flight diff plan against the 32 pre-existing HubSpot company records.',
-        'Verified domain-key identity resolution and protected-field survivorship rules offline across 18 mock HubSpot API tests and 30 local wrapper checks.',
-        'Executed the initial live HubSpot synchronisation run, creating 5 net-new target companies with zero unintended updates to existing CRM records.',
-        'Executed 3 consecutive identical replay runs against the live HubSpot API, recording 0 duplicate creates, 0 overwrites, and 5 deterministic skips on every replay run (15 total skips).'
+        'The user directed the pilot and explicitly approved account-wide company read/write permissions. Coding assistants implemented and reviewed the custom standard-library Python/SQLite bridge, mock service and wrapper, and operated the import and transfer; independent manual implementation is not established.',
+        'After ERR_BLOCKED_BY_CLIENT stopped native CSV export, the coding assistant retained the block evidence and captured 40 rendered cells in two horizontal table views. The column map and all values matched the approved public seed; the resulting CSV was labelled DOM-derived rather than a native Clay download.',
+        'Eighteen synthetic loopback HTTP test methods separately exercised response-loss reconciliation, no automatic retry of uncertain writes, collision quarantine and preservation of remote edits. A different wrapper cohort passed 30 local checks using fake bridge outputs and no real HubSpot requests.',
+        'One approved live apply created five marked test companies. Each of three identical-input replays recorded zero creates, zero updates and five skips. Final readback confirmed the same five mappings and unchanged monitored fields on 32 pre-existing companies.'
       ],
       outcome:
-        'Achieved 0 drift across 3 consecutive replay runs in a live HubSpot CRM environment (5 initial creates, 0 unintended updates, and 5 deterministic skips on every replay across 32 pre-existing companies).'
+        'The observed live pilot retained five initial creates and 15 skips across three identical replays, with no replay creates or updates. Name, domain, description, update timestamp and archived state remained unchanged on the 32 pre-existing companies. The 40 checked source cells, 18 mock HTTP methods and 30 local wrapper checks are distinct evidence cohorts. No enrichment, native synchronisation or production reliability result is claimed.'
     },
     takeaway: {
-      headline: 'Pre-Flight Diff Plan + Domain-Key Replay Idempotency vs. Blind Webhook Upserts',
+      headline: 'Verified Input Provenance & Uncertain-Write Reconciliation',
       tradeoffLesson:
-        'Enforcing domain-key identity resolution and a pre-flight reviewed plan before live HubSpot API mutation guaranteed that 3 consecutive replay runs produced zero duplicate records and zero field drift.'
+        'A checked DOM-derived CSV retained its actual provenance after the native download failed. Reviewed plan digests and a SQLite write ledger supported reconciliation before retries, with three successful observed replays. The tested five-record boundary is application-enforced; account-wide API permissions are not provider-enforced five-record least privilege, and one pilot does not establish general exactly-once delivery.'
     },
     diagramConfig: {
-      title: 'Idempotent Clay-to-HubSpot CRM synchronisation & replay bridge',
+      title: 'Public-seed Clay import review and bounded HubSpot replay pilot',
       subtitleLine1:
-        '5-company, 8-column (40-cell) Clay enrichment contract synchronised into a live HubSpot portal (32 existing companies).',
+        'Five public-seed rows: 40 rendered cells checked after a blocked native CSV export, without enrichment.',
       subtitleLine2:
-        'Verified across 48 offline/mock checks, 5 initial live creates, and 3 consecutive replay runs with 0 CRM drift.',
-      orchestratorLabel: 'Python Signal-to-CRM Idempotent Sync & Replay Orchestrator',
-      entryNode: { label: 'Clay Enrichment', sub: '(5 Co / 40 Cells)', color: '#7C3AED', icon: 'db' },
+        'One live apply, three identical replays, 18 mock HTTP methods and 30 local wrapper checks are separate cohorts.',
+      orchestratorLabel: 'CUSTOM PYTHON / SQLITE PILOT | REVIEWED PLAN & WRITE LEDGER',
+      entryNode: { label: 'Reviewed Public Seed', sub: '(5 Rows / 8 Fields)', color: '#7C3AED', icon: 'db' },
       topServices: [
-        { label: 'Pre-Flight Plan', sub: '(Diff vs 32 Existing)', color: '#C026D3', icon: 'cache' },
-        { label: 'Identity Resolver', sub: '(Domain Key Match)', color: '#059669', icon: 'search' },
-        { label: 'Survivorship Gate', sub: '(Protected Fields)', color: '#DC2626', icon: 'shield' },
-        { label: 'Mock Test Suite', sub: '(48 Offline Checks)', color: '#059669', icon: 'ai' },
-        { label: 'Replay Verifier', sub: '(3x Replay = 0 Drift)', color: '#059669', icon: 'metrics' }
+        { label: 'Reviewed Plan', sub: '(32 Existing Records)', color: '#C026D3', icon: 'cache' },
+        { label: 'Identity Resolver', sub: '(Marked Test Domains)', color: '#059669', icon: 'search' },
+        { label: 'Field-Change Guard', sub: '(Monitored Fields)', color: '#DC2626', icon: 'shield' },
+        { label: 'Mock / Local Checks', sub: '(Separate Cohorts)', color: '#059669', icon: 'ai' },
+        { label: 'Replay Readback', sub: '(3 Runs / 15 Skips)', color: '#059669', icon: 'metrics' }
       ],
       flowSteps: [
-        { line1: 'Validate 5-company', line2: '8-col Clay contract', line3: '(40 enriched cells)' },
-        { line1: 'Snapshot 32 live', line2: 'HubSpot companies &', line3: 'build pre-flight diff' },
-        { line1: 'Execute Run 1:', line2: '5 live creates &', line3: '0 unintended updates' },
-        { line1: 'Execute 3x identical', line2: 'replays: 0 creates,', line3: '0 updates, 15 skips' },
-        { line1: 'Audit post-transfer', line2: 'HubSpot state &', line3: 'confirm 0 CRM drift' }
+        { line1: 'Read public-seed', line2: 'Clay table cells', line3: 'and verify the CSV' },
+        { line1: 'Review the plan', line2: 'and snapshot fields', line3: 'on 32 existing rows' },
+        { line1: 'Apply once to', line2: 'create five marked', line3: 'HubSpot test rows' },
+        { line1: 'Replay three times:', line2: 'zero creates/updates', line3: 'and 15 total skips' },
+        { line1: 'Read back mappings', line2: 'and compare only', line3: 'monitored fields' }
       ],
-      branchLabel: 'Idempotent skip',
-      returnStep1: { line1: 'Preserve pre/post', line2: 'CRM audit receipts' },
-      returnStep2: { line1: 'Confirm 0 drift', line2: 'across 37 companies' },
-      rightModelNode: { label: 'HubSpot CRM API', sub: '(Live Portal Sync)', color: '#EA580C', icon: 'api' },
-      bottomStoreNode: { label: 'Sync Audit Ledger', sub: '(5 Creates / 15 Skips)', color: '#7C3AED', icon: 'lock' }
+      branchLabel: 'Reconcile or hold',
+      returnStep1: { line1: 'Retain input and', line2: 'write-intent receipts' },
+      returnStep2: { line1: 'Inspect selected', line2: 'before/after fields' },
+      rightModelNode: { label: 'HubSpot CRM API', sub: '(Marked Test Records)', color: '#EA580C', icon: 'api' },
+      bottomStoreNode: { label: 'SQLite Pilot Ledger', sub: '(Run / Write Intents)', color: '#7C3AED', icon: 'lock' }
     },
     evidence: {
       credential: 'HubSpot Data Integrations Certified (Valid 2026–2027)',
       sha256: 'be224405b734be2a9e966552eeffef31eec5b4d698ed45dc859d6d2d9b3ba72a',
       deliverables: [
-        '5-company, 8-column (40-cell) Clay account intelligence import contract and schema validator',
-        'Pre-flight CRM diff planner auditing 32 pre-existing HubSpot company records prior to mutation',
-        '48 passing offline and mock API verification checks covering domain-key deduplication and field survivorship',
-        'Live HubSpot API transfer receipt proving 5 initial creates, 0 unintended updates, and 0 drift across 3 consecutive replay runs'
+        'Custom pilot_bridge.py and CSV validation, with a reviewed plan digest, SQLite mapping/write-intent ledger and an application-enforced five-test-record boundary.',
+        'Blocked native-download evidence, the original rendered 40-cell capture and column map, a DOM-derived bridge CSV and public-seed import review receipt.',
+        'Separate receipts for 18 mock HTTP test methods and 30 local wrapper checks; injected write/read faults remain mock scenarios rather than observed live incidents.',
+        'One live five-create transfer, three zero-create/zero-update replays, same-five mapping readback and monitored-field comparison for 32 pre-existing companies.'
       ],
       filesIncluded: [
-        'src/bridge/clay_hubspot_sync.py',
-        'contracts/clay_five_company_contract.csv',
-        'receipts/clay_import_review_receipt.json',
-        'receipts/live_transfer_summary.json',
-        'tests/test_idempotent_replay_suite.py'
+        'pilot_bridge.py',
+        'tests/test_bridge_integration.py',
+        'tests/mock_hubspot.py',
+        'evidence/Mock HubSpot Test Report.json',
+        'evidence/Wrapper Local Review.json',
+        'live-evidence/clay/native-csv-blocked.txt',
+        'live-evidence/clay/clay_dom_derived_bridge_input.csv',
+        'live-evidence/clay/clay_import_review_receipt.json',
+        'live-evidence/hubspot/live-transfer-summary.json',
+        'live-evidence/hubspot/security-boundary-receipt.json'
       ],
       scopeSummary:
-        'Verified across 48 offline and mock API checks, 5 initial live HubSpot company creates, and 3 consecutive replay runs with 0 duplicate creates and 0 CRM drift.'
-    }
+        'Assistant-operated five-company public-seed import/review and HubSpot test-record pilot, without Clay enrichment. A DOM-derived CSV replaced the blocked native download. Eighteen mock HTTP methods, 30 local wrapper checks and three live replays remain separate. Protection covers monitored company fields, not all account state. Later 20-company research and five-update runs are excluded; no native integration, general exactly-once guarantee or production reliability is established.'
+    },
+    validationLessons: 'When Clay’s native CSV export was blocked, the coding assistant captured the rendered table and checked all 40 cells against the five-company seed. The Python/SQLite bridge then created five marked HubSpot test companies. Three identical replays made no creates or updates, while monitored fields on 32 pre-existing companies remained unchanged. Eighteen mock HTTP tests separately exercised response-loss reconciliation and guard behaviour. The fallback retained its provenance, and uncertain writes required reconciliation before retrying. This pilot used public seeds, without enrichment, and did not establish native synchronisation or production reliability.'
   },
   {
     id: 'cs-13',
@@ -1098,7 +1162,7 @@ const CASE_STUDIES = [
     domainBadge: 'GOOGLE ADK, VERTEX AI & A2A SYSTEMS',
     title: 'Google ADK & Vertex AI: Four Independent Academic Agent Systems',
     subtitle:
-      'ND906 portfolio covering separate legal reporting, research orchestration, grounded support and A2A banking implementations, with source-specific historical evidence.',
+      'Four separate AI-assisted academic implementations: legal reporting, research with simulated references, tool-grounded support and prototype A2A banking, each with its own historical evidence.',
     stack: ['Google ADK', 'Vertex AI Gemini', 'FastAPI & Pydantic', 'Vertex AI Search', 'Cloud SQL & MCP Toolbox', 'Agent2Agent (A2A)'],
     headlineMetric: '4 Accepted Projects',
     headlineMetricLabel: 'ND906 | 4 Nov 2026',
@@ -1106,22 +1170,22 @@ const CASE_STUDIES = [
     certUrl: 'https://www.udacity.com/certificate/e/abc7f810-d49d-11f1-851e-ff548a14528e',
     narrative: {
       context:
-        'Four distinct academic scenarios expose different agent-engineering risks: maintaining context across report sections, coordinating research refinement, selecting authoritative support tools and limiting disclosure in a multi-agent banking prototype. Each implementation and its evaluation cohort is independent.',
+        'Four academic scenarios have different failure modes: incorrect party extraction in a supplied legal application, simulated research provenance, grounding and empty-result handling in a support agent, and database wire/state contracts in a banking prototype. Their tools, model calls and evaluation cohorts are independent.',
       objective:
-        'Implement four separate Google agent systems with inspectable orchestration, structured state, task-specific tools and deterministic controls, while keeping mocked checks, simulated research sources and historical live-model observations explicitly scoped to their originating project.',
+        'Complete the separate supplied starters with inspectable orchestration, structured state, constrained tools and project-specific validation, while separating coding-assistant work from model reasoning inside the applications and from user direction or submission review.',
       execution: [
-        'P01 Legal Intelligence: built a FastAPI/Pydantic and Vertex AI workflow using three specialist personas to generate four sequential report sections, passing accepted-section context forward with bounded retries, writing-quality heuristics and token/cost telemetry.',
-        'P02 Research Assistant: implemented actual Google ADK Runner orchestration with ParallelAgent source branches, SequentialAgent aggregation and a Researcher/Critic refinement loop. The retained run uses nine simulated references; its search agents do not retrieve external publications.',
-        'P03 Betty’s Bird Boutique: revised the ADK support agent for accepted review 4864251, routing document questions to Standard Vertex AI Search, catalogue reads to parameterised Cloud SQL SELECT tools through MCP Toolbox and bird questions to a separate Google Search AgentTool, with provider grounding-URL retention.',
-        'P04 Multi-Agent Banking: separated manager, deposit and loan into three independent ADK applications communicating through A2A, using read-only parameterised SQL, structured state, Decimal arithmetic, an isolated Boolean equity check and deterministic final wording.'
+        'P01 Legal Intelligence: Codex completed the FastAPI/Pydantic and Vertex workflow for four sequential report sections. It corrected the supplied party parser after an actual response named against as a party, then added an input-specific regression. Writing-quality heuristics check structure and coverage, not legal accuracy.',
+        'P02 Research Assistant: Codex completed ADK Runner/session execution, ParallelAgent and SequentialAgent orchestration, bounded Researcher/Critic refinement and citation-ID checks. The retained seven-stage live-model run uses nine simulated references; the workflow does not retrieve external publications.',
+        'P03 Betty’s Bird Boutique: Codex completed tool wiring, read-only parameterised catalogue queries, search prompts and grounding callbacks. It corrected the actual callback contract and tightened history and empty-result prompts. The final six-turn run preserves provider grounding URLs and a no-match branch; two earlier semantic-diagnostic raw sessions are missing.',
+        'P04 Multi-Agent Banking: Codex completed three separate ADK applications communicating through A2A, normalised the actual single-row database response and corrected committed-state handling. Decimal arithmetic and a Boolean equity interface constrain the supplied prototype, without establishing lending validity or authenticated production boundaries.'
       ],
       outcome:
-        'Four accepted assessments are recorded under reviews 4863109, 4863111, 4864251 and 4863110. Separate historical cohorts retain 31 network-mocked P01 checks and one four-section live report at 21.295 seconds with 16,591 tokens; a seven-stage P02 live-model run at 36.244 seconds with simulated sources; a revised six-turn P03 session with 15 model calls and 44.699 seconds of top-level execution; and 18 completed P04 requests across 15 threads without recorded RPC/task errors. These observations do not establish legal accuracy, external research verification, banking correctness or production reliability.'
+        'Accepted reviews are 4863109, 4863111, 4864251 and 4863110. Separate historical cohorts retain 31 mocked P01 checks and one four-section HTTP 200 report at 21.295 seconds with 16,591 report tokens; a seven-stage P02 model run at 36.244 seconds using simulated sources; a six-turn P03 session with 15 model calls and 44.699 seconds of top-level execution; and 18 completed P04 requests across 15 threads without recorded RPC/task errors. These counts do not establish legal accuracy, verified external research, complete support-answer correctness or lending accuracy.'
     },
     takeaway: {
-      headline: 'Task-Specific Model Flexibility vs. Deterministic Boundaries & Evidence Scope',
+      headline: 'Context, Tool and State Contracts Before Semantic Claims',
       tradeoffLesson:
-        'Structured state, constrained tools and local deterministic checks make model behaviour more inspectable while preserving the limits of simulated retrieval, heuristic writing scores and unlabelled scenarios. These four independent academic implementations retain disclosed AI assistance and supplied-starter provenance; historical run observations do not establish unaided authorship, commercial impact or current service availability.'
+        'A successful model call, a retained citation URL or a completed transport task does not establish that the answer is correct. Parser regressions, explicit tool-result branches and committed-state checks address bounded mechanisms. These separate AI-assisted coursework systems retain supplied-starter provenance, simulated-source limits and missing diagnostic records; they do not establish unaided authorship, commercial impact or current availability.'
     },
     diagramConfig: {
       title: 'ND906: Four independent academic agent systems',
@@ -1133,8 +1197,8 @@ const CASE_STUDIES = [
       entryNode: { label: 'Academic Scenario', sub: '(Select P01 to P04)', color: '#7C3AED', icon: 'api' },
       topServices: [
         { label: 'P01 Legal', sub: '(FastAPI / Vertex)', color: '#C026D3', icon: 'api' },
-        { label: 'P02 Research', sub: '(ADK / Simulation)', color: '#059669', icon: 'ai' },
-        { label: 'P03 Boutique', sub: '(Search / Catalogue)', color: '#059669', icon: 'search' },
+        { label: 'P02 Research', sub: '(Simulated Sources)', color: '#059669', icon: 'ai' },
+        { label: 'P03 Boutique', sub: '(Tools / No-Match)', color: '#059669', icon: 'search' },
         { label: 'P04 Banking', sub: '(ADK / A2A)', color: '#059669', icon: 'shield' },
         { label: 'Vertex AI', sub: '(Per-Project Calls)', color: '#7C3AED', icon: 'ai' }
       ],
@@ -1149,33 +1213,36 @@ const CASE_STUDIES = [
       returnStep1: { line1: 'Check local schema', line2: 'and tool boundaries' },
       returnStep2: { line1: 'Keep evidence', line2: 'project-specific' },
       rightModelNode: { label: 'Vertex AI Gemini', sub: '(Separate Calls)', color: '#059669', icon: 'ai' },
-      bottomStoreNode: { label: 'Accepted Artefacts', sub: '(4 Independent ZIPs)', color: '#7C3AED', icon: 'lock' }
+      bottomStoreNode: { label: 'Separate Run Cohorts', sub: '(4 Academic Projects)', color: '#7C3AED', icon: 'lock' }
     },
     evidence: {
       credential: 'Google Agentic AI Engineer Nanodegree (Udacity, Issued Nov 4, 2026)',
       sha256: '9285fb71111c9595939f1bf02e6fca097b1f8b4817efa0451338608187da8d7a',
       deliverables: [
-        'P01: FastAPI report service, persona/context orchestration, writing-quality validator, saved response/metrics and separately labelled mocked-check output.',
-        'P02: ADK parallel/sequential/refinement agents, saved seven-stage workflow and research report, with synthetic-source disclosures and offline-check source.',
-        'P03: revised support/search agents, source-grounding callbacks, SQL tool configuration, saved main/current-search traces and accepted review 4864251; earlier failed review 4863108 remains separate history.',
-        'P04: independent manager/deposit/loan ADK and A2A apps, parameterised read-only tools, structured loan controls, scenario results and prototype approval/decline traces.',
-        'Complete ND906 evidence ZIP containing four original accepted submission archives and their separately accessible artefacts, with recorded archive integrity metadata.'
+        'P01: supplied-starter provenance, actual incorrect party field, corrected role parser/regression, final response, 31 mocked checks and a separately recorded live report.',
+        'P02: ADK source/aggregation/refinement implementation and seven-stage live-model trace with nine simulated references; the separate five-method offline log has its own snapshot boundary.',
+        'P03: corrected grounding callback, history/catalogue prompts and final six-turn tool session. Contemporary reports retain two earlier semantic errors, but their raw diagnostic sessions are missing.',
+        'P04: independent manager/deposit/loan applications, database wire/state corrections, separate 55-test offline log and 18-response live transport cohort without a labelled financial-correctness benchmark.',
+        'Complete ND906 evidence ZIP with four accepted submissions and source-specific AI-assistance, supplied-starter and historical-execution records.'
       ],
       filesIncluded: [
         'nd906 Portfolio Evidence.zip',
-        'project/starter/src/core/agent_system.py',
-        'project/starter/src/core/quality_validator.py',
+        'project/starter/main.py',
+        'project/starter/tests/test_todos.py',
+        'project/starter/api_response.json',
         'project/starter/agents/orchestrator.py',
-        'starter/agent.py',
+        'project/starter/workflow_run.json',
         'starter/search_agent.py',
-        'starter/tools.yaml',
-        'project/starter/manager/agent.py',
+        'starter/agent-prompt.txt',
+        'starter/evidence/web-session.json',
+        'project/starter/deposit/agent.py',
         'project/starter/loan/loan.py',
-        'project/starter/deposit/agent.py'
+        'project/starter/test_results.json'
       ],
       scopeSummary:
-        'Four independent ND906 academic implementations accepted under reviews 4863109, 4863111, 4864251 and 4863110. The checksum identifies the complete programme evidence ZIP. Source records disclose AI assistance and supplied-starter material; mocked checks, simulated references and live-model observations remain separately labelled, and current service availability was not revalidated.'
-    }
+        'Four independent academic implementations with documented Codex implementation and execution, distinct from user direction and application model use. The checksum identifies the complete ND906 evidence ZIP. Mocked checks, simulated references and live-model/tool/transport observations remain separate. Legal writing heuristics, provider URLs and completed banking tasks are not semantic-accuracy benchmarks; two support diagnostic raw sessions and current service validation are absent.'
+    },
+    validationLessons: 'Validation kept the four implementations separate. In Legal Intelligence, a saved response named “against” as a party; Codex corrected the supplied parser and added a regression, followed by 31 mocked checks and a recorded live HTTP 200 report. Codex also reviewed Betty’s tool responses and tightened history and empty-catalog prompts; the final six-turn run retained the no-match branch. The research workflow completed seven stages using simulated references. Banking’s 18 requests completed without RPC errors after wire/state handling was corrected. These results support bounded coursework behaviour, not legal accuracy, verified research or lending validity.'
   },
   {
     id: 'cs-14',
@@ -1184,7 +1251,7 @@ const CASE_STUDIES = [
     accent: 'indigo',
     domainBadge: 'AZURE INFRASTRUCTURE, CI/CD & RELEASE QUALITY',
     title: 'Azure Cloud DevOps: Infrastructure, CI/CD & Quality Release Gates',
-    subtitle: 'ND082: three independent, AI-assisted academic implementations covering Azure infrastructure, CI/CD delivery and release verification with supplied applications and historical evidence.',
+    subtitle: 'Three separate Azure coursework implementations with supplied applications and historical evidence. P02/P03 document Codex assistance; P01’s specific authoring history is unresolved.',
     stack: [
       'Packer & Terraform',
       'GitHub Actions',
@@ -1198,18 +1265,18 @@ const CASE_STUDIES = [
     certName: 'Cloud DevOps using Microsoft Azure Nanodegree',
     certUrl: 'https://www.udacity.com/certificate/e/7eaa03b8-d043-11f1-bd05-3b6d8f4ec1ee',
     narrative: {
-      context: 'Three independent coursework scenarios require repeatable Azure provisioning, traceable application delivery and inspectable release gates. Their network controls, supplied applications, execution targets and retained evidence have different scopes.',
-      objective: 'Implement separately scoped infrastructure, CI/CD and release-quality workflows with reproducible configuration, explicit deployment gates, correlated telemetry and bounded cleanup evidence, preserving the provenance of each historical observation.',
+      context: 'Three independent academic scenarios require repeatable infrastructure, traceable delivery and inspectable release checks. Their applications, network paths, test targets and historical evidence have different scopes. The earlier infrastructure project lacks its specific original authoring history; later assistant activity does not establish how it was authored.',
+      objective: 'Demonstrate each project’s configuration, service behaviour and validation boundaries using its own retained artefacts, with explicit network/policy scope, source-to-deployment traceability, provider diagnostics and bounded cleanup evidence.',
       execution: [
-        'P01 Infrastructure: used Packer and parameterised Terraform for tagged private Linux VMs, managed disks and a Standard Load Balancer, with NSG Internet denial, learner-resource-group scope guards, policy checks and saved apply/destroy readbacks.',
-        'P02 CI/CD: defined a Flask prediction contract, GitHub CI and Azure Pipelines Build/Deploy with federated identity configuration, isolated packaging, readiness/heading smoke gates and request-ID log correlation. The demonstrated source snapshot and later accepted documentation snapshot remain distinct.',
-        'P03 Release Quality: provisioned temporary Terraform infrastructure and deployed supplied precompiled FakeRestAPI to Windows App Service. Azure Pipelines coordinates Newman, bounded JMeter workloads, separate Selenium workflows against a public training site, Azure Monitor/Log Analytics and scoped cleanup readback.'
+        'P01 Infrastructure: the accepted Packer/Terraform package provisions tagged private Linux VMs, managed disks and a Standard Load Balancer, with NSG Internet denial and learner-resource-group policy/scope guards. Its specific human/AI authoring history is not established; retained apply, private-VM checks and cleanup records are assessed without inventing that contribution.',
+        'P02 CI/CD: Codex adapted the supplied Flask/model example and planning template with payload/readiness validation, request IDs, packaging, GitHub CI and Azure delivery. It corrected reviewer-visible evidence access and retained one demonstrated source commit separately from the later accepted documentation snapshot. Synthetic narration and edited browser frames are not a continuous human screencast.',
+        'P03 Release Quality: Codex implemented the pipeline, infrastructure and checks around supplied precompiled FakeRestAPI and separate public Sauce Demo browser workflows. It diagnosed Azure’s rejected ingestion transform and replaced unsupported coalesce with direct timestamp parsing, then retained final API, browser, load, Log Analytics and scoped-cleanup evidence.'
       ],
-      outcome: 'P01 records 21 resources applied and later destroyed, with Hello World checks on both private VMs through Run Command; Internet ingress stays blocked and inert policy remnants remain. P02 saved Cloud Shell and GitHub runs each report 59 passing checks; the same demonstrated source snapshot completed Azure Build/Deploy and an HTTP 200 prediction correlated with its request-ID log. P03 retains 201 API assertion cases across 54 HTTP requests, three passing browser workflows, and 969 stress / 629 endurance successful workload requests, excluding one ownership preflight per load report. These are separate historical academic cohorts, not a production reliability score.'
+      outcome: 'P01 records 21 resources applied and destroyed and two private-VM Hello World checks through Run Command; Internet ingress is blocked, tag policy is resource-group scoped and inert policy objects remain. P02’s separate Cloud Shell and GitHub records each report 59 checks, with one demonstrated commit linked to successful Azure Build/Deploy and a request-ID-correlated HTTP 200 prediction. P03 retains 201 API assertion cases across 54 requests, three browser workflows, 969 stress samples over a 10-user/90-second run and 629 endurance samples over a 3-user/180-second run. Each load report has one additional ownership preflight. These layers are not one unit-test or reliability cohort.'
     },
     takeaway: {
-      headline: 'Repeatable Delivery vs. Scoped Verification & Cleanup',
-      tradeoffLesson: 'Reproducible infrastructure and release gates answer different questions, so private-VM readbacks, local checks, CI runs and bounded load cohorts stay separately labelled. This AI-assisted coursework uses supplied applications and historical evidence; it does not establish current Azure availability, a production SLA or complete removal of every policy object.'
+      headline: 'Provider Diagnostics, Traceable Runs & Explicit Evidence Boundaries',
+      tradeoffLesson: 'Detailed provider errors and run-specific readbacks support narrower conclusions than resource names, green summaries or reviewer acceptance alone. P01’s specific authoring history remains unresolved; Codex implementation and correction are documented for P02/P03. Supplied applications, private-VM traffic, mock checks, CI, small load runs and retained policy objects remain separately scoped, without a current availability, production SLA or whole-account cleanup claim.'
     },
     diagramConfig: {
       title: 'ND082: Three independent Azure coursework implementations',
@@ -1225,31 +1292,31 @@ const CASE_STUDIES = [
       topServices: [
         {
           label: 'Packer/Terraform',
-          sub: '(Image / Scoped IaC)',
+          sub: '(P01 Scoped IaC)',
           color: '#7C3AED',
           icon: 'cloud'
         },
         {
           label: 'GitHub CI',
-          sub: '(Saved CI Checks)',
+          sub: '(P02 Saved Checks)',
           color: '#059669',
           icon: 'git'
         },
         {
           label: 'Azure Pipelines',
-          sub: '(Project Releases)',
+          sub: '(P02 / P03 Runs)',
           color: '#059669',
           icon: 'git'
         },
         {
           label: 'App Service',
-          sub: '(Supplied Apps)',
+          sub: '(P02 / P03 Apps)',
           color: '#059669',
           icon: 'api'
         },
         {
           label: 'Azure Monitor',
-          sub: '(Logs / Alerts)',
+          sub: '(P03 Logs / Alerts)',
           color: '#059669',
           icon: 'metrics'
         }
@@ -1307,10 +1374,10 @@ const CASE_STUDIES = [
       credential: 'Cloud DevOps using Microsoft Azure Nanodegree (Udacity, Issued Nov 4, 2026)',
       sha256: '94bc49d21086a6b24762d0b8b43acece97fef941312d5a0d52b24e290f99c9ac',
       deliverables: [
-        'P01: Packer image configuration, parameterised Terraform topology, scope/policy guards and retained private-VM, deployment and bounded cleanup evidence.',
-        'P02: Flask contract and packaging, GitHub/Azure pipeline definitions, saved check results and correlated App Service prediction/log evidence, preserving source-snapshot provenance.',
-        'P03: Azure release pipeline, supplied application/test archives, separately counted API/browser/load results, monitoring records and scoped cleanup readback.',
-        'Complete ND082 evidence package with three original accepted submission ZIPs, source artefacts and recorded archive-integrity metadata.'
+        'P01: accepted Packer/Terraform configuration, separately recorded mock/scope checks, private-VM HTTP readbacks and apply/destroy evidence; resource-group policy and inert cleanup remnants are explicit, while specific authoring history remains unknown.',
+        'P02: Codex-adapted supplied application and planning template, pipeline/readiness configuration, separate 59-check CI records and one same-commit deployment/prediction/log chain; later documentation-access checks and edited/synthetic media retain their own provenance.',
+        'P03: Codex pipeline/test implementation and exact DCR diagnostic/corrective diff, with 201 API assertions/54 requests, three final browser workflows, separate workload/preflight counts, three ingested passing log records and 17 absent-resource cleanup checks.',
+        'Complete ND082 evidence ZIP containing three accepted submissions, source artefacts and historical integrity records, without attributing P01 from the later P02/P03 authoring chat.'
       ],
       filesIncluded: [
         'nd082 Portfolio Evidence.zip',
@@ -1318,13 +1385,20 @@ const CASE_STUDIES = [
         'server.json',
         '.github/workflows/ci.yml',
         'azure-pipelines.yml',
+        'scripts/deploy_existing_training_app.sh',
+        'scripts/predict.py',
         'azure-pipelines.yaml',
+        'terraform.zip',
         'execution-evidence/postman/TEST-DataValidation.xml',
+        'execution-evidence/postman/TEST-Regression.xml',
+        'execution-evidence/selenium/selenium.xml',
+        'execution-evidence/monitoring/selenium-query-results.json',
         'execution-evidence/cleanup-verification.json',
         'scripts/pipeline_support.py'
       ],
-      scopeSummary: 'Three independent accepted ND082 academic implementations, with disclosed AI assistance and supplied applications. The checksum identifies the complete programme evidence ZIP. Saved infrastructure, CI/CD and release-verification cohorts retain their own network, source-snapshot, workload and cleanup limits; current Azure state and production reliability were not revalidated.'
-    }
+      scopeSummary: 'Three independent accepted ND082 academic projects. The checksum identifies the complete programme evidence ZIP. P01’s original authoring contribution is unresolved; P02/P03 retain documented Codex assistance and supplied-product attribution. Private-VM checks, resource-group policy, 59-check delivery records, API/browser/load cohorts and policy remnants retain their own limits. Earlier failed cart JUnit and some startup-tracker detail are missing; current Azure state, financial-model accuracy and production reliability were not validated.'
+    },
+    validationLessons: 'Three Azure implementations were checked independently. Infrastructure logs record a 21-resource apply, private-VM HTTP checks and 21-resource destroy, with network and policy limits retained. When Azure rejected the release pipeline’s ingestion transform, Codex traced the error to unsupported `coalesce`, changed timestamp parsing and verified three published Selenium logs. Final release evidence retains 201 API assertions, three browser workflows and separately counted load tests. CI/CD evidence separately binds 59 checks and a correlated HTTP 200 prediction to one demonstrated commit. Detailed results must retain their source, run and validation boundaries.'
   }
 ];
 
@@ -1335,20 +1409,20 @@ const FEATURED_IMPLEMENTATIONS = [
   {
     "projectId": "cs-05",
     "focus": "Private AWS networking and governance",
-    "contribution": "Configured and verified private VPC peering across two AWS regions, with route tables, security groups and flow-log checks. Produced a separate multi-account governance and FinOps blueprint.",
-    "decision": "Explicit CIDR routes and least-privilege security groups support private communication; the separate OU/SCP design remains a governance blueprint."
+    "contribution": 'Codex-assisted private VPC peering across two AWS Regions, with route tables, security groups and historical private-VM and flow-log checks. Multi-account governance remains a separate blueprint.',
+    "decision": 'A bounded visibility wait checked active peering in both Regions before routing. The OU/SCP and FinOps designs have a separate evidence scope.'
   },
   {
     "projectId": "cs-14",
     "focus": "Azure delivery and release checks",
-    "contribution": "Implemented Azure infrastructure, CI/CD and release checks across three independent projects using supplied applications and AI assistance, supported by historical execution evidence.",
-    "decision": "Separated provisioning, deployment readiness and release testing so that each check had a clear purpose and evidence scope."
+    "contribution": 'Separate Azure infrastructure, CI/CD and release-quality implementations, with historical evidence, supplied applications and project-specific contribution records.',
+    "decision": 'Provisioning, delivery readiness and release testing were checked independently; private-VM, policy and cleanup limits remain explicit in the infrastructure case.'
   },
   {
     "projectId": "cs-01",
     "focus": "LLM routing and modelled cost",
-    "contribution": "Built a two-tier router and Chroma semantic cache, validated routing, caching and fallback across 231 unit tests, and produced a 74-row cost ledger.",
-    "decision": "Checked the cache before reserving the stronger model for complex queries; the ledger records a 65.0% modelled saving against an all-gpt-4o baseline."
+    "contribution": 'A supplied LLM service with retained catalogue, guard-pattern and trace-instrumentation additions. Evidence records 231 mocked checks and a mixed live/seeded 74-row cost ledger.',
+    "decision": 'The supplied service combines model routing and a Chroma cache. Its ledger compares routed costs with a hypothetical all-gpt-4o baseline, giving a 65.0% modelled saving.'
   }
 ];
 
@@ -1713,11 +1787,11 @@ const ENTERPRISE_TIMELINE = [
     domainBadge: 'Multi-Agent AI, Cloud Architecture & Data Platforms',
     accent: 'indigo',
     summary:
-      'Designing deterministic generative AI workflows, stateful multi-agent systems, and cloud-native data pipelines backed by 19 completed Udacity Nanodegrees and courses (50+ accepted engineering projects) plus AWS, Anthropic, LangChain, IBM, and EPFL specialisations.',
+      'Self-directed practice in cloud, AI and data systems through 19 completed Udacity Nanodegrees and courses, plus AWS, Anthropic, LangChain, IBM and EPFL study. The case studies distinguish supplied starters, coding-assistant contributions and separately recorded validation.',
     highlights: [
-      'Architected stateful multi-agent orchestration pipelines using LangGraph, Anthropic Claude Code, and FastAPI with schema-validated tool execution, complexity routing, and automated faithfulness gates.',
-      'Delivered end-to-end cloud reference implementations across AWS (SageMaker, Glue, Iceberg, Athena, ECS, Step Functions, CloudFormation), 5-job GitHub Actions MLOps pipelines, and real-time streaming platforms (Apache Kafka, Spark, Scala).',
-      'Engineered an idempotent Signal-to-CRM data synchronisation bridge connecting Clay enrichment contracts to a live HubSpot CRM portal with zero-drift replay verification.'
+      'Explored LangGraph, Claude Agent SDK and FastAPI workflows through supplied-starter adaptations, coding-assistant implementation and project-specific tool, schema and response checks.',
+      'Completed academic cloud and data implementations across AWS, five-job MLOps pipelines and Kafka/Spark/Scala coursework, with historical delivery and model-evaluation results separated by project and run.',
+      'Directed a coding-assistant-supported five-company public-seed Clay import/review and HubSpot pilot; three recorded replays made no creates or updates, with selected-field checks on pre-existing records.'
     ],
     tags: ['LangGraph', 'Claude Code & MCP', 'AWS Architecture', 'CloudFormation', 'Apache Kafka', 'Scala & Spark', 'PyTorch', 'FastAPI']
   },
@@ -2407,7 +2481,7 @@ export default function App() {
             </h1>
 
             <p className="text-base sm:text-lg max-w-4xl leading-relaxed text-slate-600">
-              Experienced enterprise IT professional with 12 years across energy, NHS clinical systems and data-centre technical learning. Combines operational leadership and mentoring with practical cloud/AI engineering across AWS, Azure, Python APIs and CI/CD. Independent LLM routing and caching work demonstrated a 65.0% modelled cost saving across a 74-row evaluation ledger, backed by 231 passing unit tests.
+              Experienced enterprise IT professional with 12 years across energy, NHS clinical systems and data-centre technical learning. Combines operational leadership and mentoring with practical cloud/AI engineering across AWS, Azure, Python APIs and CI/CD. LLM service adaptation recorded a 65.0% modelled cost saving in a 74-row mixed live/seeded ledger, alongside 231 mocked checks.
             </p>
 
             {/* Primary Hero Action Bar */}
@@ -2486,7 +2560,7 @@ export default function App() {
               })}
             </div>
             <p className="text-xs sm:text-sm leading-relaxed text-slate-500">
-              Independent academic implementations. Supplied components, assistance and historical verification limits are retained in the project details.
+              Academic implementations with supplied components and project-specific contribution records. Historical results and their limits are documented in the case studies.
             </p>
           </section>
 
@@ -2569,7 +2643,7 @@ export default function App() {
                 </h2>
               </div>
               <span className="text-xs font-mono text-slate-500">
-                Production & Verified Implementation Scope
+                Recorded Implementation & Validation Scope
               </span>
             </div>
 
@@ -2614,7 +2688,7 @@ export default function App() {
               System Architecture Diagrams, Execution & Measured Outcomes
             </h2>
             <p className="text-base mt-1 text-slate-600">
-              Each project details the operational challenge, architectural objective, engineering execution, measured outcome, architectural trade-off takeaway, and end-to-end system diagram.
+              Each case connects the challenge, design, implementation and diagram with recorded validation, lessons learned and project-specific evidence limits.
             </p>
           </div>
 
@@ -2824,6 +2898,18 @@ export default function App() {
                           </div>
                         </div>
                       </div>
+
+                      <section
+                        aria-labelledby={`validation-title-${cs.id}`}
+                        className="p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-1.5"
+                      >
+                        <h4 id={`validation-title-${cs.id}`} className="text-xs sm:text-sm font-mono font-bold uppercase text-indigo-700">
+                          Validation and lessons learned
+                        </h4>
+                        <p className="text-sm sm:text-base leading-relaxed text-slate-600">
+                          {cs.validationLessons}
+                        </p>
+                      </section>
 
                       {/* 2. Optional Architectural Takeaway */}
                       <div className="rounded-xl border border-amber-300 bg-amber-50/70 overflow-hidden">

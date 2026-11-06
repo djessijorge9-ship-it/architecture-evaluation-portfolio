@@ -14,10 +14,12 @@ Authorised copy refinements use plain UK English in authored prose while retaini
 
 The introduction emphasises enterprise engineering experience. Three featured implementation cards sit immediately after the hero and before the architecture tracks: CS-05, CS-14, and CS-01. Each shows the contribution, a design decision, and an existing verified metric. Its `Open implementation` action clears filters, expands the corresponding case study, and scrolls to and focuses that case. The cards use `FEATURED_IMPLEMENTATIONS`; all 14 case-study objects, 47 credentials, and the enterprise timeline are unchanged by this feature. The hero and three architecture-track business-value summaries use a neutral voice while retaining their facts.
 
+The reviewed validation update adds a Validation and lessons learned passage to every case and reconciles the surrounding narratives, metrics, diagram labels, evidence descriptions and source file lists. It preserves separate projects and execution cohorts, supplied components, documented AI assistance and unresolved authoring history. CS-09 distinguishes the ND029 demographics/risk join from separate sensor ETL coursework; CS-12 describes a public-seed import/review pilot and DOM-derived CSV; CS-14 leaves P01 authoring unknown and retains private-VM, policy and cleanup limits. The overview and 2026 independent-practice entry are aligned with these contribution limits. Credential identities and the DCD/TCS/NHS employment entries are unchanged by this update.
+
 The presentation uses a 1440px desktop container, larger responsive typography and controls, more space within the track cards, and clearer architecture diagrams. SVG labels are enlarged, and the orchestration header and numbered badges are repositioned. Header branding is simplified, with a small location icon and `LONDON, UK`. Authorised presentation and copy changes are recorded alongside the earlier content additions in the source manifest. `src/App.tsx` has a new byte identity:
 
 ```text
-Current:  181541 bytes | SHA256 60e004806bc6fe0620cb3f0ab2e7a72044c40c454446dd0a15b4de21b305c805
+Current:  209500 bytes | SHA256 fc9739475246ccfa223c1ebaf8bab3f86edbde683c1a0b4fcf038a7c330a98cc
 Original: 157493 bytes | SHA256 1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d
 ```
 

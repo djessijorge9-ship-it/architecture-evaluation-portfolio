@@ -6,7 +6,9 @@ The canonical domain is [djessijorge.com](https://djessijorge.com), with root an
 
 The current source contains 14 case studies and 47 credentials: 19 Udacity credentials and 28 industry credentials. CS-13 covers four independent ND906 academic implementations. Preserve its qualifications around AI assistance, mocked checks, simulated research references, and historical live-model observations when updating its narrative.
 
-CS-14 covers three independent ND082 academic projects: Azure infrastructure with Packer and Terraform, CI/CD with GitHub Actions and Azure Pipelines, and layered release-quality checks. Preserve the distinctions between supplied applications, AI-assisted work, and historical project results. These results do not establish commercial impact or production reliability.
+CS-14 covers three independent ND082 academic projects: Azure infrastructure with Packer and Terraform, CI/CD with GitHub Actions and Azure Pipelines, and layered release-quality checks. P01's specific authoring history is unknown; do not transfer the documented P02/P03 AI assistance to P01. Preserve its private-VM access, resource-group policy scope and inert-policy cleanup limitations. These historical results do not establish commercial impact or production reliability.
+
+All 14 cases include reviewed Validation and lessons learned passages. Keep their supplied-code, assistance and execution boundaries consistent across the narrative, takeaway, metrics, architecture labels, featured cards and evidence modal. CS-09's ND029 balance project joins customer demographics and risk streams; it does not contain the separate accelerometer/step-trainer consent ETL coursework. CS-12 is the five-create public-seed import/review pilot using a DOM-derived CSV, separate from later research and five updates. Mocked checks, simulations, deliberate negative tests, historical live runs and modelled comparisons must remain distinguishable.
 
 ## Update the GitHub source
 
