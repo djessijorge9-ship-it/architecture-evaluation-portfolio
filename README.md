@@ -17,7 +17,7 @@ The introduction emphasises enterprise engineering experience. Three featured im
 The presentation uses a 1440px desktop container, larger responsive typography and controls, more space within the track cards, and clearer architecture diagrams. SVG labels are enlarged, and the orchestration header and numbered badges are repositioned. Header branding is simplified, with a small location icon and `LONDON, UK`. Authorised presentation and copy changes are recorded alongside the earlier content additions in the source manifest. `src/App.tsx` has a new byte identity:
 
 ```text
-Current:  181661 bytes | SHA256 623359c85e956caab77c738a5de2ca723ffe1a0cfbc6c1fe0cf0e5e6643cb796
+Current:  181606 bytes | SHA256 86469ba0d245b510c63e00622efa03fd79917e1a588755cdc9c6af09895c9fc9
 Original: 157493 bytes | SHA256 1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d
 ```
 

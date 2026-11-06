@@ -2407,7 +2407,7 @@ export default function App() {
             </h1>
 
             <p className="text-base sm:text-lg max-w-4xl leading-relaxed text-slate-600">
-              Experienced enterprise IT professional bringing operational leadership and demonstrated cloud/AI engineering capability into an engineering or architecture role. Experience includes 12 years of enterprise IT work across DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust, with team leadership, mentoring, technical escalations, clinical system implementation and statutory data validation.
+              Experienced enterprise IT professional with 12 years across energy, NHS clinical systems and data-centre technical learning. Combines operational leadership and mentoring with practical cloud/AI engineering across AWS, Azure, Python APIs and CI/CD. Independent LLM routing and caching work demonstrated a 65.0% modelled cost saving across a 74-row evaluation ledger, backed by 231 passing unit tests.
             </p>
 
             {/* Primary Hero Action Bar */}

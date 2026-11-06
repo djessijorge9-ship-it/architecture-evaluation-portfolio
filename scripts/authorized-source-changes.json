@@ -4,8 +4,8 @@
     "sha256": "1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d"
   },
   "current": {
-    "bytes": 181661,
-    "sha256": "623359c85e956caab77c738a5de2ca723ffe1a0cfbc6c1fe0cf0e5e6643cb796"
+    "bytes": 181606,
+    "sha256": "86469ba0d245b510c63e00622efa03fd79917e1a588755cdc9c6af09895c9fc9"
   },
   "changes": [
     {
@@ -721,6 +721,21 @@
     {
       "before": "Experience spans 12 years across enterprise IT support, clinical systems and technical learning in London, including DCD Academy, Tata Consultancy Services supporting EDF Energy, and King&apos;s College Hospital NHS Foundation Trust. Responsibilities have included team leadership, mentoring junior colleagues, support queue management and escalations, clinical system implementation and statutory data validation. Current independent technical practice focuses on cloud, AI and data implementations, with scope and evidence documented in the case studies.",
       "after": "Experienced enterprise IT professional bringing operational leadership and demonstrated cloud/AI engineering capability into an engineering or architecture role. Experience includes 12 years of enterprise IT work across DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust, with team leadership, mentoring, technical escalations, clinical system implementation and statutory data validation.",
+      "occurrences": 1
+    },
+    {
+      "before": "Experienced enterprise IT professional bringing operational leadership and demonstrated cloud/AI engineering capability into an engineering or architecture role. Experience includes 12 years of enterprise IT work across DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust, with team leadership, mentoring, technical escalations, clinical system implementation and statutory data validation.",
+      "after": "Experienced enterprise IT professional bringing operational leadership and demonstrated cloud/AI engineering capability into an engineering or architecture role. Roles at DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust span 12 years and cover team leadership, mentoring, technical escalations, clinical system implementation and statutory data validation.",
+      "occurrences": 1
+    },
+    {
+      "before": "Experienced enterprise IT professional bringing operational leadership and demonstrated cloud/AI engineering capability into an engineering or architecture role. Roles at DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust span 12 years and cover team leadership, mentoring, technical escalations, clinical system implementation and statutory data validation.",
+      "after": "Experienced enterprise IT professional bringing operational leadership and demonstrated cloud/AI engineering capability into an engineering or architecture role. Work across DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust spans 12 years and covers team leadership, mentoring, technical escalations, clinical system implementation and statutory data validation.",
+      "occurrences": 1
+    },
+    {
+      "before": "Experienced enterprise IT professional bringing operational leadership and demonstrated cloud/AI engineering capability into an engineering or architecture role. Work across DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust spans 12 years and covers team leadership, mentoring, technical escalations, clinical system implementation and statutory data validation.",
+      "after": "Experienced enterprise IT professional with 12 years across energy, NHS clinical systems and data-centre technical learning. Combines operational leadership and mentoring with practical cloud/AI engineering across AWS, Azure, Python APIs and CI/CD. Independent LLM routing and caching work demonstrated a 65.0% modelled cost saving across a 74-row evaluation ledger, backed by 231 passing unit tests.",
       "occurrences": 1
     }
   ]
