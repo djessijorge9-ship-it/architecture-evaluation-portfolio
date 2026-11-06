@@ -2407,7 +2407,7 @@ export default function App() {
             </h1>
 
             <p className="text-base sm:text-lg max-w-4xl leading-relaxed text-slate-600">
-              Experience spans 12 years across enterprise IT support, clinical systems and technical learning in London, including DCD Academy, Tata Consultancy Services supporting EDF Energy, and King&apos;s College Hospital NHS Foundation Trust. Responsibilities have included team leadership, mentoring junior colleagues, support queue management and escalations, clinical system implementation and statutory data validation. Current independent technical practice focuses on cloud, AI and data implementations, with scope and evidence documented in the case studies.
+              Experienced enterprise IT professional bringing operational leadership and demonstrated cloud/AI engineering capability into an engineering or architecture role. Experience includes 12 years of enterprise IT work across DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust, with team leadership, mentoring, technical escalations, clinical system implementation and statutory data validation.
             </p>
 
             {/* Primary Hero Action Bar */}

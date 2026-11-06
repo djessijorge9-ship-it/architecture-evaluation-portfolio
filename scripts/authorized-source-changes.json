@@ -4,8 +4,8 @@
     "sha256": "1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d"
   },
   "current": {
-    "bytes": 181762,
-    "sha256": "3083c84e4e89ba912faa3c0c3451fd2bc24ba9c80967eb79b365ab3a72df82d2"
+    "bytes": 181661,
+    "sha256": "623359c85e956caab77c738a5de2ca723ffe1a0cfbc6c1fe0cf0e5e6643cb796"
   },
   "changes": [
     {
@@ -716,6 +716,11 @@
     {
       "before": "Select any credential below to open its official verification page on Udacity, Coursera, Anthropic, LangChain Academy, DeepLearning.AI, or HubSpot Academy.",
       "after": "47 verified credentials: 19 Udacity Nanodegrees and courses, plus 28 industry credentials. Select any credential below to open its official verification page on Udacity, Coursera, Anthropic, LangChain Academy, DeepLearning.AI, or HubSpot Academy.",
+      "occurrences": 1
+    },
+    {
+      "before": "Experience spans 12 years across enterprise IT support, clinical systems and technical learning in London, including DCD Academy, Tata Consultancy Services supporting EDF Energy, and King&apos;s College Hospital NHS Foundation Trust. Responsibilities have included team leadership, mentoring junior colleagues, support queue management and escalations, clinical system implementation and statutory data validation. Current independent technical practice focuses on cloud, AI and data implementations, with scope and evidence documented in the case studies.",
+      "after": "Experienced enterprise IT professional bringing operational leadership and demonstrated cloud/AI engineering capability into an engineering or architecture role. Experience includes 12 years of enterprise IT work across DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust, with team leadership, mentoring, technical escalations, clinical system implementation and statutory data validation.",
       "occurrences": 1
     }
   ]
