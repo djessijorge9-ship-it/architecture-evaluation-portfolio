@@ -4,8 +4,8 @@
     "sha256": "1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d"
   },
   "current": {
-    "bytes": 181606,
-    "sha256": "86469ba0d245b510c63e00622efa03fd79917e1a588755cdc9c6af09895c9fc9"
+    "bytes": 181541,
+    "sha256": "60e004806bc6fe0620cb3f0ab2e7a72044c40c454446dd0a15b4de21b305c805"
   },
   "changes": [
     {
@@ -736,6 +736,11 @@
     {
       "before": "Experienced enterprise IT professional bringing operational leadership and demonstrated cloud/AI engineering capability into an engineering or architecture role. Work across DCD Academy, Tata Consultancy Services (supporting EDF Energy) and King&apos;s College Hospital NHS Foundation Trust spans 12 years and covers team leadership, mentoring, technical escalations, clinical system implementation and statutory data validation.",
       "after": "Experienced enterprise IT professional with 12 years across energy, NHS clinical systems and data-centre technical learning. Combines operational leadership and mentoring with practical cloud/AI engineering across AWS, Azure, Python APIs and CI/CD. Independent LLM routing and caching work demonstrated a 65.0% modelled cost saving across a 74-row evaluation ledger, backed by 231 passing unit tests.",
+      "occurrences": 1
+    },
+    {
+      "before": "            <h1 className=\"text-3xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-[1.14] text-slate-900\">\n              Engineer & Architect{' '}\n              <span className=\"text-slate-500 font-semibold\">\n                building backend, AI and data systems, with a focus on\n              </span>{' '}\n              <span className=\"bg-gradient-to-r from-indigo-600 via-sky-600 to-emerald-600 bg-clip-text text-transparent\">\n                performance, running costs and practical results.\n              </span>\n            </h1>",
+      "after": "            <h1 className=\"text-3xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-[1.14] text-slate-900\">\n              Engineering and architecture{' '}\n              <span className=\"text-slate-500 font-semibold\">\n                for\n              </span>{' '}\n              <span className=\"bg-gradient-to-r from-indigo-600 via-sky-600 to-emerald-600 bg-clip-text text-transparent\">\n                cloud, AI and data systems.\n              </span>\n            </h1>",
       "occurrences": 1
     }
   ]

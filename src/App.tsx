@@ -2397,12 +2397,12 @@ export default function App() {
           {/* Core Value Proposition Headline + Primary Action */}
           <div className="space-y-6">
             <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-[1.14] text-slate-900">
-              Engineer & Architect{' '}
+              Engineering and architecture{' '}
               <span className="text-slate-500 font-semibold">
-                building backend, AI and data systems, with a focus on
+                for
               </span>{' '}
               <span className="bg-gradient-to-r from-indigo-600 via-sky-600 to-emerald-600 bg-clip-text text-transparent">
-                performance, running costs and practical results.
+                cloud, AI and data systems.
               </span>
             </h1>
 
