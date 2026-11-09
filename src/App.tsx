@@ -1,23 +1,9 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import {
-  ChevronDown,
-  ChevronUp,
-  ArrowUp,
-  CheckCircle2,
-  Copy,
-  Check,
-  ExternalLink,
-  Search,
-  ShieldCheck,
-  ArrowRight,
-  FileCode2,
-  Sparkles,
-  MapPin,
-  Linkedin,
-  Github,
-  X,
-  Briefcase,
-  Award
+  ArrowUp, ArrowDown, ArrowRight, ArrowUpRight, ChevronDown,
+  CheckCircle2, Copy, Check, Search, ShieldCheck, FileCode2,
+  MapPin, Linkedin, Github, X, Award, Cloud, Cpu, Database,
+  Network, FlaskConical
 } from 'lucide-react';
 
 // ============================================================================
@@ -2205,1104 +2191,428 @@ const AwsReferenceArchitectureSVG = ({ config, projectId }) => {
 // ============================================================================
 // MAIN BRIGHT-THEME PORTFOLIO APPLICATION
 // ============================================================================
+const PROJECT_VIEWS = [
+  {
+    "id": "cs-01",
+    "shortTitle": "LLM guardrails, tracing & cost analysis",
+    "summary": "AI-assisted additions to a supplied FAQ service, with mocked checks, retrieval comparisons and a bounded historical cost model.",
+    "scopeLabel": "AI-assisted academic extension · supplied service",
+    "flowLabel": "Service and separate analysis",
+    "flowNodes": [
+      "FAQ API",
+      "Cache / router",
+      "Trace & compare"
+    ],
+    "metricValue": "65.0%",
+    "metricLabel": "Modelled cost difference · 74 mixed rows · hypothetical baseline",
+    "contribution": "Added catalogue content, guard patterns and trace instrumentation to the supplied service, with 231 mocked checks retained.",
+    "decision": "Compare retrieval quality and cost separately; the modelled ledger mixes live and seeded rows rather than measuring production savings."
+  },
+  {
+    "id": "cs-02",
+    "shortTitle": "FinBERT delivery & drift checks",
+    "summary": "AI-assisted completion of a supplied sentiment API, checked through historical CI, drift gates and ECS deployment dispatch.",
+    "scopeLabel": "AI-assisted coursework · pretrained model",
+    "flowLabel": "Historical delivery workflow",
+    "flowNodes": [
+      "API starter",
+      "CI / drift checks",
+      "ECS dispatch"
+    ],
+    "metricValue": "5 / 5",
+    "metricLabel": "Historical CI jobs passed · ECS dispatch only",
+    "contribution": "Completed starter API and monitoring sections, delivery scripts and container checks around pretrained FinBERT weights.",
+    "decision": "Pass an image tag between jobs and reconstruct the deployment URI locally; successful dispatch does not establish a completed rollout."
+  },
+  {
+    "id": "cs-03",
+    "shortTitle": "LangGraph support agent",
+    "summary": "An AI-assisted support prototype combining persistent conversations, lexical retrieval and guarded local account actions over supplied teaching data.",
+    "scopeLabel": "AI-assisted academic prototype · supplied data",
+    "flowLabel": "Support workflow",
+    "flowNodes": [
+      "Support request",
+      "LangGraph + tools",
+      "Resolve / escalate"
+    ],
+    "metricValue": "21",
+    "metricLabel": "Offline tests · injected deterministic model",
+    "contribution": "Implemented stateful support routing, lexical retrieval and tenant-scoped SQLite tools; a separate provider run exercised eight synthetic tickets.",
+    "decision": "Check ownership and escalation alongside successful answers; trusted upstream identities and heuristic confidence retain explicit limits."
+  },
+  {
+    "id": "cs-04",
+    "shortTitle": "Claude code-review CLI",
+    "summary": "AI-assisted review tooling that separates Claude specialist drafts from source adjudication and deterministic report checks.",
+    "scopeLabel": "AI-assisted coursework · supplied CLI scaffold",
+    "flowLabel": "Review and adjudication",
+    "flowNodes": [
+      "Supplied PRs",
+      "Claude specialists",
+      "Source review"
+    ],
+    "metricValue": "42",
+    "metricLabel": "Tool tests passed · paid-model boundary mocked",
+    "contribution": "Completed SDK orchestration, constrained read tools, prompts, report rendering and tests around supplied contracts and helpers.",
+    "decision": "Check model findings against exact source; valid schemas and deterministic scores cannot establish semantic accuracy."
+  },
+  {
+    "id": "cs-05",
+    "shortTitle": "Private AWS networking",
+    "summary": "Codex-assisted private connectivity across two AWS Regions in one account, with a separate undeployed governance blueprint.",
+    "scopeLabel": "Codex-assisted coursework · one authorised account",
+    "flowLabel": "Private regional connectivity",
+    "flowNodes": [
+      "Private VPC",
+      "Regional peering",
+      "Private VPC"
+    ],
+    "metricValue": "2",
+    "metricLabel": "Regions · historical private connectivity · one account",
+    "contribution": "Added regional routes, scoped security rules and Flow Logs; retained eight mocked safety tests and separate historical private-VM observations.",
+    "decision": "Wait for active peering in both Regions before routing; connectivity observations do not establish loss-free networking or failover."
+  },
+  {
+    "id": "cs-06",
+    "shortTitle": "Fraud training & model publication",
+    "summary": "Codex-assisted adaptation of supplied Glue training, S3 publication and ECS serving interfaces, with separately recorded model and delivery checks.",
+    "scopeLabel": "Codex-assisted coursework · supplied interfaces",
+    "flowLabel": "Workflow with separate run cohorts",
+    "flowNodes": [
+      "Glue training",
+      "S3 publication",
+      "ECS serving"
+    ],
+    "metricValue": "0.8344",
+    "metricLabel": "Held-out F1 · 43,210 rows · historical B run",
+    "contribution": "Adapted the trainer, loader and refresh function; added event journalling, immutable model publication and exact-version triggering-object archival.",
+    "decision": "Validate model quality separately from serving; localhost HTTP 200 probes establish delivery rather than predictive accuracy."
+  },
+  {
+    "id": "cs-07",
+    "shortTitle": "Serverless document summarisation",
+    "summary": "A source-matched academic workflow connecting S3 events, Lambda and Amazon Bedrock to encrypted summary outputs.",
+    "scopeLabel": "Academic deployment · per-action authorship unverified",
+    "flowLabel": "Source-matched event path",
+    "flowNodes": [
+      "S3 upload",
+      "Lambda + Bedrock",
+      "Encrypted summary"
+    ],
+    "metricValue": "447",
+    "metricLabel": "Output tokens · one recorded document run",
+    "contribution": "Retained CloudFormation and Lambda source, deployment hashes and an upload-to-output receipt for the final matching deployment.",
+    "decision": "Separate input and output buckets to avoid recursion; event delivery and token usage do not establish legal correctness or savings."
+  },
+  {
+    "id": "cs-08",
+    "shortTitle": "Iceberg medallion lakehouse",
+    "summary": "A batch lakehouse over supplied data, with tolerant timestamps, initial materialised layers and a separate later Bronze CDC demonstration.",
+    "scopeLabel": "Academic batch design · supplied data and scaffolding",
+    "flowLabel": "Initial batch materialisation",
+    "flowNodes": [
+      "Bronze",
+      "Silver",
+      "Gold / Athena"
+    ],
+    "metricValue": "5 + 25",
+    "metricLabel": "Historical Glue runs + Athena queries completed",
+    "contribution": "Completed four Glue scripts over supplied notebooks and datasets, retaining initial analytics, later Bronze changes and Athena history queries separately.",
+    "decision": "Retain malformed raw values and distinguish snapshot populations; successful jobs do not establish a refreshed end-to-end CDC reconciliation."
+  },
+  {
+    "id": "cs-09",
+    "shortTitle": "Transit & STEDI streaming",
+    "summary": "Two separate classroom implementations: transit event aggregation and a customer-demographics/risk join, with distinct checks and run cohorts.",
+    "scopeLabel": "Separate classroom projects · authoring attribution unverified",
+    "flowLabel": "Independent projects",
+    "flowNodes": [
+      "Kafka / KSQL transit",
+      "Spark / Redis join",
+      "Separate evidence"
+    ],
+    "metricValue": "36,002",
+    "metricLabel": "Transit rider events · exact frozen-offset replay match",
+    "contribution": "Retained keyed transit aggregation and STEDI demographics/risk transforms, with frozen-offset counts and five separate native Spark tests.",
+    "decision": "Validate event identity and each stream arrival order; STEDI's unwatermarked state and trigger interval provide no production latency guarantee."
+  },
+  {
+    "id": "cs-10",
+    "shortTitle": "Scala, parallelism & Spark",
+    "summary": "Seventeen separate AI-assisted coursework assignments spanning functional programming, parallel tasks, Spark analysis and limited Observatory rendering.",
+    "scopeLabel": "AI-assisted coursework · supplied starters and fixtures",
+    "flowLabel": "Independent assignments",
+    "flowNodes": [
+      "Functional Scala",
+      "Parallel tasks",
+      "Spark analysis",
+      "Observatory"
+    ],
+    "metricValue": "265",
+    "metricLabel": "Recorded test passes · 17 distinct assignment suites",
+    "contribution": "Completed supplied-starter assignments with recorded compiler investigation, a bounded Wikipedia corpus run and separately retained optional-run limitations.",
+    "decision": "Keep compilation, fixture tests, full-data analysis and rendered output separate; failed or skipped optional runs remain part of the result."
+  },
+  {
+    "id": "cs-11",
+    "shortTitle": "Vision models & confidence gating",
+    "summary": "Two AI-assisted academic projects: facial-keypoint regression and a separate SageMaker classifier workflow with a confidence-based rejection gate.",
+    "scopeLabel": "AI-assisted coursework · two independent projects",
+    "flowLabel": "Independent projects",
+    "flowNodes": [
+      "PyTorch keypoints",
+      "SageMaker workflow",
+      "Separate validation"
+    ],
+    "metricValue": "2.69 px",
+    "metricLabel": "Keypoint mean error · 770 held-out images",
+    "contribution": "Implemented and evaluated facial-keypoint processing; separately prepared Scones inference and confidence gating with retained historical cloud execution.",
+    "decision": "Distinguish image-holdout error from unseen-subject performance; confidence rejection and captured payloads do not establish accuracy, calibration or drift detection."
+  },
+  {
+    "id": "cs-12",
+    "shortTitle": "HubSpot replay pilot",
+    "summary": "An assistant-operated public-seed import/review pilot creating five HubSpot test companies through a custom Python/SQLite bridge, without enrichment.",
+    "scopeLabel": "Assistant-operated pilot · user-directed scope",
+    "flowLabel": "Checked source to test records",
+    "flowNodes": [
+      "Reviewed seed",
+      "Python / SQLite",
+      "HubSpot test records"
+    ],
+    "metricValue": "3 replays",
+    "metricLabel": "Zero creates or updates · after five initial creates",
+    "contribution": "Directed an approved five-company pilot; coding assistants implemented the bridge and checked a DOM-derived CSV after native export was blocked.",
+    "decision": "Reconcile uncertain writes through reviewed plans and a write ledger; application-enforced scope does not narrow account-wide provider permissions."
+  },
+  {
+    "id": "cs-13",
+    "shortTitle": "Google ADK agent systems",
+    "summary": "Four independent Codex-assisted academic agents covering legal reports, simulated-source research, tool-grounded support and prototype A2A banking.",
+    "scopeLabel": "Codex-assisted coursework · supplied starters",
+    "flowLabel": "Independent projects",
+    "flowNodes": [
+      "Legal report",
+      "Simulated research",
+      "Boutique support",
+      "A2A banking"
+    ],
+    "metricValue": "4",
+    "metricLabel": "Accepted academic projects · distinct validation cohorts",
+    "contribution": "Codex completed project-specific orchestration, tools and state handling, with documented parser, callback and database-response corrections.",
+    "decision": "Validate each project's contracts and semantic limits separately; simulated references and successful transport are not verified research or lending accuracy."
+  },
+  {
+    "id": "cs-14",
+    "shortTitle": "Azure delivery & release checks",
+    "summary": "Three separate Azure coursework projects covering private infrastructure, traceable delivery and release checks, with project-specific contribution records.",
+    "scopeLabel": "Coursework · P02/P03 Codex-assisted; P01 authorship unknown",
+    "flowLabel": "Independent projects",
+    "flowNodes": [
+      "Infrastructure",
+      "CI/CD",
+      "Release checks"
+    ],
+    "metricValue": "3",
+    "metricLabel": "Accepted academic projects · separate execution cohorts",
+    "contribution": "P02/P03 document Codex implementation and correction. P01 retains private-VM apply/check/destroy evidence without a verified specific authoring history.",
+    "decision": "Keep private-VM access, resource-group policy and cleanup limits explicit; pipeline, API, browser and load checks support different conclusions."
+  }
+];
+
+const DOMAIN_META = {
+  cloud: { label: 'Cloud & delivery', icon: Cloud },
+  ai: { label: 'AI & agents', icon: Cpu },
+  data: { label: 'Data & integration', icon: Database }
+};
+
+function MiniFlow({ view, category, compact = false }) {
+  const independent = view.flowLabel.startsWith('Independent');
+  const DomainIcon = DOMAIN_META[category].icon;
+  return <div className={`pv-flow ${independent ? 'parallel' : ''} ${compact ? 'compact' : ''}`}>
+    <span className="pv-flow-label">{view.flowLabel}</span>
+    <div className="pv-flow-nodes">{view.flowNodes.map((node, i) => <span key={node + i}>
+      {independent ? <DomainIcon aria-hidden="true" /> : i === 0 ? <FileCode2 aria-hidden="true" /> : i === view.flowNodes.length - 1 ? <CheckCircle2 aria-hidden="true" /> : <Network aria-hidden="true" />}
+      <span>{node}</span>
+    </span>)}</div>
+  </div>;
+}
+
 export default function App() {
   const [activeNav, setActiveNav] = useState('overview');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCertGroup, setSelectedCertGroup] = useState('all');
-
-  // First project expanded by default
-  const [expandedIds, setExpandedIds] = useState(['cs-01']);
-  const [pendingCaseId, setPendingCaseId] = useState(null);
-
-  // Clipboard state for SHA256 copy button
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [selectedProjectId, setSelectedProjectId] = useState(null);
+  const [projectTab, setProjectTab] = useState('overview');
+  const [directoryOpen, setDirectoryOpen] = useState(false);
+  const [certGroup, setCertGroup] = useState('all');
+  const [certSearch, setCertSearch] = useState('');
+  const [openCareer, setOpenCareer] = useState([]);
   const [copiedHash, setCopiedHash] = useState(null);
-
-  // Recruiter-Friendly Project Summary & Scope Modal state
-  const [summaryModalProject, setSummaryModalProject] = useState(null);
-
-  // Filtered Case Studies
-  const filteredCaseStudies = useMemo(() => {
-    return CASE_STUDIES.filter((cs) => {
-      const matchesCat =
-        selectedCategory === 'all' ||
-        (selectedCategory === 'ai' && cs.category === 'ai') ||
-        (selectedCategory === 'cloud' && cs.category === 'cloud') ||
-        (selectedCategory === 'data' && cs.category === 'data');
-
-      const q = searchQuery.trim().toLowerCase();
-      const matchesQuery =
-        !q ||
-        cs.title.toLowerCase().includes(q) ||
-        cs.code.toLowerCase().includes(q) ||
-        cs.domainBadge.toLowerCase().includes(q) ||
-        cs.subtitle.toLowerCase().includes(q) ||
-        cs.stack.some((t) => t.toLowerCase().includes(q));
-
-      return matchesCat && matchesQuery;
-    });
-  }, [selectedCategory, searchQuery]);
-
-  // Visible Certificate Groups
-  const visibleCertGroups = useMemo(() => {
-    if (selectedCertGroup === 'all') return CERT_GROUPS;
-    return CERT_GROUPS.filter((g) => g.id === selectedCertGroup);
-  }, [selectedCertGroup]);
-
-  // Toggle single case study card
-  const toggleProject = (id) => {
-    setExpandedIds((prev) => (prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]));
-  };
-
-  // Open the full case after React has applied the filter and expansion changes.
-  const openImplementation = (id) => {
-    setSelectedCategory('all');
-    setSearchQuery('');
-    setExpandedIds((ids) => ids.includes(id) ? ids : [...ids, id]);
-    setActiveNav('cases');
-    setPendingCaseId(id);
-  };
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const openerRef = useRef<HTMLElement>(null);
+  const selectedProject = CASE_STUDIES.find(c => c.id === selectedProjectId);
+  const selectedView = PROJECT_VIEWS.find(c => c.id === selectedProjectId);
+  const projectTabs = ['overview', 'architecture', 'validation', 'evidence'];
+  const certificates = useMemo(() => [
+    ...UDACITY_CERTIFICATES.map(c => ({...c, issuer: 'Udacity', group: 'udacity', summary: ''})),
+    ...COURSERA_AND_INDUSTRY_CERTIFICATES
+  ], []);
+  const filteredCertificates = certificates.filter(c => (certGroup === 'all' || c.group === certGroup) && `${c.title} ${c.issuer}`.toLowerCase().includes(certSearch.toLowerCase()));
+  const filteredProjects = CASE_STUDIES.filter(c => (selectedCategory === 'all' || c.category === selectedCategory) && `${c.title} ${c.code} ${c.stack.join(' ')} ${PROJECT_VIEWS.find(v => v.id === c.id).shortTitle}`.toLowerCase().includes(searchQuery.toLowerCase()));
+  const visibleProjects = showAllProjects ? filteredProjects : filteredProjects.slice(0, 6);
 
   useEffect(() => {
-    if (!pendingCaseId || selectedCategory !== 'all' || searchQuery || !expandedIds.includes(pendingCaseId)) return;
-    const article = document.getElementById(`case-${pendingCaseId}`);
-    const heading = document.getElementById(`case-title-${pendingCaseId}`);
-    if (!article || !heading) return;
-    const frame = window.requestAnimationFrame(() => {
-      heading.focus({ preventScroll: true });
-      article.scrollIntoView({
-        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-        block: 'start'
-      });
-      setPendingCaseId(null);
-    });
-    return () => window.cancelAnimationFrame(frame);
-  }, [pendingCaseId, selectedCategory, searchQuery, expandedIds]);
-
-  // Smooth navigation scroll
-  const scrollToSection = (navId, elementId) => {
-    setActiveNav(navId);
-    const el = document.getElementById(elementId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const dialog = dialogRef.current;
+    if (selectedProjectId) {
+      if (!dialog.open) dialog.showModal();
+      document.body.classList.add('modal-open');
+    } else {
+      if (dialog.open) dialog.close();
+      document.body.classList.remove('modal-open');
     }
+    return () => document.body.classList.remove('modal-open');
+  }, [selectedProjectId]);
+
+  const navigate = (section, revealAll = false) => {
+    setActiveNav(section);
+    if (section === 'credentials') setDirectoryOpen(true);
+    if (revealAll) setShowAllProjects(true);
+    requestAnimationFrame(() => document.getElementById(`section-${section}`)?.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}));
+  };
+  const openProject = id => {
+    openerRef.current = document.activeElement as HTMLElement;
+    setProjectTab('overview');
+    setCopiedHash(null);
+    setSelectedProjectId(id);
+  };
+  const chooseCategory = category => {
+    setSelectedCategory(category);
+    setShowAllProjects(true);
+    navigate('cases');
+  };
+  const copyHash = async hash => {
+    try { await navigator.clipboard.writeText(hash); setCopiedHash(hash); }
+    catch { setCopiedHash('unavailable'); }
+  };
+  const changeTab = (event, index) => {
+    const key = event.key;
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(key)) return;
+    event.preventDefault();
+    const next = key === 'Home' ? 0 : key === 'End' ? 3 : (index + (key === 'ArrowRight' ? 1 : -1) + 4) % 4;
+    setProjectTab(projectTabs[next]);
+    document.getElementById(`project-tab-${projectTabs[next]}`)?.focus();
   };
 
-  // Smooth scroll back to top
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  return <div className="pv-site">
+    <a className="pv-skip" href="#main-content">Skip to content</a>
+    <header className="pv-header">
+      <div className="pv-shell pv-header-inner">
+        <button className="pv-brand" onClick={() => navigate('overview')} aria-label="Djessi Jorge, back to overview">
+          <span className="pv-brand-mark" aria-hidden="true">DJ<span /></span>
+          <span><strong>Djessi Jorge</strong><small><MapPin aria-hidden="true" /> London, UK</small></span>
+        </button>
+        <nav className="pv-nav" aria-label="Main navigation">
+          {[['overview','Overview'],['cases','Projects'],['experience','Experience'],['credentials','Credentials']].map(([id,label]) => <button key={id} className={activeNav === id ? 'active' : ''} onClick={() => navigate(id)}>{label}</button>)}
+        </nav>
+        <div className="pv-header-links">
+          <a href="https://github.com/djessijorge9-ship-it/architecture-evaluation-portfolio" target="_blank" rel="noreferrer" aria-label="Portfolio source on GitHub"><Github aria-hidden="true" /></a>
+          <a className="pv-linkedin" aria-label="Connect on LinkedIn" href="https://www.linkedin.com/in/djessijorge/" target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /><span>Connect</span><ArrowUpRight aria-hidden="true" /></a>
+        </div>
+      </div>
+    </header>
 
-  // Copy SHA256 hash
-  const handleCopyHash = (hash, e) => {
-    e.stopPropagation();
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(hash);
-    }
-    setCopiedHash(hash);
-    setTimeout(() => setCopiedHash(null), 2200);
-  };
+    <main id="main-content" className="pv-shell">
+      <section id="section-overview" className="pv-hero">
+        <div className="pv-hero-copy">
+          <span className="pv-eyebrow"><span className="pv-line" /> Enterprise IT. Applied engineering.</span>
+          <h1>Engineering for<br /><em>cloud, AI</em><br />&amp; data systems.</h1>
+          <p className="pv-lead">Enterprise IT and operational leadership, paired with AI-assisted academic work in cloud, AI and data engineering.</p>
+          <div className="pv-actions">
+            <button className="pv-button primary" onClick={() => navigate('featured')}>Explore selected work <ArrowDown aria-hidden="true" /></button>
+            <button className="pv-button secondary" onClick={() => navigate('experience')}>Career background <ArrowUpRight aria-hidden="true" /></button>
+          </div>
+        </div>
+        <div className="pv-system-map" aria-label="Interactive map of portfolio disciplines">
+          <div className="pv-map-grid" aria-hidden="true" />
+          <div className="pv-map-top"><span>AREAS OF PRACTICE</span><span>3 disciplines</span></div>
+          <svg className="pv-map-lines" viewBox="0 0 500 400" aria-hidden="true"><path d="M250 200 C250 100 100 200 100 100 M250 200 C250 100 400 200 400 100 M250 200 V330" fill="none" stroke="currentColor" strokeWidth="1.4" strokeDasharray="5 6" /></svg>
+          <div className="pv-map-orbit" aria-hidden="true" />
+          <div className="pv-map-core"><Network aria-hidden="true" /><strong>Systems<br />thinking</strong><small>Design · Build · Verify</small></div>
+          {Object.entries(DOMAIN_META).map(([id, meta]) => {const Icon = meta.icon; return <button key={id} className={`pv-map-node ${id}`} onClick={() => chooseCategory(id)} aria-label={`Explore ${meta.label} projects`}><Icon aria-hidden="true" /><strong>{id === 'cloud' ? 'Cloud' : id === 'ai' ? 'AI & agents' : 'Data'}</strong><small>{CASE_STUDIES.filter(c=>c.category===id).length} projects <ArrowUpRight aria-hidden="true" /></small></button>;})}
+          <div className="pv-map-caption"><span>Decisions</span><ArrowRight aria-hidden="true" /><span>Implementation</span><ArrowRight aria-hidden="true" /><span>Evidence</span></div>
+        </div>
+      </section>
 
-  return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] font-sans relative">
-      {/* Subtle Daylight Alabaster Dot-Matrix Drafting Canvas */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-65"
-        style={{
-          backgroundImage: 'radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px)',
-          backgroundSize: '24px 24px',
-          maskImage: 'radial-gradient(ellipse 85% 65% at 50% 15%, black 45%, transparent 100%)',
-          WebkitMaskImage: 'radial-gradient(ellipse 85% 65% at 50% 15%, black 45%, transparent 100%)'
-        }}
-      />
+      <div className="pv-stat-strip" aria-label="Portfolio at a glance">
+        <div className="pv-stat"><strong>14<span> / projects</span></strong><small>Architecture, implementation & validation</small></div>
+        <div className="pv-stat"><strong>48<span> / credentials</span></strong><small>Official verification links</small></div>
+        <div className="pv-stat"><strong>~10.5<span> / years</span></strong><small>Paid enterprise IT experience</small></div>
+      </div>
 
-      {/* =====================================================================
-          FIXED RIGHT-HAND SIDE VERTICALLY-ORIENTED LINKEDIN & GITHUB RAIL
-      ===================================================================== */}
-      <aside
-        aria-label="External Profiles"
-        className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-2 pr-0"
-      >
-        <a
-          href="https://www.linkedin.com/in/djessijorge/"
-          target="_blank"
-          rel="noreferrer"
-          className="group flex flex-col items-center justify-center gap-2 py-4 px-2.5 rounded-l-xl bg-blue-600 hover:bg-blue-700 text-white shadow-md transition-all"
-          title="Connect on LinkedIn"
-        >
-          <Linkedin className="w-4 h-4 shrink-0" />
-          <span
-            style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
-            className="text-[11px] font-mono font-bold tracking-wider uppercase select-none"
-          >
-            Connect on LinkedIn
-          </span>
-        </a>
+      <section id="section-featured" className="pv-section">
+        <div className="pv-section-heading"><div><span className="pv-eyebrow">01 / Selected work</span><h2>Start with these three.</h2></div><button className="pv-text-link" onClick={() => navigate('cases',true)}>Explore all 14 projects <ArrowUpRight aria-hidden="true" /></button></div>
+        <div className="pv-featured">{FEATURED_IMPLEMENTATIONS.map(f => {const c=CASE_STUDIES.find(c=>c.id===f.projectId);const v=PROJECT_VIEWS.find(v=>v.id===c.id);return <button className={`pv-project-card ${c.category}`} key={c.id} onClick={()=>openProject(c.id)} aria-label={`View project ${c.code}: ${v.shortTitle}`}>
+          <div className="pv-card-meta"><span className={`pv-domain ${c.category}`}>{DOMAIN_META[c.category].label}</span><span>{c.code}</span></div>
+          <div className="pv-feature-art"><MiniFlow view={v} category={c.category} /></div>
+          <div className="pv-card-content"><h3>{v.shortTitle}</h3><p>{v.summary}</p><div className="pv-result"><strong>{v.metricValue}</strong><span>{v.metricLabel}</span></div></div>
+          <div className="pv-card-footer"><small>{v.scopeLabel}</small><span className="pv-round-arrow"><ArrowUpRight aria-hidden="true" /></span></div>
+        </button>;})}</div>
+      </section>
 
-        <a
-          href="https://github.com/djessijorge9-ship-it/architecture-evaluation-portfolio"
-          target="_blank"
-          rel="noreferrer"
-          className="group flex flex-col items-center justify-center gap-2 py-4 px-2.5 rounded-l-xl bg-slate-900 hover:bg-slate-800 text-white shadow-md transition-all"
-          title="GitHub Repository"
-        >
-          <Github className="w-4 h-4 shrink-0" />
-          <span
-            style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
-            className="text-[11px] font-mono font-bold tracking-wider uppercase select-none"
-          >
-            GitHub
-          </span>
-        </a>
-      </aside>
+      <section id="section-cases" className="pv-section">
+        <div className="pv-section-heading"><div><span className="pv-eyebrow">02 / Project library</span><h2>Explore the engineering.</h2></div><p>Pick a project for its decisions,<br />architecture and recorded results.</p></div>
+        <div className="pv-filter-bar"><div className="pv-filter-pills" aria-label="Filter projects">
+          {[['all','All work'],['cloud','Cloud'],['ai','AI & agents'],['data','Data & integration']].map(([id,label])=><button key={id} className={`pv-pill ${selectedCategory===id?'active':''}`} aria-pressed={selectedCategory===id} onClick={()=>{setSelectedCategory(id);setShowAllProjects(true);}}>{label}<span>{id==='all'?14:CASE_STUDIES.filter(c=>c.category===id).length}</span></button>)}
+        </div><label className="pv-search"><Search aria-hidden="true" /><input aria-label="Search projects" placeholder="Find a stack or project…" value={searchQuery} onChange={e=>{setSearchQuery(e.target.value);setShowAllProjects(true);}} />{searchQuery&&<button aria-label="Clear project search" onClick={()=>setSearchQuery('')}><X aria-hidden="true" /></button>}</label></div>
+        <div className="pv-project-grid">{visibleProjects.map(c=>{const v=PROJECT_VIEWS.find(v=>v.id===c.id);return <button className={`pv-project-tile ${c.category}`} key={c.id} onClick={()=>openProject(c.id)} aria-label={`View project ${c.code}: ${v.shortTitle}`}>
+          <div className="pv-card-meta"><span className={`pv-domain ${c.category}`}>{DOMAIN_META[c.category].label}</span><span>{c.code}</span></div>
+          <div className="pv-tile-art"><MiniFlow view={v} category={c.category} compact /></div>
+          <div className="pv-tile-body"><h3>{v.shortTitle}</h3><div className="pv-result"><strong>{v.metricValue}</strong><span>{v.metricLabel}</span></div><div className="pv-chips">{c.stack.slice(0,3).map(s=><span key={s}>{s}</span>)}</div></div>
+          <div className="pv-card-footer"><small>{v.scopeLabel}</small><ArrowUpRight aria-hidden="true" /></div>
+        </button>;})}</div>
+        {!filteredProjects.length&&<div className="pv-empty"><Search aria-hidden="true" /><h3>No matching projects</h3><p>Try Python, Azure, Kafka or a case-study number.</p><button className="pv-button secondary" onClick={()=>{setSearchQuery('');setSelectedCategory('all');}}>Reset filters</button></div>}
+        {!showAllProjects&&filteredProjects.length>6&&<div className="pv-more"><button className="pv-button secondary" onClick={()=>setShowAllProjects(true)}>Show all 14 projects <ArrowDown aria-hidden="true" /></button><small>Showing 6 of 14 · All evidence remains available</small></div>}
+        <p className="pv-scope-note"><FlaskConical aria-hidden="true" />Academic implementations include supplied starters and documented AI assistance. Each project retains its own execution scope and evidence limits.</p>
+      </section>
 
-      {/* =====================================================================
-          NON-STICKY BRIGHT-THEME NAVIGATION HEADER (4 CLEAN TABS)
-      ===================================================================== */}
-      <header className="relative z-30 bg-white border-b border-slate-200 text-[#0F172A]">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-12 pr-14 sm:pr-16 h-20 flex items-center justify-between gap-3 max-lg:h-auto max-lg:min-h-20 max-lg:flex-wrap max-lg:py-4">
-          {/* Brand Identity */}
-          <button
-            onClick={() => scrollToSection('overview', 'section-overview')}
-            className="text-left flex items-center gap-2.5 shrink-0"
-          >
-            <div>
-              <span className="font-extrabold tracking-tight text-base sm:text-lg block leading-none text-slate-900">
-                DJESSI JORGE
-              </span>
-              <span className="font-mono text-xs tracking-wider uppercase inline-flex items-center gap-1 mt-0.5 text-slate-500">
-                <MapPin className="w-3 h-3 shrink-0" aria-hidden="true" />
-                <span>LONDON, UK</span>
-              </span>
-            </div>
+      <section className="pv-skills-ribbon" aria-label="Engineering toolkit">
+        <div><Cloud aria-hidden="true" /><span><strong>Cloud & delivery</strong><small>AWS · Azure · Terraform · CI/CD</small></span></div>
+        <div><Cpu aria-hidden="true" /><span><strong>AI & backend</strong><small>Python · FastAPI · LangGraph · Claude SDK</small></span></div>
+        <div><Database aria-hidden="true" /><span><strong>Data & integration</strong><small>Kafka · Spark · Scala · SQL</small></span></div>
+      </section>
+
+      <section id="section-experience" className="pv-section">
+        <div className="pv-section-heading"><div><span className="pv-eyebrow">03 / Career background</span><h2>Enterprise experience.<br />Practical perspective.</h2></div><p>Clinical systems, energy support,<br />software development and technical learning.</p></div>
+        <div className="pv-timeline">{ENTERPRISE_TIMELINE.map((item,i)=>{const open=openCareer.includes(i);return <article className="pv-career-row" key={item.period}>
+          <button className="pv-career-summary" aria-expanded={open} aria-controls={`career-detail-${i}`} onClick={()=>setOpenCareer(rows=>rows.includes(i)?rows.filter(n=>n!==i):[...rows,i])}>
+            <span className="pv-career-date">{item.period}</span><span className={`pv-career-mark ${i===0?'academic':''}`} aria-hidden="true">{i===0?<FlaskConical/>:i===1?'DCD':i===2?'TCS':i===4?'C':'NHS'}</span><span className="pv-career-title"><strong>{item.role}</strong><span>{item.company}</span><small>{i===0?'Independent academic practice':item.domainBadge}</small></span><ChevronDown className={open?'rotated':''} aria-hidden="true" />
           </button>
+          {open&&<div id={`career-detail-${i}`} className="pv-career-detail"><p>{item.summary}</p><ul>{item.highlights.map(h=><li key={h}>{h}</li>)}</ul><div className="pv-chips">{item.tags.map(t=><span key={t}>{t}</span>)}</div><small>{item.location}</small></div>}
+        </article>;})}</div>
+      </section>
 
-          {/* Clean 4-Tab Section Navigation */}
-          <nav className="grid grid-cols-2 items-center gap-1 w-full lg:flex lg:w-auto lg:flex-wrap">
-            {[
-              { id: 'overview', label: 'Overview', target: 'section-overview' },
-              { id: 'cases', label: 'System Case Studies', target: 'section-cases' },
-              { id: 'credentials', label: 'Verified Credentials', target: 'section-credentials' },
-              { id: 'experience', label: 'Enterprise Experience', target: 'section-experience' }
-            ].map((item) => {
-              const isActive = activeNav === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id, item.target)}
-                  className={`px-4 py-2 rounded-lg text-sm sm:text-[15px] font-medium transition-all ${
-                    isActive
-                      ? 'bg-indigo-50 text-indigo-700 border border-indigo-200 font-semibold'
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              );
-            })}
-          </nav>
+      <section id="section-credentials" className="pv-section">
+        <div className="pv-credential-banner"><div className="pv-credential-number"><Award aria-hidden="true" /><strong>48</strong><span>verified credentials</span></div><div><span className="pv-eyebrow">04 / Continuous learning</span><h2>Knowledge with a paper trail.</h2><p>19 Udacity credentials and 29 industry credentials.<br />Open any certificate to verify it at the source.</p><div className="pv-issuer-row"><span>AWS</span><span>Microsoft Azure</span><span>Google</span><span>Anthropic</span><span>IBM</span><span>EPFL</span></div></div><button className="pv-button primary" aria-expanded={directoryOpen} aria-controls="credential-directory" onClick={()=>setDirectoryOpen(!directoryOpen)}>{directoryOpen?'Close directory':'Browse credentials'}<ChevronDown className={directoryOpen?'rotated':''} aria-hidden="true" /></button></div>
+        {directoryOpen&&<div id="credential-directory" className="pv-directory"><div className="pv-filter-bar"><div className="pv-filter-pills" aria-label="Filter credentials">{[['all','All 48'],['udacity','Udacity 19'],...CERT_GROUPS.map(g=>[g.id,g.shortLabel])].map(([id,label])=><button key={id} className={`pv-pill ${certGroup===id?'active':''}`} aria-pressed={certGroup===id} onClick={()=>setCertGroup(id)}>{label}</button>)}</div><label className="pv-search"><Search aria-hidden="true" /><input aria-label="Search credentials" placeholder="Search credentials…" value={certSearch} onChange={e=>setCertSearch(e.target.value)} /></label></div><p className="pv-directory-count" role="status">{filteredCertificates.length} credentials</p><div className="pv-certificate-grid">{filteredCertificates.map(c=><a className="pv-certificate" key={c.url} href={c.url} target="_blank" rel="noreferrer"><span className="pv-cert-icon" aria-hidden="true"><Award /></span><span className="pv-cert-copy"><strong>{c.title}</strong><small>{c.issuer} · {c.date}</small>{c.summary&&<span>{c.summary}</span>}</span><ArrowUpRight aria-hidden="true" /><span className="pv-sr-only">Verify certificate</span></a>)}</div>{!filteredCertificates.length&&<div className="pv-empty">No credentials match this search.</div>}</div>}
+      </section>
+
+      <section className="pv-contact"><div><span className="pv-eyebrow">Connect</span><h2>Discuss the work.<br />Explore the opportunity.</h2></div><div className="pv-actions"><a className="pv-button primary" href="https://www.linkedin.com/in/djessijorge/" target="_blank" rel="noreferrer">Connect on LinkedIn <ArrowUpRight aria-hidden="true" /></a><a className="pv-button secondary" href="https://github.com/djessijorge9-ship-it/architecture-evaluation-portfolio" target="_blank" rel="noreferrer"><Github aria-hidden="true" />Portfolio source</a></div></section>
+      <footer className="pv-footer"><span>Djessi Jorge <span aria-hidden="true">/</span> London, UK</span><span>Cloud · AI · Data</span><button onClick={()=>navigate('overview')}>Back to top <ArrowUp aria-hidden="true" /></button></footer>
+    </main>
+
+    <dialog ref={dialogRef} className="pv-dialog" aria-labelledby="project-dialog-title" onCancel={()=>setSelectedProjectId(null)} onClose={()=>{setSelectedProjectId(null);document.body.classList.remove('modal-open');openerRef.current?.focus();}}>
+      {selectedProject&&selectedView&&<>
+        <div className="pv-dialog-header"><div><span className={`pv-domain ${selectedProject.category}`}>{selectedProject.code} / {DOMAIN_META[selectedProject.category].label}</span><h2 id="project-dialog-title">{selectedView.shortTitle}</h2><p>{selectedView.scopeLabel}</p></div><button className="pv-close" onClick={()=>setSelectedProjectId(null)} aria-label="Close project"><X aria-hidden="true" /></button></div>
+        <div className="pv-tabs" role="tablist" aria-label="Project details">{projectTabs.map((tab,i)=><button key={tab} role="tab" id={`project-tab-${tab}`} aria-selected={projectTab===tab} aria-controls="project-panel" tabIndex={projectTab===tab?0:-1} onKeyDown={e=>changeTab(e,i)} onClick={()=>setProjectTab(tab)}>{tab==='overview'?'At a glance':tab==='validation'?'Validation & lessons':tab[0].toUpperCase()+tab.slice(1)}</button>)}</div>
+        <div className="pv-tab-panel" role="tabpanel" id="project-panel" aria-labelledby={`project-tab-${projectTab}`} tabIndex={0} key={`${selectedProject.id}-${projectTab}`}>
+          {projectTab==='overview'&&<><p className="pv-dialog-intro">{selectedView.summary}</p><div className={`pv-dialog-art ${selectedProject.category}`}><MiniFlow view={selectedView} category={selectedProject.category}/><div className="pv-result"><strong>{selectedView.metricValue}</strong><span>{selectedView.metricLabel}</span></div></div><div className="pv-dialog-overview"><div className="pv-fact"><span>Contribution</span><p>{selectedView.contribution}</p></div><div className="pv-fact"><span>Design decision</span><p>{selectedView.decision}</p></div></div><div className="pv-chips">{selectedProject.stack.map(s=><span key={s}>{s}</span>)}</div><details className="pv-full-notes"><summary>Read the full implementation notes <ChevronDown aria-hidden="true" /></summary><h3>Context and challenge</h3><p>{selectedProject.narrative.context}</p><h3>Objective</h3><p>{selectedProject.narrative.objective}</p><h3>Implementation</h3><ul>{selectedProject.narrative.execution.map(t=><li key={t}>{t}</li>)}</ul><h3>Recorded outcome</h3><p>{selectedProject.narrative.outcome}</p></details></>}
+          {projectTab==='architecture'&&<><div className="pv-panel-heading"><h3>System architecture & workflow</h3><span><ArrowRight aria-hidden="true" /> Scroll the diagram on smaller screens</span></div><div className="pv-diagram-scroll"><AwsReferenceArchitectureSVG config={selectedProject.diagramConfig} projectId={selectedProject.id}/></div><p className="pv-project-scope">{selectedView.flowLabel.startsWith('Independent')?'This diagram compares shared engineering patterns across independent projects or assignments. It does not represent one integrated deployment.':selectedProject.diagramConfig.subtitleLine2}</p></>}
+          {projectTab==='validation'&&<section className="pv-validation" aria-labelledby={`validation-title-${selectedProject.id}`}><span className="pv-eyebrow"><FlaskConical aria-hidden="true" /> Recorded results & boundaries</span><h3 id={`validation-title-${selectedProject.id}`}>Validation and lessons learned</h3><p>{selectedProject.validationLessons}</p><div className="pv-project-scope"><ShieldCheck aria-hidden="true" /><span>{selectedProject.evidence.scopeSummary}</span></div></section>}
+          {projectTab==='evidence'&&<><div className="pv-panel-heading"><h3>Evidence & provenance</h3><a className="pv-text-link" href={selectedProject.certUrl} target="_blank" rel="noreferrer">Verify credential <ArrowUpRight aria-hidden="true" /></a></div><p>{selectedProject.evidence.credential}</p><div className="pv-project-scope">{selectedProject.evidence.scopeSummary}</div><h4>Retained deliverables</h4><ul className="pv-deliverables">{selectedProject.evidence.deliverables.map(t=><li key={t}><CheckCircle2 aria-hidden="true" /><span>{t}</span></li>)}</ul><h4>Representative files</h4><div className="pv-evidence-files">{selectedProject.evidence.filesIncluded.map(f=><code key={f}>{f}</code>)}</div><div className="pv-checksum"><span>Archive SHA256<code>{selectedProject.evidence.sha256}</code></span><button className="pv-button secondary small" onClick={()=>copyHash(selectedProject.evidence.sha256)}>{copiedHash===selectedProject.evidence.sha256?<Check aria-hidden="true"/>:<Copy aria-hidden="true"/>}{copiedHash===selectedProject.evidence.sha256?'Copied':'Copy hash'}</button></div>{copiedHash==='unavailable'&&<p role="status">Copy is unavailable. The full checksum above can be selected manually.</p>}</>}
         </div>
-      </header>
-
-      {/* =====================================================================
-          MAIN PORTFOLIO CONTENT
-      ===================================================================== */}
-      <main className="relative z-10 max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-12 pr-14 sm:pr-16 pt-10 pb-20 space-y-24">
-        {/* ===================================================================
-            SECTION 1: OVERVIEW, HERO & CORE ARCHITECTURE TRACKS
-        =================================================================== */}
-        <section id="section-overview" className="scroll-mt-8 space-y-8">
-          {/* Core Value Proposition Headline + Primary Action */}
-          <div className="space-y-6">
-            <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-[1.14] text-slate-900">
-              Engineering and architecture{' '}
-              <span className="text-slate-500 font-semibold">
-                for
-              </span>{' '}
-              <span className="bg-gradient-to-r from-indigo-600 via-sky-600 to-emerald-600 bg-clip-text text-transparent">
-                cloud, AI and data systems.
-              </span>
-            </h1>
-
-            <p className="text-base sm:text-lg max-w-4xl leading-relaxed text-slate-600">
-              Enterprise IT professional with approximately 10.5 years of paid experience across clinical systems, energy support, software development and technical learning. Combines requirements review, SQL data validation and stakeholder communication with recent AI-assisted academic work in Python, TypeScript, machine learning and cloud services. The case studies distinguish supplied components, coding-assistant contributions and recorded validation.
-            </p>
-
-            {/* Primary Hero Action Bar */}
-            <div className="flex flex-wrap items-center gap-3 pt-1">
-              <button
-                onClick={() => scrollToSection('cases', 'section-featured')}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm sm:text-base font-semibold border border-indigo-200 bg-indigo-50/70 hover:bg-indigo-100/80 text-indigo-700 transition-colors"
-              >
-                <span>Explore featured implementations</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-
-              <button
-                onClick={() => scrollToSection('credentials', 'section-credentials')}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm sm:text-base font-semibold border border-emerald-200 bg-emerald-50/70 hover:bg-emerald-100/80 text-emerald-800 transition-colors"
-              >
-                <Award className="w-4 h-4 text-emerald-600" />
-                <span>View Verified Credentials</span>
-              </button>
-            </div>
-          </div>
-
-          {/* Featured architectural implementations */}
-          <section id="section-featured" aria-labelledby="featured-heading" className="scroll-mt-8 rounded-xl border border-slate-200 bg-white p-5 sm:p-6 space-y-5 shadow-sm">
-            <div className="flex flex-wrap items-start justify-between gap-4">
-              <div className="space-y-2 max-w-4xl">
-                <h2 id="featured-heading" className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
-                  Featured architectural implementations
-                </h2>
-                <p className="text-sm sm:text-base leading-relaxed text-slate-600">
-                  Cloud networking, Azure delivery and cost-aware AI, with clear implementation scope, design decisions and recorded verification.
-                </p>
-              </div>
-              <button type="button" onClick={() => scrollToSection('cases', 'section-cases')} className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-700 hover:text-indigo-900 underline underline-offset-4">
-                View all 14 case studies <ArrowRight className="w-4 h-4" aria-hidden="true" />
-              </button>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-              {FEATURED_IMPLEMENTATIONS.map((feature) => {
-                const cs = CASE_STUDIES.find((project) => project.id === feature.projectId);
-                if (!cs) return null;
-                return (
-                  <article key={cs.id} aria-labelledby={`featured-${cs.id}`} className="min-w-0 rounded-lg border border-slate-200 border-t-4 border-t-indigo-600 bg-slate-50/70 p-5 flex flex-col gap-4">
-                    <div className="space-y-3">
-                      <span className="inline-block rounded-md bg-indigo-100 px-2.5 py-1 text-xs font-mono font-bold text-indigo-800">{cs.code}</span>
-                      <h3 id={`featured-${cs.id}`} className="text-lg sm:text-xl font-bold leading-snug text-slate-900">{feature.focus}</h3>
-                      <div className="flex flex-wrap gap-1.5">
-                        {cs.stack.slice(0, 3).map((technology) => (
-                          <span key={technology} className="max-w-full rounded-md border border-slate-200 bg-white px-2 py-1 text-xs font-mono text-slate-600">{technology}</span>
-                        ))}
-                      </div>
-                    </div>
-                    <dl className="space-y-4 text-sm sm:text-[15px] leading-relaxed text-slate-600">
-                      <div>
-                        <dt className="mb-1 text-xs font-bold uppercase tracking-wide text-slate-800">Implementation</dt>
-                        <dd>{feature.contribution}</dd>
-                      </div>
-                      <div>
-                        <dt className="mb-1 text-xs font-bold uppercase tracking-wide text-slate-800">Design decision</dt>
-                        <dd>{feature.decision}</dd>
-                      </div>
-                    </dl>
-                    <div className="mt-auto pt-4 border-t border-slate-200 space-y-4">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Recorded verification</p>
-                        <p className="mt-1 text-lg font-mono font-bold leading-snug text-indigo-700 break-words">{cs.headlineMetric}</p>
-                        <p className="mt-1 text-xs sm:text-sm font-mono text-slate-500">{cs.headlineMetricLabel}</p>
-                      </div>
-                      <button type="button" onClick={() => openImplementation(cs.id)} aria-label={`Open implementation: ${cs.code} ${feature.focus}`} className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 text-sm font-semibold text-white hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                        Open implementation <ArrowRight className="w-4 h-4" aria-hidden="true" />
-                      </button>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-            <p className="text-xs sm:text-sm leading-relaxed text-slate-500">
-              Academic implementations with supplied components and project-specific contribution records. Historical results and their limits are documented in the case studies.
-            </p>
-          </section>
-
-
-          {/* CORE ARCHITECTURE & ENGINEERING TRACKS (Static Skill Badges) */}
-          <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 space-y-4 shadow-sm">
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
-              <div className="flex items-center gap-2">
-                <Briefcase className="w-4 h-4 text-emerald-600" />
-                <h2 className="text-sm sm:text-base font-bold uppercase tracking-wider text-slate-900">
-                  Core Architecture & Engineering Tracks
-                </h2>
-              </div>
-              <span className="text-xs font-mono text-slate-500">
-                Domain Capabilities & Technical Stack
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {ARCHITECTURE_TRACKS.map((item) => {
-                const topBorder =
-                  item.accent === 'indigo'
-                    ? 'border-t-4 border-t-indigo-600'
-                    : item.accent === 'emerald'
-                    ? 'border-t-4 border-t-emerald-600'
-                    : 'border-t-4 border-t-amber-500';
-                const badgeStyle =
-                  item.accent === 'indigo'
-                    ? 'bg-indigo-50 text-indigo-700 border-indigo-200'
-                    : item.accent === 'emerald'
-                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                    : 'bg-amber-50 text-amber-800 border-amber-200';
-
-                return (
-                  <div
-                    key={item.id}
-                    className={`rounded-lg border border-slate-200 bg-slate-50/70 p-5 sm:p-6 flex flex-col justify-between space-y-3 ${topBorder}`}
-                  >
-                    <div className="space-y-2">
-                      <span className={`inline-block px-2.5 py-1 rounded text-xs font-mono font-semibold border ${badgeStyle}`}>
-                        {item.badge}
-                      </span>
-                      <h3 className="text-lg sm:text-xl font-bold text-slate-900">{item.trackTitle}</h3>
-                      <p className="text-sm sm:text-[15px] leading-relaxed text-slate-600">
-                        {item.businessValue}
-                      </p>
-                    </div>
-
-                    <div className="space-y-2 pt-2 border-t border-slate-200">
-                      <div className="text-xs font-mono uppercase font-semibold text-slate-500">
-                        Core Technologies:
-                      </div>
-                      <div className="flex flex-wrap gap-1">
-                        {item.matchedSkills.map((skill) => (
-                          <span
-                            key={skill}
-                            className="px-2.5 py-1 rounded-md text-xs font-mono border border-slate-200 bg-white text-slate-700 select-none"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                      <div className="text-xs sm:text-sm font-mono font-semibold text-indigo-600 pt-1">
-                        Featured Proof: {item.relevantProjects}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* 5 Core Architectural Focus Areas */}
-          <div className="rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-indigo-600" />
-                <h2 className="text-sm sm:text-base font-mono font-bold uppercase tracking-wider text-slate-900">
-                  FOCUS AREAS & ARCHITECTURAL SCOPE
-                </h2>
-              </div>
-              <span className="text-xs font-mono text-slate-500">
-                Recorded Implementation & Validation Scope
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-              {CORE_CAPABILITIES.map((cap, idx) => {
-                const dotColor =
-                  cap.accent === 'indigo'
-                    ? 'bg-indigo-600'
-                    : cap.accent === 'emerald'
-                    ? 'bg-emerald-600'
-                    : 'bg-amber-500';
-                return (
-                  <div
-                    key={cap.id}
-                    className={`p-4 rounded-lg border border-slate-200 bg-slate-50/70 ${
-                      idx === 4 ? 'md:col-span-2' : ''
-                    }`}
-                  >
-                    <div className="flex items-start gap-3">
-                      <span className={`w-2.5 h-2.5 rounded-full mt-1.5 shrink-0 ${dotColor}`} />
-                      <div className="space-y-1">
-                        <h3 className="text-base sm:text-lg font-bold leading-snug text-slate-900">{cap.title}</h3>
-                        <p className="text-sm sm:text-[15px] leading-relaxed text-slate-600">{cap.detail}</p>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            SECTION 2: SYSTEM CASE STUDIES & ARCHITECTURE DIAGRAMS (CS-01 TO CS-14)
-        =================================================================== */}
-        <section id="section-cases" className="scroll-mt-24 space-y-6">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-indigo-200 bg-indigo-50 text-indigo-700 font-semibold mb-2">
-              <span>ENGINEERING & ARCHITECTURE CASE STUDIES (CS-01 TO CS-14)</span>
-            </div>
-            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-              System Architecture Diagrams, Execution & Measured Outcomes
-            </h2>
-            <p className="text-base mt-1 text-slate-600">
-              Each case connects the challenge, design, implementation and diagram with recorded validation, lessons learned and project-specific evidence limits.
-            </p>
-          </div>
-
-          {/* Filter & Search Bar */}
-          <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-sm flex flex-wrap items-center justify-between gap-3">
-            <div className="flex flex-wrap items-center gap-1.5">
-              {[
-                { id: 'all', label: 'All Case Studies (14)' },
-                { id: 'ai', label: 'Agentic AI & AI Ops (5)' },
-                { id: 'cloud', label: 'Cloud & Serverless Architecture (4)' },
-                { id: 'data', label: 'Data, Scala, Vision & RevOps (5)' }
-              ].map((tab) => {
-                const active = selectedCategory === tab.id;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => setSelectedCategory(tab.id)}
-                    className={`px-3.5 py-2 rounded-lg text-xs sm:text-sm font-mono transition-all border ${
-                      active
-                        ? 'bg-indigo-600 text-white border-indigo-600 font-semibold shadow-sm'
-                        : 'bg-slate-50 text-slate-600 border-slate-200 hover:text-slate-900 hover:border-slate-300'
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Search Input */}
-            <div className="relative w-full sm:w-72">
-              <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Filter by stack (e.g. Scala, Kafka)..."
-                className="w-full px-3.5 pl-8 pr-7 py-2 rounded-lg text-xs sm:text-sm font-mono border border-slate-200 bg-slate-50 text-slate-900 focus:bg-white focus:border-indigo-500 outline-none transition-colors"
-              />
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery('')}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
-                >
-                  <X className="w-3.5 h-3.5" />
-                </button>
-              )}
-            </div>
-          </div>
-
-          {/* 14 Case Study Cards */}
-          <div className="space-y-6">
-            {filteredCaseStudies.map((cs) => {
-              const isExpanded = expandedIds.includes(cs.id);
-
-              const leftBorderAccent =
-                cs.accent === 'indigo'
-                  ? 'border-l-4 border-l-indigo-600'
-                  : cs.accent === 'emerald'
-                  ? 'border-l-4 border-l-emerald-600'
-                  : 'border-l-4 border-l-amber-500';
-
-              const codeBadgeStyle =
-                cs.accent === 'indigo'
-                  ? 'bg-indigo-600 text-white'
-                  : cs.accent === 'emerald'
-                  ? 'bg-emerald-600 text-white'
-                  : 'bg-amber-500 text-slate-950';
-
-              const domainBadgeStyle =
-                cs.accent === 'indigo'
-                  ? 'bg-indigo-50 text-indigo-700 border-indigo-200'
-                  : cs.accent === 'emerald'
-                  ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                  : 'bg-amber-50 text-amber-800 border-amber-200';
-
-              return (
-                <article
-                  key={cs.id}
-                  id={`case-${cs.id}`}
-                  aria-labelledby={`case-title-${cs.id}`}
-                  className={`scroll-mt-8 rounded-xl border border-slate-200 bg-white shadow-sm transition-all overflow-hidden ${leftBorderAccent}`}
-                >
-                  {/* Card Header */}
-                  <div
-                    onClick={() => toggleProject(cs.id)}
-                    className="p-5 sm:p-6 cursor-pointer select-none flex flex-col lg:flex-row lg:items-center justify-between gap-4 hover:bg-slate-50/60 transition-colors"
-                  >
-                    <div className="space-y-2.5 flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className={`px-3 py-1 rounded-md text-xs sm:text-sm font-mono font-extrabold ${codeBadgeStyle}`}>
-                          {cs.code}
-                        </span>
-                        <span className={`px-3 py-1 rounded-md text-xs sm:text-[13px] font-mono font-semibold border ${domainBadgeStyle}`}>
-                          {cs.domainBadge}
-                        </span>
-                      </div>
-
-                      <h3 id={`case-title-${cs.id}`} tabIndex={-1} className="text-xl sm:text-2xl font-bold leading-snug text-slate-900">
-                        {cs.title}
-                      </h3>
-                      <p className="text-sm sm:text-base leading-relaxed text-slate-600">{cs.subtitle}</p>
-
-                      {/* Static Tech Stack Badges */}
-                      <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                        {cs.stack.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 rounded-md text-xs sm:text-[13px] font-mono border border-slate-200 bg-slate-50 text-slate-700 select-none"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Right Primary Metric + Explore Project Trigger */}
-                    <div className="flex flex-wrap items-center justify-between lg:justify-end gap-5 pt-3 lg:pt-0 border-t lg:border-t-0 border-slate-100 min-w-0 max-w-full">
-                      <div className="text-left lg:text-right min-w-0 max-w-full break-words">
-                        <div className="text-lg sm:text-xl font-mono font-extrabold text-indigo-600">
-                          {cs.headlineMetric}
-                        </div>
-                        <div className="text-xs sm:text-sm font-mono text-slate-500">
-                          {cs.headlineMetricLabel}
-                        </div>
-                      </div>
-
-                      <div
-                        className={`inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-mono font-semibold border shrink-0 ${
-                          isExpanded
-                            ? 'bg-indigo-600 text-white border-indigo-600'
-                            : 'bg-slate-50 text-slate-700 border-slate-200'
-                        }`}
-                      >
-                        <span>{isExpanded ? 'Close Project' : 'Explore Project'}</span>
-                        {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Expanded Case Study Body */}
-                  {isExpanded && (
-                    <div className="px-5 sm:px-6 pb-6 pt-5 border-t border-slate-200 bg-slate-50/70 space-y-6">
-                      {/* 1. 4-Box Narrative Breakdown */}
-                      <div className="space-y-3">
-                        <div className="flex flex-wrap items-center justify-between gap-2">
-                          <span className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-700">
-                            PROJECT OVERVIEW & EXECUTION
-                          </span>
-                          <a
-                            href={cs.certUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-1 text-xs font-mono font-semibold text-emerald-700 hover:text-emerald-800 underline"
-                          >
-                            <ShieldCheck className="w-3.5 h-3.5" />
-                            <span>Official Certificate: {cs.certName}</span>
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          {/* Context & Operational Challenge */}
-                          <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-1.5">
-                            <div className="text-xs sm:text-sm font-mono font-bold uppercase text-indigo-700">
-                              Context & Operational Challenge
-                            </div>
-                            <p className="text-sm sm:text-base leading-relaxed text-slate-600">
-                              {cs.narrative.context}
-                            </p>
-                          </div>
-
-                          {/* Architectural Objective */}
-                          <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-1.5">
-                            <div className="text-xs sm:text-sm font-mono font-bold uppercase text-sky-700">
-                              Architectural Objective
-                            </div>
-                            <p className="text-sm sm:text-base leading-relaxed text-slate-600">
-                              {cs.narrative.objective}
-                            </p>
-                          </div>
-
-                          {/* System Implementation & Engineering Execution */}
-                          <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-2 md:col-span-2">
-                            <div className="text-xs sm:text-sm font-mono font-bold uppercase text-emerald-700">
-                              System Implementation & Engineering Execution
-                            </div>
-                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-2.5 pt-1">
-                              {cs.narrative.execution.map((act, idx) => (
-                                <li key={idx} className="text-sm sm:text-base leading-relaxed text-slate-700 flex items-start gap-2">
-                                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                                  <span className="leading-relaxed">{act}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-
-                          {/* Measured Outcome & Verification Benchmarks */}
-                          <div className="p-4 rounded-xl border border-emerald-200 bg-emerald-50/60 shadow-sm space-y-1.5 md:col-span-2">
-                            <div className="text-xs sm:text-sm font-mono font-bold uppercase text-emerald-950">
-                              Measured Outcome & Verification Benchmarks
-                            </div>
-                            <p className="text-sm sm:text-base leading-relaxed font-medium text-slate-800">
-                              {cs.narrative.outcome}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <section
-                        aria-labelledby={`validation-title-${cs.id}`}
-                        className="p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-1.5"
-                      >
-                        <h4 id={`validation-title-${cs.id}`} className="text-xs sm:text-sm font-mono font-bold uppercase text-indigo-700">
-                          Validation and lessons learned
-                        </h4>
-                        <p className="text-sm sm:text-base leading-relaxed text-slate-600">
-                          {cs.validationLessons}
-                        </p>
-                      </section>
-
-                      {/* 3. Project-Aligned Architecture Diagram */}
-                      <div className="space-y-2">
-                        <div className="flex flex-wrap items-center justify-between gap-2">
-                          <span className="text-xs font-mono font-bold uppercase tracking-wider text-indigo-700">
-                            SYSTEM ARCHITECTURE & WORKFLOW DIAGRAM
-                          </span>
-                          <span className="text-[11px] font-mono text-slate-500">
-                            End-to-End Orchestrator & Service Topology
-                          </span>
-                        </div>
-                        <AwsReferenceArchitectureSVG config={cs.diagramConfig} projectId={cs.id} />
-                      </div>
-
-                      {/* 4. Clean Single-Row Executive Evidence Footer */}
-                      <div className="p-4 rounded-xl border border-slate-200 bg-white flex flex-col sm:flex-row sm:flex-wrap sm:items-center justify-between gap-4 min-w-0">
-                        <div className="space-y-1 min-w-0 max-w-full break-words">
-                          <div className="text-sm font-mono font-bold uppercase text-emerald-700">
-                            VERIFIED CREDENTIAL & ARCHIVE INTEGRITY
-                          </div>
-                          <div className="text-sm font-semibold text-slate-800">{cs.evidence.credential}</div>
-                          <div className="flex flex-wrap items-center gap-2 pt-0.5">
-                            <span className="text-[11px] font-mono text-slate-500">
-                              SHA256: {cs.evidence.sha256.slice(0, 18)}...
-                            </span>
-                            <button
-                              onClick={(e) => handleCopyHash(cs.evidence.sha256, e)}
-                              className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100"
-                            >
-                              {copiedHash === cs.evidence.sha256 ? (
-                                <>
-                                  <Check className="w-3 h-3 text-emerald-600" />
-                                  <span>Copied SHA256</span>
-                                </>
-                              ) : (
-                                <>
-                                  <Copy className="w-3 h-3" />
-                                  <span>Copy SHA256</span>
-                                </>
-                              )}
-                            </button>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-wrap items-center gap-2 min-w-0 max-w-full">
-                          <a
-                            href={cs.certUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-mono font-semibold border border-emerald-300 max-w-full whitespace-normal text-left bg-emerald-50 text-emerald-800 hover:bg-emerald-100 transition-colors"
-                          >
-                            <Award className="w-3.5 h-3.5 text-emerald-600" />
-                            <span>Verify Certificate</span>
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
-
-                          <button
-                            onClick={() => setSummaryModalProject(cs)}
-                            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-xs sm:text-sm font-mono font-bold bg-indigo-600 max-w-full whitespace-normal text-left hover:bg-indigo-500 text-white transition-colors"
-                          >
-                            <FileCode2 className="w-4 h-4" />
-                            <span>Project Summary & Scope</span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </article>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* ===================================================================
-            SECTION 3: VERIFIED CREDENTIALS (19 Udacity + 29 Categorized Links)
-        =================================================================== */}
-        <section id="section-credentials" className="scroll-mt-24 space-y-8">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-emerald-200 bg-emerald-50 text-emerald-700 font-semibold mb-2">
-              <span>OFFICIAL CERTIFICATE VERIFICATION DIRECTORY</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
-              Verified Udacity Nanodegrees, Coursera Specialisations & Certifications
-            </h2>
-            <p className="text-sm mt-1 text-slate-600">
-              48 verified credentials: 19 Udacity Nanodegrees and courses, plus 29 industry credentials. Select any credential below to open its official verification page on Udacity, Coursera, Anthropic, LangChain Academy, DeepLearning.AI, or HubSpot Academy.
-            </p>
-          </div>
-
-          {/* Card 1: 19 Udacity Graduated Nanodegrees & Courses */}
-          <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
-              <div className="flex items-center gap-2">
-                <Award className="w-5 h-5 text-indigo-600" />
-                <h3 className="text-xl font-bold text-slate-900">
-                  Udacity Graduated Nanodegrees & Advanced Engineering Certificates (19 Verified)
-                </h3>
-              </div>
-              <span className="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200">
-                50+ Reviewed Project Archives
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {UDACITY_CERTIFICATES.map((cert) => (
-                <a
-                  key={cert.url}
-                  href={cert.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group p-3.5 rounded-lg border border-slate-200 bg-slate-50/70 hover:bg-indigo-50/50 hover:border-indigo-300 transition-all flex flex-col items-start sm:flex-row sm:items-center justify-between gap-3 min-w-0"
-                >
-                  <div className="space-y-0.5 min-w-0 max-w-full break-words">
-                    <div className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-indigo-700 flex items-center gap-1.5">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                      <span>{cert.title}</span>
-                    </div>
-                    <div className="text-xs sm:text-[13px] font-mono text-slate-500 pl-5">
-                      {cert.category} | Issued {cert.date}
-                    </div>
-                  </div>
-                  <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs sm:text-sm font-mono font-semibold bg-white border border-slate-200 text-indigo-600 group-hover:border-indigo-300 shrink-0">
-                    <span>Verify</span>
-                    <ExternalLink className="w-3 h-3" />
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Card 2: Coursera Specializations, Anthropic, LangChain, DeepLearning.AI & HubSpot Certifications (29 Verified) */}
-          <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm space-y-5">
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-emerald-600" />
-                <h3 className="text-xl font-bold text-slate-900">
-                  Coursera Specialisations, Anthropic, LangChain, DeepLearning.AI & HubSpot Certifications (29 Verified)
-                </h3>
-              </div>
-              <span className="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                90+ Total Verified Certificates
-              </span>
-            </div>
-
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center gap-1.5">
-              <button
-                onClick={() => setSelectedCertGroup('all')}
-                className={`px-3.5 py-2 rounded-lg text-xs sm:text-sm font-mono transition-all border ${
-                  selectedCertGroup === 'all'
-                    ? 'bg-emerald-600 text-white border-emerald-600 font-semibold shadow-sm'
-                    : 'bg-slate-50 text-slate-600 border-slate-200 hover:text-slate-900 hover:border-slate-300'
-                }`}
-              >
-                All (29)
-              </button>
-              {CERT_GROUPS.map((grp) => {
-                const active = selectedCertGroup === grp.id;
-                return (
-                  <button
-                    key={grp.id}
-                    onClick={() => setSelectedCertGroup(grp.id)}
-                    className={`px-3.5 py-2 rounded-lg text-xs sm:text-sm font-mono transition-all border ${
-                      active
-                        ? 'bg-emerald-600 text-white border-emerald-600 font-semibold shadow-sm'
-                        : 'bg-slate-50 text-slate-600 border-slate-200 hover:text-slate-900 hover:border-slate-300'
-                    }`}
-                  >
-                    {grp.shortLabel}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Categorized Credential Grids */}
-            <div className="space-y-6">
-              {visibleCertGroups.map((grp) => {
-                const items = COURSERA_AND_INDUSTRY_CERTIFICATES.filter((c) => c.group === grp.id);
-                return (
-                  <div key={grp.id} className="space-y-2.5">
-                    <div className="text-sm font-mono font-bold uppercase tracking-wider text-slate-700 border-l-4 border-l-emerald-600 pl-2.5">
-                      {grp.title}
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {items.map((cert) => (
-                        <a
-                          key={cert.url}
-                          href={cert.url}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="group p-3.5 rounded-lg border border-slate-200 bg-slate-50/70 hover:bg-emerald-50/50 hover:border-emerald-300 transition-all flex flex-col items-start sm:flex-row sm:items-center justify-between gap-3 min-w-0"
-                        >
-                          <div className="space-y-0.5 min-w-0 max-w-full break-words">
-                            <div className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-emerald-800 flex items-center gap-1.5">
-                              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                              <span>{cert.title}</span>
-                            </div>
-                            <div className="text-xs sm:text-[13px] font-mono text-slate-500 pl-5">
-                              {cert.issuer} | Issued {cert.date}
-                            </div>
-                            {cert.summary && (
-                              <p className="text-xs sm:text-[13px] text-slate-600 pl-5 leading-relaxed">
-                                {cert.summary}
-                              </p>
-                            )}
-                          </div>
-                          <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs sm:text-sm font-mono font-semibold bg-white border border-slate-200 text-emerald-700 group-hover:border-emerald-300 shrink-0">
-                            <span>Verify</span>
-                            <ExternalLink className="w-3 h-3" />
-                          </span>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* ===================================================================
-            SECTION 4: QUALITATIVE ENTERPRISE EXPERIENCE TIMELINE (2015-2026)
-        =================================================================== */}
-        <section id="section-experience" className="scroll-mt-24 space-y-8">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-indigo-200 bg-indigo-50 text-indigo-700 font-semibold mb-2">
-              <span>ENTERPRISE CAREER TRACK RECORD (2015-2026)</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
-              Professional Experience in Technology, Data & Technical Learning
-            </h2>
-            <p className="text-sm mt-1 text-slate-600">
-              Approximately 10.5 years of paid employment across clinical systems, software development, energy support and technical learning. Independent academic AI and cloud projects are described separately.
-            </p>
-          </div>
-
-          <div className="relative pl-6 sm:pl-8 space-y-6 before:content-[''] before:absolute before:left-[11px] sm:before:left-[15px] before:top-3 before:bottom-3 before:w-0.5 before:bg-gradient-to-b before:from-indigo-600 before:via-sky-500 before:to-emerald-600">
-            {ENTERPRISE_TIMELINE.map((item) => {
-              const isIndigo = item.accent === 'indigo';
-              return (
-                <div key={item.period} className="relative">
-                  <div
-                    className={`w-6 h-6 rounded-full border-4 bg-white absolute -left-6 sm:-left-8 top-5 ${
-                      isIndigo ? 'border-indigo-600' : 'border-emerald-600'
-                    }`}
-                  />
-
-                  <div className="p-5 sm:p-6 rounded-xl border border-slate-200 bg-white shadow-sm">
-                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                      <span className="font-mono text-xs sm:text-sm font-bold text-indigo-600">
-                        {item.period} | {item.location}
-                      </span>
-                      <span
-                        className={`px-2.5 py-0.5 rounded-full text-xs sm:text-sm font-mono font-semibold border ${
-                          isIndigo
-                            ? 'bg-indigo-50 text-indigo-700 border-indigo-200'
-                            : 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                        }`}
-                      >
-                        {item.domainBadge}
-                      </span>
-                    </div>
-
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
-                      {item.role} <span className="text-slate-500 font-semibold">| {item.company}</span>
-                    </h3>
-
-                    <p className="text-sm sm:text-base mt-2 mb-3.5 leading-relaxed text-slate-600">
-                      {item.summary}
-                    </p>
-
-                    <ul className="space-y-2 mb-4">
-                      {item.highlights.map((bullet, idx) => (
-                        <li key={idx} className="text-sm sm:text-base leading-relaxed text-slate-700 flex items-start gap-2.5">
-                          <CheckCircle2
-                            className={`w-4 h-4 shrink-0 mt-0.5 ${
-                              isIndigo ? 'text-indigo-600' : 'text-emerald-600'
-                            }`}
-                          />
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-slate-100">
-                      {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 rounded-md text-xs sm:text-[13px] font-mono border border-slate-200 bg-slate-50 text-slate-700 select-none"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Scroll Back to Top Arrow Button at Bottom of Page */}
-          <div className="pt-8 flex justify-center">
-            <button
-              onClick={scrollToTop}
-              aria-label="Scroll back to top"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-slate-200 bg-white hover:bg-indigo-50 hover:border-indigo-200 text-slate-700 hover:text-indigo-700 text-xs font-mono font-semibold shadow-sm transition-all"
-            >
-              <ArrowUp className="w-4 h-4" />
-              <span>Back to Top</span>
-            </button>
-          </div>
-        </section>
-      </main>
-
-      {/* Floating Bottom-Right Scroll Back to Top Arrow Button */}
-      <button
-        onClick={scrollToTop}
-        aria-label="Scroll to top"
-        title="Scroll back to top"
-        className="fixed bottom-6 right-4 z-40 p-3 rounded-full bg-white hover:bg-indigo-600 text-slate-700 hover:text-white border border-slate-200 hover:border-indigo-600 shadow-md transition-all"
-      >
-        <ArrowUp className="w-4 h-4" />
-      </button>
-
-      {/* =====================================================================
-          CLEAN BRIGHT-THEME MODAL: PROJECT SUMMARY & SCOPE
-      ===================================================================== */}
-      {summaryModalProject && (
-        <div
-          className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-start justify-center p-4 overflow-y-auto"
-          onClick={() => setSummaryModalProject(null)}
-        >
-          <div
-            className="max-w-2xl w-full min-w-0 rounded-2xl border border-slate-200 bg-white p-6 space-y-5 shadow-2xl my-0 text-slate-900 max-h-[calc(100dvh-2rem)] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-slate-200">
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-indigo-600" />
-                <span className="text-xs font-mono font-bold uppercase text-indigo-700">
-                  {summaryModalProject.code} | PROJECT SUMMARY, DELIVERABLES & SCOPE
-                </span>
-              </div>
-              <button
-                onClick={() => setSummaryModalProject(null)}
-                className="p-1 rounded-lg hover:bg-slate-100 text-slate-500"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            <div className="space-y-4 text-sm sm:text-base">
-              {/* Title & Verified Credential */}
-              <div>
-                <div className="text-base sm:text-lg font-bold text-slate-900">
-                  {summaryModalProject.title}
-                </div>
-                <div className="text-xs font-mono mt-0.5 text-slate-500">
-                  {summaryModalProject.evidence.credential}
-                </div>
-              </div>
-
-              {/* Verification Scope Summary */}
-              <div className="p-4 rounded-xl border border-emerald-200 bg-emerald-50/60 space-y-1">
-                <div className="text-xs font-mono font-bold uppercase text-emerald-800">
-                  Executive Verification Summary
-                </div>
-                <p className="text-slate-700 leading-relaxed">
-                  {summaryModalProject.evidence.scopeSummary}
-                </p>
-              </div>
-
-              {/* Key Engineering Deliverables */}
-              <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/70 space-y-2">
-                <div className="text-xs font-mono font-bold uppercase text-indigo-700">
-                  Key Architectural & Engineering Deliverables
-                </div>
-                <ul className="space-y-1.5">
-                  {summaryModalProject.evidence.deliverables.map((item, idx) => (
-                    <li key={idx} className="flex items-start gap-2 text-slate-700">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Representative Source Modules & Archive SHA256 */}
-              <div className="p-4 rounded-xl border border-slate-200 bg-white space-y-2">
-                <div className="text-xs font-mono font-bold uppercase text-slate-700">
-                  Representative Source Modules & Archive Checksum
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {summaryModalProject.evidence.filesIncluded.map((f) => (
-                    <span
-                      key={f}
-                      className="px-2.5 py-1 rounded-md text-xs sm:text-[13px] font-mono border border-slate-200 bg-slate-50 text-slate-700 max-w-full break-all"
-                    >
-                      {f}
-                    </span>
-                  ))}
-                </div>
-                <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
-                  <span className="text-[11px] font-mono text-slate-500 break-all">
-                    Archive SHA256: {summaryModalProject.evidence.sha256}
-                  </span>
-                  <button
-                    onClick={(e) => handleCopyHash(summaryModalProject.evidence.sha256, e)}
-                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-mono bg-indigo-50 text-indigo-700 border border-indigo-200 hover:bg-indigo-100 shrink-0"
-                  >
-                    {copiedHash === summaryModalProject.evidence.sha256 ? (
-                      <>
-                        <Check className="w-3 h-3 text-emerald-600" />
-                        <span>Copied SHA256</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3 h-3" />
-                        <span>Copy SHA256</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              {/* Modal Footer */}
-              <div className="flex flex-wrap justify-between items-center gap-3 pt-2">
-                <a
-                  href={summaryModalProject.certUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 font-mono text-xs font-semibold text-emerald-700 hover:underline"
-                >
-                  <Award className="w-4 h-4" />
-                  <span>Open Official Certificate Verification</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-
-                <button
-                  onClick={() => setSummaryModalProject(null)}
-                  className="px-4 py-2 rounded-lg font-mono text-xs bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-colors"
-                >
-                  Close Summary
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
+      </>}
+    </dialog>
+  </div>;
 }
