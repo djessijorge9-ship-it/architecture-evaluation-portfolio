@@ -17,8 +17,7 @@ import {
   Github,
   X,
   Briefcase,
-  Award,
-  Lightbulb
+  Award
 } from 'lucide-react';
 
 // ============================================================================
@@ -151,11 +150,6 @@ const CASE_STUDIES = [
       outcome:
         'The retained archive records 231 passing tests and a 74-row historical-price comparison of $0.1009 versus a hypothetical $0.2882 baseline, a 65.0% modelled difference. These results do not measure production savings or establish unchanged answer quality.'
     },
-    takeaway: {
-      headline: 'Retrieval Recall, Precision & Cost Require Separate Comparisons',
-      tradeoffLesson:
-        'The 30-question sweep raised faithfulness from 0.848 to 0.931 and recall from 0.867 to 0.922 at k=10 versus k=5, while precision fell from 0.822 to 0.741. That proposed setting, the unchanged k=5 default and the mixed cost ledger answer different questions; none establishes a production quality or cost guarantee.'
-    },
     diagramConfig: {
       title: 'Supplied LLM FAQ service with added guard patterns & tracing',
       subtitleLine1:
@@ -207,7 +201,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'Academic, AI-assisted extension of a supplied service. Archive evidence records 231 tests, 74 cost rows and a 65.0% modelled difference. The reviewer separately states 235 tests, 87 rows and 61.9%; that discrepancy remains unresolved and is not substituted for the retained archive results. No production savings, measured scanner accuracy or current availability is established.'
     },
-    validationLessons: 'Validation separated mocked service checks from historical provider execution. The retained suite records 231 passes. A 30-question retrieval sweep favoured k=10 in the write-up for stronger grounding and recall, with lower precision than k=5; the configured default remained k=5. Deliberate malformed ingestion and paired prompt-injection controls were checked separately. Additions to the supplied service included catalogue data, guard patterns and trace instrumentation. The 65.0% modelled cost comparison mixes live and seeded rows against a hypothetical baseline, supporting a bounded experiment rather than production savings.'
+    validationLessons: 'Validation separated 231 passing mocked service checks from historical provider execution. Additions to the supplied service included catalogue data, guard patterns and trace instrumentation; deliberate malformed-ingestion and paired prompt-injection checks were recorded separately. In a 30-question sweep, k=10 versus k=5 raised faithfulness from 0.848 to 0.931 and recall from 0.867 to 0.922, while precision fell from 0.822 to 0.741. The write-up favoured k=10, but the configured default remained k=5. The separate 65.0% modelled cost comparison mixes live and seeded rows against a hypothetical baseline. Retrieval settings, service checks and that mixed cost ledger answer different questions; these bounded experiments establish neither production savings nor a quality guarantee.'
   },
   {
     id: 'cs-02',
@@ -236,11 +230,6 @@ const CASE_STUDIES = [
       ],
       outcome:
         'All five jobs succeeded in the final historical CI run. The retained ECS response still reports rolloutState=IN_PROGRESS, establishing deployment dispatch rather than steady state or present endpoint health. The model smoke result and drift checks are bounded validation, not prediction-accuracy evidence.'
-    },
-    takeaway: {
-      headline: 'A Passing Deploy Job Is One Delivery Checkpoint',
-      tradeoffLesson:
-        'Passing only an image tag between jobs avoids the recorded image-URI output suppression, while reconstructing the URI in deployment keeps the required input local to that job. CI, drift checks and deployment dispatch provide separate evidence; service readiness still needs an observed completed rollout and health checks.'
     },
     diagramConfig: {
       title: 'FinBERT CI/CD checks & historically dispatched ECS deployment',
@@ -292,7 +281,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'Academic, assistant-operated implementation and historical CI evidence. Five final jobs passed; seven API tests and separate model/drift checks are retained. ECS dispatch succeeded without evidence of completed rollout or present health. Reviewer-only weighted F1 is not presented as a reproduced measurement, and individual CI correction authorship remains unrecorded.'
     },
-    validationLessons: 'CI logs exposed two delivery problems: Ruff reported seven errors, and GitHub suppressed an image URI output as potentially secret, leaving deployment without its required image. Recorded commits corrected lint handling and passed an image tag between jobs, reconstructing the URI inside deployment. Later CPU-only container dependencies narrowed the serving package. The final run passed five jobs, including seven API tests and separate model and drift checks. The specific correction author is unrecorded; the successful deploy job does not establish completed ECS rollout or present service health.'
+    validationLessons: 'CI logs exposed two delivery problems: Ruff reported seven errors, and GitHub suppressed an image URI output as potentially secret, leaving deployment without its required image. Recorded commits corrected lint handling and passed only an image tag between jobs, reconstructing the URI within deployment to keep its required input local. Later CPU-only container dependencies narrowed the serving package. The final run passed five jobs, including seven API tests and separate model and drift checks. The specific correction author is unrecorded. CI, drift checks and deployment dispatch provide separate evidence; service readiness still requires an observed completed rollout and health checks, which the successful deploy job does not establish.'
   },
   {
     id: 'cs-03',
@@ -321,11 +310,6 @@ const CASE_STUDIES = [
       ],
       outcome:
         'The retained evidence contains 21 passing offline tests and ten passing assertions in the separate eight-ticket provider run. Deliberate ownership and unknown-account errors exercised negative boundaries. Operational confidence is heuristic rather than a calibrated probability, and current availability or customer success is not established.'
-    },
-    takeaway: {
-      headline: 'Test Conservative Escalation Alongside Successful Answers',
-      tradeoffLesson:
-        'Persistent state, tenant-scoped tools and explicit output schemas make support behaviour inspectable, while lexical retrieval and confidence thresholds retain limitations. Synthetic resolutions and escalation assertions show bounded scenario behaviour; they do not establish production accuracy, full authentication or calibrated confidence.'
     },
     diagramConfig: {
       title: 'UDA-Hub academic LangGraph support prototype & local tools',
@@ -379,7 +363,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'Substantially AI-assisted academic prototype over supplied data. Offline tests inject a deterministic model; the separate historical provider run uses eight synthetic tickets. Trusted upstream identifiers, local actions and heuristic confidence limit the claims. The reported earlier 23-request debugging sequence lacks retained original failures and pre-change prompts, so it is not presented as an independently reconstructed incident.'
     },
-    validationLessons: 'Validation used 21 offline tests with an injected deterministic model, followed by a separate eight-ticket course-provider run using 25 requests. Tests covered tenant isolation, guarded account actions, exact quotations, invalid model output and memory across restarts. Final prompts state exact JSON schemas and clarify confidence semantics; provider traces exercise resolution, escalation, ownership and remembered preferences. AI assistance supported implementation and verification. Conservative escalation needs tests alongside successful answers: synthetic scenario passes and operational confidence heuristics do not establish production accuracy or calibrated probabilities.'
+    validationLessons: 'AI-assisted implementation and verification used 21 offline tests with an injected deterministic model, followed by a separate eight-ticket course-provider run using 25 requests. Tests covered tenant isolation, guarded account actions, exact quotations, invalid model output and memory across restarts. Persistent state, tenant-scoped tools and exact JSON output schemas made behaviour inspectable; final prompts clarified confidence semantics, while provider traces exercised resolution, escalation, ownership and remembered preferences. Lexical retrieval and confidence thresholds retain limitations. Conservative escalation needs tests alongside successful answers: synthetic resolutions and escalation assertions establish bounded scenario behaviour, not production accuracy, full authentication or calibrated probabilities.'
   },
   {
     id: 'cs-04',
@@ -408,11 +392,6 @@ const CASE_STUDIES = [
       ],
       outcome:
         'The retained tool suite passed 42 tests, and three historical SDK PR runs produced source-adjudicated final report sets. Nine final files are three formats for three heads, not nine independently accurate model reviews. Suggested target-module tests are illustrative and were not executed as the 42 tool tests.'
-    },
-    takeaway: {
-      headline: 'Source Adjudication Complements Tool & Schema Checks',
-      tradeoffLesson:
-        'Read-tool constraints, valid JSON and deterministic scores bound execution and report structure, while source inspection is still needed to reject plausible but unsupported findings. The supplied mock database and payment examples do not prove real SQL exfiltration, charging or compliance failures, and model changes do not establish a controlled accuracy improvement.'
     },
     diagramConfig: {
       title: 'Review CLI execution & separate source-adjudication workflow',
@@ -464,7 +443,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'Academic, assistant-operated implementation, review inspection and adjudication over supplied targets. Claude-generated raw drafts and source-adjudicated final reports are distinct; final structure and tool success do not establish semantic accuracy. The 42 mocked-boundary tests are not executed target-module regression tests. Rejected raw drafts remain in original-workspace provenance outside the accepted archive.'
     },
-    validationLessons: 'Real SDK reviews produced schema-valid reports containing unsupported findings, including a claim that an email expression rejected plus-addresses. The coding assistant checked the exact PR source, tightened review instructions and reran reviews; model changes and attempts remain separate. A further source-adjudication pass removed speculative security claims and repaired illustrative tests using private helpers or invalid fixtures. Final verification records 42 tool tests with the paid-model boundary mocked and nine consistent reports for three PR heads. Valid structure and successful tool calls do not establish a review’s semantic accuracy.'
+    validationLessons: 'Real SDK reviews produced schema-valid reports with unsupported findings, including a claim that an email expression rejected plus-addresses. The coding assistant checked the exact PR source, tightened instructions and reran reviews; model changes and attempts remain separate, without a controlled accuracy-improvement claim. Further source adjudication removed speculative security claims and repaired illustrative tests using private helpers or invalid fixtures. Final verification records 42 tool tests with the paid-model boundary mocked and nine consistent reports for three PR heads. Read-tool constraints, valid JSON and deterministic scores bound execution and report structure, not semantic accuracy. Source inspection remains necessary: the supplied mock database and payment examples do not prove real SQL exfiltration, charging or compliance failures.'
   },
   {
     id: 'cs-05',
@@ -493,11 +472,6 @@ const CASE_STUDIES = [
       ],
       outcome:
         'Historical observations corroborate private connectivity across two Regions within one authorised account, with bounded packet-loss evidence and matching ACCEPT logs. Eight mocked safety tests support runtime guard behaviour. The governance blueprint is a design artefact; cleanup records do not establish present cloud state.'
-    },
-    takeaway: {
-      headline: 'Confirm Regional State Before Advancing the Network Workflow',
-      tradeoffLesson:
-        'A successful creation response did not make peering immediately visible to the accepter Region. A provider-specific bounded wait and active-state checks in both Regions addressed that recorded failure before routing. Private connectivity observations remain distinct from loss-free networking, cross-account governance and failover assurances.'
     },
     diagramConfig: {
       title: 'Historical one-account network path & separate governance design',
@@ -549,7 +523,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'Codex-assisted academic work with a historical live network run in one authorised account across two Regions. Ping and Flow Logs corroborate private reachability, while the first east-Region ping recorded 25% loss. Eight safety tests used isolated fake clients. Multi-account governance remained a blueprint; cross-account deployment, failover, RTO, SLA, cost savings and current cloud state are unestablished.'
     },
-    validationLessons: 'The first live peering attempt failed before EC2 launch when the accepter Region reported the connection as not found. Codex added a bounded, provider-specific visibility wait and required active status in both Regions before routing. Eight isolated mocked safety tests passed; a separate live run then recorded private-VM ping success and matching ACCEPT Flow Logs in both Regions. Usable regional state needed corroboration beyond a successful creation response. Multi-account governance remained a design exercise, and no failover SLA was measured.'
+    validationLessons: 'The first live peering attempt failed before EC2 launch when the accepter Region reported the connection as not found. A successful creation response had not made peering immediately visible there. Codex added a bounded, provider-specific visibility wait and required active status in both Regions before routing. Eight isolated mocked safety tests passed; a separate live run recorded private-VM ping success and matching ACCEPT Flow Logs in both Regions. Usable regional state needed corroboration beyond creation alone. These private-connectivity observations do not establish loss-free networking or failover assurances; multi-account governance remained a separate design exercise, and no failover SLA was measured.'
   },
   {
     id: 'cs-06',
@@ -578,11 +552,6 @@ const CASE_STUDIES = [
       ],
       outcome:
         'The B run records F1 0.8344, PR-AUC 0.8082 and ROC-AUC 0.9821 on 43,210 held-out rows. Two localhost probes inside the ECS task returned HTTP 200 and checked functional delivery, not holdout accuracy. The earlier notification-window account has no proven cause; neither the later run nor its waiting barrier establishes a controlled before-and-after improvement or current endpoint availability.'
-    },
-    takeaway: {
-      headline: 'Separate Training, Publication, Archival & Serving Checks',
-      tradeoffLesson:
-        'Immutable model outputs and an event journal make state transitions inspectable, while exact-version archival protects the triggering object. They do not lock the whole training inventory. Predictive quality, mocked interface behaviour and HTTP delivery need separate checks; no production fraud-decision, throughput or latency guarantee follows from these classroom records.'
     },
     diagramConfig: {
       title: 'Source-bound fraud training, publication & ECS serving workflow',
@@ -635,7 +604,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'Academic, starter-derived implementation with substantial Codex assistance disclosed. The earlier notification-window account, source-bound B training, mocked tests, native fixture and HTTP probes are separate records. The full training inventory is not transactionally version-locked; HTTP 200 does not establish predictive accuracy, production reliability or current service availability.'
     },
-    validationLessons: 'Codex adapted three supplied starter interfaces and used 12 mocked tests to check schemas, event deduplication and publication/archive ordering. An attempt-history record reports no observed notification within the allotted window; the original runtime and cause remain unverified. A separate, source-bound run processed 284,807 source rows, recorded held-out F1 of 0.8344 and served two HTTP 200 smoke probes. The probes checked delivery, not accuracy. Training, publication, archival and serving needed distinct state checks, with each execution cohort kept separate.'
+    validationLessons: 'Codex adapted three supplied starter interfaces and used 12 mocked tests to check schemas, event deduplication and publication/archive ordering. An attempt-history record reports no observed notification within the allotted window; the original runtime and cause remain unverified. A separate, source-bound run processed 284,807 source rows, recorded held-out F1 of 0.8344 and served two HTTP 200 smoke probes, which checked delivery rather than accuracy. Immutable model outputs and an event journal made state transitions inspectable; exact-version archival protected the triggering object without locking the whole training inventory. Training, publication, archival, predictive quality and serving need separate checks and execution cohorts. These classroom records establish no production fraud-decision, throughput or latency guarantee.'
   },
   {
     id: 'cs-07',
@@ -664,11 +633,6 @@ const CASE_STUDIES = [
       ],
       outcome:
         'The final workflow receipt records a 69,854-byte input and a fresh saved output at 2026-10-30 09:20:28 UTC, bound to deployed code/template hashes. Recorded usage is 13,932 input and 447 output tokens. This verifies event delivery and persisted output, not legal factual accuracy or cost savings. An earlier Lambda log is a separate execution; the reported ten local tests lack an independently retained raw test log.'
-    },
-    takeaway: {
-      headline: 'Source-Matched Event Delivery vs. Text Quality & Cost Proposals',
-      tradeoffLesson:
-        'Separate buckets and bounded reads make the event path inspectable and avoid output-trigger recursion. Deployment receipts and an encrypted summary establish that path, not legal correctness. Lifecycle, caching and batch inference require implementation and measurement before any storage, inference or idle-cost saving can be claimed.'
     },
     diagramConfig: {
       title: 'Event-driven Amazon Bedrock workload modernisation with CloudFormation',
@@ -718,7 +682,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'Historical academic validation of the source-matched S3 notification, Lambda, Bedrock and encrypted-output chain. Per-action author attribution and a raw log for the reported local test count are not established. Proposal-only cost strategies, generated-text accuracy and current cloud availability remain outside the verified deployment account.'
     },
-    validationLessons: 'Validation followed the deployed document from S3 notification through Lambda and Bedrock to an encrypted output object. CloudFormation validation and deployment receipts were checked alongside source hashes; a recorded upload after the final update produced a new saved summary from the matching code. The recorded response used 13,932 input and 447 output tokens. These checks establish the event-to-output path, not legal accuracy. Lifecycle policies, caching and batch inference remained proposed optimisations. Deployment correctness, generated-text quality and future cost claims each require their own validation.'
+    validationLessons: 'Validation followed the document from S3 notification through Lambda and Bedrock to an encrypted output object. Separate buckets and bounded reads made the event path inspectable and avoided output-trigger recursion. CloudFormation validation and deployment receipts were checked alongside source hashes; an upload after the final update produced a saved summary from matching code, recording 13,932 input and 447 output tokens. These checks establish event delivery, not legal correctness. Lifecycle policies, caching and batch inference remained proposed optimisations requiring implementation and measurement before any storage, inference or idle-cost saving can be claimed. Deployment correctness, generated-text quality and future cost claims each need their own validation.'
   },
   {
     id: 'cs-08',
@@ -747,11 +711,6 @@ const CASE_STUDIES = [
       ],
       outcome:
         'The execution ledger records five Glue runs and 25 Athena queries, all SUCCEEDED. Historical Bronze order revenue is 556,462.16 across 2,133 orders versus 555,744.83 across 2,131 later orders. These are distinct from Silver/Gold revenue definitions. Successful jobs and retained snapshots do not establish a refreshed end-to-end reconciliation, and no independent local SQL-test log or exact eight-gate suite is asserted.'
-    },
-    takeaway: {
-      headline: 'Raw Retention & Explicit Snapshot Boundaries in a Batch Lakehouse',
-      tradeoffLesson:
-        'Tolerant parsing avoids rejecting an entire batch while keeping unsuitable records out of analytics, so row-count differences need a documented explanation. Later Bronze CDC does not refresh existing Silver/Gold tables. Deleted keys have no retained tombstones, making older-base replay unsafe; this bounded batch design is not a durable streaming checkpoint or measured all-service saving.'
     },
     diagramConfig: {
       title: 'Exastore Medallion data lakehouse on AWS Glue, Iceberg & Athena',
@@ -803,7 +762,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'Supplied academic datasets, notebooks and scaffolding underpin this bounded batch lakehouse. Per-action human/AI authorship is not established by the package. Five Glue/25 Athena completions and separately scoped initial/later counts are retained; no current cloud state, complete downstream CDC refresh, general replay guarantee or measured cost saving is claimed.'
     },
-    validationLessons: 'Malformed calendar values in the supplied data were handled with tolerant timestamp casts while the raw records remained available. Silver analytics excluded unsuitable timestamps, and saved outputs explained the resulting row-count differences. Five Glue runs and 25 Athena queries completed successfully. The later CDC demonstration changed bronze orders from 2,133 to 2,131; silver and gold retained their earlier materialised snapshot. Rejected-record handling, snapshot boundaries and revenue definitions had to remain explicit; successful jobs and differing totals did not establish end-to-end reconciliation.'
+    validationLessons: 'Malformed calendar values in the supplied data were handled with tolerant timestamp casts, retaining raw records without rejecting the entire batch. Silver analytics excluded unsuitable timestamps, and saved outputs explained the row-count differences. Five Glue runs and 25 Athena queries completed successfully. Later Bronze CDC changed orders from 2,133 to 2,131, while Silver and Gold retained their earlier materialised snapshot. Deleted keys have no retained tombstones, making older-base replay unsafe. Rejected records, snapshot boundaries and revenue definitions therefore need explicit treatment: successful jobs and differing totals do not establish end-to-end reconciliation. This bounded batch design is neither a durable streaming checkpoint nor evidence of measured all-service savings.'
   },
   {
     id: 'cs-09',
@@ -832,11 +791,6 @@ const CASE_STUDIES = [
       ],
       outcome:
         'The frozen-offset transit check matches 36,002 raw rider events to 36,002 summary riders across 92 unique station IDs, with no differences and a stable source. Separate service readback records 230 stops and 111 physical stations; 94 displayed line memberships are not 94 unique stations. STEDI has five passing native Spark tests in 42.946 seconds and five application messages for one customer. These counts do not establish transit demand, medical-model accuracy, bounded production state or a latency guarantee.'
-    },
-    takeaway: {
-      headline: 'Explicit Event Identity, Join State & Separate Output Contracts',
-      tradeoffLesson:
-        'Transit aggregation needs one event per rider and an explicit KSQL table key; topic existence alone does not prove counts. STEDI needs both stream arrival orders tested and the actual downstream JSON contract checked. Retaining customer state without a watermark supports later risk matches in this demonstration but has no production retention bound. No measured optimal-engine or throughput comparison is claimed.'
     },
     diagramConfig: {
       title: 'Independent Kafka/Faust/KSQL transit & Spark demographics/risk streaming',
@@ -890,7 +844,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'Two separate supplied classroom implementations, with original actor-level authoring and patch attribution unverified. Transit Avro events and plain-JSON station metadata have different validation boundaries. STEDI joins customer demographics and supplied risk scores, not accelerometer/step-trainer/consent ETL. Synthetic fixtures, frozen-offset counts and the one-customer application sample are distinct historical cohorts, without production or medical guarantees.'
     },
-    validationLessons: 'A saved KSQL error identified a missing table key in the transit pipeline. The retained query declares event identity explicitly; a later frozen-offset replay matched 36,002 rider events across 92 stations exactly. The separate STEDI implementation passed five native Spark tests and emitted five matched events for one customer. Its stream-stream join retains customer state without a watermark, so the evidence supports a bounded classroom demonstration. Record identity, aggregation and application output needed separate checks; a trigger interval was not a latency guarantee.'
+    validationLessons: 'A saved KSQL error identified a missing table key in the transit pipeline. The retained query declares event identity explicitly; a later frozen-offset replay matched 36,002 rider events across 92 stations exactly. The separate STEDI implementation passed five native Spark tests and emitted five matched events for one customer. Its unwatermarked stream-stream join retains customer state for later risk matches, without a production retention bound. Transit counts require one event per rider and an explicit key; topic existence alone does not prove counts. STEDI needs both arrival orders and the downstream JSON contract checked. These classroom records require separate identity, aggregation and output checks; neither the trigger interval nor the results establish a latency guarantee, optimal engine choice or throughput comparison.'
   },
   {
     id: 'cs-10',
@@ -919,11 +873,6 @@ const CASE_STUDIES = [
       ],
       outcome:
         'Saved suites record 265 passing tests across 17 distinct assignments, while official course records show 100% across five courses. These are different evidence types. Fixture passes do not complete the failed/skipped full-data analyses or extend Observatory beyond its 2015 preview. The Codecs compile correction, Wikipedia run and later UI checks are separately scoped historical records, not one combined benchmark or proof that races were eliminated.'
-    },
-    takeaway: {
-      headline: 'Assignment-Specific Validation vs. Broad Performance Claims',
-      tradeoffLesson:
-        'Immutable transformations, parallel tasks and Spark operations provide inspectable coursework designs, but correctness fixtures, compilation, data runs and rendering need separate validation. A compiler fix can repair the test harness without changing modelled behaviour. No controlled race-elimination, cluster-scale performance or network-shuffle improvement is demonstrated; failed/skipped optional runs and limited imagery remain part of the result.'
     },
     diagramConfig: {
       title: 'EPFL Scala: functional, parallel, Spark and Observatory coursework',
@@ -977,7 +926,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'AI-assisted coursework over supplied interfaces and fixtures. Course grades, 17 separate final suites, optional data runs and UI phases are distinct cohorts. StackOverflow full-data analysis failed, TimeUsage analysis was skipped, Wikipedia grader-memory cause remains unknown, and Observatory generated only 2015 world/zoom-0 temperature imagery while its external basemap failed. No unaided authorship, race elimination, measured shuffle gain or cluster-scale guarantee is claimed.'
     },
-    validationLessons: 'Across the AI-assisted Scala coursework, validation kept assignments separate. A Codecs test initially failed to compile because MUnit inferred incompatible JSON types; adding one type parameter produced another compiler error. The assertion was corrected to `assertEquals[Json, Json]`, after which the saved suite passed all 26 tests. Separately, Wikipedia was revised to avoid driver-side corpus retention and repeated token arrays; 17 tests and a bounded full-corpus run completed. These checks support the coursework implementations, not cluster-scale performance or complete Observatory rendering.'
+    validationLessons: 'Validation kept the AI-assisted Scala assignments separate. A Codecs test failed to compile because MUnit inferred incompatible JSON types; adding one type parameter produced another compiler error. Correcting the assertion to `assertEquals[Json, Json]` was followed by 26 passing tests. Separately, Wikipedia was revised to avoid driver-side corpus retention and repeated token arrays; 17 tests and a bounded full-corpus run completed. Immutable transformations, parallel tasks and Spark operations remain inspectable coursework designs, with compilation, correctness fixtures, data runs and rendering requiring distinct checks. A test-harness correction does not itself demonstrate changed modelled behaviour. Failed or skipped optional runs and limited Observatory imagery remain part of the result; no controlled race-elimination, cluster-scale performance or network-shuffle improvement is demonstrated.'
   },
   {
     id: 'cs-11',
@@ -1006,11 +955,6 @@ const CASE_STUDIES = [
       ],
       outcome:
         'The selected facial-keypoint checkpoint recorded 2.691904-pixel mean landmark error versus a 7.961189-pixel training mean-face comparator on 770 official test images, in the same transformed pixel space. Separately, Scones returned a prediction at confidence 0.9957326055 and intentionally rejected a 0.6997604966 case below 0.93. Its 19 capture records have no joined ground-truth labels, so they do not measure accuracy, calibration or drift.'
-    },
-    takeaway: {
-      headline: 'Labelled Model Evaluation & Separate Abstention-Policy Validation',
-      tradeoffLesson:
-        'Preprocessing checks, a validation-selected image-holdout result and an expected confidence-gate failure answer different questions. The two AI-assisted academic implementations remain separate; neither a confidence threshold nor payload capture establishes unseen-subject generalisation, demographic fairness, production robustness or drift detection.'
     },
     diagramConfig: {
       title: 'Two independent vision projects: facial keypoints and Scones',
@@ -1065,7 +1009,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'Two independent AI-assisted academic projects. Facial-keypoint mean error is measured on 770 official image holdouts after validation selection. Scones execution, abstention and 19 captured requests are separate observations without accuracy or drift labels. The original OpenCV-stop exception trace is absent; no complete compatibility-debugging sequence, unseen-subject benchmark or current service availability is claimed.'
     },
-    validationLessons: 'Validation treated the two vision projects separately. For facial keypoints, eight recorded preprocessing checks covered geometry, normalisation and Haar detection. A validation-selected checkpoint was evaluated on 770 held-out images, giving 2.691904-pixel mean error against a 7.961189-pixel mean-face comparator. The official test was an image holdout, not an unseen-subject benchmark. Separately, Scones recorded successful inference and an expected low-confidence rejection at a 0.93 gate. Preprocessing correctness, labelled model evaluation and abstention policy are separate forms of evidence, rather than one combined reliability claim.'
+    validationLessons: 'Validation kept the two AI-assisted academic vision implementations separate. For facial keypoints, eight preprocessing checks covered geometry, normalisation and Haar detection. A validation-selected checkpoint evaluated on 770 held-out images recorded 2.691904-pixel mean error against a 7.961189-pixel mean-face comparator. This was an image holdout, not an unseen-subject benchmark. Separately, Scones recorded successful inference and an expected low-confidence rejection at a 0.93 gate. Preprocessing correctness, labelled model evaluation and abstention-policy behaviour answer different questions. Neither a confidence threshold nor payload capture establishes unseen-subject generalisation, demographic fairness, production robustness or drift detection, and these results do not form a combined reliability claim.'
   },
   {
     id: 'cs-12',
@@ -1094,11 +1038,6 @@ const CASE_STUDIES = [
       ],
       outcome:
         'The observed live pilot retained five initial creates and 15 skips across three identical replays, with no replay creates or updates. Name, domain, description, update timestamp and archived state remained unchanged on the 32 pre-existing companies. The 40 checked source cells, 18 mock HTTP methods and 30 local wrapper checks are distinct evidence cohorts. No enrichment, native synchronisation or production reliability result is claimed.'
-    },
-    takeaway: {
-      headline: 'Verified Input Provenance & Uncertain-Write Reconciliation',
-      tradeoffLesson:
-        'A checked DOM-derived CSV retained its actual provenance after the native download failed. Reviewed plan digests and a SQLite write ledger supported reconciliation before retries, with three successful observed replays. The tested five-record boundary is application-enforced; account-wide API permissions are not provider-enforced five-record least privilege, and one pilot does not establish general exactly-once delivery.'
     },
     diagramConfig: {
       title: 'Public-seed Clay import review and bounded HubSpot replay pilot',
@@ -1152,7 +1091,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'Assistant-operated five-company public-seed import/review and HubSpot test-record pilot, without Clay enrichment. A DOM-derived CSV replaced the blocked native download. Eighteen mock HTTP methods, 30 local wrapper checks and three live replays remain separate. Protection covers monitored company fields, not all account state. Later 20-company research and five-update runs are excluded; no native integration, general exactly-once guarantee or production reliability is established.'
     },
-    validationLessons: 'When Clay’s native CSV export was blocked, the coding assistant captured the rendered table and checked all 40 cells against the five-company seed. The Python/SQLite bridge then created five marked HubSpot test companies. Three identical replays made no creates or updates, while monitored fields on 32 pre-existing companies remained unchanged. Eighteen mock HTTP tests separately exercised response-loss reconciliation and guard behaviour. The fallback retained its provenance, and uncertain writes required reconciliation before retrying. This pilot used public seeds, without enrichment, and did not establish native synchronisation or production reliability.'
+    validationLessons: 'When Clay’s native CSV export was blocked, the coding assistant captured the rendered table and checked all 40 cells against the five-company seed, retaining the fallback’s DOM-derived provenance. The Python/SQLite bridge created five marked HubSpot test companies. Three identical replays made no creates or updates, while monitored fields on 32 pre-existing companies remained unchanged. Eighteen mock HTTP tests separately exercised response-loss reconciliation and guards. Reviewed plan digests and a SQLite write ledger supported reconciliation before retries. The five-record boundary was application-enforced; account-wide API permissions were not provider-enforced five-record least privilege. This public-seed pilot used no enrichment and establishes neither general exactly-once delivery, native synchronisation nor production reliability.'
   },
   {
     id: 'cs-13',
@@ -1181,11 +1120,6 @@ const CASE_STUDIES = [
       ],
       outcome:
         'Accepted reviews are 4863109, 4863111, 4864251 and 4863110. Separate historical cohorts retain 31 mocked P01 checks and one four-section HTTP 200 report at 21.295 seconds with 16,591 report tokens; a seven-stage P02 model run at 36.244 seconds using simulated sources; a six-turn P03 session with 15 model calls and 44.699 seconds of top-level execution; and 18 completed P04 requests across 15 threads without recorded RPC/task errors. These counts do not establish legal accuracy, verified external research, complete support-answer correctness or lending accuracy.'
-    },
-    takeaway: {
-      headline: 'Context, Tool and State Contracts Before Semantic Claims',
-      tradeoffLesson:
-        'A successful model call, a retained citation URL or a completed transport task does not establish that the answer is correct. Parser regressions, explicit tool-result branches and committed-state checks address bounded mechanisms. These separate AI-assisted coursework systems retain supplied-starter provenance, simulated-source limits and missing diagnostic records; they do not establish unaided authorship, commercial impact or current availability.'
     },
     diagramConfig: {
       title: 'ND906: Four independent academic agent systems',
@@ -1242,7 +1176,7 @@ const CASE_STUDIES = [
       scopeSummary:
         'Four independent academic implementations with documented Codex implementation and execution, distinct from user direction and application model use. The checksum identifies the complete ND906 evidence ZIP. Mocked checks, simulated references and live-model/tool/transport observations remain separate. Legal writing heuristics, provider URLs and completed banking tasks are not semantic-accuracy benchmarks; two support diagnostic raw sessions and current service validation are absent.'
     },
-    validationLessons: 'Validation kept the four implementations separate. In Legal Intelligence, a saved response named “against” as a party; Codex corrected the supplied parser and added a regression, followed by 31 mocked checks and a recorded live HTTP 200 report. Codex also reviewed Betty’s tool responses and tightened history and empty-catalog prompts; the final six-turn run retained the no-match branch. The research workflow completed seven stages using simulated references. Banking’s 18 requests completed without RPC errors after wire/state handling was corrected. These results support bounded coursework behaviour, not legal accuracy, verified research or lending validity.'
+    validationLessons: 'Validation kept four AI-assisted coursework implementations separate. Legal Intelligence named “against” as a party; Codex corrected the supplied parser and added a regression, followed by 31 mocked checks and a recorded live HTTP 200 report. Codex tightened Betty’s history and empty-catalog prompts after reviewing tool responses; the final six-turn run retained the no-match branch. Research completed seven stages using simulated references. Banking’s 18 requests completed without RPC errors after wire/state handling was corrected. Parser regressions, explicit tool-result branches and committed-state checks address bounded mechanisms: successful model calls, citation URLs and completed transport tasks do not establish semantic correctness. Supplied-starter provenance, simulated-source limits and missing diagnostics remain explicit, without claims of legal accuracy, verified research, lending validity, unaided authorship, commercial impact or current availability.'
   },
   {
     id: 'cs-14',
@@ -1273,10 +1207,6 @@ const CASE_STUDIES = [
         'P03 Release Quality: Codex implemented the pipeline, infrastructure and checks around supplied precompiled FakeRestAPI and separate public Sauce Demo browser workflows. It diagnosed Azure’s rejected ingestion transform and replaced unsupported coalesce with direct timestamp parsing, then retained final API, browser, load, Log Analytics and scoped-cleanup evidence.'
       ],
       outcome: 'P01 records 21 resources applied and destroyed and two private-VM Hello World checks through Run Command; Internet ingress is blocked, tag policy is resource-group scoped and inert policy objects remain. P02’s separate Cloud Shell and GitHub records each report 59 checks, with one demonstrated commit linked to successful Azure Build/Deploy and a request-ID-correlated HTTP 200 prediction. P03 retains 201 API assertion cases across 54 requests, three browser workflows, 969 stress samples over a 10-user/90-second run and 629 endurance samples over a 3-user/180-second run. Each load report has one additional ownership preflight. These layers are not one unit-test or reliability cohort.'
-    },
-    takeaway: {
-      headline: 'Provider Diagnostics, Traceable Runs & Explicit Evidence Boundaries',
-      tradeoffLesson: 'Detailed provider errors and run-specific readbacks support narrower conclusions than resource names, green summaries or reviewer acceptance alone. P01’s specific authoring history remains unresolved; Codex implementation and correction are documented for P02/P03. Supplied applications, private-VM traffic, mock checks, CI, small load runs and retained policy objects remain separately scoped, without a current availability, production SLA or whole-account cleanup claim.'
     },
     diagramConfig: {
       title: 'ND082: Three independent Azure coursework implementations',
@@ -1398,7 +1328,7 @@ const CASE_STUDIES = [
       ],
       scopeSummary: 'Three independent accepted ND082 academic projects. The checksum identifies the complete programme evidence ZIP. P01’s original authoring contribution is unresolved; P02/P03 retain documented Codex assistance and supplied-product attribution. Private-VM checks, resource-group policy, 59-check delivery records, API/browser/load cohorts and policy remnants retain their own limits. Earlier failed cart JUnit and some startup-tracker detail are missing; current Azure state, financial-model accuracy and production reliability were not validated.'
     },
-    validationLessons: 'Three Azure implementations were checked independently. Infrastructure logs record a 21-resource apply, private-VM HTTP checks and 21-resource destroy, with network and policy limits retained. When Azure rejected the release pipeline’s ingestion transform, Codex traced the error to unsupported `coalesce`, changed timestamp parsing and verified three published Selenium logs. Final release evidence retains 201 API assertions, three browser workflows and separately counted load tests. CI/CD evidence separately binds 59 checks and a correlated HTTP 200 prediction to one demonstrated commit. Detailed results must retain their source, run and validation boundaries.'
+    validationLessons: 'Three Azure implementations were checked independently. Infrastructure logs record a 21-resource apply, private-VM HTTP checks and 21-resource destroy, with network and resource-group policy limits retained. P01’s specific authoring history remains unresolved; Codex implementation and correction are documented for P02/P03. When Azure rejected the release pipeline’s ingestion transform, Codex traced the error to unsupported `coalesce`, changed timestamp parsing and verified three published Selenium logs. Release evidence retains 201 API assertions, three browser workflows and separately counted small load tests. CI/CD separately binds 59 checks and a correlated HTTP 200 prediction to one demonstrated commit. Provider diagnostics and run-specific readbacks support narrower conclusions than green summaries, resource names or reviewer acceptance. Supplied applications, mocked checks and retained policy objects remain separately scoped, without current-availability, production-SLA or whole-account cleanup claims.'
   }
 ];
 
@@ -2285,24 +2215,6 @@ export default function App() {
   const [expandedIds, setExpandedIds] = useState(['cs-01']);
   const [pendingCaseId, setPendingCaseId] = useState(null);
 
-  // Optional Architectural Takeaway visibility per project
-  const [openTakeaways, setOpenTakeaways] = useState({
-    'cs-01': true,
-    'cs-02': true,
-    'cs-03': true,
-    'cs-04': true,
-    'cs-05': true,
-    'cs-06': true,
-    'cs-07': true,
-    'cs-08': true,
-    'cs-09': true,
-    'cs-10': true,
-    'cs-11': true,
-    'cs-12': true,
-    'cs-13': true,
-    'cs-14': true
-  });
-
   // Clipboard state for SHA256 copy button
   const [copiedHash, setCopiedHash] = useState(null);
 
@@ -2340,11 +2252,6 @@ export default function App() {
   // Toggle single case study card
   const toggleProject = (id) => {
     setExpandedIds((prev) => (prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]));
-  };
-
-  // Toggle individual project takeaway
-  const toggleTakeaway = (id) => {
-    setOpenTakeaways((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   // Open the full case after React has applied the filter and expansion changes.
@@ -2780,7 +2687,6 @@ export default function App() {
           <div className="space-y-6">
             {filteredCaseStudies.map((cs) => {
               const isExpanded = expandedIds.includes(cs.id);
-              const showTakeaway = openTakeaways[cs.id];
 
               const leftBorderAccent =
                 cs.accent === 'indigo'
@@ -2947,30 +2853,6 @@ export default function App() {
                           {cs.validationLessons}
                         </p>
                       </section>
-
-                      {/* 2. Optional Architectural Takeaway */}
-                      <div className="rounded-xl border border-amber-300 bg-amber-50/70 overflow-hidden">
-                        <button
-                          onClick={() => toggleTakeaway(cs.id)}
-                          className="w-full px-4 py-3 flex items-center justify-between gap-2 text-left hover:bg-amber-100/50 transition-colors"
-                        >
-                          <div className="flex items-center gap-2">
-                            <Lightbulb className="w-4 h-4 text-amber-600 shrink-0" />
-                            <span className="text-xs sm:text-sm font-mono font-bold uppercase text-amber-900">
-                              Optional Architectural Takeaway: {cs.takeaway.headline}
-                            </span>
-                          </div>
-                          <span className="text-[11px] font-mono font-semibold text-amber-800 shrink-0">
-                            {showTakeaway ? 'Hide Takeaway' : 'Show Takeaway'}
-                          </span>
-                        </button>
-
-                        {showTakeaway && (
-                          <div className="px-4 pb-3.5 pt-1 border-t border-amber-200/80 text-sm sm:text-base text-slate-800 leading-relaxed">
-                            {cs.takeaway.tradeoffLesson}
-                          </div>
-                        )}
-                      </div>
 
                       {/* 3. Project-Aligned Architecture Diagram */}
                       <div className="space-y-2">

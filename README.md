@@ -20,10 +20,12 @@ The 9 November 2026 career update aligns the overview and six timeline entries w
 
 The 9 November 2026 AWS security addition records the AWS Security Engineer Advanced Professional Certificate from Amazon Web Services via Coursera (JWB4H05JGSK2): 18 completed courses, including eight lab courses. Its official programme link and a short curriculum summary appear in the cloud credential group. This is programme completion; it does not claim the separate AWS Certified Security – Specialty examination, a new implementation case study, or runtime results without underlying lab evidence.
 
+Validation and architectural takeaways are combined into one always-visible Validation and lessons learned section per expanded case. The merged copy removes repeated points while retaining the unique findings, figures and evidence qualifications from both former sections. The separate takeaway accordion and its unused state are removed; other case data, all 48 credentials and the career timeline are preserved.
+
 The presentation uses a 1440px desktop container, larger responsive typography and controls, more space within the track cards, and clearer architecture diagrams. SVG labels are enlarged, and the orchestration header and numbered badges are repositioned. Header branding is simplified, with a small location icon and `LONDON, UK`. Authorised presentation and copy changes are recorded alongside the earlier content additions in the source manifest. `src/App.tsx` has a new byte identity:
 
 ```text
-Current:  210955 bytes | SHA256 7de3b097d03f9c3b414ce75f633e901efec8caf1b5278bdb56560ef3a196308f
+Current:  204709 bytes | SHA256 23d860132d6a815fda6d44af02d0605563f5a70e888fa3141a5813597a4790e6
 Original: 157493 bytes | SHA256 1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d
 ```
 
