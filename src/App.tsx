@@ -1427,7 +1427,7 @@ const FEATURED_IMPLEMENTATIONS = [
 ];
 
 // ============================================================================
-// DATA: OFFICIAL VERIFIED CERTIFICATES (19 Udacity + 28 Categorized Credentials)
+// DATA: OFFICIAL VERIFIED CERTIFICATES (19 Udacity + 29 Categorized Credentials)
 // ============================================================================
 const UDACITY_CERTIFICATES = [
   {
@@ -1633,7 +1633,15 @@ const COURSERA_AND_INDUSTRY_CERTIFICATES = [
     url: 'https://www.coursera.org/account/accomplishments/specialization/AW9TFC4M0K44'
   },
 
-  // 2. Cloud, Scala & DevOps (6)
+  // 2. Cloud, Scala & DevOps (7)
+  {
+    title: 'AWS Security Engineer Advanced Professional Certificate (18 Courses)',
+    issuer: 'Coursera | Amazon Web Services',
+    date: 'Nov 9, 2026',
+    group: 'cloud',
+    url: 'https://www.coursera.org/account/accomplishments/specialization/JWB4H05JGSK2',
+    summary: 'Includes eight lab courses covering AWS Config, IAM troubleshooting, network controls, WAF, encryption, CloudWatch monitoring and incident response.'
+  },
   {
     title: 'EPFL Functional Programming in Scala Specialization (5 Courses)',
     issuer: 'Coursera | EPFL',
@@ -1760,8 +1768,8 @@ const CERT_GROUPS = [
   },
   {
     id: 'cloud',
-    title: 'Cloud, Scala & DevOps (6)',
-    shortLabel: 'Cloud, Scala & DevOps (6)'
+    title: 'Cloud, Scala & DevOps (7)',
+    shortLabel: 'Cloud, Scala & DevOps (7)'
   },
   {
     id: 'data',
@@ -1776,18 +1784,18 @@ const CERT_GROUPS = [
 ];
 
 // ============================================================================
-// DATA: QUALITATIVE ENTERPRISE TIMELINE (2014–2026)
+// DATA: QUALITATIVE ENTERPRISE TIMELINE (2015-2026)
 // ============================================================================
 const ENTERPRISE_TIMELINE = [
   {
-    period: '2026',
+    period: 'April 2026-present',
     role: 'Independent Applied AI & Systems Specialist',
     company: 'Self-Directed Technical Practice & Architecture Delivery',
     location: 'London, United Kingdom',
-    domainBadge: 'Multi-Agent AI, Cloud Architecture & Data Platforms',
+    domainBadge: 'Academic AI, Cloud Architecture & Data Projects',
     accent: 'indigo',
     summary:
-      'Self-directed practice in cloud, AI and data systems through 19 completed Udacity Nanodegrees and courses, plus AWS, Anthropic, LangChain, IBM and EPFL study. The case studies distinguish supplied starters, coding-assistant contributions and separately recorded validation.',
+      'Self-directed academic practice in cloud, AI and data systems through 19 completed Udacity Nanodegrees and courses, plus AWS, Anthropic, LangChain, IBM and EPFL study. The case studies distinguish supplied starters, coding-assistant contributions and separately recorded validation.',
     highlights: [
       'Explored LangGraph, Claude Agent SDK and FastAPI workflows through supplied-starter adaptations, coding-assistant implementation and project-specific tool, schema and response checks.',
       'Completed academic cloud and data implementations across AWS, five-job MLOps pipelines and Kafka/Spark/Scala coursework, with historical delivery and model-evaluation results separated by project and run.',
@@ -1796,52 +1804,81 @@ const ENTERPRISE_TIMELINE = [
     tags: ['LangGraph', 'Claude Code & MCP', 'AWS Architecture', 'CloudFormation', 'Apache Kafka', 'Scala & Spark', 'PyTorch', 'FastAPI']
   },
   {
-    period: '2024–2026',
-    role: 'Senior Curriculum Curator & Technical Learning Designer',
-    company: 'DCD Academy (DataCenterDynamics)',
+    period: '1 May 2024-14 April 2026',
+    role: 'Senior Curriculum Curator Executive (Team Lead duties)',
+    company: 'DCD Academy',
     location: 'London, United Kingdom',
-    domainBadge: 'Data Centre Infrastructure, Power, Cooling & AI Enablement',
+    domainBadge: 'Technical Learning, SME Collaboration & AI Workflows',
     accent: 'indigo',
     summary:
-      'Led end-to-end technical learning architecture and AI-assisted curriculum production across mission-critical data-centre engineering domains, acting as Team Lead to junior peers and collaborating with 24 senior subject-matter experts.',
+      'Translated infrastructure specifications with subject matter experts into technical learning, competency frameworks and SOPs. Coached junior peers and integrated AI-assisted production with human technical review.',
     highlights: [
-      'Curated and structured technical engineering programmes covering data-centre power distribution, liquid and air cooling thermodynamics, hyperscale cloud infrastructure, energy sustainability, and AI operations.',
-      'Integrated generative AI production workflows (Anthropic Claude, ChatGPT, HeyGen, ElevenLabs) with Articulate Storyline 360 and Thought Industries LMS to standardise technical accuracy and modular delivery.',
-      'Acted as Team Lead mentoring and coaching junior peers while partnering with 24 principal engineers and industry SMEs to translate complex infrastructure specifications into competency frameworks, SOPs, and scenario-driven assessments.'
+      'Structured data-centre engineering guidance with subject matter experts into competency frameworks and SOPs for technical audiences.',
+      'Coached junior peers in technical structuring, troubleshooting scenarios and quality assurance across data-centre engineering programmes.',
+      'Integrated Claude, ChatGPT, HeyGen and ElevenLabs into learning workflows, retaining human technical review in Storyline 360 and Thought Industries.'
     ],
-    tags: ['Data Centre Infrastructure', 'Power & Cooling Systems', 'AI Production Workflows', 'SME Collaboration', 'Thought Industries LMS']
+    tags: ['Technical Communication', 'Requirements Interpretation', 'SME Collaboration', 'Storyline 360', 'Thought Industries LMS']
   },
   {
-    period: '2018–2023',
+    period: 'September 2018-9 November 2023',
     role: '1st to 3rd Line Technical Support Engineer & Team Lead',
-    company: 'Tata Consultancy Services (Supporting EDF Energy)',
+    company: 'Tata Consultancy Services (TCS), supporting EDF Energy',
     location: 'London & Croydon, United Kingdom',
-    domainBadge: 'Red, Green & Blue Segregated Enterprise Networks',
+    domainBadge: 'Enterprise Support, Incidents & Change Control',
     accent: 'emerald',
     summary:
-      'Provided high-availability 1st to 3rd line infrastructure, endpoint, and energy trading-floor support for EDF Energy across strictly segregated corporate and power generation network environments, acting as Team Lead and senior escalation point for junior support engineers.',
+      'Supported corporate, power-generation and trading systems across segregated networks. Coordinated incidents, stakeholder communications and UK/offshore handovers while reviewing release impacts and deployment risks.',
     highlights: [
-      'Supported critical enterprise operations across EDF Energy corporate networks (Red and Green), power Generation enclaves (Blue), and live wholesale energy trading-floor systems at Interchange Croydon.',
-      'Acted as Team Lead overseeing queue health, SLA compliance, and shift handovers; mentored junior 1st/2nd line analysts on root-cause incident diagnostics, problem management escalations, and change control governance in ServiceNow.',
-      'Managed endpoint security compliance, automated software deployment, and real-time user experience telemetry using Microsoft Intune, Active Directory, and Aternity monitoring.'
+      'Supported EDF Energy corporate, power-generation and trading systems using Intune, Active Directory and Aternity for compliance and diagnostics.',
+      'Coordinated P1 incidents, stakeholder communications and UK/offshore handovers to support service continuity.',
+      'Reviewed release impacts and deployment risks through ServiceNow change control.'
     ],
-    tags: ['ServiceNow Diagnostics', 'Red/Green/Blue Networks', 'Microsoft Intune', 'Aternity Telemetry', 'Trading Floor Support']
+    tags: ['ServiceNow', 'Segregated Networks', 'Microsoft Intune', 'Active Directory', 'Aternity', 'Incident Coordination']
   },
   {
-    period: '2014–2018',
-    role: 'System Implementation Specialist & Data Analyst',
+    period: '4 September 2017-31 August 2018',
+    role: 'Systems (Excelicare) Implementation Officer',
     company: "King's College Hospital NHS Foundation Trust",
     location: 'London, United Kingdom',
-    domainBadge: 'SQL Server Statutory Data Audit & Clinical PAS/PIMS',
+    domainBadge: 'Clinical Systems, Workflow Mapping & UAT',
     accent: 'emerald',
     summary:
-      'Led clinical system implementation and workflow mapping, and used SQL Server to validate statutory data across acute and specialist NHS healthcare clinics.',
+      'Implemented clinical systems across specialist NHS clinics, mapped workflows and supported users through system changes under strict confidentiality requirements.',
     highlights: [
-      'Rolled out and supported clinical PAS and PIMS patient administration modules across Caldecott Sexual Health and The Havens (Sexual Assault Referral Centres), enforcing strict clinical data confidentiality.',
-      'Authored complex SQL Server queries to audit, cleanse, and reconcile large patient-level datasets for mandatory NHS statutory submissions and operational performance reporting.',
-      'Conducted end-to-end clinical workflow mapping, user acceptance testing (UAT), and schema migration validation between legacy hospital databases and modern electronic health record systems.'
+      'Mapped clinical workflows and supported users during clinical system implementation.',
+      'Validated requirements, functional specifications and schema migrations through User Acceptance Testing (UAT), identifying defects before system releases.'
     ],
-    tags: ['SQL Server Data Audit', 'PAS / PIMS Implementation', 'Clinical Data Governance', 'UAT & Workflow Mapping', 'NHS Statutory Reporting']
+    tags: ['Excelicare', 'Clinical Systems', 'Workflow Mapping', 'UAT', 'Migration Validation', 'Data Confidentiality']
+  },
+  {
+    period: '7 November 2016-1 September 2017',
+    role: 'Junior Software Developer',
+    company: 'Cohaesus Projects Ltd',
+    location: 'London, United Kingdom',
+    domainBadge: 'Software Development, Debugging & Testing',
+    accent: 'indigo',
+    summary:
+      'Implemented small changes and bug fixes under senior developer guidance; tested functionality, documented updates and participated in code reviews.',
+    highlights: [
+      'Implemented small changes and bug fixes under senior developer guidance.',
+      'Tested functionality, documented updates and participated in code reviews.'
+    ],
+    tags: ['Bug Fixing', 'Debugging', 'Software Testing', 'Technical Documentation', 'Code Review']
+  },
+  {
+    period: '23 March 2015-4 November 2016',
+    role: 'Data & Systems Support Officer',
+    company: "King's College Hospital NHS Foundation Trust",
+    location: 'London, United Kingdom',
+    domainBadge: 'Clinical Data Support, SQL Server & NHS Reporting',
+    accent: 'emerald',
+    summary:
+      'Supported PAS/PIMS users, investigated clinical data issues and used SQL Server to reconcile patient datasets for NHS reporting.',
+    highlights: [
+      'Explained system processes and escalated faults to maintain service continuity for PAS/PIMS users.',
+      'Reconciled patient datasets with SQL Server queries and cleansed records for NHS statutory submissions and operational reporting.'
+    ],
+    tags: ['SQL Server', 'PAS / PIMS Support', 'Data Reconciliation', 'NHS Statutory Reporting', 'Clinical Data Integrity']
   }
 ];
 
@@ -2481,7 +2518,7 @@ export default function App() {
             </h1>
 
             <p className="text-base sm:text-lg max-w-4xl leading-relaxed text-slate-600">
-              Experienced enterprise IT professional with 12 years across energy, NHS clinical systems and data-centre technical learning. Combines operational leadership and mentoring with practical cloud/AI engineering across AWS, Azure, Python APIs and CI/CD. LLM service adaptation recorded a 65.0% modelled cost saving in a 74-row mixed live/seeded ledger, alongside 231 mocked checks.
+              Enterprise IT professional with approximately 10.5 years of paid experience across clinical systems, energy support, software development and technical learning. Combines requirements review, SQL data validation and stakeholder communication with recent AI-assisted academic work in Python, TypeScript, machine learning and cloud services. The case studies distinguish supplied components, coding-assistant contributions and recorded validation.
             </p>
 
             {/* Primary Hero Action Bar */}
@@ -3008,7 +3045,7 @@ export default function App() {
         </section>
 
         {/* ===================================================================
-            SECTION 3: VERIFIED CREDENTIALS (19 Udacity + 28 Categorized Links)
+            SECTION 3: VERIFIED CREDENTIALS (19 Udacity + 29 Categorized Links)
         =================================================================== */}
         <section id="section-credentials" className="scroll-mt-24 space-y-8">
           <div>
@@ -3019,7 +3056,7 @@ export default function App() {
               Verified Udacity Nanodegrees, Coursera Specialisations & Certifications
             </h2>
             <p className="text-sm mt-1 text-slate-600">
-              47 verified credentials: 19 Udacity Nanodegrees and courses, plus 28 industry credentials. Select any credential below to open its official verification page on Udacity, Coursera, Anthropic, LangChain Academy, DeepLearning.AI, or HubSpot Academy.
+              48 verified credentials: 19 Udacity Nanodegrees and courses, plus 29 industry credentials. Select any credential below to open its official verification page on Udacity, Coursera, Anthropic, LangChain Academy, DeepLearning.AI, or HubSpot Academy.
             </p>
           </div>
 
@@ -3064,13 +3101,13 @@ export default function App() {
             </div>
           </div>
 
-          {/* Card 2: Coursera Specializations, Anthropic, LangChain, DeepLearning.AI & HubSpot Certifications (28 Verified) */}
+          {/* Card 2: Coursera Specializations, Anthropic, LangChain, DeepLearning.AI & HubSpot Certifications (29 Verified) */}
           <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm space-y-5">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-emerald-600" />
                 <h3 className="text-xl font-bold text-slate-900">
-                  Coursera Specialisations, Anthropic, LangChain, DeepLearning.AI & HubSpot Certifications (28 Verified)
+                  Coursera Specialisations, Anthropic, LangChain, DeepLearning.AI & HubSpot Certifications (29 Verified)
                 </h3>
               </div>
               <span className="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
@@ -3088,7 +3125,7 @@ export default function App() {
                     : 'bg-slate-50 text-slate-600 border-slate-200 hover:text-slate-900 hover:border-slate-300'
                 }`}
               >
-                All (28)
+                All (29)
               </button>
               {CERT_GROUPS.map((grp) => {
                 const active = selectedCertGroup === grp.id;
@@ -3134,6 +3171,11 @@ export default function App() {
                             <div className="text-xs sm:text-[13px] font-mono text-slate-500 pl-5">
                               {cert.issuer} | Issued {cert.date}
                             </div>
+                            {cert.summary && (
+                              <p className="text-xs sm:text-[13px] text-slate-600 pl-5 leading-relaxed">
+                                {cert.summary}
+                              </p>
+                            )}
                           </div>
                           <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-md text-xs sm:text-sm font-mono font-semibold bg-white border border-slate-200 text-emerald-700 group-hover:border-emerald-300 shrink-0">
                             <span>Verify</span>
@@ -3150,18 +3192,18 @@ export default function App() {
         </section>
 
         {/* ===================================================================
-            SECTION 4: QUALITATIVE ENTERPRISE EXPERIENCE TIMELINE (2014–2026)
+            SECTION 4: QUALITATIVE ENTERPRISE EXPERIENCE TIMELINE (2015-2026)
         =================================================================== */}
         <section id="section-experience" className="scroll-mt-24 space-y-8">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-indigo-200 bg-indigo-50 text-indigo-700 font-semibold mb-2">
-              <span>ENTERPRISE CAREER TRACK RECORD (2014–2026)</span>
+              <span>ENTERPRISE CAREER TRACK RECORD (2015-2026)</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900">
-              12 Years of London Enterprise Delivery & Systems Engineering
+              Professional Experience in Technology, Data & Technical Learning
             </h2>
             <p className="text-sm mt-1 text-slate-600">
-              Qualitative, audit-verified operational scope across data-centre infrastructure, segregated energy networks, and NHS clinical systems.
+              Approximately 10.5 years of paid employment across clinical systems, software development, energy support and technical learning. Independent academic AI and cloud projects are described separately.
             </p>
           </div>
 

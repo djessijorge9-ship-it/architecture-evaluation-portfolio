@@ -4,8 +4,8 @@
     "sha256": "1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d"
   },
   "current": {
-    "bytes": 209500,
-    "sha256": "fc9739475246ccfa223c1ebaf8bab3f86edbde683c1a0b4fcf038a7c330a98cc"
+    "bytes": 210955,
+    "sha256": "7de3b097d03f9c3b414ce75f633e901efec8caf1b5278bdb56560ef3a196308f"
   },
   "changes": [
     {
@@ -896,6 +896,81 @@
     {
       "before": "                      {/* 2. Optional Architectural Takeaway */}",
       "after": "                      <section\n                        aria-labelledby={`validation-title-${cs.id}`}\n                        className=\"p-4 rounded-xl border border-slate-200 bg-white shadow-sm space-y-1.5\"\n                      >\n                        <h4 id={`validation-title-${cs.id}`} className=\"text-xs sm:text-sm font-mono font-bold uppercase text-indigo-700\">\n                          Validation and lessons learned\n                        </h4>\n                        <p className=\"text-sm sm:text-base leading-relaxed text-slate-600\">\n                          {cs.validationLessons}\n                        </p>\n                      </section>\n\n                      {/* 2. Optional Architectural Takeaway */}",
+      "occurrences": 1
+    },
+    {
+      "before": "const ENTERPRISE_TIMELINE = [\n  {\n    period: '2026',\n    role: 'Independent Applied AI & Systems Specialist',\n    company: 'Self-Directed Technical Practice & Architecture Delivery',\n    location: 'London, United Kingdom',\n    domainBadge: 'Multi-Agent AI, Cloud Architecture & Data Platforms',\n    accent: 'indigo',\n    summary:\n      'Self-directed practice in cloud, AI and data systems through 19 completed Udacity Nanodegrees and courses, plus AWS, Anthropic, LangChain, IBM and EPFL study. The case studies distinguish supplied starters, coding-assistant contributions and separately recorded validation.',\n    highlights: [\n      'Explored LangGraph, Claude Agent SDK and FastAPI workflows through supplied-starter adaptations, coding-assistant implementation and project-specific tool, schema and response checks.',\n      'Completed academic cloud and data implementations across AWS, five-job MLOps pipelines and Kafka/Spark/Scala coursework, with historical delivery and model-evaluation results separated by project and run.',\n      'Directed a coding-assistant-supported five-company public-seed Clay import/review and HubSpot pilot; three recorded replays made no creates or updates, with selected-field checks on pre-existing records.'\n    ],\n    tags: ['LangGraph', 'Claude Code & MCP', 'AWS Architecture', 'CloudFormation', 'Apache Kafka', 'Scala & Spark', 'PyTorch', 'FastAPI']\n  },\n  {\n    period: '2024–2026',\n    role: 'Senior Curriculum Curator & Technical Learning Designer',\n    company: 'DCD Academy (DataCenterDynamics)',\n    location: 'London, United Kingdom',\n    domainBadge: 'Data Centre Infrastructure, Power, Cooling & AI Enablement',\n    accent: 'indigo',\n    summary:\n      'Led end-to-end technical learning architecture and AI-assisted curriculum production across mission-critical data-centre engineering domains, acting as Team Lead to junior peers and collaborating with 24 senior subject-matter experts.',\n    highlights: [\n      'Curated and structured technical engineering programmes covering data-centre power distribution, liquid and air cooling thermodynamics, hyperscale cloud infrastructure, energy sustainability, and AI operations.',\n      'Integrated generative AI production workflows (Anthropic Claude, ChatGPT, HeyGen, ElevenLabs) with Articulate Storyline 360 and Thought Industries LMS to standardise technical accuracy and modular delivery.',\n      'Acted as Team Lead mentoring and coaching junior peers while partnering with 24 principal engineers and industry SMEs to translate complex infrastructure specifications into competency frameworks, SOPs, and scenario-driven assessments.'\n    ],\n    tags: ['Data Centre Infrastructure', 'Power & Cooling Systems', 'AI Production Workflows', 'SME Collaboration', 'Thought Industries LMS']\n  },\n  {\n    period: '2018–2023',\n    role: '1st to 3rd Line Technical Support Engineer & Team Lead',\n    company: 'Tata Consultancy Services (Supporting EDF Energy)',\n    location: 'London & Croydon, United Kingdom',\n    domainBadge: 'Red, Green & Blue Segregated Enterprise Networks',\n    accent: 'emerald',\n    summary:\n      'Provided high-availability 1st to 3rd line infrastructure, endpoint, and energy trading-floor support for EDF Energy across strictly segregated corporate and power generation network environments, acting as Team Lead and senior escalation point for junior support engineers.',\n    highlights: [\n      'Supported critical enterprise operations across EDF Energy corporate networks (Red and Green), power Generation enclaves (Blue), and live wholesale energy trading-floor systems at Interchange Croydon.',\n      'Acted as Team Lead overseeing queue health, SLA compliance, and shift handovers; mentored junior 1st/2nd line analysts on root-cause incident diagnostics, problem management escalations, and change control governance in ServiceNow.',\n      'Managed endpoint security compliance, automated software deployment, and real-time user experience telemetry using Microsoft Intune, Active Directory, and Aternity monitoring.'\n    ],\n    tags: ['ServiceNow Diagnostics', 'Red/Green/Blue Networks', 'Microsoft Intune', 'Aternity Telemetry', 'Trading Floor Support']\n  },\n  {\n    period: '2014–2018',\n    role: 'System Implementation Specialist & Data Analyst',\n    company: \"King's College Hospital NHS Foundation Trust\",\n    location: 'London, United Kingdom',\n    domainBadge: 'SQL Server Statutory Data Audit & Clinical PAS/PIMS',\n    accent: 'emerald',\n    summary:\n      'Led clinical system implementation and workflow mapping, and used SQL Server to validate statutory data across acute and specialist NHS healthcare clinics.',\n    highlights: [\n      'Rolled out and supported clinical PAS and PIMS patient administration modules across Caldecott Sexual Health and The Havens (Sexual Assault Referral Centres), enforcing strict clinical data confidentiality.',\n      'Authored complex SQL Server queries to audit, cleanse, and reconcile large patient-level datasets for mandatory NHS statutory submissions and operational performance reporting.',\n      'Conducted end-to-end clinical workflow mapping, user acceptance testing (UAT), and schema migration validation between legacy hospital databases and modern electronic health record systems.'\n    ],\n    tags: ['SQL Server Data Audit', 'PAS / PIMS Implementation', 'Clinical Data Governance', 'UAT & Workflow Mapping', 'NHS Statutory Reporting']\n  }\n];",
+      "after": "const ENTERPRISE_TIMELINE = [\n  {\n    period: 'April 2026-present',\n    role: 'Independent Applied AI & Systems Specialist',\n    company: 'Self-Directed Technical Practice & Architecture Delivery',\n    location: 'London, United Kingdom',\n    domainBadge: 'Academic AI, Cloud Architecture & Data Projects',\n    accent: 'indigo',\n    summary:\n      'Self-directed academic practice in cloud, AI and data systems through 19 completed Udacity Nanodegrees and courses, plus AWS, Anthropic, LangChain, IBM and EPFL study. The case studies distinguish supplied starters, coding-assistant contributions and separately recorded validation.',\n    highlights: [\n      'Explored LangGraph, Claude Agent SDK and FastAPI workflows through supplied-starter adaptations, coding-assistant implementation and project-specific tool, schema and response checks.',\n      'Completed academic cloud and data implementations across AWS, five-job MLOps pipelines and Kafka/Spark/Scala coursework, with historical delivery and model-evaluation results separated by project and run.',\n      'Directed a coding-assistant-supported five-company public-seed Clay import/review and HubSpot pilot; three recorded replays made no creates or updates, with selected-field checks on pre-existing records.'\n    ],\n    tags: ['LangGraph', 'Claude Code & MCP', 'AWS Architecture', 'CloudFormation', 'Apache Kafka', 'Scala & Spark', 'PyTorch', 'FastAPI']\n  },\n  {\n    period: '1 May 2024-14 April 2026',\n    role: 'Senior Curriculum Curator Executive (Team Lead duties)',\n    company: 'DCD Academy',\n    location: 'London, United Kingdom',\n    domainBadge: 'Technical Learning, SME Collaboration & AI Workflows',\n    accent: 'indigo',\n    summary:\n      'Translated infrastructure specifications with subject matter experts into technical learning, competency frameworks and SOPs. Coached junior peers and integrated AI-assisted production with human technical review.',\n    highlights: [\n      'Structured data-centre engineering guidance with subject matter experts into competency frameworks and SOPs for technical audiences.',\n      'Coached junior peers in technical structuring, troubleshooting scenarios and quality assurance across data-centre engineering programmes.',\n      'Integrated Claude, ChatGPT, HeyGen and ElevenLabs into learning workflows, retaining human technical review in Storyline 360 and Thought Industries.'\n    ],\n    tags: ['Technical Communication', 'Requirements Interpretation', 'SME Collaboration', 'Storyline 360', 'Thought Industries LMS']\n  },\n  {\n    period: 'September 2018-9 November 2023',\n    role: '1st to 3rd Line Technical Support Engineer & Team Lead',\n    company: 'Tata Consultancy Services (TCS), supporting EDF Energy',\n    location: 'London & Croydon, United Kingdom',\n    domainBadge: 'Enterprise Support, Incidents & Change Control',\n    accent: 'emerald',\n    summary:\n      'Supported corporate, power-generation and trading systems across segregated networks. Coordinated incidents, stakeholder communications and UK/offshore handovers while reviewing release impacts and deployment risks.',\n    highlights: [\n      'Supported EDF Energy corporate, power-generation and trading systems using Intune, Active Directory and Aternity for compliance and diagnostics.',\n      'Coordinated P1 incidents, stakeholder communications and UK/offshore handovers to support service continuity.',\n      'Reviewed release impacts and deployment risks through ServiceNow change control.'\n    ],\n    tags: ['ServiceNow', 'Segregated Networks', 'Microsoft Intune', 'Active Directory', 'Aternity', 'Incident Coordination']\n  },\n  {\n    period: '4 September 2017-31 August 2018',\n    role: 'Systems (Excelicare) Implementation Officer',\n    company: \"King's College Hospital NHS Foundation Trust\",\n    location: 'London, United Kingdom',\n    domainBadge: 'Clinical Systems, Workflow Mapping & UAT',\n    accent: 'emerald',\n    summary:\n      'Implemented clinical systems across specialist NHS clinics, mapped workflows and supported users through system changes under strict confidentiality requirements.',\n    highlights: [\n      'Mapped clinical workflows and supported users during clinical system implementation.',\n      'Validated requirements, functional specifications and schema migrations through User Acceptance Testing (UAT), identifying defects before system releases.'\n    ],\n    tags: ['Excelicare', 'Clinical Systems', 'Workflow Mapping', 'UAT', 'Migration Validation', 'Data Confidentiality']\n  },\n  {\n    period: '7 November 2016-1 September 2017',\n    role: 'Junior Software Developer',\n    company: 'Cohaesus Projects Ltd',\n    location: 'London, United Kingdom',\n    domainBadge: 'Software Development, Debugging & Testing',\n    accent: 'indigo',\n    summary:\n      'Implemented small application changes and bug fixes under senior developer guidance, following agreed requirements and coding standards.',\n    highlights: [\n      'Implemented small changes and bug fixes under senior developer guidance.',\n      'Tested functionality, documented updates and participated in code reviews.'\n    ],\n    tags: ['Requirements Interpretation', 'Debugging', 'Software Testing', 'Technical Documentation', 'Code Review']\n  },\n  {\n    period: '23 March 2015-4 November 2016',\n    role: 'Data & Systems Support Officer',\n    company: \"King's College Hospital NHS Foundation Trust\",\n    location: 'London, United Kingdom',\n    domainBadge: 'Clinical Data Support, SQL Server & NHS Reporting',\n    accent: 'emerald',\n    summary:\n      'Supported PAS/PIMS users, investigated clinical data issues and used SQL Server to reconcile patient datasets for NHS reporting.',\n    highlights: [\n      'Explained system processes and escalated faults to maintain service continuity for PAS/PIMS users.',\n      'Reconciled patient datasets with SQL Server queries and cleansed records for NHS statutory submissions and operational reporting.'\n    ],\n    tags: ['SQL Server', 'PAS / PIMS Support', 'Data Reconciliation', 'NHS Statutory Reporting', 'Clinical Data Integrity']\n  }\n];",
+      "occurrences": 1
+    },
+    {
+      "before": "2014–2026",
+      "after": "2015-2026",
+      "occurrences": 3
+    },
+    {
+      "before": "Experienced enterprise IT professional with 12 years across energy, NHS clinical systems and data-centre technical learning. Combines operational leadership and mentoring with practical cloud/AI engineering across AWS, Azure, Python APIs and CI/CD. LLM service adaptation recorded a 65.0% modelled cost saving in a 74-row mixed live/seeded ledger, alongside 231 mocked checks.",
+      "after": "Enterprise IT professional with approximately 10.5 years of paid experience across clinical systems, energy support, software development and technical learning. Combines requirements review, SQL data validation and stakeholder communication with recent AI-assisted academic work in Python, TypeScript, machine learning and cloud services. The case studies distinguish supplied components, coding-assistant contributions and recorded validation.",
+      "occurrences": 1
+    },
+    {
+      "before": "12 Years of London Enterprise Delivery & Systems Engineering",
+      "after": "Professional Experience in Technology, Data & Technical Learning",
+      "occurrences": 1
+    },
+    {
+      "before": "Qualitative, audit-verified operational scope across data-centre infrastructure, segregated energy networks, and NHS clinical systems.",
+      "after": "Approximately 10.5 years of paid employment across clinical systems, software development, energy support and technical learning, followed by independent academic AI and cloud projects.",
+      "occurrences": 1
+    },
+    {
+      "before": "Implemented small application changes and bug fixes under senior developer guidance, following agreed requirements and coding standards.",
+      "after": "Implemented small changes and bug fixes under senior developer guidance; tested functionality, documented updates and participated in code reviews.",
+      "occurrences": 1
+    },
+    {
+      "before": "Approximately 10.5 years of paid employment across clinical systems, software development, energy support and technical learning, followed by independent academic AI and cloud projects.",
+      "after": "Approximately 10.5 years of paid employment across clinical systems, software development, energy support and technical learning. Independent academic AI and cloud projects are described separately.",
+      "occurrences": 1
+    },
+    {
+      "before": "tags: ['Requirements Interpretation', 'Debugging', 'Software Testing', 'Technical Documentation', 'Code Review']",
+      "after": "tags: ['Bug Fixing', 'Debugging', 'Software Testing', 'Technical Documentation', 'Code Review']",
+      "occurrences": 1
+    },
+    {
+      "before": "// 2. Cloud, Scala & DevOps (6)\n",
+      "after": "// 2. Cloud, Scala & DevOps (7)\n  {\n    title: 'AWS Security Engineer Advanced Professional Certificate (18 Courses)',\n    issuer: 'Coursera | Amazon Web Services',\n    date: 'Nov 9, 2026',\n    group: 'cloud',\n    url: 'https://www.coursera.org/account/accomplishments/specialization/JWB4H05JGSK2',\n    summary: 'Includes eight lab courses covering AWS Config, IAM troubleshooting, network controls, WAF, encryption, CloudWatch monitoring and incident response.'\n  },\n",
+      "occurrences": 1
+    },
+    {
+      "before": "    title: 'Cloud, Scala & DevOps (6)',\n    shortLabel: 'Cloud, Scala & DevOps (6)'",
+      "after": "    title: 'Cloud, Scala & DevOps (7)',\n    shortLabel: 'Cloud, Scala & DevOps (7)'",
+      "occurrences": 1
+    },
+    {
+      "before": "19 Udacity + 28 Categorized",
+      "after": "19 Udacity + 29 Categorized",
+      "occurrences": 2
+    },
+    {
+      "before": "47 verified credentials: 19 Udacity Nanodegrees and courses, plus 28 industry credentials.",
+      "after": "48 verified credentials: 19 Udacity Nanodegrees and courses, plus 29 industry credentials.",
+      "occurrences": 1
+    },
+    {
+      "before": "HubSpot Certifications (28 Verified)",
+      "after": "HubSpot Certifications (29 Verified)",
+      "occurrences": 2
+    },
+    {
+      "before": "All (28)",
+      "after": "All (29)",
+      "occurrences": 1
+    },
+    {
+      "before": "                              {cert.issuer} | Issued {cert.date}\n                            </div>",
+      "after": "                              {cert.issuer} | Issued {cert.date}\n                            </div>\n                            {cert.summary && (\n                              <p className=\"text-xs sm:text-[13px] text-slate-600 pl-5 leading-relaxed\">\n                                {cert.summary}\n                              </p>\n                            )}",
       "occurrences": 1
     }
   ]
