@@ -1,64 +1,31 @@
-# Djessi Jorge | Architecture Portfolio
+# Djessi Jorge — engineering portfolio
 
-React 18, TypeScript, Tailwind CSS 3.4, and Lucide portfolio, built with Vite 8 and hosted through ChatGPT/Codex Sites.
+React 18, TypeScript, Vite 8, Tailwind CSS and Lucide portfolio for cloud, AI and data engineering work.
 
-- Source: [architecture-evaluation-portfolio](https://github.com/djessijorge9-ship-it/architecture-evaluation-portfolio), branch `main`.
-- Canonical domain: [djessijorge.com](https://djessijorge.com). The root domain and `www` are active on Sites with verified HTTPS certificates.
-- Sites fallback: [Djessi Jorge Systems Portfolio](https://djessi-jorge-systems-portfolio.djessi2.chatgpt.site).
+- Website: https://djessijorge.com
+- Source: https://github.com/djessijorge9-ship-it/architecture-evaluation-portfolio
+- Hosting: the existing ChatGPT/Codex Sites project identified by .openai/hosting.json.
 
-The portfolio contains 14 case studies and 48 credentials: 19 Udacity credentials and 29 industry credentials. The authorized ND906 extension adds the Google Agentic AI Engineer Nanodegree and CS-13, covering four independent academic agent implementations. Its evidence distinguishes AI-assisted work, mocked checks, simulated research references, and historical live-model observations. Those observations do not establish production reliability or current service availability.
+The portfolio contains 14 systems case studies and one combined AWS security project with five independent practical areas. Project views focus on implementation, architecture and recorded validation. All 48 credential links remain accessible; the default directory highlights 43 engineering-related qualifications. The employment section displays five paid roles.
 
-The authorized ND082 extension adds an Azure DevOps credential and CS-14, covering three independent academic projects: Azure infrastructure with Packer and Terraform, CI/CD with GitHub Actions and Azure Pipelines, and layered release-quality checks. Its evidence retains the scope of supplied applications, disclosed AI assistance, and historical results; it does not establish commercial impact or production reliability.
+Guided coursework, supplied components, coding assistance, mocked tests, simulations, historical execution and modelled comparisons retain their individual scope. The AWS programme is a Coursera Professional Certificate; it is not a claim of passing the separate AWS Security – Specialty examination. Private evidence packs and raw source archives are excluded from the website.
 
-Authorised copy refinements use plain UK English in authored prose while retaining official credential titles, URLs, source paths, metrics, and facts. The current arrays include 14 case studies, 19 Udacity credentials, 29 industry credentials, architecture tracks, core capabilities, credential groups, and the enterprise timeline. CS-13 and the Google Agentic AI Engineer Nanodegree remain included.
-
-Three selected project cards highlight CS-05, CS-14 and CS-01. Each opens a native project dialog with concise contribution and design summaries, a scoped result, the unchanged full implementation notes, original architecture diagram, merged validation passage and original evidence metadata. The project library supports category and stack searches, showing six projects initially with access to all 14. The condensed timeline and credential directory expose their full original records on demand.
-
-The reviewed validation update adds a Validation and lessons learned passage to every case and reconciles the surrounding narratives, metrics, diagram labels, evidence descriptions and source file lists. It preserves separate projects and execution cohorts, supplied components, documented AI assistance and unresolved authoring history. CS-09 distinguishes the ND029 demographics/risk join from separate sensor ETL coursework; CS-12 describes a public-seed import/review pilot and DOM-derived CSV; CS-14 leaves P01 authoring unknown and retains private-VM, policy and cleanup limits. The overview and 2026 independent-practice entry are aligned with these contribution limits. Credential identities and the DCD/TCS/NHS employment entries are unchanged by this update.
-
-The 9 November 2026 career update aligns the overview and six timeline entries with the latest confirmed CV. It uses approximately 10.5 years of paid employment, the contractual NHS appointment dates and confirmed leaving dates; adds the Cohaesus Junior Software Developer role between the two NHS appointments; and uses the official DCD title with Team Lead duties. SME collaboration has no headcount claim. Independent academic work remains separate, with all 14 case studies and 48 credential links preserved.
-
-The 9 November 2026 AWS security addition records the AWS Security Engineer Advanced Professional Certificate from Amazon Web Services via Coursera (JWB4H05JGSK2): 18 completed courses, including eight lab courses. Its official programme link and a short curriculum summary remain available in the cloud credential group within the directory. This is programme completion; it does not claim the separate AWS Certified Security – Specialty examination, a new implementation case study, or runtime results without underlying lab evidence.
-
-Validation and architectural takeaways are combined into one Validation and lessons learned section per project, now available in its Validation & lessons tab. The merged copy removes repeated points while retaining the unique findings, figures and evidence qualifications from both former sections. The separate takeaway accordion and its unused state are removed; other case data, all 48 credentials and the career timeline are preserved.
-
-The visual redesign gives hiring managers a compact, graphical overview: an interactive discipline map, three selected projects, metric-led project cards, a searchable library, an expandable career timeline and an on-demand credential directory. Native project dialogs provide keyboard-accessible tabs for summaries, original diagrams, merged validation and original evidence. The full case-study data, diagrams, career records, 48 certificate identities and archive checksums are preserved exactly. Compact metrics retain their academic, assistance and execution qualifications.
-
-The previous presentation used a 1440px desktop container, larger responsive typography and controls, more space within the track cards, and clearer architecture diagrams. SVG labels are enlarged, and the orchestration header and numbered badges are repositioned. Header branding is simplified, with a small location icon and `LONDON, UK`. Authorised presentation and copy changes are recorded alongside the earlier content additions in the source manifest. `src/App.tsx` has a new byte identity:
-
-```text
-Current:  181340 bytes | SHA256 66e7e587ec8aeb862b9e9bb467db523b64a4e45cd90bc4f2738a7775cb7fd34a
-Original: 157493 bytes | SHA256 1705c8b0b180d9b8296584a18e88f4f7174e9928d1957294c9f6c7c7cdbb6b2d
-```
-
-## Local development
+## Development and verification
 
 Use Node.js 24. The package requires Node.js 22.12.0 or newer.
 
 ```sh
 npm ci
-npm run dev
-```
-
-Open `http://127.0.0.1:5000`. The dev and preview servers bind to the local loopback interface.
-
-```sh
 node scripts/verify-source.mjs
 npm audit --audit-level=low
 npm run build
 npm run preview
 ```
 
-The production build writes `dist/index.html` and static assets. Stop the dev server before starting preview because both use port 5000. The build script remains `vite build`; TypeScript retains `strict: false` and `noImplicitAny: false`, without a blocking `tsc -b` step.
+The preview binds to http://127.0.0.1:5000. Build output is written to dist/.
 
-## Verification
+The source guard validates the current App.tsx identity, then reverses the exact authorised edits to reconstruct the original 157,493-byte reference. Changes must be recorded as literal reversible replacements; do not weaken the guard to bypass a failure.
 
-`scripts/verify-source.mjs` checks the current component's bytes and SHA256 against `scripts/authorized-source-changes.json`, then reverses the exact authorised replacements in reverse order. The reconstructed component must match the full original 157,493-byte SHA256. This checks preservation of the complete baseline outside the reviewed content additions, presentation changes, and copy edits. The guard also rejects Drive and Docs URLs in the public source and change manifest.
+Main navigation follows the visible section during scrolling, including responsive header sizes and expanded content. The header uses the name and location without a monogram. Source narratives, diagrams, course/run boundaries and credential identities remain in the data; detailed notes are available on demand.
 
-Build tooling uses Vite 8.3.5 and `@vitejs/plugin-react` 6.2.1. React 18 and Tailwind CSS 3.4 are retained. Run the source guard, dependency audit, and production build above before publishing a release.
-
-## Source and hosting
-
-GitHub stores the source and verifies pull requests and pushes to `main` with Node.js 24, a clean install, a dependency audit, source-preservation verification, and a production build. That workflow verifies the repository; it does not publish a Sites release.
-
-The tracked `.openai/hosting.json` identifies the existing Site and declares `dist` as its static output directory. Keep that identity when updating this portfolio. Ask Codex with the Sites plugin to apply and publish updates to the existing Site. See [PUBLISH.md](./PUBLISH.md) for the update workflow.
+See PUBLISH.md for the existing deployment workflow.

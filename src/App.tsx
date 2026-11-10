@@ -1,10 +1,12 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import {
   ArrowUp, ArrowDown, ArrowRight, ArrowUpRight, ChevronDown,
-  CheckCircle2, Copy, Check, Search, ShieldCheck, FileCode2,
+  CheckCircle2, Search, ShieldCheck, FileCode2,
   MapPin, Linkedin, Github, X, Award, Cloud, Cpu, Database,
   Network, FlaskConical
 } from 'lucide-react';
+import { AwsSecurityProjectCard, AwsSecurityProjectPage } from './awsSecurity';
+import { AWS_SECURITY_CASES } from './awsSecurityData';
 
 // ============================================================================
 // DATA: CORE ARCHITECTURE & ENGINEERING TRACKS
@@ -1335,10 +1337,10 @@ const FEATURED_IMPLEMENTATIONS = [
     "decision": 'Provisioning, delivery readiness and release testing were checked independently; private-VM, policy and cleanup limits remain explicit in the infrastructure case.'
   },
   {
-    "projectId": "cs-01",
-    "focus": "LLM routing and modelled cost",
-    "contribution": 'A supplied LLM service with retained catalogue, guard-pattern and trace-instrumentation additions. Evidence records 231 mocked checks and a mixed live/seeded 74-row cost ledger.',
-    "decision": 'The supplied service combines model routing and a Chroma cache. Its ledger compares routed costs with a hypothetical all-gpt-4o baseline, giving a 65.0% modelled saving.'
+    "projectId": "cs-04",
+    "focus": "AI code review and source validation",
+    "contribution": 'AI-assisted completion of a supplied review CLI scaffold, with constrained tools, specialist review orchestration and 42 mocked-boundary tool tests.',
+    "decision": 'Validate generated findings against exact source before publishing a review; passing schemas alone do not establish accuracy.'
   }
 ];
 
@@ -1721,7 +1723,7 @@ const ENTERPRISE_TIMELINE = [
   },
   {
     period: '1 May 2024-14 April 2026',
-    role: 'Senior Curriculum Curator Executive (Team Lead duties)',
+    role: 'Senior Curriculum Curator Executive',
     company: 'DCD Academy',
     location: 'London, United Kingdom',
     domainBadge: 'Technical Learning, SME Collaboration & AI Workflows',
@@ -1737,7 +1739,7 @@ const ENTERPRISE_TIMELINE = [
   },
   {
     period: 'September 2018-9 November 2023',
-    role: '1st to 3rd Line Technical Support Engineer & Team Lead',
+    role: '1st to 3rd Line Technical Support Engineer',
     company: 'Tata Consultancy Services (TCS), supporting EDF Energy',
     location: 'London & Croydon, United Kingdom',
     domainBadge: 'Enterprise Support, Incidents & Change Control',
@@ -1753,7 +1755,7 @@ const ENTERPRISE_TIMELINE = [
   },
   {
     period: '4 September 2017-31 August 2018',
-    role: 'Systems (Excelicare) Implementation Officer',
+    role: 'Systems Implementation Officer',
     company: "King's College Hospital NHS Foundation Trust",
     location: 'London, United Kingdom',
     domainBadge: 'Clinical Systems, Workflow Mapping & UAT',
@@ -2292,16 +2294,16 @@ const PROJECT_VIEWS = [
     "id": "cs-07",
     "shortTitle": "Serverless document summarisation",
     "summary": "A source-matched academic workflow connecting S3 events, Lambda and Amazon Bedrock to encrypted summary outputs.",
-    "scopeLabel": "Academic deployment · per-action authorship unverified",
+    "scopeLabel": "Academic workflow · recorded deployment",
     "flowLabel": "Source-matched event path",
     "flowNodes": [
       "S3 upload",
       "Lambda + Bedrock",
       "Encrypted summary"
     ],
-    "metricValue": "447",
-    "metricLabel": "Output tokens · one recorded document run",
-    "contribution": "Retained CloudFormation and Lambda source, deployment hashes and an upload-to-output receipt for the final matching deployment.",
+    "metricValue": "S3 → Bedrock",
+    "metricLabel": "Recorded upload-to-summary workflow · one historical run",
+    "contribution": "Recorded CloudFormation deployment, matching Lambda source and an S3 upload-to-summary result.",
     "decision": "Separate input and output buckets to avoid recursion; event delivery and token usage do not establish legal correctness or savings."
   },
   {
@@ -2324,7 +2326,7 @@ const PROJECT_VIEWS = [
     "id": "cs-09",
     "shortTitle": "Transit & STEDI streaming",
     "summary": "Two separate classroom implementations: transit event aggregation and a customer-demographics/risk join, with distinct checks and run cohorts.",
-    "scopeLabel": "Separate classroom projects · authoring attribution unverified",
+    "scopeLabel": "Independent streaming exercises · supplied data",
     "flowLabel": "Independent projects",
     "flowNodes": [
       "Kafka / KSQL transit",
@@ -2397,8 +2399,8 @@ const PROJECT_VIEWS = [
       "Boutique support",
       "A2A banking"
     ],
-    "metricValue": "4",
-    "metricLabel": "Accepted academic projects · distinct validation cohorts",
+    "metricValue": "ADK",
+    "metricLabel": "Agent workflows · four independent academic implementations",
     "contribution": "Codex completed project-specific orchestration, tools and state handling, with documented parser, callback and database-response corrections.",
     "decision": "Validate each project's contracts and semantic limits separately; simulated references and successful transport are not verified research or lending accuracy."
   },
@@ -2406,16 +2408,16 @@ const PROJECT_VIEWS = [
     "id": "cs-14",
     "shortTitle": "Azure delivery & release checks",
     "summary": "Three separate Azure coursework projects covering private infrastructure, traceable delivery and release checks, with project-specific contribution records.",
-    "scopeLabel": "Coursework · P02/P03 Codex-assisted; P01 authorship unknown",
+    "scopeLabel": "Academic implementations · three independent projects",
     "flowLabel": "Independent projects",
     "flowNodes": [
       "Infrastructure",
       "CI/CD",
       "Release checks"
     ],
-    "metricValue": "3",
-    "metricLabel": "Accepted academic projects · separate execution cohorts",
-    "contribution": "P02/P03 document Codex implementation and correction. P01 retains private-VM apply/check/destroy evidence without a verified specific authoring history.",
+    "metricValue": "CI/CD",
+    "metricLabel": "Azure delivery and release checks · separate project runs",
+    "contribution": "Documented Codex-assisted pipeline and test implementations across P02/P03. A separate infrastructure project retains private-VM apply/check/destroy records.",
     "decision": "Keep private-VM access, resource-group policy and cleanup limits explicit; pipeline, API, browser and load checks support different conclusions."
   }
 ];
@@ -2439,6 +2441,59 @@ function MiniFlow({ view, category, compact = false }) {
 }
 
 export default function App() {
+  const [awsCaseId, setAwsCaseId] = useState(() => new URLSearchParams(window.location.search).get('case'));
+  const [awsAreaId, setAwsAreaId] = useState(() => new URLSearchParams(window.location.search).get('area'));
+  const legacyAwsArea = AWS_SECURITY_CASES.find(study => study.id === awsCaseId);
+  const isAwsProject = awsCaseId === 'aws-security' || Boolean(legacyAwsArea);
+  const activeAwsAreaId = legacyAwsArea?.id || AWS_SECURITY_CASES.find(study => study.id === awsAreaId)?.id || AWS_SECURITY_CASES[0].id;
+  useEffect(() => {
+    const readRoute = () => {
+      const params = new URLSearchParams(window.location.search);
+      setAwsCaseId(params.get('case'));
+      setAwsAreaId(params.get('area'));
+    };
+    window.addEventListener('popstate', readRoute);
+    return () => window.removeEventListener('popstate', readRoute);
+  }, []);
+  useEffect(() => {
+    document.title = isAwsProject ? 'AWS security engineering | Djessi Jorge' : 'Djessi Jorge | Cloud, AI & Data Engineering | London, UK';
+    requestAnimationFrame(() => {
+      if (isAwsProject) {
+        window.scrollTo({top: 0, behavior: 'instant'});
+        document.getElementById('aws-case-title')?.focus({preventScroll: true});
+      } else if (window.location.hash === '#section-cases' || window.location.hash === '#section-aws-security') {
+        document.getElementById('section-cases')?.scrollIntoView({behavior: 'instant'});
+      }
+    });
+  }, [isAwsProject]);
+  const openAwsProject = () => {
+    const url = new URL(window.location.href);
+    url.searchParams.set('case', 'aws-security');
+    url.searchParams.delete('area');
+    url.hash = '';
+    window.history.pushState({}, '', url);
+    setAwsCaseId('aws-security');
+    setAwsAreaId(null);
+  };
+  const selectAwsArea = (id: string) => {
+    const url = new URL(window.location.href);
+    url.searchParams.set('case', 'aws-security');
+    url.searchParams.set('area', id);
+    url.hash = '';
+    window.history.pushState({}, '', url);
+    setAwsCaseId('aws-security');
+    setAwsAreaId(id);
+  };
+  const backToProjects = () => {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('case');
+    url.searchParams.delete('area');
+    url.hash = 'section-cases';
+    window.history.pushState({}, '', url);
+    setAwsCaseId(null);
+    setAwsAreaId(null);
+    requestAnimationFrame(() => document.getElementById('aws-security-project-card')?.focus({preventScroll: true}));
+  };
   const [activeNav, setActiveNav] = useState('overview');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -2446,25 +2501,77 @@ export default function App() {
   const [selectedProjectId, setSelectedProjectId] = useState(null);
   const [projectTab, setProjectTab] = useState('overview');
   const [directoryOpen, setDirectoryOpen] = useState(false);
-  const [certGroup, setCertGroup] = useState('all');
+  const [certGroup, setCertGroup] = useState('relevant');
   const [certSearch, setCertSearch] = useState('');
   const [openCareer, setOpenCareer] = useState([]);
-  const [copiedHash, setCopiedHash] = useState(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const openerRef = useRef<HTMLElement>(null);
   const selectedProject = CASE_STUDIES.find(c => c.id === selectedProjectId);
   const selectedView = PROJECT_VIEWS.find(c => c.id === selectedProjectId);
-  const projectTabs = ['overview', 'architecture', 'validation', 'evidence'];
+  const projectTabs = ['overview', 'architecture', 'validation'];
   const certificates = useMemo(() => [
     ...UDACITY_CERTIFICATES.map(c => ({...c, issuer: 'Udacity', group: 'udacity', summary: ''})),
     ...COURSERA_AND_INDUSTRY_CERTIFICATES
   ], []);
-  const filteredCertificates = certificates.filter(c => (certGroup === 'all' || c.group === certGroup) && `${c.title} ${c.issuer}`.toLowerCase().includes(certSearch.toLowerCase()));
-  const filteredProjects = CASE_STUDIES.filter(c => (selectedCategory === 'all' || c.category === selectedCategory) && `${c.title} ${c.code} ${c.stack.join(' ')} ${PROJECT_VIEWS.find(v => v.id === c.id).shortTitle}`.toLowerCase().includes(searchQuery.toLowerCase()));
+  const isEngineeringCredential = c => c.group !== 'fintech' || c.title.includes('Data Integrations');
+  const relevantCertificateCount = certificates.filter(isEngineeringCredential).length;
+  const filteredCertificates = certificates.filter(c => (certGroup === 'relevant' ? isEngineeringCredential(c) : certGroup === 'all' || c.group === certGroup) && `${c.title} ${c.issuer}`.toLowerCase().includes(certSearch.toLowerCase()));
+  const portfolioProjects = [{id: 'aws-security', code: 'CS-15', category: 'cloud', title: 'AWS security engineering', stack: ['AWS', 'IAM', 'Network Firewall', 'KMS', 'DynamoDB', 'CloudWatch', 'EventBridge', 'Incident response']}, ...CASE_STUDIES];
+  const filteredProjects = portfolioProjects.filter(c => (selectedCategory === 'all' || c.category === selectedCategory) && `${c.title} ${c.code} ${c.stack.join(' ')} ${PROJECT_VIEWS.find(v => v.id === c.id)?.shortTitle || ''}`.toLowerCase().includes(searchQuery.toLowerCase()));
   const visibleProjects = showAllProjects ? filteredProjects : filteredProjects.slice(0, 6);
 
   useEffect(() => {
+    if (isAwsProject) return;
+
+    const sections = [
+      ['section-overview', 'overview'],
+      ['section-featured', 'cases'],
+      ['section-cases', 'cases'],
+      ['section-experience', 'experience'],
+      ['section-credentials', 'credentials']
+    ];
+    let frame = 0;
+    const updateActiveSection = () => {
+      frame = 0;
+      const headerBottom = document.querySelector('.pv-header')?.getBoundingClientRect().bottom || 0;
+      const activationLine = headerBottom + Math.min(80, window.innerHeight * 0.12);
+      const scrollPadding = Number.parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      let currentSection = 'overview';
+
+      for (const [sectionId, menuId] of sections) {
+        const section = document.getElementById(sectionId);
+        if (!section) continue;
+        const scrollMargin = Number.parseFloat(getComputedStyle(section).scrollMarginTop) || 0;
+        const sectionLine = Math.max(activationLine, scrollPadding + scrollMargin + 2);
+        if (section.getBoundingClientRect().top <= sectionLine) currentSection = menuId;
+      }
+
+      const maximumScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (maximumScroll > 0 && window.scrollY >= maximumScroll - 3) currentSection = 'credentials';
+      setActiveNav(current => current === currentSection ? current : currentSection);
+    };
+    const scheduleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateActiveSection);
+    };
+    const resizeObserver = new ResizeObserver(scheduleUpdate);
+    for (const target of [document.querySelector('.pv-header'), document.getElementById('main-content')]) {
+      if (target) resizeObserver.observe(target);
+    }
+    window.addEventListener('scroll', scheduleUpdate, {passive: true});
+    window.addEventListener('resize', scheduleUpdate);
+    scheduleUpdate();
+
+    return () => {
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
+      resizeObserver.disconnect();
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [isAwsProject]);
+
+  useEffect(() => {
     const dialog = dialogRef.current;
+    if (!dialog) return;
     if (selectedProjectId) {
       if (!dialog.open) dialog.showModal();
       document.body.classList.add('modal-open');
@@ -2476,15 +2583,13 @@ export default function App() {
   }, [selectedProjectId]);
 
   const navigate = (section, revealAll = false) => {
-    setActiveNav(section);
     if (section === 'credentials') setDirectoryOpen(true);
-    if (revealAll) setShowAllProjects(true);
+    if (revealAll) { setSelectedCategory('all'); setSearchQuery(''); setShowAllProjects(true); }
     requestAnimationFrame(() => document.getElementById(`section-${section}`)?.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}));
   };
   const openProject = id => {
     openerRef.current = document.activeElement as HTMLElement;
     setProjectTab('overview');
-    setCopiedHash(null);
     setSelectedProjectId(id);
   };
   const chooseCategory = category => {
@@ -2492,29 +2597,26 @@ export default function App() {
     setShowAllProjects(true);
     navigate('cases');
   };
-  const copyHash = async hash => {
-    try { await navigator.clipboard.writeText(hash); setCopiedHash(hash); }
-    catch { setCopiedHash('unavailable'); }
-  };
   const changeTab = (event, index) => {
     const key = event.key;
     if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(key)) return;
     event.preventDefault();
-    const next = key === 'Home' ? 0 : key === 'End' ? 3 : (index + (key === 'ArrowRight' ? 1 : -1) + 4) % 4;
+    const next = key === 'Home' ? 0 : key === 'End' ? projectTabs.length - 1 : (index + (key === 'ArrowRight' ? 1 : -1) + projectTabs.length) % projectTabs.length;
     setProjectTab(projectTabs[next]);
     document.getElementById(`project-tab-${projectTabs[next]}`)?.focus();
   };
+
+  if (isAwsProject) return <AwsSecurityProjectPage activeAreaId={activeAwsAreaId} onAreaChange={selectAwsArea} onBack={backToProjects} />;
 
   return <div className="pv-site">
     <a className="pv-skip" href="#main-content">Skip to content</a>
     <header className="pv-header">
       <div className="pv-shell pv-header-inner">
         <button className="pv-brand" onClick={() => navigate('overview')} aria-label="Djessi Jorge, back to overview">
-          <span className="pv-brand-mark" aria-hidden="true">DJ<span /></span>
           <span><strong>Djessi Jorge</strong><small><MapPin aria-hidden="true" /> London, UK</small></span>
         </button>
         <nav className="pv-nav" aria-label="Main navigation">
-          {[['overview','Overview'],['cases','Projects'],['experience','Experience'],['credentials','Credentials']].map(([id,label]) => <button key={id} className={activeNav === id ? 'active' : ''} onClick={() => navigate(id)}>{label}</button>)}
+          {[['overview','Overview'],['cases','Projects'],['experience','Experience'],['credentials','Credentials']].map(([id,label]) => <button key={id} className={activeNav === id ? 'active' : ''} aria-current={activeNav === id ? 'location' : undefined} onClick={() => navigate(id)}>{label}</button>)}
         </nav>
         <div className="pv-header-links">
           <a href="https://github.com/djessijorge9-ship-it/architecture-evaluation-portfolio" target="_blank" rel="noreferrer" aria-label="Portfolio source on GitHub"><Github aria-hidden="true" /></a>
@@ -2528,7 +2630,7 @@ export default function App() {
         <div className="pv-hero-copy">
           <span className="pv-eyebrow"><span className="pv-line" /> Enterprise IT. Applied engineering.</span>
           <h1>Engineering for<br /><em>cloud, AI</em><br />&amp; data systems.</h1>
-          <p className="pv-lead">Enterprise IT and operational leadership, paired with AI-assisted academic work in cloud, AI and data engineering.</p>
+          <p className="pv-lead">Enterprise IT professional bringing operational leadership and practical cloud, AI and data engineering capability. Work spans incident diagnosis, infrastructure, APIs and tested delivery workflows.</p>
           <div className="pv-actions">
             <button className="pv-button primary" onClick={() => navigate('featured')}>Explore selected work <ArrowDown aria-hidden="true" /></button>
             <button className="pv-button secondary" onClick={() => navigate('experience')}>Career background <ArrowUpRight aria-hidden="true" /></button>
@@ -2540,21 +2642,15 @@ export default function App() {
           <svg className="pv-map-lines" viewBox="0 0 500 400" aria-hidden="true"><path d="M250 200 C250 100 100 200 100 100 M250 200 C250 100 400 200 400 100 M250 200 V330" fill="none" stroke="currentColor" strokeWidth="1.4" strokeDasharray="5 6" /></svg>
           <div className="pv-map-orbit" aria-hidden="true" />
           <div className="pv-map-core"><Network aria-hidden="true" /><strong>Systems<br />thinking</strong><small>Design · Build · Verify</small></div>
-          {Object.entries(DOMAIN_META).map(([id, meta]) => {const Icon = meta.icon; return <button key={id} className={`pv-map-node ${id}`} onClick={() => chooseCategory(id)} aria-label={`Explore ${meta.label} projects`}><Icon aria-hidden="true" /><strong>{id === 'cloud' ? 'Cloud' : id === 'ai' ? 'AI & agents' : 'Data'}</strong><small>{CASE_STUDIES.filter(c=>c.category===id).length} projects <ArrowUpRight aria-hidden="true" /></small></button>;})}
+          {Object.entries(DOMAIN_META).map(([id, meta]) => {const Icon = meta.icon; return <button key={id} className={`pv-map-node ${id}`} onClick={() => chooseCategory(id)} aria-label={`Explore ${meta.label} projects`}><Icon aria-hidden="true" /><strong>{id === 'cloud' ? 'Cloud' : id === 'ai' ? 'AI & agents' : 'Data'}</strong><small>{portfolioProjects.filter(c=>c.category===id).length} projects <ArrowUpRight aria-hidden="true" /></small></button>;})}
           <div className="pv-map-caption"><span>Decisions</span><ArrowRight aria-hidden="true" /><span>Implementation</span><ArrowRight aria-hidden="true" /><span>Evidence</span></div>
         </div>
       </section>
 
-      <div className="pv-stat-strip" aria-label="Portfolio at a glance">
-        <div className="pv-stat"><strong>14<span> / projects</span></strong><small>Architecture, implementation & validation</small></div>
-        <div className="pv-stat"><strong>48<span> / credentials</span></strong><small>Official verification links</small></div>
-        <div className="pv-stat"><strong>~10.5<span> / years</span></strong><small>Paid enterprise IT experience</small></div>
-      </div>
-
       <section id="section-featured" className="pv-section">
-        <div className="pv-section-heading"><div><span className="pv-eyebrow">01 / Selected work</span><h2>Start with these three.</h2></div><button className="pv-text-link" onClick={() => navigate('cases',true)}>Explore all 14 projects <ArrowUpRight aria-hidden="true" /></button></div>
+        <div className="pv-section-heading"><div><span className="pv-eyebrow">01 / Selected work</span><h2>Selected projects</h2></div><button className="pv-text-link" onClick={() => navigate('cases',true)}>Explore all projects <ArrowUpRight aria-hidden="true" /></button></div>
         <div className="pv-featured">{FEATURED_IMPLEMENTATIONS.map(f => {const c=CASE_STUDIES.find(c=>c.id===f.projectId);const v=PROJECT_VIEWS.find(v=>v.id===c.id);return <button className={`pv-project-card ${c.category}`} key={c.id} onClick={()=>openProject(c.id)} aria-label={`View project ${c.code}: ${v.shortTitle}`}>
-          <div className="pv-card-meta"><span className={`pv-domain ${c.category}`}>{DOMAIN_META[c.category].label}</span><span>{c.code}</span></div>
+          <div className="pv-card-meta"><span className={`pv-domain ${c.category}`}>{DOMAIN_META[c.category].label}</span></div>
           <div className="pv-feature-art"><MiniFlow view={v} category={c.category} /></div>
           <div className="pv-card-content"><h3>{v.shortTitle}</h3><p>{v.summary}</p><div className="pv-result"><strong>{v.metricValue}</strong><span>{v.metricLabel}</span></div></div>
           <div className="pv-card-footer"><small>{v.scopeLabel}</small><span className="pv-round-arrow"><ArrowUpRight aria-hidden="true" /></span></div>
@@ -2562,19 +2658,18 @@ export default function App() {
       </section>
 
       <section id="section-cases" className="pv-section">
-        <div className="pv-section-heading"><div><span className="pv-eyebrow">02 / Project library</span><h2>Explore the engineering.</h2></div><p>Pick a project for its decisions,<br />architecture and recorded results.</p></div>
+        <div className="pv-section-heading"><div><span className="pv-eyebrow">02 / Project library</span><h2>Cloud, AI and data projects</h2></div></div>
         <div className="pv-filter-bar"><div className="pv-filter-pills" aria-label="Filter projects">
-          {[['all','All work'],['cloud','Cloud'],['ai','AI & agents'],['data','Data & integration']].map(([id,label])=><button key={id} className={`pv-pill ${selectedCategory===id?'active':''}`} aria-pressed={selectedCategory===id} onClick={()=>{setSelectedCategory(id);setShowAllProjects(true);}}>{label}<span>{id==='all'?14:CASE_STUDIES.filter(c=>c.category===id).length}</span></button>)}
+          {[['all','All projects'],['cloud','Cloud'],['ai','AI & agents'],['data','Data & integration']].map(([id,label])=><button key={id} className={`pv-pill ${selectedCategory===id?'active':''}`} aria-pressed={selectedCategory===id} onClick={()=>{setSelectedCategory(id);setShowAllProjects(true);}}>{label}<span>{id==='all'?portfolioProjects.length:portfolioProjects.filter(c=>c.category===id).length}</span></button>)}
         </div><label className="pv-search"><Search aria-hidden="true" /><input aria-label="Search projects" placeholder="Find a stack or project…" value={searchQuery} onChange={e=>{setSearchQuery(e.target.value);setShowAllProjects(true);}} />{searchQuery&&<button aria-label="Clear project search" onClick={()=>setSearchQuery('')}><X aria-hidden="true" /></button>}</label></div>
-        <div className="pv-project-grid">{visibleProjects.map(c=>{const v=PROJECT_VIEWS.find(v=>v.id===c.id);return <button className={`pv-project-tile ${c.category}`} key={c.id} onClick={()=>openProject(c.id)} aria-label={`View project ${c.code}: ${v.shortTitle}`}>
-          <div className="pv-card-meta"><span className={`pv-domain ${c.category}`}>{DOMAIN_META[c.category].label}</span><span>{c.code}</span></div>
+        <div className="pv-project-grid">{visibleProjects.map(c=>{if(c.id==='aws-security') return <AwsSecurityProjectCard key={c.id} onOpen={openAwsProject} />;const v=PROJECT_VIEWS.find(v=>v.id===c.id);return <button className={`pv-project-tile ${c.category}`} key={c.id} onClick={()=>openProject(c.id)} aria-label={`View project ${c.code}: ${v.shortTitle}`}>
+          <div className="pv-card-meta"><span className={`pv-domain ${c.category}`}>{DOMAIN_META[c.category].label}</span></div>
           <div className="pv-tile-art"><MiniFlow view={v} category={c.category} compact /></div>
           <div className="pv-tile-body"><h3>{v.shortTitle}</h3><div className="pv-result"><strong>{v.metricValue}</strong><span>{v.metricLabel}</span></div><div className="pv-chips">{c.stack.slice(0,3).map(s=><span key={s}>{s}</span>)}</div></div>
           <div className="pv-card-footer"><small>{v.scopeLabel}</small><ArrowUpRight aria-hidden="true" /></div>
         </button>;})}</div>
-        {!filteredProjects.length&&<div className="pv-empty"><Search aria-hidden="true" /><h3>No matching projects</h3><p>Try Python, Azure, Kafka or a case-study number.</p><button className="pv-button secondary" onClick={()=>{setSearchQuery('');setSelectedCategory('all');}}>Reset filters</button></div>}
-        {!showAllProjects&&filteredProjects.length>6&&<div className="pv-more"><button className="pv-button secondary" onClick={()=>setShowAllProjects(true)}>Show all 14 projects <ArrowDown aria-hidden="true" /></button><small>Showing 6 of 14 · All evidence remains available</small></div>}
-        <p className="pv-scope-note"><FlaskConical aria-hidden="true" />Academic implementations include supplied starters and documented AI assistance. Each project retains its own execution scope and evidence limits.</p>
+        {!filteredProjects.length&&<div className="pv-empty"><Search aria-hidden="true" /><h3>No matching projects</h3><p>Try Python, Azure or Kafka.</p><button className="pv-button secondary" onClick={()=>{setSearchQuery('');setSelectedCategory('all');}}>Reset filters</button></div>}
+        {!showAllProjects&&filteredProjects.length>6&&<div className="pv-more"><button className="pv-button secondary" onClick={()=>setShowAllProjects(true)}>Show all projects <ArrowDown aria-hidden="true" /></button></div>}
       </section>
 
       <section className="pv-skills-ribbon" aria-label="Engineering toolkit">
@@ -2584,18 +2679,18 @@ export default function App() {
       </section>
 
       <section id="section-experience" className="pv-section">
-        <div className="pv-section-heading"><div><span className="pv-eyebrow">03 / Career background</span><h2>Enterprise experience.<br />Practical perspective.</h2></div><p>Clinical systems, energy support,<br />software development and technical learning.</p></div>
-        <div className="pv-timeline">{ENTERPRISE_TIMELINE.map((item,i)=>{const open=openCareer.includes(i);return <article className="pv-career-row" key={item.period}>
+        <div className="pv-section-heading"><div><span className="pv-eyebrow">03 / Career background</span><h2>Enterprise IT experience</h2></div><p>Clinical systems, energy support,<br />software development and technical learning.</p></div>
+        <div className="pv-timeline">{ENTERPRISE_TIMELINE.map((item,i)=>({item,i})).filter(({i})=>i>0).map(({item,i})=>{const open=openCareer.includes(i);return <article className="pv-career-row" key={item.period}>
           <button className="pv-career-summary" aria-expanded={open} aria-controls={`career-detail-${i}`} onClick={()=>setOpenCareer(rows=>rows.includes(i)?rows.filter(n=>n!==i):[...rows,i])}>
             <span className="pv-career-date">{item.period}</span><span className={`pv-career-mark ${i===0?'academic':''}`} aria-hidden="true">{i===0?<FlaskConical/>:i===1?'DCD':i===2?'TCS':i===4?'C':'NHS'}</span><span className="pv-career-title"><strong>{item.role}</strong><span>{item.company}</span><small>{i===0?'Independent academic practice':item.domainBadge}</small></span><ChevronDown className={open?'rotated':''} aria-hidden="true" />
           </button>
-          {open&&<div id={`career-detail-${i}`} className="pv-career-detail"><p>{item.summary}</p><ul>{item.highlights.map(h=><li key={h}>{h}</li>)}</ul><div className="pv-chips">{item.tags.map(t=><span key={t}>{t}</span>)}</div><small>{item.location}</small></div>}
+          {open&&<div id={`career-detail-${i}`} className="pv-career-detail">{i===2&&<p>{item.summary}</p>}<ul>{item.highlights.map(h=><li key={h}>{h}</li>)}</ul><div className="pv-chips">{item.tags.map(t=><span key={t}>{t}</span>)}</div><small>{item.location}</small></div>}
         </article>;})}</div>
       </section>
 
       <section id="section-credentials" className="pv-section">
-        <div className="pv-credential-banner"><div className="pv-credential-number"><Award aria-hidden="true" /><strong>48</strong><span>verified credentials</span></div><div><span className="pv-eyebrow">04 / Continuous learning</span><h2>Knowledge with a paper trail.</h2><p>19 Udacity credentials and 29 industry credentials.<br />Open any certificate to verify it at the source.</p><div className="pv-issuer-row"><span>AWS</span><span>Microsoft Azure</span><span>Google</span><span>Anthropic</span><span>IBM</span><span>EPFL</span></div></div><button className="pv-button primary" aria-expanded={directoryOpen} aria-controls="credential-directory" onClick={()=>setDirectoryOpen(!directoryOpen)}>{directoryOpen?'Close directory':'Browse credentials'}<ChevronDown className={directoryOpen?'rotated':''} aria-hidden="true" /></button></div>
-        {directoryOpen&&<div id="credential-directory" className="pv-directory"><div className="pv-filter-bar"><div className="pv-filter-pills" aria-label="Filter credentials">{[['all','All 48'],['udacity','Udacity 19'],...CERT_GROUPS.map(g=>[g.id,g.shortLabel])].map(([id,label])=><button key={id} className={`pv-pill ${certGroup===id?'active':''}`} aria-pressed={certGroup===id} onClick={()=>setCertGroup(id)}>{label}</button>)}</div><label className="pv-search"><Search aria-hidden="true" /><input aria-label="Search credentials" placeholder="Search credentials…" value={certSearch} onChange={e=>setCertSearch(e.target.value)} /></label></div><p className="pv-directory-count" role="status">{filteredCertificates.length} credentials</p><div className="pv-certificate-grid">{filteredCertificates.map(c=><a className="pv-certificate" key={c.url} href={c.url} target="_blank" rel="noreferrer"><span className="pv-cert-icon" aria-hidden="true"><Award /></span><span className="pv-cert-copy"><strong>{c.title}</strong><small>{c.issuer} · {c.date}</small>{c.summary&&<span>{c.summary}</span>}</span><ArrowUpRight aria-hidden="true" /><span className="pv-sr-only">Verify certificate</span></a>)}</div>{!filteredCertificates.length&&<div className="pv-empty">No credentials match this search.</div>}</div>}
+        <div className="pv-credential-banner"><div><span className="pv-eyebrow">04 / Professional development</span><h2>Cloud, AI and data credentials</h2><p>Verified qualifications supporting the engineering work.</p><div className="pv-issuer-row"><span>AWS</span><span>Microsoft Azure</span><span>Google</span><span>Anthropic</span><span>IBM</span><span>EPFL</span></div></div><button className="pv-button primary" aria-expanded={directoryOpen} aria-controls="credential-directory" onClick={()=>setDirectoryOpen(!directoryOpen)}>{directoryOpen?'Close directory':'Browse credentials'}<ChevronDown className={directoryOpen?'rotated':''} aria-hidden="true" /></button></div>
+        {directoryOpen&&<div id="credential-directory" className="pv-directory"><div className="pv-filter-bar"><div className="pv-filter-pills" aria-label="Filter credentials">{[['relevant',`Cloud, AI & data (${relevantCertificateCount})`],['all','All credentials (48)'],['udacity','Udacity (19)'],...CERT_GROUPS.map(g=>[g.id,g.shortLabel])].map(([id,label])=><button key={id} className={`pv-pill ${certGroup===id?'active':''}`} aria-pressed={certGroup===id} onClick={()=>setCertGroup(id)}>{label}</button>)}</div><label className="pv-search"><Search aria-hidden="true" /><input aria-label="Search credentials" placeholder="Search credentials…" value={certSearch} onChange={e=>setCertSearch(e.target.value)} /></label></div><p className="pv-directory-count" role="status">{filteredCertificates.length} credentials</p><div className="pv-certificate-grid">{filteredCertificates.map(c=><a className="pv-certificate" key={c.url} href={c.url} target="_blank" rel="noreferrer"><span className="pv-cert-icon" aria-hidden="true"><Award /></span><span className="pv-cert-copy"><strong>{c.title}</strong><small>{c.issuer} · {c.date}</small>{c.summary&&<span>{c.summary}</span>}</span><ArrowUpRight aria-hidden="true" /><span className="pv-sr-only">Verify certificate</span></a>)}</div>{!filteredCertificates.length&&<div className="pv-empty">No credentials match this search.</div>}</div>}
       </section>
 
       <section className="pv-contact"><div><span className="pv-eyebrow">Connect</span><h2>Discuss the work.<br />Explore the opportunity.</h2></div><div className="pv-actions"><a className="pv-button primary" href="https://www.linkedin.com/in/djessijorge/" target="_blank" rel="noreferrer">Connect on LinkedIn <ArrowUpRight aria-hidden="true" /></a><a className="pv-button secondary" href="https://github.com/djessijorge9-ship-it/architecture-evaluation-portfolio" target="_blank" rel="noreferrer"><Github aria-hidden="true" />Portfolio source</a></div></section>
@@ -2604,13 +2699,12 @@ export default function App() {
 
     <dialog ref={dialogRef} className="pv-dialog" aria-labelledby="project-dialog-title" onCancel={()=>setSelectedProjectId(null)} onClose={()=>{setSelectedProjectId(null);document.body.classList.remove('modal-open');openerRef.current?.focus();}}>
       {selectedProject&&selectedView&&<>
-        <div className="pv-dialog-header"><div><span className={`pv-domain ${selectedProject.category}`}>{selectedProject.code} / {DOMAIN_META[selectedProject.category].label}</span><h2 id="project-dialog-title">{selectedView.shortTitle}</h2><p>{selectedView.scopeLabel}</p></div><button className="pv-close" onClick={()=>setSelectedProjectId(null)} aria-label="Close project"><X aria-hidden="true" /></button></div>
-        <div className="pv-tabs" role="tablist" aria-label="Project details">{projectTabs.map((tab,i)=><button key={tab} role="tab" id={`project-tab-${tab}`} aria-selected={projectTab===tab} aria-controls="project-panel" tabIndex={projectTab===tab?0:-1} onKeyDown={e=>changeTab(e,i)} onClick={()=>setProjectTab(tab)}>{tab==='overview'?'At a glance':tab==='validation'?'Validation & lessons':tab[0].toUpperCase()+tab.slice(1)}</button>)}</div>
+        <div className="pv-dialog-header"><div><span className={`pv-domain ${selectedProject.category}`}>{DOMAIN_META[selectedProject.category].label}</span><h2 id="project-dialog-title">{selectedView.shortTitle}</h2><p>{selectedView.scopeLabel}</p></div><button className="pv-close" onClick={()=>setSelectedProjectId(null)} aria-label="Close project"><X aria-hidden="true" /></button></div>
+        <div className="pv-tabs" role="tablist" aria-label="Project details">{projectTabs.map((tab,i)=><button key={tab} role="tab" id={`project-tab-${tab}`} aria-selected={projectTab===tab} aria-controls="project-panel" tabIndex={projectTab===tab?0:-1} onKeyDown={e=>changeTab(e,i)} onClick={()=>setProjectTab(tab)}>{tab==='overview'?'At a glance':tab==='validation'?'Validation':'Architecture'}</button>)}</div>
         <div className="pv-tab-panel" role="tabpanel" id="project-panel" aria-labelledby={`project-tab-${projectTab}`} tabIndex={0} key={`${selectedProject.id}-${projectTab}`}>
-          {projectTab==='overview'&&<><p className="pv-dialog-intro">{selectedView.summary}</p><div className={`pv-dialog-art ${selectedProject.category}`}><MiniFlow view={selectedView} category={selectedProject.category}/><div className="pv-result"><strong>{selectedView.metricValue}</strong><span>{selectedView.metricLabel}</span></div></div><div className="pv-dialog-overview"><div className="pv-fact"><span>Contribution</span><p>{selectedView.contribution}</p></div><div className="pv-fact"><span>Design decision</span><p>{selectedView.decision}</p></div></div><div className="pv-chips">{selectedProject.stack.map(s=><span key={s}>{s}</span>)}</div><details className="pv-full-notes"><summary>Read the full implementation notes <ChevronDown aria-hidden="true" /></summary><h3>Context and challenge</h3><p>{selectedProject.narrative.context}</p><h3>Objective</h3><p>{selectedProject.narrative.objective}</p><h3>Implementation</h3><ul>{selectedProject.narrative.execution.map(t=><li key={t}>{t}</li>)}</ul><h3>Recorded outcome</h3><p>{selectedProject.narrative.outcome}</p></details></>}
+          {projectTab==='overview'&&<><p className="pv-dialog-intro">{selectedView.summary}</p><div className={`pv-dialog-art ${selectedProject.category}`}><MiniFlow view={selectedView} category={selectedProject.category}/><div className="pv-result"><strong>{selectedView.metricValue}</strong><span>{selectedView.metricLabel}</span></div></div><div className="pv-dialog-overview"><div className="pv-fact"><span>{['cs-07','cs-09'].includes(selectedProject.id)?'Implementation scope':'Contribution'}</span><p>{selectedView.contribution}</p></div><div className="pv-fact"><span>Design decision</span><p>{selectedView.decision}</p></div></div><div className="pv-chips">{selectedProject.stack.map(s=><span key={s}>{s}</span>)}</div><a className="pv-project-support-link" href={selectedProject.certUrl} target="_blank" rel="noreferrer">Verify programme credential <ArrowUpRight aria-hidden="true" /></a><details className="pv-full-notes"><summary>Implementation detail <ChevronDown aria-hidden="true" /></summary><h3>Context and challenge</h3><p>{selectedProject.narrative.context}</p><h3>Objective</h3><p>{selectedProject.narrative.objective}</p><h3>Implementation</h3><ul>{selectedProject.narrative.execution.map(t=><li key={t}>{t}</li>)}</ul><h3>Recorded outcome</h3><p>{selectedProject.narrative.outcome}</p><h3>Project scope and contribution</h3><p>{selectedProject.evidence.scopeSummary}</p></details></>}
           {projectTab==='architecture'&&<><div className="pv-panel-heading"><h3>System architecture & workflow</h3><span><ArrowRight aria-hidden="true" /> Scroll the diagram on smaller screens</span></div><div className="pv-diagram-scroll"><AwsReferenceArchitectureSVG config={selectedProject.diagramConfig} projectId={selectedProject.id}/></div><p className="pv-project-scope">{selectedView.flowLabel.startsWith('Independent')?'This diagram compares shared engineering patterns across independent projects or assignments. It does not represent one integrated deployment.':selectedProject.diagramConfig.subtitleLine2}</p></>}
-          {projectTab==='validation'&&<section className="pv-validation" aria-labelledby={`validation-title-${selectedProject.id}`}><span className="pv-eyebrow"><FlaskConical aria-hidden="true" /> Recorded results & boundaries</span><h3 id={`validation-title-${selectedProject.id}`}>Validation and lessons learned</h3><p>{selectedProject.validationLessons}</p><div className="pv-project-scope"><ShieldCheck aria-hidden="true" /><span>{selectedProject.evidence.scopeSummary}</span></div></section>}
-          {projectTab==='evidence'&&<><div className="pv-panel-heading"><h3>Evidence & provenance</h3><a className="pv-text-link" href={selectedProject.certUrl} target="_blank" rel="noreferrer">Verify credential <ArrowUpRight aria-hidden="true" /></a></div><p>{selectedProject.evidence.credential}</p><div className="pv-project-scope">{selectedProject.evidence.scopeSummary}</div><h4>Retained deliverables</h4><ul className="pv-deliverables">{selectedProject.evidence.deliverables.map(t=><li key={t}><CheckCircle2 aria-hidden="true" /><span>{t}</span></li>)}</ul><h4>Representative files</h4><div className="pv-evidence-files">{selectedProject.evidence.filesIncluded.map(f=><code key={f}>{f}</code>)}</div><div className="pv-checksum"><span>Archive SHA256<code>{selectedProject.evidence.sha256}</code></span><button className="pv-button secondary small" onClick={()=>copyHash(selectedProject.evidence.sha256)}>{copiedHash===selectedProject.evidence.sha256?<Check aria-hidden="true"/>:<Copy aria-hidden="true"/>}{copiedHash===selectedProject.evidence.sha256?'Copied':'Copy hash'}</button></div>{copiedHash==='unavailable'&&<p role="status">Copy is unavailable. The full checksum above can be selected manually.</p>}</>}
+          {projectTab==='validation'&&<section className="pv-validation" aria-labelledby={`validation-title-${selectedProject.id}`}><h3 id={`validation-title-${selectedProject.id}`}>Validation and lessons learned</h3><p>{selectedProject.validationLessons}</p></section>}
         </div>
       </>}
     </dialog>
